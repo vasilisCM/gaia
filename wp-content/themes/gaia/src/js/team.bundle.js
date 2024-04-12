@@ -20,13 +20,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/js/pages/about.js":
-/*!*******************************!*\
-  !*** ./src/js/pages/about.js ***!
-  \*******************************/
+/***/ "./src/js/pages/team.js":
+/*!******************************!*\
+  !*** ./src/js/pages/team.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _logic_test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../logic/test.js */ \"./src/js/logic/test.js\");\n\r\n\r\nconst about = () => {\r\n  console.log(\"Hello from About\");\r\n\r\n  (0,_logic_test_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n};\r\n\r\nabout();\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (about);\r\n\n\n//# sourceURL=webpack://boilerplate/./src/js/pages/about.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _logic_test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../logic/test.js */ \"./src/js/logic/test.js\");\n\r\n\r\nconst team = () => {\r\n  console.log(\"Hello from Team\");\r\n\r\n  (0,_logic_test_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n};\r\n\r\nteam();\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (team);\r\n\n\n//# sourceURL=webpack://boilerplate/./src/js/pages/team.js?");
 
 /***/ })
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/pages/about.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/pages/team.js");
 /******/ 	
 /******/ })()
 ;
