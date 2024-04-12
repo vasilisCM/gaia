@@ -1,0 +1,57 @@
+// Headings
+.heading-l {
+  font-size: cross-media(30px, 991px, 67px);
+  font-weight: 400;
+}
+
+h1,
+.heading-ml {
+  font-size: cross-media(44px, 991px, 64px);
+  font-weight: 400;
+}
+
+h2,
+.heading {
+  font-size: cross-media(20px, 991px, 34px);
+}
+
+h3,
+.heading-ms {
+  font-size: cross-media(20px, 991px, 24px);
+  line-height: 1.3em;
+}
+
+h4,
+.heading-s {
+  font-size: cross-media(16px, 991px, 18px);
+  line-height: 1.3em;
+}
+
+// Texts
+.text-l {
+  font-size: cross-media(16px, 991px, 24px);
+}
+
+.text-ml {
+  font-size: cross-media(18px, 991px, 27px);
+}
+
+p,
+.text {
+  font-size: cross-media(14px, 991px, 16px);
+}
+
+.text-ms {
+  font-size: cross-media(12px, 991px, 14px);
+}
+
+.text-s {
+  font-size: cross-media(8px, 991px, 10px);
+}
+
+.button {
+  font-size: cross-media(12px, 991px, 18px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
