@@ -276,6 +276,7 @@ button {
   width: 100%;
   background-color: transparent;
   backdrop-filter: blur(10px);
+  padding-block: clamp(32px, 6.458123108vw, 64px);
 }
 @media only screen and (max-width: 991px) {
   .header--sticky .header__logo-container {
@@ -288,7 +289,7 @@ button {
   justify-content: space-between;
 }
 .header__logo {
-  max-width: 150px;
+  max-width: 270px;
 }
 .header ul {
   margin: 0;
@@ -300,9 +301,12 @@ button {
   list-style-type: none;
 }
 
+.main-menu {
+  text-transform: uppercase;
+}
 .main-menu__list {
   display: flex;
-  gap: 16px;
+  gap: clamp(32px, 6.458123108vw, 64px);
   position: relative;
 }
 .main-menu__list ul {
@@ -310,14 +314,70 @@ button {
   visibility: hidden;
   opacity: 0;
 }
+.main-menu__list a {
+  color: #000;
+}
 
 .footer {
   background-color: white;
 }
-.footer__container {
+.footer__top {
+  padding-block: clamp(32px, 6.458123108vw, 64px);
+  background-color: #417369;
+  color: #fff;
+}
+.footer__top-container, .footer__bottom-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.footer__top-right, .footer__bottom-right {
+  display: grid;
+  justify-items: end;
+  gap: clamp(20px, 4.0363269425vw, 40px);
+}
+.footer__social, .footer__social-icons {
+  display: flex;
+  justify-content: end;
+  gap: clamp(20px, 4.0363269425vw, 40px);
+}
+.footer__newsletter form {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
+}
+.footer__newsletter form p {
+  display: flex;
+  align-items: center;
+}
+.footer__newsletter form .newsletter__input-container {
+  width: fit-content;
+}
+.footer__newsletter form input, .footer__newsletter form .newsletter__submit {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: #fff;
+  padding: 7px 14px;
+}
+.footer__newsletter form input::placeholder {
+  color: #000;
+}
+.footer__newsletter form .newsletter__submit {
+  cursor: pointer;
+}
+.footer__newsletter form .wpcf7-spinner {
+  display: none;
+}
+.footer__bottom {
+  padding-block: clamp(12px, 1.8163471241vw, 18px);
+}
+.footer__bottom a {
+  color: #000;
 }
 .footer__logo {
   max-width: 150px;
@@ -332,9 +392,24 @@ button {
   list-style-type: none;
 }
 
-.hero {
-  background-color: #417369;
-  background-image: url("../../assets/img/home-hero-bg.webp");
+.footer-menu {
+  text-transform: uppercase;
+}
+.footer-menu__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+.footer-menu__list ul li {
+  text-transform: none;
+}
+.footer-menu a {
+  color: #fff;
+}
+
+.privacy-menu__list {
+  display: flex;
+  gap: clamp(20px, 4.0363269425vw, 40px);
 }
 
 .loader {
