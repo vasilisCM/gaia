@@ -101,3 +101,9 @@
     opacity: 1;
   }
 }
+
+// Button
+.button {
+  padding: cross-media(7px, 991px, 14px) cross-media(32px, 991px, 64px);
+  border: solid 1px $black;
+}

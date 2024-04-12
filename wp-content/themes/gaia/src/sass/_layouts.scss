@@ -48,24 +48,52 @@
     & a {
       color: $black;
       // Font styles will be the CSS rules of the correct typography class
+      font-size: cross-media(10px, 991px, 12px);
     }
   }
 }
 
 // Hero
 .hero {
-  min-height: 1200px;
+  position: relative;
+  z-index: -1;
+  min-height: cross-media(800px, 991px, 1200px);
   padding-top: cross-media(150px, 991px, 350px);
   text-align: center;
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  &__background-img {
+    width: 100%;
+  }
 
   &__heading {
     display: grid;
   }
 }
 
+// Text Banner
+.text-banner {
+  text-align: center;
+  padding-block: cross-media(40px, 991px, 80px) cross-media(80px, 991px, 160px);
+}
+
+.curved-container {
+  padding-top: 24px;
+}
+
 // Footer
 .footer {
-  background-color: white;
+  background-color: $white;
+  font-size: cross-media(10px, 991px, 12px);
 
   &__top {
     padding-block: cross-media(32px, 991px, 64px);
@@ -175,6 +203,7 @@
   & a {
     color: $white;
     // Font styles will be the CSS rules of the correct typography class
+    font-size: cross-media(10px, 991px, 12px);
   }
 }
 

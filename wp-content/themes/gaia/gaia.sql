@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2024 at 04:11 PM
+-- Generation Time: Apr 12, 2024 at 05:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -210,7 +210,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (103, 'user_count', '2', 'no'),
 (104, 'widget_block', 'a:6:{i:2;a:1:{s:7:\"content\";s:19:\"<!-- wp:search /-->\";}i:3;a:1:{s:7:\"content\";s:154:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Recent Posts</h2><!-- /wp:heading --><!-- wp:latest-posts /--></div><!-- /wp:group -->\";}i:4;a:1:{s:7:\"content\";s:227:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Recent Comments</h2><!-- /wp:heading --><!-- wp:latest-comments {\"displayAvatar\":false,\"displayDate\":false,\"displayExcerpt\":false} /--></div><!-- /wp:group -->\";}i:5;a:1:{s:7:\"content\";s:146:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Archives</h2><!-- /wp:heading --><!-- wp:archives /--></div><!-- /wp:group -->\";}i:6;a:1:{s:7:\"content\";s:150:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Categories</h2><!-- /wp:heading --><!-- wp:categories /--></div><!-- /wp:group -->\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (105, 'sidebars_widgets', 'a:2:{s:19:\"wp_inactive_widgets\";a:5:{i:0;s:7:\"block-2\";i:1;s:7:\"block-3\";i:2;s:7:\"block-4\";i:3;s:7:\"block-5\";i:4;s:7:\"block-6\";}s:13:\"array_version\";i:3;}', 'yes'),
-(106, 'cron', 'a:8:{i:1712932963;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1712958163;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1712958171;a:1:{s:21:\"wp_update_user_counts\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1713001362;a:2:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1713001371;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1713001373;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1713524142;a:1:{s:30:\"wp_delete_temp_updater_backups\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}', 'yes'),
+(106, 'cron', 'a:8:{i:1712936563;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1712958163;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1712958171;a:1:{s:21:\"wp_update_user_counts\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1713001362;a:2:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1713001371;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1713001373;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1713524142;a:1:{s:30:\"wp_delete_temp_updater_backups\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}', 'yes'),
 (107, 'widget_pages', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (108, 'widget_calendar', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (109, 'widget_archives', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -304,7 +304,20 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (215, 'options_hero_image', '', 'no'),
 (216, '_options_hero_image', 'field_66193789e7e72', 'no'),
 (217, 'options_hero', '', 'no'),
-(218, '_options_hero', 'field_6619373ce7e6e', 'no');
+(218, '_options_hero', 'field_6619373ce7e6e', 'no'),
+(220, 'category_children', 'a:0:{}', 'yes'),
+(221, 'options_text_banner_text_small', 'Discover the perfect blend of rejuvenation and growth at Gaia Haven', 'no'),
+(222, '_options_text_banner_text_small', 'field_66194a81a228d', 'no'),
+(223, 'options_text_banner_text_large', 'Join us for an immersive experience', 'no'),
+(224, '_options_text_banner_text_large', 'field_66194a8da228e', 'no'),
+(225, 'options_text_banner_button_text', 'Book now', 'no'),
+(226, '_options_text_banner_button_text', 'field_66194aa8a2290', 'no'),
+(227, 'options_text_banner_button_link', '13', 'no'),
+(228, '_options_text_banner_button_link', 'field_66194aada2291', 'no'),
+(229, 'options_text_banner_button', '', 'no'),
+(230, '_options_text_banner_button', 'field_66194a95a228f', 'no'),
+(231, 'options_text_banner', '', 'no'),
+(232, '_options_text_banner', 'field_66194a55a228c', 'no');
 
 -- --------------------------------------------------------
 
@@ -379,7 +392,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (67, 18, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (68, 18, '_menu_item_xfn', ''),
 (69, 18, '_menu_item_url', '#'),
-(71, 19, '_form', '<span> Newsletter subscription </span>\n<div class=\"newsletter__input-container\">\n[email* your-email autocomplete:email placeholder \"e-mail\"]\n[submit class:newsletter__submit \"→\"]\n</div>'),
+(71, 19, '_form', '<span class=\"text-s\"> Newsletter subscription </span>\n<div class=\"newsletter__input-container\">\n[email* your-email autocomplete:email class:text-s placeholder \"e-mail\"]\n[submit class:text-s newsletter__submit \"→\"]\n</div>'),
 (72, 19, '_mail', 'a:9:{s:6:\"active\";b:1;s:7:\"subject\";s:30:\"[_site_title] \"[your-subject]\"\";s:6:\"sender\";s:45:\"[_site_title] <vpafiliaris@conceptmaniax.com>\";s:9:\"recipient\";s:19:\"[_site_admin_email]\";s:4:\"body\";s:191:\"From: [your-name] [your-email]\nSubject: [your-subject]\n\nMessage Body:\n[your-message]\n\n-- \nThis is a notification that a contact form was submitted on your website ([_site_title] [_site_url]).\";s:18:\"additional_headers\";s:22:\"Reply-To: [your-email]\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (73, 19, '_mail_2', 'a:9:{s:6:\"active\";b:0;s:7:\"subject\";s:30:\"[_site_title] \"[your-subject]\"\";s:6:\"sender\";s:45:\"[_site_title] <vpafiliaris@conceptmaniax.com>\";s:9:\"recipient\";s:12:\"[your-email]\";s:4:\"body\";s:220:\"Message Body:\n[your-message]\n\n-- \nThis email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.\";s:18:\"additional_headers\";s:29:\"Reply-To: [_site_admin_email]\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (74, 19, '_messages', 'a:22:{s:12:\"mail_sent_ok\";s:45:\"Thank you for your message. It has been sent.\";s:12:\"mail_sent_ng\";s:71:\"There was an error trying to send your message. Please try again later.\";s:16:\"validation_error\";s:61:\"One or more fields have an error. Please check and try again.\";s:4:\"spam\";s:71:\"There was an error trying to send your message. Please try again later.\";s:12:\"accept_terms\";s:69:\"You must accept the terms and conditions before sending your message.\";s:16:\"invalid_required\";s:27:\"Please fill out this field.\";s:16:\"invalid_too_long\";s:32:\"This field has a too long input.\";s:17:\"invalid_too_short\";s:33:\"This field has a too short input.\";s:13:\"upload_failed\";s:46:\"There was an unknown error uploading the file.\";s:24:\"upload_file_type_invalid\";s:49:\"You are not allowed to upload files of this type.\";s:21:\"upload_file_too_large\";s:31:\"The uploaded file is too large.\";s:23:\"upload_failed_php_error\";s:38:\"There was an error uploading the file.\";s:12:\"invalid_date\";s:41:\"Please enter a date in YYYY-MM-DD format.\";s:14:\"date_too_early\";s:32:\"This field has a too early date.\";s:13:\"date_too_late\";s:31:\"This field has a too late date.\";s:14:\"invalid_number\";s:22:\"Please enter a number.\";s:16:\"number_too_small\";s:34:\"This field has a too small number.\";s:16:\"number_too_large\";s:34:\"This field has a too large number.\";s:23:\"quiz_answer_not_correct\";s:36:\"The answer to the quiz is incorrect.\";s:13:\"invalid_email\";s:30:\"Please enter an email address.\";s:11:\"invalid_url\";s:19:\"Please enter a URL.\";s:11:\"invalid_tel\";s:32:\"Please enter a telephone number.\";}'),
@@ -476,19 +489,19 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (185, 38, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (186, 38, '_menu_item_xfn', ''),
 (187, 38, '_menu_item_url', '#'),
-(189, 40, '_edit_lock', '1712929708:1'),
+(189, 40, '_edit_lock', '1712933347:1'),
 (190, 40, '_edit_last', '1'),
 (191, 48, '_edit_last', '1'),
 (192, 48, '_wp_page_template', 'default'),
 (193, 48, 'inline_featured_image', '0'),
-(194, 48, '_edit_lock', '1712930520:1'),
+(194, 48, '_edit_lock', '1712932612:1'),
 (195, 48, 'hero_heading_text_large', 'in a transformative journey'),
 (196, 48, '_hero_heading_text_large', 'field_66193769e7e70'),
 (197, 48, 'hero_heading_text_small', 'Discover a new dimension of yourself'),
 (198, 48, '_hero_heading_text_small', 'field_66193779e7e71'),
 (199, 48, 'hero_heading', ''),
 (200, 48, '_hero_heading', 'field_6619375fe7e6f'),
-(201, 48, 'hero_image_desktop', ''),
+(201, 48, 'hero_image_desktop', '52'),
 (202, 48, '_hero_image_desktop', 'field_6619379ee7e73'),
 (203, 48, 'hero_image_mobile', ''),
 (204, 48, '_hero_image_mobile', 'field_661937b0e7e74'),
@@ -523,7 +536,25 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (233, 51, 'hero_image', ''),
 (234, 51, '_hero_image', 'field_66193789e7e72'),
 (235, 51, 'hero', ''),
-(236, 51, '_hero', 'field_6619373ce7e6e');
+(236, 51, '_hero', 'field_6619373ce7e6e'),
+(237, 52, '_wp_attached_file', '2024/04/home-hero-001.webp'),
+(238, 52, '_wp_attachment_metadata', 'a:6:{s:5:\"width\";i:1920;s:6:\"height\";i:1272;s:4:\"file\";s:26:\"2024/04/home-hero-001.webp\";s:8:\"filesize\";i:230818;s:5:\"sizes\";a:5:{s:6:\"medium\";a:5:{s:4:\"file\";s:26:\"home-hero-001-300x199.webp\";s:5:\"width\";i:300;s:6:\"height\";i:199;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:13264;}s:5:\"large\";a:5:{s:4:\"file\";s:27:\"home-hero-001-1024x678.webp\";s:5:\"width\";i:1024;s:6:\"height\";i:678;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:89820;}s:9:\"thumbnail\";a:5:{s:4:\"file\";s:26:\"home-hero-001-150x150.webp\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:6744;}s:12:\"medium_large\";a:5:{s:4:\"file\";s:26:\"home-hero-001-768x509.webp\";s:5:\"width\";i:768;s:6:\"height\";i:509;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:60024;}s:9:\"1536x1536\";a:5:{s:4:\"file\";s:28:\"home-hero-001-1536x1018.webp\";s:5:\"width\";i:1536;s:6:\"height\";i:1018;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:157546;}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
+(239, 53, 'hero_heading_text_large', 'in a transformative journey'),
+(240, 53, '_hero_heading_text_large', 'field_66193769e7e70'),
+(241, 53, 'hero_heading_text_small', 'Discover a new dimension of yourself'),
+(242, 53, '_hero_heading_text_small', 'field_66193779e7e71'),
+(243, 53, 'hero_heading', ''),
+(244, 53, '_hero_heading', 'field_6619375fe7e6f'),
+(245, 53, 'hero_image_desktop', '52'),
+(246, 53, '_hero_image_desktop', 'field_6619379ee7e73'),
+(247, 53, 'hero_image_mobile', ''),
+(248, 53, '_hero_image_mobile', 'field_661937b0e7e74'),
+(249, 53, 'hero_image', ''),
+(250, 53, '_hero_image', 'field_66193789e7e72'),
+(251, 53, 'hero', ''),
+(252, 53, '_hero', 'field_6619373ce7e6e'),
+(253, 54, '_edit_lock', '1712935060:1'),
+(254, 54, '_edit_last', '1');
 
 -- --------------------------------------------------------
 
@@ -576,7 +607,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (16, 1, '2024-04-12 10:53:33', '2024-04-12 10:53:33', ' ', '', '', 'publish', 'closed', 'closed', '', '16', '', '', '2024-04-12 10:53:33', '2024-04-12 10:53:33', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=16', 3, 'nav_menu_item', '', 0),
 (17, 1, '2024-04-12 10:53:33', '2024-04-12 10:53:33', '', 'Online Booking', '', 'publish', 'closed', 'closed', '', 'online-booking', '', '', '2024-04-12 10:53:33', '2024-04-12 10:53:33', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=17', 2, 'nav_menu_item', '', 0),
 (18, 1, '2024-04-12 10:53:33', '2024-04-12 10:53:33', '', 'Retreat in Mykonos', '', 'publish', 'closed', 'closed', '', 'retreat-in-mykonos', '', '', '2024-04-12 10:53:33', '2024-04-12 10:53:33', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=18', 1, 'nav_menu_item', '', 0),
-(19, 1, '2024-04-12 10:56:25', '2024-04-12 10:56:25', '<span> Newsletter subscription </span>\r\n<div class=\"newsletter__input-container\">\r\n[email* your-email autocomplete:email placeholder \"e-mail\"]\r\n[submit class:newsletter__submit \"→\"]\r\n</div>\n1\n[_site_title] \"[your-subject]\"\n[_site_title] <vpafiliaris@conceptmaniax.com>\n[_site_admin_email]\nFrom: [your-name] [your-email]\r\nSubject: [your-subject]\r\n\r\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis is a notification that a contact form was submitted on your website ([_site_title] [_site_url]).\nReply-To: [your-email]\n\n\n\n\n[_site_title] \"[your-subject]\"\n[_site_title] <vpafiliaris@conceptmaniax.com>\n[your-email]\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.\nReply-To: [_site_admin_email]\n\n\n\nThank you for your message. It has been sent.\nThere was an error trying to send your message. Please try again later.\nOne or more fields have an error. Please check and try again.\nThere was an error trying to send your message. Please try again later.\nYou must accept the terms and conditions before sending your message.\nPlease fill out this field.\nThis field has a too long input.\nThis field has a too short input.\nThere was an unknown error uploading the file.\nYou are not allowed to upload files of this type.\nThe uploaded file is too large.\nThere was an error uploading the file.\nPlease enter a date in YYYY-MM-DD format.\nThis field has a too early date.\nThis field has a too late date.\nPlease enter a number.\nThis field has a too small number.\nThis field has a too large number.\nThe answer to the quiz is incorrect.\nPlease enter an email address.\nPlease enter a URL.\nPlease enter a telephone number.', 'Newsletter', '', 'publish', 'closed', 'closed', '', 'contact-form-1', '', '', '2024-04-12 12:40:23', '2024-04-12 12:40:23', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?post_type=wpcf7_contact_form&#038;p=19', 0, 'wpcf7_contact_form', '', 0),
+(19, 1, '2024-04-12 10:56:25', '2024-04-12 10:56:25', '<span class=\"text-s\"> Newsletter subscription </span>\r\n<div class=\"newsletter__input-container\">\r\n[email* your-email autocomplete:email class:text-s placeholder \"e-mail\"]\r\n[submit class:text-s newsletter__submit \"→\"]\r\n</div>\n1\n[_site_title] \"[your-subject]\"\n[_site_title] <vpafiliaris@conceptmaniax.com>\n[_site_admin_email]\nFrom: [your-name] [your-email]\r\nSubject: [your-subject]\r\n\r\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis is a notification that a contact form was submitted on your website ([_site_title] [_site_url]).\nReply-To: [your-email]\n\n\n\n\n[_site_title] \"[your-subject]\"\n[_site_title] <vpafiliaris@conceptmaniax.com>\n[your-email]\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.\nReply-To: [_site_admin_email]\n\n\n\nThank you for your message. It has been sent.\nThere was an error trying to send your message. Please try again later.\nOne or more fields have an error. Please check and try again.\nThere was an error trying to send your message. Please try again later.\nYou must accept the terms and conditions before sending your message.\nPlease fill out this field.\nThis field has a too long input.\nThis field has a too short input.\nThere was an unknown error uploading the file.\nYou are not allowed to upload files of this type.\nThe uploaded file is too large.\nThere was an error uploading the file.\nPlease enter a date in YYYY-MM-DD format.\nThis field has a too early date.\nThis field has a too late date.\nPlease enter a number.\nThis field has a too small number.\nThis field has a too large number.\nThe answer to the quiz is incorrect.\nPlease enter an email address.\nPlease enter a URL.\nPlease enter a telephone number.', 'Newsletter', '', 'publish', 'closed', 'closed', '', 'contact-form-1', '', '', '2024-04-12 14:40:20', '2024-04-12 14:40:20', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?post_type=wpcf7_contact_form&#038;p=19', 0, 'wpcf7_contact_form', '', 0),
 (21, 1, '2024-04-12 12:02:16', '2024-04-12 11:22:33', '', 'Exclusive Retreat in Mykonos', '', 'publish', 'closed', 'closed', '', 'exclusive-retreat-in-mykonos', '', '', '2024-04-12 12:02:16', '2024-04-12 12:02:16', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=21', 1, 'nav_menu_item', '', 0),
 (22, 1, '2024-04-12 12:02:16', '2024-04-12 11:22:33', '', 'Philosophy', '', 'publish', 'closed', 'closed', '', 'philosophy-2', '', '', '2024-04-12 12:02:16', '2024-04-12 12:02:16', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=22', 4, 'nav_menu_item', '', 0),
 (23, 1, '2024-04-12 12:02:16', '2024-04-12 11:22:33', ' ', '', '', 'publish', 'closed', 'closed', '', '23', '', '', '2024-04-12 12:02:16', '2024-04-12 12:02:16', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=23', 6, 'nav_menu_item', '', 0),
@@ -603,10 +634,19 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (45, 1, '2024-04-12 13:32:17', '2024-04-12 13:32:17', 'a:8:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"group\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"block\";s:10:\"sub_fields\";a:0:{}}', 'Image', 'image', 'publish', 'closed', 'closed', '', 'field_66193789e7e72', '', '', '2024-04-12 13:32:17', '2024-04-12 13:32:17', '', 41, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=45', 1, 'acf-field', '', 0),
 (46, 1, '2024-04-12 13:32:17', '2024-04-12 13:32:17', 'a:16:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";s:12:\"preview_size\";s:6:\"medium\";}', 'Desktop', 'desktop', 'publish', 'closed', 'closed', '', 'field_6619379ee7e73', '', '', '2024-04-12 13:32:17', '2024-04-12 13:32:17', '', 45, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=46', 0, 'acf-field', '', 0),
 (47, 1, '2024-04-12 13:32:17', '2024-04-12 13:32:17', 'a:16:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";s:12:\"preview_size\";s:6:\"medium\";}', 'Mobile', 'mobile', 'publish', 'closed', 'closed', '', 'field_661937b0e7e74', '', '', '2024-04-12 13:32:17', '2024-04-12 13:32:17', '', 45, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=47', 1, 'acf-field', '', 0),
-(48, 1, '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2024-04-12 13:48:05', '2024-04-12 13:48:05', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?page_id=48', 0, 'page', '', 0),
+(48, 1, '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2024-04-12 14:34:01', '2024-04-12 14:34:01', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?page_id=48', 0, 'page', '', 0),
 (49, 1, '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=49', 0, 'revision', '', 0),
 (50, 1, '2024-04-12 13:34:36', '2024-04-12 13:34:36', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 13:34:36', '2024-04-12 13:34:36', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=50', 0, 'revision', '', 0),
-(51, 1, '2024-04-12 13:48:05', '2024-04-12 13:48:05', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 13:48:05', '2024-04-12 13:48:05', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=51', 0, 'revision', '', 0);
+(51, 1, '2024-04-12 13:48:05', '2024-04-12 13:48:05', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 13:48:05', '2024-04-12 13:48:05', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=51', 0, 'revision', '', 0),
+(52, 1, '2024-04-12 14:33:52', '2024-04-12 14:33:52', '', 'home-hero-001', '', 'inherit', 'open', 'closed', '', 'home-hero-001', '', '', '2024-04-12 14:33:52', '2024-04-12 14:33:52', '', 48, 'http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/home-hero-001.webp', 0, 'attachment', 'image/webp', 0),
+(53, 1, '2024-04-12 14:34:01', '2024-04-12 14:34:01', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 14:34:01', '2024-04-12 14:34:01', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=53', 0, 'revision', '', 0),
+(54, 1, '2024-04-12 14:52:41', '2024-04-12 14:52:41', 'a:8:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:12:\"options_page\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:23:\"acf-options-text-banner\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:0:\"\";s:12:\"show_in_rest\";i:0;}', 'Text Banner', 'text-banner', 'publish', 'closed', 'closed', '', 'group_66194a54d8fc7', '', '', '2024-04-12 14:53:11', '2024-04-12 14:53:11', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field-group&#038;p=54', 0, 'acf-field-group', '', 0),
+(55, 1, '2024-04-12 14:52:40', '2024-04-12 14:52:40', 'a:8:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"group\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"block\";s:10:\"sub_fields\";a:0:{}}', 'Text Banner', 'text_banner', 'publish', 'closed', 'closed', '', 'field_66194a55a228c', '', '', '2024-04-12 14:52:40', '2024-04-12 14:52:40', '', 54, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=55', 0, 'acf-field', '', 0),
+(56, 1, '2024-04-12 14:52:40', '2024-04-12 14:52:40', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";}', 'Text Small', 'text_small', 'publish', 'closed', 'closed', '', 'field_66194a81a228d', '', '', '2024-04-12 14:52:40', '2024-04-12 14:52:40', '', 55, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=56', 0, 'acf-field', '', 0),
+(57, 1, '2024-04-12 14:52:40', '2024-04-12 14:52:40', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";}', 'Text Large', 'text_large', 'publish', 'closed', 'closed', '', 'field_66194a8da228e', '', '', '2024-04-12 14:52:40', '2024-04-12 14:52:40', '', 55, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=57', 1, 'acf-field', '', 0),
+(58, 1, '2024-04-12 14:52:40', '2024-04-12 14:52:40', 'a:8:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"group\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"block\";s:10:\"sub_fields\";a:0:{}}', 'Button', 'button', 'publish', 'closed', 'closed', '', 'field_66194a95a228f', '', '', '2024-04-12 14:52:40', '2024-04-12 14:52:40', '', 55, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=58', 2, 'acf-field', '', 0),
+(59, 1, '2024-04-12 14:52:40', '2024-04-12 14:52:40', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";}', 'Text', 'text', 'publish', 'closed', 'closed', '', 'field_66194aa8a2290', '', '', '2024-04-12 14:52:40', '2024-04-12 14:52:40', '', 58, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=59', 0, 'acf-field', '', 0),
+(60, 1, '2024-04-12 14:52:40', '2024-04-12 14:52:40', 'a:12:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:9:\"page_link\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:9:\"post_type\";s:0:\"\";s:11:\"post_status\";s:0:\"\";s:8:\"taxonomy\";s:0:\"\";s:14:\"allow_archives\";i:1;s:8:\"multiple\";i:0;s:10:\"allow_null\";i:0;}', 'Link', 'link', 'publish', 'closed', 'closed', '', 'field_66194aada2291', '', '', '2024-04-12 14:52:40', '2024-04-12 14:52:40', '', 58, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=60', 1, 'acf-field', '', 0);
 
 -- --------------------------------------------------------
 
@@ -920,19 +960,19 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT for table `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 
 --
 -- AUTO_INCREMENT for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=255;
 
 --
 -- AUTO_INCREMENT for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `wp_termmeta`

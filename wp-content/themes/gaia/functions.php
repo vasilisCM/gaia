@@ -18,7 +18,7 @@ add_action('init', 'theme_menus');
 if (function_exists('acf_add_options_page')) {
   acf_add_options_page();
   acf_add_options_sub_page('Social');
-  acf_add_options_sub_page('Footer');
+  acf_add_options_sub_page('Text Banner');
 }
 
 // Enqueue CSS

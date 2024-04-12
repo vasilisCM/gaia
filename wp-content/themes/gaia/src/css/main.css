@@ -305,19 +305,44 @@ button {
 }
 .main-menu__list a {
   color: #000;
+  font-size: clamp(10px, 1.2108980827vw, 12px);
 }
 
 .hero {
-  min-height: 1200px;
+  position: relative;
+  z-index: -1;
+  min-height: clamp(800px, 121.0898082745vw, 1200px);
   padding-top: clamp(150px, 35.3178607467vw, 350px);
   text-align: center;
+}
+.hero__background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+}
+.hero__background-img {
+  width: 100%;
 }
 .hero__heading {
   display: grid;
 }
 
+.text-banner {
+  text-align: center;
+  padding-block: clamp(40px, 8.072653885vw, 80px) clamp(80px, 16.1453077699vw, 160px);
+}
+
+.curved-container {
+  padding-top: 24px;
+}
+
 .footer {
-  background-color: white;
+  background-color: #fff;
+  font-size: clamp(10px, 1.2108980827vw, 12px);
 }
 .footer__top {
   padding-block: clamp(32px, 6.458123108vw, 64px);
@@ -403,6 +428,7 @@ button {
 }
 .footer-menu a {
   color: #fff;
+  font-size: clamp(10px, 1.2108980827vw, 12px);
 }
 
 .privacy-menu__list {
@@ -501,6 +527,11 @@ button {
 .back-to-top--visible {
   visibility: visible;
   opacity: 1;
+}
+
+.button {
+  padding: clamp(7px, 1.4127144299vw, 14px) clamp(32px, 6.458123108vw, 64px);
+  border: solid 1px #000;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -8,12 +8,10 @@
     <?php
     $hero = get_field('hero');
     ?>
-    <!-- <picture>
-      <source media="(max-width: 991px)" srcset="<?php // echo $hero['image']['mobile']; 
-                                                  ?>">
-      <img src="<?php // echo $hero['image']['desktop']; 
-                ?>">
-    </picture> -->
+    <picture class="hero__background">
+      <source media="(max-width: 991px)" srcset="<?php echo $hero['image']['mobile']; ?>">
+      <img src="<?php echo $hero['image']['desktop']; ?>" class="hero__background-img">
+    </picture>
     <div class="boxed centered hero__container">
       <h1 class="hero__heading">
         <span class="heading-s italic serif hero__text"><?php echo $hero['heading']['text_small']; ?></span>
@@ -21,6 +19,10 @@
       </h1>
     </div>
   </section>
+
+  <?php
+  include 'components/text-banner.php';
+  ?>
 </main>
 
 <!-- Footer  -->
