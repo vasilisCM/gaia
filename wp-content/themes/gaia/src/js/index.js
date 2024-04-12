@@ -12,4 +12,15 @@ stickyHeader(header, "header--sticky");
 const backToTopButton = document.querySelector(".back-to-top");
 backToTop(backToTopButton, "back-to-top--visible");
 
+const footerMenuList = document.querySelector(".footer-menu__list");
+const footerMenuItemsExceptFirst = document.querySelectorAll(
+  ".footer-menu__list > li:not(:first-child)"
+);
+const footerMenuCustomWrapper = document.createElement("div");
+footerMenuItemsExceptFirst.forEach((item) => {
+  footerMenuCustomWrapper.insertAdjacentElement("beforeend", item);
+});
+
+footerMenuList.insertAdjacentElement("beforeend", footerMenuCustomWrapper);
+
 console.log("JavaScript");

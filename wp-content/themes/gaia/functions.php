@@ -3,14 +3,24 @@
 function theme_menus()
 {
   $locations = array(
-    'main' => "Main Menu",
+    'main_1' => "Main Menu 1",
+    'main_2' => "Main Menu 2",
     'footer' => "Footer Menu",
+    'privacy' => "Privacy Menu",
   );
   register_nav_menus($locations);
 }
 add_action('init', 'theme_menus');
 
 // Place custom post type content here
+
+// ACF Options
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page();
+  acf_add_options_sub_page('Hero');
+  acf_add_options_sub_page('Social');
+  acf_add_options_sub_page('Footer');
+}
 
 // Enqueue CSS
 function load_css()
@@ -34,7 +44,7 @@ add_action('wp_enqueue_scripts', 'load_js_libraries');
 function load_js()
 {
   // Global JS
-  wp_enqueue_script('main', get_template_directory_uri() . '/src/js/global.bundle.js', array(), false, true);
+  wp_enqueue_script('global', get_template_directory_uri() . '/src/js/global.bundle.js', array(), false, true);
 
   // Pages JS
   // Team
@@ -58,3 +68,9 @@ add_action('wp_enqueue_scripts', 'load_js');
 
 // Remove Gutenberg Editor
 add_filter('use_block_editor_for_post', '__return_false', 10);
+
+// Use assets
+function assets($filename = '')
+{
+  return get_template_directory_uri() . '/assets/img/' . $filename;
+}
