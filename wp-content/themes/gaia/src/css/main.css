@@ -79,115 +79,84 @@ html.lenis {
   scroll-behavior: auto;
 }
 
-/*
 @font-face {
-  font-family: "Cera";
-  src: url("../../assets/fonts/Cera/Cera-GR.eot");
-  src: url("../../assets/fonts/Cera/Cera-GR.eot?#iefix")
-      format("embedded-opentype"),
-    url("../../assets/fonts/Cera/Cera-GR.woff") format("woff"),
-    url("../../assets/fonts/Cera/Cera-GR.ttf") format("truetype"),
-    url("../../assets/fonts/Cera/Cera-GR.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat-VariableFont_wght.eot");
+  src: url("../../assets/fonts/Montserrat-VariableFont_wght.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Montserrat-VariableFont_wght.woff") format("woff"), url("../../assets/fonts/Montserrat-VariableFont_wght.woff2") format("woff2"), url("../../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype"), url("../../assets/fonts/Montserrat-VariableFont_wght.svg") format("svg");
+}
+@font-face {
+  font-family: "Unna";
+  src: url("../../assets/fonts/Unna-Italic.eot");
+  src: url("../../assets/fonts/Unna-Italic.eot.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Unna-Italic.woff2") format("woff2"), url("../../assets/fonts/Unna-Italic.woff") format("woff"), url("../../assets/fonts/Unna-Italic.ttf") format("truetype"), url("../../assets/fonts/Unna-Italic.svg") format("svg");
+  font-weight: normal;
+  font-style: italic;
   font-display: swap;
 }
-
-@font-face {
-  font-family: "Cera";
-  src: url("../../assets/fonts/Cera/Cera-GR-Light.eot");
-  src: url("../../assets/fonts/Cera/Cera-GR-Light.eot?#iefix")
-      format("embedded-opentype"),
-    url("../../assets/fonts/Cera/Cera-GR-Light.woff2") format("woff2"),
-    url("../../assets/fonts/Cera/Cera-GR-Light.woff") format("woff"),
-    url("../../assets/fonts/Cera/Cera-GR-Light.ttf") format("truetype"),
-    url("../../assets/fonts/Cera/Cera-GR-Light.svg") format("svg");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cera";
-  src: url("../../assets/fonts/Cera/Cera-GR-Bold.eot");
-  src: url("../../assets/fonts/Cera/Cera-GR-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    // url("../../assets/fonts/Cera/Cera-GR-Bold.woff2") format("woff2"),
-    url("../../assets/fonts/Cera/Cera-GR-Bold.woff") format("woff"),
-    url("../../assets/fonts/Cera/Cera-GR-Bold.ttf") format("truetype"),
-    url("../../assets/fonts/Cera/Cera-GR-Bold.svg") format("svg");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cera";
-  src: url("../../assets/fonts/Cera/Cera-GR-Black.eot");
-  src: url("../../assets/fonts/Cera/Cera-GR-Black.eot?#iefix")
-      format("embedded-opentype"),
-    // url("../../assets/fonts/Cera/Cera-GR-Black.woff2") format("woff2"),
-    url("../../assets/fonts/Cera/Cera-GR-Black.woff") format("woff"),
-    url("../../assets/fonts/Cera/Cera-GR-Black.ttf") format("truetype"),
-    url("../../assets/fonts/Cera/Cera-GR-Black.svg") format("svg");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-// Icomoon
 @font-face {
   font-family: "icomoon";
-  src: url("../../assets/fonts/icomoon/icomoon.eot?6ejz1j");
-  src: url("../../assets/fonts/icomoon/icomoon.eot?6ejz1j#iefix")
-      format("embedded-opentype"),
-    url("../../assets/fonts/icomoon/icomoon.ttf?6ejz1j") format("truetype"),
-    url("../../assets/fonts/icomoon/icomoon.woff?6ejz1j") format("woff"),
-    url("../../assets/fonts/icomoon/icomoon.svg?6ejz1j#icomoon") format("svg");
+  src: url("../../assets/icomoon.eot?8j2uvd");
+  src: url("../../assets/icomoon.eot?8j2uvd#iefix") format("embedded-opentype"), url("../../assets/icomoon.ttf?8j2uvd") format("truetype"), url("../../assets/icomoon.woff?8j2uvd") format("woff"), url("../../assets/icomoon.svg?8j2uvd#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-*/
-.heading-l {
-  font-size: clamp(30px, 6.7608476287vw, 67px);
-  font-weight: 400;
+.body {
+  font-family: "Montserrat";
+}
+
+.serif {
+  font-family: "Unna", serif;
+  font-style: italic;
+}
+
+.sans-serif {
+  font-family: "Montserrat", sans-serif;
 }
 
 h1,
+.heading-l {
+  font-size: clamp(60px, 8.072653885vw, 80px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
 .heading-ml {
-  font-size: clamp(44px, 6.458123108vw, 64px);
-  font-weight: 400;
+  font-size: clamp(50px, 6.0544904137vw, 60px);
+  letter-spacing: -0.04em;
+  line-height: 1.25;
 }
 
 h2,
 .heading {
-  font-size: clamp(20px, 3.4308779011vw, 34px);
+  font-size: clamp(35px, 5.0454086781vw, 50px);
+  line-height: 1;
 }
 
 h3,
 .heading-ms {
-  font-size: clamp(20px, 2.4217961655vw, 24px);
-  line-height: 1.3em;
+  font-size: clamp(28px, 4.0363269425vw, 40px);
+  line-height: 1.1;
 }
 
 h4,
 .heading-s {
-  font-size: clamp(16px, 1.8163471241vw, 18px);
+  font-size: clamp(20px, 3.0272452069vw, 30px);
   line-height: 1.3em;
 }
 
 .text-l {
-  font-size: clamp(16px, 2.4217961655vw, 24px);
+  font-size: clamp(20px, 2.2199798184vw, 22px);
 }
 
 .text-ml {
-  font-size: clamp(18px, 2.7245206862vw, 27px);
+  font-size: clamp(18px, 2.0181634712vw, 20px);
 }
 
 p,
 .text {
   font-size: clamp(14px, 1.614530777vw, 16px);
+  line-height: 1.56;
 }
 
 .text-ms {
@@ -195,20 +164,27 @@ p,
 }
 
 .text-s {
-  font-size: clamp(8px, 1.0090817356vw, 10px);
+  font-size: clamp(10px, 1.2108980827vw, 12px);
 }
 
 .button {
-  font-size: clamp(12px, 1.8163471241vw, 18px);
-  font-weight: 600;
+  font-size: clamp(12px, 1.3118062563vw, 13px);
+  letter-spacing: 0.048em;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .body {
   overflow-x: hidden;
   background-color: #e5e7e1;
-  font-family: system-ui;
 }
 
 a {
