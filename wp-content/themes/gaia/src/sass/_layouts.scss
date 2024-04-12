@@ -52,6 +52,17 @@
   }
 }
 
+// Hero
+.hero {
+  min-height: 1200px;
+  padding-top: cross-media(150px, 991px, 350px);
+  text-align: center;
+
+  &__container {
+    border: solid 2px red;
+  }
+}
+
 // Footer
 .footer {
   background-color: white;

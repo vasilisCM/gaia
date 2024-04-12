@@ -241,10 +241,6 @@ button {
   margin-inline: auto;
 }
 
-.first-section {
-  padding-top: 225px;
-}
-
 .two-col {
   display: grid;
 }
@@ -340,6 +336,15 @@ button {
 }
 .main-menu__list a {
   color: #000;
+}
+
+.hero {
+  min-height: 1200px;
+  padding-top: clamp(150px, 35.3178607467vw, 350px);
+  text-align: center;
+}
+.hero__container {
+  border: solid 2px red;
 }
 
 .footer {
