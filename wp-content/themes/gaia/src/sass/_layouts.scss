@@ -84,8 +84,8 @@
 }
 
 .main-grid {
-  &__container {
-  }
+  // &__container {
+  // }
   &__item {
     gap: cross-media(60px, 1800px, 180px);
     margin-bottom: cross-media(150px, 1800px, 280px);
