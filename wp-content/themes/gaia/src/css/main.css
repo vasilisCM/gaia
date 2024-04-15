@@ -94,8 +94,8 @@ html.lenis {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../../assets/icomoon.eot?8j2uvd");
-  src: url("../../assets/icomoon.eot?8j2uvd#iefix") format("embedded-opentype"), url("../../assets/icomoon.ttf?8j2uvd") format("truetype"), url("../../assets/icomoon.woff?8j2uvd") format("woff"), url("../../assets/icomoon.svg?8j2uvd#icomoon") format("svg");
+  src: url("../../assets/fonts/icomoon.eot?8j2uvd");
+  src: url("../../assets/fonts/icomoon.eot?8j2uvd#iefix") format("embedded-opentype"), url("../../assets/fonts/icomoon.ttf?8j2uvd") format("truetype"), url("../../assets/fonts/icomoon.woff?8j2uvd") format("woff"), url("../../assets/fonts/icomoon.svg?8j2uvd#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -115,14 +115,14 @@ html.lenis {
 
 h1,
 .heading-l {
-  font-size: clamp(60px, 8.072653885vw, 80px);
+  font-size: clamp(50px, 8.072653885vw, 80px);
   letter-spacing: -0.02em;
   line-height: 1.1;
   font-weight: 300;
 }
 
 .heading-ml {
-  font-size: clamp(50px, 6.0544904137vw, 60px);
+  font-size: clamp(42px, 6.0544904137vw, 60px);
   letter-spacing: -0.04em;
   line-height: 1.25;
 }
@@ -143,6 +143,7 @@ h4,
 .heading-s {
   font-size: clamp(20px, 3.0272452069vw, 30px);
   line-height: 1.3em;
+  letter-spacing: 0;
 }
 
 .text-l {
@@ -323,12 +324,71 @@ button {
   left: 0;
   margin: auto;
   overflow: hidden;
+  height: 100%;
 }
 .hero__background-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .hero__heading {
   display: grid;
+}
+
+.main-grid__item {
+  gap: clamp(60px, 10vw, 180px);
+  margin-bottom: clamp(150px, 15.5555555556vw, 280px);
+}
+.main-grid__item-text-container {
+  max-width: 545px;
+  justify-self: right;
+  padding-top: 10%;
+}
+.main-grid__item-text {
+  padding-block: clamp(25px, 3.5317860747vw, 35px);
+}
+.main-grid__item-image-container {
+  justify-self: center;
+  position: relative;
+  width: 100%;
+}
+.main-grid__item-image {
+  height: 100%;
+  object-fit: cover;
+}
+.main-grid__item-image.image-with-tiles {
+  width: 70%;
+  margin-left: 12%;
+}
+.main-grid__item-image-sl {
+  position: absolute;
+  width: 26%;
+  top: 10%;
+  left: 0;
+}
+.main-grid__item-image-sr {
+  position: absolute;
+  width: 32%;
+  top: 40%;
+  right: 0;
+}
+.main-grid__item:nth-child(2n) .main-grid__item-text-container {
+  order: 1;
+  justify-self: left;
+}
+@media only screen and (max-width: 991px) {
+  .main-grid__item {
+    justify-content: center;
+  }
+  .main-grid__item-text-container {
+    order: 1;
+    max-width: 100%;
+    padding-top: 0;
+    justify-self: center;
+  }
+  .main-grid__item-image {
+    margin-inline: auto;
+  }
 }
 
 .text-banner {
@@ -338,6 +398,10 @@ button {
 
 .curved-container {
   padding-top: 24px;
+  max-width: 100%;
+}
+.curved-container svg {
+  max-width: 100%;
 }
 
 .footer {
@@ -439,7 +503,7 @@ button {
 .loader {
   display: grid;
   place-content: center;
-  background-color: #94bf86;
+  background-color: #a19696;
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -516,13 +580,21 @@ button {
   bottom: 0;
   right: 0;
   margin: clamp(24px, 4.843592331vw, 48px);
-  padding: clamp(12px, 2.4217961655vw, 24px);
-  background-color: #94bf86;
+  padding: clamp(12px, 1.8163471241vw, 18px) clamp(10px, 1.614530777vw, 16px);
+  background-color: #000;
   color: #fff;
   opacity: 0;
   transform: rotate(-90deg);
   transition: opacity ease 0.2s;
   cursor: pointer;
+}
+.back-to-top::after {
+  content: "\e902";
+  font-family: "icomoon";
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 10px;
 }
 .back-to-top--visible {
   visibility: visible;
@@ -532,6 +604,29 @@ button {
 .button {
   padding: clamp(7px, 1.4127144299vw, 14px) clamp(32px, 6.458123108vw, 64px);
   border: solid 1px #000;
+}
+.button--plain {
+  position: relative;
+  padding-inline: 0;
+  border: none;
+  background: transparent;
+}
+.button--plain::after {
+  content: "";
+  position: absolute;
+  background-image: url(./../../assets/img/ic-curve.svg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+  width: 95%;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.button--plain:hover::after {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

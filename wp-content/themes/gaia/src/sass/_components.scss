@@ -37,7 +37,7 @@
   z-index: 2;
   width: 36px;
   height: 3px;
-  background: $secondary;
+  background: $accent;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 
@@ -51,7 +51,7 @@
     position: absolute;
     width: 36px;
     height: 3px;
-    background: $secondary;
+    background: $accent;
     transition: all 0.5s ease-in-out;
   }
 
@@ -88,13 +88,18 @@
   bottom: 0;
   right: 0;
   margin: cross-media(24px, 991px, 48px);
-  padding: cross-media(12px, 991px, 24px);
-  background-color: $accent;
+  padding: cross-media(12px, 991px, 18px) cross-media(10px, 991px, 16px);
+  background-color: $black;
   color: $white;
   opacity: 0;
   transform: rotate(-90deg);
   transition: opacity ease 0.2s;
   cursor: pointer;
+
+  &::after {
+    @include icon("\e902");
+    font-size: 10px;
+  }
 
   &--visible {
     visibility: visible;
@@ -106,4 +111,27 @@
 .button {
   padding: cross-media(7px, 991px, 14px) cross-media(32px, 991px, 64px);
   border: solid 1px $black;
+  &--plain {
+    position: relative;
+    padding-inline: 0;
+    border: none;
+    background: transparent;
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(./../../assets/img/ic-curve.svg);
+      background-position: bottom left;
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: 0;
+      width: 95%;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+  }
 }

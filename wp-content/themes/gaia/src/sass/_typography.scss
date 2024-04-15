@@ -14,14 +14,14 @@
 // Headings
 h1,
 .heading-l {
-  font-size: cross-media(60px, 991px, 80px);
+  font-size: cross-media(50px, 991px, 80px);
   letter-spacing: -0.02em;
   line-height: 1.1;
   font-weight: 300;
 }
 
 .heading-ml {
-  font-size: cross-media(50px, 991px, 60px);
+  font-size: cross-media(42px, 991px, 60px);
   letter-spacing: -0.04em;
   line-height: 1.25;
 }
@@ -42,6 +42,7 @@ h4,
 .heading-s {
   font-size: cross-media(20px, 991px, 30px);
   line-height: 1.3em;
+  letter-spacing: 0;
 }
 
 // Texts
