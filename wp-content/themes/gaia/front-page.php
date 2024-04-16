@@ -107,6 +107,27 @@
   include 'components/text-banner.php';
   ?>
 
+  <!-- Testimonial  -->
+  <section class="home-testimonial">
+    <?php
+    $testimonial = get_field('testimonial');
+    $image = $testimonial['image'];
+    $heading = $testimonial['heading'];
+    $text = $testimonial['text'];
+    $author = $testimonial['author'];
+    ?>
+    <div class="boxed-s centered home-testimonial__container">
+      <div class="home-testimonial__img-container">
+        <img src="<?php echo $image; ?>" alt="" class="home-testimonial__img">
+      </div>
+      <div class="home-testimonial__text-container">
+        <h4 class="heading italic"><?php echo $heading; ?></h4>
+        <div class="heading-s italic"><?php echo $text; ?></div>
+        <span class="text-ml"><?php echo $author; ?></span>
+      </div>
+    </div>
+  </section>
+
   <!-- Custom Cursor  -->
   <?php
   include 'components/custom-cursor.php';

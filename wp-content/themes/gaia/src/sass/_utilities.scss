@@ -11,6 +11,11 @@
   }
 }
 
+.boxed-s {
+  max-width: $box-s + $padding-inline;
+  padding-inline: $padding-inline;
+}
+
 .centered {
   margin-inline: auto;
 }

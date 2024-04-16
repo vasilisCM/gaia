@@ -1,8 +1,55 @@
+// Our Team
 .home-team {
   padding-bottom: cross-media(75px, 1800px, 150px);
 
   &__button {
     display: block;
     margin-top: cross-media(20px, 1800px, 40px);
+  }
+}
+
+// Testimonial
+.home-testimonial {
+  &__container {
+    display: grid;
+    align-items: center;
+    gap: cross-media(36px, 991px, 72px);
+    padding: cross-media(50px, 991px, 100px) cross-media(75px, 991px, 150px)
+      cross-media(150px, 1800px, 280px);
+
+    @include view(lg-min) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__img-container {
+    position: relative;
+    &:after {
+      content: "“";
+      position: absolute;
+      top: 0;
+      right: -5%;
+      font-size: cross-media(150px, 991px, 300px);
+      line-height: 0.5;
+      font-family: "Unna", serif;
+      font-style: italic;
+      transform: scaleX(-1) rotate(180deg);
+    }
+  }
+
+  &__img {
+    border-radius: 100%;
+  }
+
+  &__text-container {
+    display: grid;
+    gap: cross-media(12px, 991px, 24px);
+
+    & p {
+      // Like .heading-s because of WYSIWYG
+      font-size: cross-media(20px, 991px, 30px);
+      line-height: 1.3em;
+      letter-spacing: 0;
+    }
   }
 }
