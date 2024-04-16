@@ -196,6 +196,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    @include view(md-max) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
 
   &__top-right,
@@ -203,12 +207,16 @@
     display: grid;
     justify-items: end;
     gap: cross-media(20px, 991px, 40px);
+    @include view(md-max) {
+      justify-items: center;
+    }
   }
 
   &__social,
   &__social-icons {
     display: flex;
     justify-content: end;
+    align-items: center;
     gap: cross-media(20px, 991px, 40px);
   }
 
@@ -243,6 +251,10 @@
 
       & .newsletter__submit {
         cursor: pointer;
+      }
+
+      & .newsletter__label {
+        line-height: 1.2;
       }
 
       & .wpcf7-spinner {
@@ -288,12 +300,24 @@
         text-transform: none;
       }
     }
+
+    @include view(md-max) {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      gap: 10px;
+    }
   }
 
   & a {
     color: $white;
     // Font styles will be the CSS rules of the correct typography class
     font-size: cross-media(10px, 991px, 12px);
+  }
+
+  @include view(md-max) {
+    margin-bottom: 20px;
   }
 }
 

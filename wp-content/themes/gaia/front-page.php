@@ -121,8 +121,8 @@
         <img src="<?php echo $image; ?>" alt="" class="home-testimonial__img">
       </div>
       <div class="home-testimonial__text-container">
-        <h4 class="heading italic"><?php echo $heading; ?></h4>
-        <div class="heading-s italic"><?php echo $text; ?></div>
+        <h4 class="heading italic serif"><?php echo $heading; ?></h4>
+        <div class="heading-s italic serif"><?php echo $text; ?></div>
         <span class="text-ml"><?php echo $author; ?></span>
       </div>
     </div>
