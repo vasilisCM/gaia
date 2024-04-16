@@ -69,14 +69,77 @@
     left: 0;
     margin: auto;
     overflow: hidden;
+    height: 100%;
   }
 
   &__background-img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__heading {
     display: grid;
+  }
+}
+
+.main-grid {
+  // &__container {
+  // }
+  &__item {
+    gap: cross-media(60px, 1800px, 180px);
+    margin-bottom: cross-media(150px, 1800px, 280px);
+    &-text-container {
+      max-width: 545px;
+      justify-self: right;
+      padding-top: 10%;
+    }
+    &-text {
+      padding-block: cross-media(25px, 991px, 35px);
+    }
+    &-image-container {
+      justify-self: center;
+      position: relative;
+      width: 100%;
+    }
+    &-image {
+      height: 100%;
+      object-fit: cover;
+      &.image-with-tiles {
+        width: 70%;
+        margin-left: 12%;
+      }
+    }
+    &-image-sl {
+      position: absolute;
+      width: 26%;
+      top: 10%;
+      left: 0;
+    }
+    &-image-sr {
+      position: absolute;
+      width: 32%;
+      top: 40%;
+      right: 0;
+    }
+    &:nth-child(2n) {
+      & .main-grid__item-text-container {
+        order: 1;
+        justify-self: left;
+      }
+    }
+    @include view(md-max) {
+      justify-content: center;
+      &-text-container {
+        order: 1;
+        max-width: 100%;
+        padding-top: 0;
+        justify-self: center;
+      }
+      &-image {
+        margin-inline: auto;
+      }
+    }
   }
 }
 
@@ -88,6 +151,10 @@
 
 .curved-container {
   padding-top: 24px;
+  max-width: 100%;
+  & svg {
+    max-width: 100%;
+  }
 }
 
 // Footer
@@ -97,7 +164,7 @@
 
   &__top {
     padding-block: cross-media(32px, 991px, 64px);
-    background-color: $secondary;
+    background-color: $accent;
     color: $white;
   }
 
@@ -213,8 +280,3 @@
     gap: cross-media(20px, 991px, 40px);
   }
 }
-
-// Hero
-// .hero {
-//   background-color: $secondary;
-// }

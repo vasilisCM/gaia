@@ -52,7 +52,7 @@
     <div class="boxed centered footer__bottom-container">
       <!-- Copyrights -->
       <div>
-        <span class="text-extra-small footer__copyrights">2024 Gaia Exclusive Retreats. All Rights Reserved | </span>
+        <span class="text-extra-small footer__copyrights"><?php echo date("Y"); ?> Gaia Exclusive Retreats. All Rights Reserved | </span>
         <span class="text-extra-small footer__created-by">
           Created by
           <a href="https://conceptmaniax.gr/" target="_blank">ConceptManiax</a>
@@ -82,7 +82,7 @@
   </div>
 
   <!-- Back to Top  -->
-  <div class="back-to-top">></div>
+  <div class="back-to-top"></div>
 </footer>
 
 <?php wp_footer(); ?>
