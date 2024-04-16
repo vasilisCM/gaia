@@ -83,6 +83,7 @@
   }
 }
 
+// Main Grid
 .main-grid {
   // &__container {
   // }
@@ -140,6 +141,28 @@
         margin-inline: auto;
       }
     }
+  }
+}
+
+// Carousel
+.carousel {
+  padding-block: cross-media(40px, 991px, 60px);
+
+  &__track {
+    display: flex;
+    gap: cross-media(28px, 991px, 56px);
+  }
+
+  &__item {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__img-container {
+    min-width: cross-media(300px, 991px, 540px);
+  }
+  &__heading {
+    display: grid;
   }
 }
 

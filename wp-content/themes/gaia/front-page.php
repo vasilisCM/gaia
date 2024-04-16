@@ -66,10 +66,52 @@
     <?php endif; ?>
   </section>
 
+  <!-- Carousel  -->
+  <section class="home-team">
+    <div class="boxed centered">
+      <h2 class="serif heading center-align"><?php echo get_field('home__team')['heading']; ?></h2>
+      <div class="carousel carousel--home">
+        <div class="carousel__container">
+          <div class="carousel__track">
+            <?php if (have_rows('carousel')) : ?>
+              <?php while (have_rows('carousel')) : the_row();
+                $image = get_sub_field('image');
+                $name = get_sub_field('name');
+                $profession = get_sub_field('profession');
+              ?>
 
+                <!-- Carousel Item  -->
+                <div class="carousel__item">
+                  <div class="carousel__img-container">
+                    <img src="<?php echo $image; ?>" alt="">
+                  </div>
+                  <h3 class="text-ms carousel__heading">
+                    <span class="bold"><?php echo $name; ?></span>
+                    <span><?php echo $profession; ?></span>
+                  </h3>
+                </div>
+
+              <?php endwhile; ?>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <a href="<?php echo get_field('home__team')['button']['link']; ?>" class="center-align home-team__button">
+        <button class="button button--plain"><?php echo get_field('home__team')['button']['label']; ?></button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Text Banner  -->
   <?php
   include 'components/text-banner.php';
   ?>
+
+  <!-- Custom Cursor  -->
+  <?php
+  include 'components/custom-cursor.php';
+  ?>
+
 </main>
 
 <!-- Footer  -->

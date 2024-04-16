@@ -135,3 +135,48 @@
     }
   }
 }
+
+// Drag Custom Cursor
+.cursor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-radius: 100%;
+  opacity: 0;
+  background-color: rgba($white, 0.4);
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity 0.4s, width ease 0.8s, height ease 0.8s,
+    background-color ease 0.3s, border-radius ease 0.8s;
+  will-change: scale;
+
+  &--active {
+    // background-color: $white-op-80;
+    opacity: 1;
+    width: cross-media(80px, 991px, 120px);
+    height: cross-media(80px, 991px, 120px);
+    backdrop-filter: blur(15px);
+
+    @include view(ultra) {
+      width: cross-media(120px, 3000px, 180px);
+      height: cross-media(120px, 3000px, 180px);
+    }
+
+    &:after {
+      content: "drag";
+      // font-size: cross-media(14px, 3000px, 16px);
+
+      // @include view(ultra) {
+      //   font-size: cross-media(16px, 3000px, 24px);
+      // }
+    }
+  }
+
+  // &--clicked {
+  //   background-color: rgba($accent, 0.6);
+  // }
+}

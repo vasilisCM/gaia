@@ -1,0 +1,8 @@
+.home-team {
+  padding-bottom: cross-media(75px, 1800px, 150px);
+
+  &__button {
+    display: block;
+    margin-top: cross-media(20px, 1800px, 40px);
+  }
+}
