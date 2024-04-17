@@ -13,9 +13,9 @@
       <img src="<?php echo $hero['image']['desktop']; ?>" class="hero__background-img">
     </picture>
     <div class="boxed centered hero__container">
-      <h1 class="hero__heading" animate>
-        <span class="heading-s italic serif hero__text"><?php echo $hero['heading']['text_small']; ?></span>
-        <span class="heading-l hero__text"><?php echo $hero['heading']['text_large']; ?></span>
+      <h1 class="hero__heading">
+        <span class="heading-s italic serif hero__text" animate><?php echo $hero['heading']['text_small']; ?></span>
+        <span class="heading-l hero__text" animate><?php echo $hero['heading']['text_large']; ?></span>
       </h1>
     </div>
   </section>
