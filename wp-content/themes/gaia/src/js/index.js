@@ -1,6 +1,7 @@
 import loader from "./global/loader.js";
 import smoothScroll from "./global/smoothScroll.js";
 import stickyHeader from "./global/stickyHeader.js";
+import moveUpTextByLine from "./animations/moveUpTextbyLine.js";
 import moveUpOnScroll from "./animations/moveUpOnScroll.js";
 import backToTop from "./global/backToTop.js";
 
@@ -9,6 +10,10 @@ loader(body);
 
 const header = document.querySelector(".header");
 stickyHeader(header, "header--sticky");
+
+// Hero Text Animation
+console.log(document.querySelector("[animate]"));
+moveUpTextByLine();
 
 // Main Grid
 const imageLarge = document.querySelector(".main-grid__item-image-container");
