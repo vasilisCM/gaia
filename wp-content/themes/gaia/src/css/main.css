@@ -448,14 +448,26 @@ button {
   grid-template-columns: 1fr 1fr;
   align-items: center;
 }
+@media only screen and (max-width: 991px) {
+  .footer__top-container, .footer__bottom-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
 .footer__top-right, .footer__bottom-right {
   display: grid;
   justify-items: end;
   gap: clamp(20px, 4.0363269425vw, 40px);
 }
+@media only screen and (max-width: 991px) {
+  .footer__top-right, .footer__bottom-right {
+    justify-items: center;
+  }
+}
 .footer__social, .footer__social-icons {
   display: flex;
   justify-content: end;
+  align-items: center;
   gap: clamp(20px, 4.0363269425vw, 40px);
 }
 .footer__newsletter form {
@@ -486,6 +498,9 @@ button {
 }
 .footer__newsletter form .newsletter__submit {
   cursor: pointer;
+}
+.footer__newsletter form .newsletter__label {
+  line-height: 1.2;
 }
 .footer__newsletter form .wpcf7-spinner {
   display: none;
@@ -520,9 +535,23 @@ button {
 .footer-menu__list ul li {
   text-transform: none;
 }
+@media only screen and (max-width: 991px) {
+  .footer-menu__list {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
 .footer-menu a {
   color: #fff;
   font-size: clamp(10px, 1.2108980827vw, 12px);
+}
+@media only screen and (max-width: 991px) {
+  .footer-menu {
+    margin-bottom: 20px;
+  }
 }
 
 .privacy-menu__list {
