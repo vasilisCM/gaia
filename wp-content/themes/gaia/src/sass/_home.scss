@@ -10,6 +10,7 @@
 
 // Testimonials
 .home-testimonial {
+  display: flex;
   &__container {
     display: grid;
     align-items: center;

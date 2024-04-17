@@ -728,6 +728,9 @@ button {
   margin-top: clamp(20px, 2.2222222222vw, 40px);
 }
 
+.home-testimonial {
+  display: flex;
+}
 .home-testimonial__container {
   display: grid;
   align-items: center;
