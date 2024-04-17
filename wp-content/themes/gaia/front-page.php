@@ -56,8 +56,8 @@
               <?php endif; ?>
                 " alt="">
               <?php if ($itemImage['image_with_tiles']) : ?>
-                <img src="<?php echo $itemImage['image_small_left']; ?>" class="main-grid__item-image-sl" alt="">
-                <img src="<?php echo $itemImage['image_small_right']; ?>" class="main-grid__item-image-sr" alt="">
+                <img src="<?php echo $itemImage['image_small_left']; ?>" class="main-grid__item-image-s main-grid__item-image-sl" alt="">
+                <img src="<?php echo $itemImage['image_small_right']; ?>" class="main-grid__item-image-s main-grid__item-image-sr" alt="">
               <?php endif; ?>
             </div>
           </div>
@@ -65,6 +65,8 @@
       </div>
     <?php endif; ?>
   </section>
+
+
 
   <!-- Carousel  -->
   <section class="home-team">

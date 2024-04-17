@@ -68,7 +68,7 @@ const carousel = (
   carouselSlides.forEach((slide) => {
     // console.log(slide.offsetWidth);
     totalSlideWidth += slide.offsetWidth;
-    console.log(slide);
+    // console.log(slide);
   });
 
   // Calculate Each Slide Width
