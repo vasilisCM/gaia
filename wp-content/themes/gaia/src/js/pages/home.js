@@ -1,14 +1,8 @@
-import moveUpOnScroll from "../animations/moveUpOnScroll.js";
 import carousel from "../logic/carousel.js";
 import customCursor from "../logic/customCursor.js";
 
 const home = () => {
   console.log("Hello from home");
-
-  const imageLarge = document.querySelector(".main-grid__item-image-container");
-  const imagesSmall = document.querySelectorAll(".main-grid__item-image-s");
-
-  moveUpOnScroll(imageLarge, imagesSmall);
 
   // Carousel
   const carouselElement = document.querySelector(".carousel");
