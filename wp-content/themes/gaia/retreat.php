@@ -15,7 +15,7 @@
         <?php echo get_field('heading'); ?>
       </h1>
       <div class="hero__text-container">
-        <div class="hero__text-large heading-ml light">
+        <div class="hero__text-large heading-ml light" animate>
           <?php echo get_field('text_large'); ?>
         </div>
         <?php if (get_field('test_small')) : ?>
