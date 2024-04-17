@@ -4,8 +4,9 @@
   z-index: 100;
   width: 100%;
   background-color: transparent;
-  backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
   padding-block: cross-media(32px, 991px, 64px);
+  mix-blend-mode: difference;
 
   &--sticky {
     & .header__logo-container {
@@ -47,6 +48,7 @@
 
     & a {
       color: $black;
+      color: $white;
       // Font styles will be the CSS rules of the correct typography class
       font-size: cross-media(10px, 991px, 12px);
     }

@@ -285,8 +285,8 @@ button {
   z-index: 100;
   width: 100%;
   background-color: transparent;
-  backdrop-filter: blur(10px);
   padding-block: clamp(32px, 6.458123108vw, 64px);
+  mix-blend-mode: difference;
 }
 @media only screen and (max-width: 991px) {
   .header--sticky .header__logo-container {
@@ -326,6 +326,7 @@ button {
 }
 .main-menu__list a {
   color: #000;
+  color: #fff;
   font-size: clamp(10px, 1.2108980827vw, 12px);
 }
 
@@ -669,14 +670,38 @@ button {
 }
 
 .button {
+  position: relative;
+  z-index: 0;
   padding: clamp(7px, 1.4127144299vw, 14px) clamp(32px, 6.458123108vw, 64px);
   border: solid 1px #000;
+  transition: color 0.3s ease;
+}
+.button:hover {
+  color: #fff;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  z-index: -1;
+  transition: clip-path 0.3s ease;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+.button:hover:before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .button--plain {
   position: relative;
   padding-inline: 0;
   border: none;
   background: transparent;
+}
+.button--plain:hover {
+  color: revert;
+}
+.button--plain:before {
+  display: none;
 }
 .button--plain::after {
   content: "";
@@ -689,11 +714,11 @@ button {
   width: 95%;
   height: 100%;
   left: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: clip-path 0.3s ease;
 }
 .button--plain:hover::after {
-  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .cursor {
