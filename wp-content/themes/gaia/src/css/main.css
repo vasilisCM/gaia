@@ -285,8 +285,8 @@ button {
   z-index: 100;
   width: 100%;
   background-color: transparent;
+  backdrop-filter: blur(10px);
   padding-block: clamp(32px, 6.458123108vw, 64px);
-  mix-blend-mode: difference;
 }
 @media only screen and (max-width: 991px) {
   .header--sticky .header__logo-container {
@@ -326,7 +326,6 @@ button {
 }
 .main-menu__list a {
   color: #000;
-  color: #fff;
   font-size: clamp(10px, 1.2108980827vw, 12px);
 }
 
