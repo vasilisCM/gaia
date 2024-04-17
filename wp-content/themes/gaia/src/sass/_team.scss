@@ -1,0 +1,44 @@
+//Intro
+.intro {
+  &--team {
+    & .intro {
+      &__heading {
+        padding-bottom: cross-media(35px, 991px, 50px);
+      }
+      &__text {
+        padding-block: cross-media(25px, 991px, 40px);
+      }
+    }
+  }
+}
+
+//Grid
+.team-grid {
+  padding-top: cross-media(150px, 991px, 290px);
+  &__item {
+    gap: 20px 0;
+    margin-bottom: cross-media(130px, 1800px, 210px);
+    &:nth-child(2n) {
+      @include view(lg-min) {
+        .team-grid__image-container {
+          order: 1;
+        }
+        .team-grid__image {
+          margin-left: auto;
+        }
+        .team-grid__text-container {
+          text-align: right;
+        }
+      }
+    }
+  }
+  &__image {
+    max-width: 86%;
+  }
+  &__name {
+    margin-block: 10px;
+  }
+  &__text {
+    padding-block: cross-media(25px, 991px, 45px);
+  }
+}

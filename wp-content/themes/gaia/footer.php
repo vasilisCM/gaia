@@ -5,7 +5,7 @@
   ?>
 
   <div class="footer__top">
-    <div class="boxed centered footer__top-container">
+    <div class="boxed-s centered footer__top-container">
       <!-- Footer Menu -->
       <div class="footer__menu">
         <nav class="footer-menu">

@@ -73,8 +73,8 @@
       <div class="carousel carousel--home">
         <div class="carousel__container">
           <div class="carousel__track">
-            <?php if (have_rows('carousel')) : ?>
-              <?php while (have_rows('carousel')) : the_row();
+            <?php if (have_rows('carousel', 'options')) : ?>
+              <?php while (have_rows('carousel', 'options')) : the_row();
                 $image = get_sub_field('image');
                 $name = get_sub_field('name');
                 $profession = get_sub_field('profession');

@@ -20,12 +20,20 @@
   margin-inline: auto;
 }
 
+.centered-text {
+  text-align: center;
+}
+
 .two-col {
   display: grid;
 
   @include view(lg-min) {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.first-section {
+  padding-top: cross-media(150px, 991px, 350px);
 }
 
 // Typography

@@ -168,6 +168,7 @@
 
     &:after {
       content: "drag";
+      color: $white;
       // font-size: cross-media(14px, 3000px, 16px);
 
       // @include view(ultra) {
