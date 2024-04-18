@@ -708,6 +708,7 @@ ul li {
 }
 
 .button {
+  display: block;
   position: relative;
   z-index: 0;
   padding: clamp(7px, 1.4127144299vw, 14px) clamp(32px, 6.458123108vw, 64px);
@@ -871,6 +872,14 @@ ul li {
 }
 .team-grid__text {
   padding-block: clamp(25px, 4.5408678103vw, 45px);
+}
+
+.hero--mykonos {
+  color: #fff;
+}
+
+.main-grid--mykonos {
+  padding-top: clamp(80px, 16.1453077699vw, 160px);
 }
 
 /*# sourceMappingURL=main.css.map */

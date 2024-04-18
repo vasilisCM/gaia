@@ -29,7 +29,7 @@
 
       <!-- Logo  -->
       <div class="header__logo-container">
-        <a href="/">
+        <a href="<?php echo home_url(); ?>">
           <img src="<?php echo assets('gaia-logo.svg'); ?>" alt="" class="logo header__logo">
         </a>
       </div>
