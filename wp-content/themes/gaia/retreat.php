@@ -27,6 +27,17 @@
     </div>
   </section>
 
+  <!-- Intro -->
+  <?php if (get_field('intro_text')) : ?>
+    <section class="intro">
+      <div class="intro__text-container boxed-s centered centered-text">
+        <div class="intro__text">
+          <?php echo get_field('intro_text'); ?>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
+
   <!-- Grid -->
   <section class="main-grid main-grid--home">
     <?php if (have_rows('grid_item')) : ?>
