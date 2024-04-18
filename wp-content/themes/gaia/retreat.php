@@ -6,7 +6,7 @@
 <!-- Main  -->
 <main>
   <!-- Hero  -->
-  <section class="first-section hero hero--retreat">
+  <section class="first-section hero hero--inner">
     <picture class="hero__background">
       <img src="<?php echo get_field('image'); ?>" class="hero__background-img">
     </picture>
@@ -30,8 +30,8 @@
   <!-- Intro -->
   <?php if (get_field('intro_text')) : ?>
     <section class="intro">
-      <div class="intro__text-container boxed-s centered centered-text">
-        <div class="intro__text">
+      <div class="intro__text-container boxed-xs centered centered-text">
+        <div class="intro__text text-l">
           <?php echo get_field('intro_text'); ?>
         </div>
       </div>
@@ -39,7 +39,7 @@
   <?php endif; ?>
 
   <!-- Grid -->
-  <section class="main-grid main-grid--home">
+  <section class="main-grid main-grid--inner">
     <?php if (have_rows('grid_item')) : ?>
       <div class="main-grid__container boxed centered">
         <?php while (have_rows('grid_item')) : the_row();

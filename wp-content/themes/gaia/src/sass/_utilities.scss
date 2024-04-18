@@ -16,6 +16,11 @@
   padding-inline: $padding-inline;
 }
 
+.boxed-xs {
+  max-width: $box-xs + $padding-inline;
+  padding-inline: $padding-inline;
+}
+
 .centered {
   margin-inline: auto;
 }
@@ -63,6 +68,12 @@
 
 .center-align {
   text-align: center;
+}
+
+ul {
+  & li {
+    margin-bottom: 10px;
+  }
 }
 
 // Visibility

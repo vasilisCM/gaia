@@ -1,3 +1,9 @@
+.hero {
+  &--home {
+    margin-bottom: 0;
+  }
+}
+
 // Our Team
 .home-team {
   padding-bottom: cross-media(75px, 1800px, 150px);
