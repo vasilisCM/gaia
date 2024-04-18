@@ -16,8 +16,8 @@
   }
 
   // Sticky Header
-  & .header--sticky {
-    background-color: $primary;
+  & .header--sticky,
+  & .header--dropdown {
     & .header__logo {
       filter: revert;
     }
@@ -28,6 +28,10 @@
       }
     }
   }
+
+  // & .header--dropdown {
+  //   background-color: $primary;
+  // }
 }
 
 a {

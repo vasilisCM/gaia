@@ -48,16 +48,7 @@
         ?>
       </nav>
 
-      <!-- Language Switcher -->
-      <!-- <div class="language-switcher">
-        <ul class="language-switcher__list">
-          <li class="language-switcher__item">
-            <a href=""> <span class="language-switcher__text">ΕΛ</span></a>
-          </li>
-          <li class="language-switcher__item">
-            <a href=""> <span class="language-switcher__text">EN</span></a>
-          </li>
-        </ul>
-      </div> -->
+
     </div>
+    <div class="main-menu__dropdown-background"></div>
   </header>

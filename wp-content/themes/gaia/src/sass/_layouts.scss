@@ -9,13 +9,17 @@
   // mix-blend-mode: difference;
   transition: background-color ease 300ms;
 
-  &--sticky {
-    background-color: $primary;
+  &--sticky,
+  &--dropdown {
     & .header__logo-container {
       @include view(md-max) {
         opacity: 0;
       }
     }
+  }
+
+  &--sticky {
+    background-color: $primary;
   }
 
   &__container {
@@ -26,6 +30,7 @@
 
   &__logo {
     max-width: 270px;
+    transition: all ease 300ms;
   }
 
   & ul {
@@ -42,19 +47,19 @@
     gap: cross-media(32px, 991px, 64px);
     position: relative;
 
-    & > li {
-      &:hover {
-        & ul {
-          // position: absolute;
-          visibility: visible;
-          opacity: 1;
-        }
-      }
-    }
+    // & > li {
+    //   &:hover {
+    //     & ul {
+    //       // position: absolute;
+    //       visibility: visible;
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
 
-    & ul {
+    .sub-menu {
       position: absolute;
-      margin-top: 20px;
+      padding-top: 36px;
       visibility: hidden;
       opacity: 0;
       transition: all ease 300ms;
@@ -64,11 +69,32 @@
       }
     }
 
+    .dropdown--open {
+      visibility: visible;
+      opacity: 1;
+    }
+
     & a {
       color: $black;
       // color: $white; // For mix-blend-more: difference
       // Font styles will be the CSS rules of the correct typography class
       font-size: cross-media(10px, 991px, 12px);
+      transition: color ease 300ms;
+    }
+  }
+
+  &__dropdown-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    background-color: $primary;
+    width: 100%;
+    height: 580px;
+    clip-path: ellipse(50% 0% at 50% 0%);
+    transition: clip-path ease 500ms;
+
+    &--open {
+      clip-path: ellipse(70% 70% at 50% 0%);
     }
   }
 }
