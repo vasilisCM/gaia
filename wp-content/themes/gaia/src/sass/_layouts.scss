@@ -124,13 +124,11 @@
 
 // Main Grid
 .main-grid {
-  // &__container {
-  // }
   &--inner {
     padding-top: cross-media(40px, 991px, 100px);
   }
   &__item {
-    gap: cross-media(60px, 1800px, 180px);
+    gap: cross-media(60px, 1920px, 180px);
     margin-bottom: cross-media(150px, 1800px, 280px);
     &-text-container {
       max-width: 545px;
@@ -169,6 +167,16 @@
       & .main-grid__item-text-container {
         order: 1;
         justify-self: left;
+      }
+    }
+    &--wide-image {
+      &.two-col {
+        @include view(lg-min) {
+          grid-template-columns: 1fr 2fr;
+        }
+      }
+      & .main-grid__item-text-container {
+        max-width: 390px;
       }
     }
     @include view(md-max) {
