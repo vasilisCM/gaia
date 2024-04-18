@@ -61,6 +61,7 @@
   z-index: -1;
   min-height: cross-media(800px, 991px, 1200px);
   padding-top: cross-media(150px, 991px, 350px);
+  margin-bottom: 20px;
   text-align: center;
 
   &__background {
@@ -83,12 +84,33 @@
   &__heading {
     display: grid;
   }
+
+  &--inner {
+    min-height: cross-media(800px, 991px, 1080px);
+    background-color: $secondary;
+    & .hero__heading {
+      margin-bottom: cross-media(35px, 991px, 50px);
+    }
+  }
+}
+
+// Intro
+.intro {
+  &__heading {
+    padding-bottom: cross-media(35px, 991px, 50px);
+  }
+  &__text {
+    padding-block: cross-media(25px, 991px, 40px);
+  }
 }
 
 // Main Grid
 .main-grid {
   // &__container {
   // }
+  &--inner {
+    padding-top: cross-media(40px, 991px, 100px);
+  }
   &__item {
     gap: cross-media(60px, 1800px, 180px);
     margin-bottom: cross-media(150px, 1800px, 280px);

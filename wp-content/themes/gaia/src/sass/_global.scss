@@ -8,6 +8,11 @@ a {
   @include clear-styles;
 }
 
+ul,
+li {
+  @include clear-styles;
+}
+
 button {
   cursor: pointer;
 }
