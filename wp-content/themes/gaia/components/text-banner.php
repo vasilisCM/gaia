@@ -13,12 +13,8 @@
         <svg width="1920.464" height="114.755" viewBox="0 0 1920.464 114.755">
             <path id="Path_272" data-name="Path 272" d="M64.87,222.35c81.438-19.438,164.687-36.657,247.457-51.14a4149.027,4149.027,0,0,1,1425.077,0c82.77,14.5,166.028,31.7,247.466,51.14" transform="translate(-64.638 -108.567)" fill="none" stroke="#a19696" stroke-miterlimit="10" stroke-width="2" />
         </svg>
-
-        <div class="boxed centered">
-            <a href="<?php echo $text_banner['button']['link']; ?>">
-                <button class="button"><?php echo $text_banner['button']['text']; ?></button>
-            </a>
-
-        </div>
+        <a href="<?php echo $text_banner['button']['link']; ?>">
+            <button class="button centered"><?php echo $text_banner['button']['text']; ?></button>
+        </a>
     </div>
 </section>

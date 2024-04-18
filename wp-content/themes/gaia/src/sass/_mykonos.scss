@@ -1,0 +1,11 @@
+.hero {
+  &--mykonos {
+    color: $white;
+  }
+}
+
+.main-grid {
+  &--mykonos {
+    padding-top: cross-media(80px, 991px, 160px);
+  }
+}

@@ -6,9 +6,11 @@ const moveUpTextByLine = () => {
   gsap.from("[animate] .line", {
     y: "100%",
     opacity: 0,
-    duration: 0.5,
-    stagger: 0.1,
-    ease: "power1.out",
+    duration: 1.5,
+    stagger: 0.3,
+    // ease: "power1.out",
+    ease: "power4.out",
+    delay: 0.2,
   });
 };
 

@@ -1,4 +1,4 @@
-<?php /* Mykonos */ ?>
+<?php /* Template Name: Mykonos */ ?>
 
 <!-- Header  -->
 <?php get_header(); ?>
@@ -6,22 +6,22 @@
 <!-- Main  -->
 <main>
     <!-- Hero  -->
-    <section class="first-section hero hero--retreat">
-        Mykonos
+    <section class="first-section hero hero--mykonos">
+        <?php
+        $hero = get_field('hero');
+        ?>
         <picture class="hero__background">
-            <img src="<?php echo get_field('image'); ?>" class="hero__background-img">
+            <img src="<?php echo $hero['image']['desktop']; ?>" class="hero__background-img">
         </picture>
         <div class="boxed-s centered hero__container">
-            <h1 class="hero__heading heading-s italic serif">
-                <?php echo get_field('heading'); ?>
-            </h1>
+
             <div class="hero__text-container">
-                <div class="hero__text-large heading-ml light" animate>
-                    <?php echo get_field('text_large'); ?>
-                </div>
-                <?php if (get_field('test_small')) : ?>
+                <h1 class="hero__text-large heading-ml light" animate>
+                    <?php echo $hero['heading']['text_large']; ?>
+                </h1>
+                <?php if ($hero['heading']['text_small']) : ?>
                     <div class="hero__text-small text-l">
-                        <?php echo get_field('test_small'); ?>
+                        <?php echo $hero['heading']['text_small']; ?>
                     </div>
                 <?php endif; ?>
             </div>
@@ -29,7 +29,7 @@
     </section>
 
     <!-- Grid -->
-    <section class="main-grid main-grid--home">
+    <section class="main-grid main-grid--mykonos">
         <?php if (have_rows('grid_item')) : ?>
             <div class="main-grid__container boxed centered">
                 <?php while (have_rows('grid_item')) : the_row();
@@ -64,8 +64,8 @@
               <?php endif; ?>
                 " alt="">
                             <?php if ($itemImage['image_with_tiles']) : ?>
-                                <img src="<?php echo $itemImage['image_small_left']; ?>" class="main-grid__item-image-sl" alt="">
-                                <img src="<?php echo $itemImage['image_small_right']; ?>" class="main-grid__item-image-sr" alt="">
+                                <img src="<?php echo $itemImage['image_small_left']; ?>" class="main-grid__item-image-s main-grid__item-image-sl" alt="">
+                                <img src="<?php echo $itemImage['image_small_right']; ?>" class="main-grid__item-image-s main-grid__item-image-sr" alt="">
                             <?php endif; ?>
                         </div>
                     </div>
@@ -74,11 +74,66 @@
         <?php endif; ?>
     </section>
 
+    <section>
+        <?php
+        $gallery = get_field('gallery');
+        ?>
+        <div class="boxed centered">
+            <button class="button centered"><?php echo $gallery['button']; ?></button>
+
+        </div>
+    </section>
+
+    <section>
+        <h1 class="center-align">
+            <br>
+            Here will come the Carousel
+        </h1>
+    </section>
+
+    <section class="main-grid main-grid--mykonos">
+        <?php
+        $mykonos_grid = get_field('mykonos__main_grid');
+        $texts = $mykonos_grid['texts'];
+        $images = $mykonos_grid['images'];
+        ?>
+        <div class="main-grid__container boxed centered">
+
+            <div class="main-grid__item two-col">
+                <div class="main-grid__item-text-container">
+                    <div class="main-grid__item-title serif heading">
+                        <?php echo $texts['title']; ?>
+                    </div>
+
+                    <div class="main-grid__item-text sans-serif text">
+                        <?php echo $texts['text']; ?>
+                    </div>
+
+                </div>
+                <div class="main-grid__item-image-container">
+                    <img src="<?php echo $images['image']; ?>" class="main-grid__item-image 
+           
+                image-with-tiles
+            
+                " alt="">
+
+                    <img src="<?php echo $images['image_small_left']; ?>" class="main-grid__item-image-s main-grid__item-image-sl" alt="">
+                    <img src="<?php echo $images['image_small_right']; ?>" class="main-grid__item-image-s main-grid__item-image-sr" alt="">
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
 
     <!-- Text Banner  -->
     <?php
     include 'components/text-banner.php';
     ?>
+
+
 </main>
 
 <!-- Footer  -->

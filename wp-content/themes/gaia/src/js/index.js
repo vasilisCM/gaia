@@ -16,8 +16,8 @@ console.log(document.querySelector("[animate]"));
 moveUpTextByLine();
 
 // Main Grid
-const imageLarge = document.querySelector(".main-grid__item-image-container");
-const imagesSmall = document.querySelectorAll(".main-grid__item-image-s");
+const imageLarge = ".image-with-tiles";
+const imagesSmall = ".main-grid__item-image-s";
 if (imagesSmall) moveUpOnScroll(imageLarge, imagesSmall);
 
 const backToTopButton = document.querySelector(".back-to-top");
