@@ -8,7 +8,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body class="body">
+<body <?php body_class('body'); ?>>
   <header class="header">
     <div class="header__container boxed centered">
       <div class="main-menu__mobile-button hamburger" pressed="false"></div>

@@ -22,6 +22,21 @@ if (function_exists('acf_add_options_page')) {
   acf_add_options_sub_page('Our Team');
 }
 
+// Body Classes
+function custom_body_classes($classes)
+{
+
+  $white_menu_templates = ['mykonos.php']; // Add more templates in the array
+
+  if (is_page_template($white_menu_templates)) {
+    $classes[] = 'white-menu-items';
+  }
+
+  return $classes;
+}
+add_filter('body_class', 'custom_body_classes');
+
+
 // Enqueue CSS
 function load_css()
 {

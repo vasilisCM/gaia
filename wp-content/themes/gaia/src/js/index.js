@@ -5,9 +5,11 @@ import moveUpTextByLine from "./animations/moveUpTextbyLine.js";
 import moveUpOnScroll from "./animations/moveUpOnScroll.js";
 import backToTop from "./global/backToTop.js";
 
+// Loader
 const body = document.querySelector(".body");
 loader(body);
 
+// Sticky Header
 const header = document.querySelector(".header");
 stickyHeader(header, "header--sticky");
 

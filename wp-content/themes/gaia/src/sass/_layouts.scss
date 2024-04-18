@@ -6,9 +6,11 @@
   background-color: transparent;
   // backdrop-filter: blur(10px);
   padding-block: cross-media(32px, 991px, 64px);
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
+  transition: background-color ease 300ms;
 
   &--sticky {
+    background-color: $primary;
     & .header__logo-container {
       @include view(md-max) {
         opacity: 0;
@@ -40,15 +42,31 @@
     gap: cross-media(32px, 991px, 64px);
     position: relative;
 
+    & > li {
+      &:hover {
+        & ul {
+          // position: absolute;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
     & ul {
       position: absolute;
+      margin-top: 20px;
       visibility: hidden;
       opacity: 0;
+      transition: all ease 300ms;
+
+      & a {
+        text-transform: none;
+      }
     }
 
     & a {
       color: $black;
-      color: $white;
+      // color: $white; // For mix-blend-more: difference
       // Font styles will be the CSS rules of the correct typography class
       font-size: cross-media(10px, 991px, 12px);
     }
