@@ -137,6 +137,9 @@
     & .hero__heading {
       margin-bottom: cross-media(35px, 991px, 50px);
     }
+    & .hero__background {
+      opacity: 0.8;
+    }
   }
 }
 

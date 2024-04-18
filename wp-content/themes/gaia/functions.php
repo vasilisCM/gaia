@@ -26,7 +26,7 @@ if (function_exists('acf_add_options_page')) {
 function custom_body_classes($classes)
 {
 
-  $white_menu_templates = ['mykonos.php']; // Add more templates in the array
+  $white_menu_templates = ['mykonos.php', 'retreat.php', 'experience.php']; // Add more templates in the array
 
   if (is_page_template($white_menu_templates)) {
     $classes[] = 'white-menu-items';
