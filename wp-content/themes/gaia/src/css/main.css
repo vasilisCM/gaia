@@ -21,8 +21,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -83,12 +83,23 @@ html.lenis {
 @font-face {
   font-family: "Montserrat";
   src: url("../../assets/fonts/Montserrat-VariableFont_wght.eot");
-  src: url("../../assets/fonts/Montserrat-VariableFont_wght.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Montserrat-VariableFont_wght.woff") format("woff"), url("../../assets/fonts/Montserrat-VariableFont_wght.woff2") format("woff2"), url("../../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype"), url("../../assets/fonts/Montserrat-VariableFont_wght.svg") format("svg");
+  src: url("../../assets/fonts/Montserrat-VariableFont_wght.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/Montserrat-VariableFont_wght.woff") format("woff"),
+    url("../../assets/fonts/Montserrat-VariableFont_wght.woff2") format("woff2"),
+    url("../../assets/fonts/Montserrat-VariableFont_wght.ttf")
+      format("truetype"),
+    url("../../assets/fonts/Montserrat-VariableFont_wght.svg") format("svg");
 }
 @font-face {
   font-family: "Unna";
   src: url("../../assets/fonts/Unna-Italic.eot");
-  src: url("../../assets/fonts/Unna-Italic.eot.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Unna-Italic.woff2") format("woff2"), url("../../assets/fonts/Unna-Italic.woff") format("woff"), url("../../assets/fonts/Unna-Italic.ttf") format("truetype"), url("../../assets/fonts/Unna-Italic.svg") format("svg");
+  src: url("../../assets/fonts/Unna-Italic.eot.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/Unna-Italic.woff2") format("woff2"),
+    url("../../assets/fonts/Unna-Italic.woff") format("woff"),
+    url("../../assets/fonts/Unna-Italic.ttf") format("truetype"),
+    url("../../assets/fonts/Unna-Italic.svg") format("svg");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -96,7 +107,11 @@ html.lenis {
 @font-face {
   font-family: "icomoon";
   src: url("../../assets/fonts/icomoon.eot?8j2uvd");
-  src: url("../../assets/fonts/icomoon.eot?8j2uvd#iefix") format("embedded-opentype"), url("../../assets/fonts/icomoon.ttf?8j2uvd") format("truetype"), url("../../assets/fonts/icomoon.woff?8j2uvd") format("woff"), url("../../assets/fonts/icomoon.svg?8j2uvd#icomoon") format("svg");
+  src: url("../../assets/fonts/icomoon.eot?8j2uvd#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/icomoon.ttf?8j2uvd") format("truetype"),
+    url("../../assets/fonts/icomoon.woff?8j2uvd") format("woff"),
+    url("../../assets/fonts/icomoon.svg?8j2uvd#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -190,10 +205,12 @@ p,
 .white-menu-items .main-menu a {
   color: #fff;
 }
-.white-menu-items .header--sticky .header__logo, .white-menu-items .header--dropdown .header__logo {
+.white-menu-items .header--sticky .header__logo,
+.white-menu-items .header--dropdown .header__logo {
   filter: revert;
 }
-.white-menu-items .header--sticky .main-menu a, .white-menu-items .header--dropdown .main-menu a {
+.white-menu-items .header--sticky .main-menu a,
+.white-menu-items .header--dropdown .main-menu a {
   color: #000;
 }
 
@@ -325,13 +342,14 @@ ul li {
   padding-block: clamp(32px, 6.458123108vw, 64px);
   transition: background-color ease 300ms;
 }
-.header--sticky {
-  background-color: #eceaea;
-}
 @media only screen and (max-width: 991px) {
-  .header--sticky .header__logo-container {
+  .header--sticky .header__logo-container,
+  .header--dropdown .header__logo-container {
     opacity: 0;
   }
+}
+.header--sticky {
+  background-color: #eceaea;
 }
 .header__container {
   display: flex;
@@ -340,6 +358,7 @@ ul li {
 }
 .header__logo {
   max-width: 270px;
+  transition: all ease 300ms;
 }
 .header ul {
   margin: 0;
@@ -370,12 +389,30 @@ ul li {
   opacity: 0;
   transition: all ease 300ms;
 }
-.main-menu__list ul a {
+.main-menu__list .sub-menu a {
   text-transform: none;
+}
+.main-menu__list .dropdown--open {
+  visibility: visible;
+  opacity: 1;
 }
 .main-menu__list a {
   color: #000;
   font-size: clamp(10px, 1.2108980827vw, 12px);
+  transition: color ease 300ms;
+}
+.main-menu__dropdown-background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  background-color: #eceaea;
+  width: 100%;
+  height: 300px;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path ease 500ms;
+}
+.main-menu__dropdown-background--open {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .hero {
@@ -506,7 +543,8 @@ ul li {
 
 .text-banner {
   text-align: center;
-  padding-block: clamp(40px, 8.072653885vw, 80px) clamp(80px, 16.1453077699vw, 160px);
+  padding-block: clamp(40px, 8.072653885vw, 80px)
+    clamp(80px, 16.1453077699vw, 160px);
 }
 
 .curved-container {
@@ -526,28 +564,33 @@ ul li {
   background-color: #a19696;
   color: #fff;
 }
-.footer__top-container, .footer__bottom-container {
+.footer__top-container,
+.footer__bottom-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 }
 @media only screen and (max-width: 991px) {
-  .footer__top-container, .footer__bottom-container {
+  .footer__top-container,
+  .footer__bottom-container {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 }
-.footer__top-right, .footer__bottom-right {
+.footer__top-right,
+.footer__bottom-right {
   display: grid;
   justify-items: end;
   gap: clamp(20px, 4.0363269425vw, 40px);
 }
 @media only screen and (max-width: 991px) {
-  .footer__top-right, .footer__bottom-right {
+  .footer__top-right,
+  .footer__bottom-right {
     justify-items: center;
   }
 }
-.footer__social, .footer__social-icons {
+.footer__social,
+.footer__social-icons {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -565,7 +608,8 @@ ul li {
 .footer__newsletter form .newsletter__input-container {
   width: fit-content;
 }
-.footer__newsletter form input, .footer__newsletter form .newsletter__submit {
+.footer__newsletter form input,
+.footer__newsletter form .newsletter__submit {
   margin: 0;
   padding: 0;
   border: none;
@@ -686,7 +730,8 @@ ul li {
     display: none;
   }
 }
-.hamburger:before, .hamburger:after {
+.hamburger:before,
+.hamburger:after {
   content: "";
   position: absolute;
   width: 36px;
@@ -809,7 +854,8 @@ ul li {
   transform: translate(-50%, -50%);
   text-transform: uppercase;
   pointer-events: none;
-  transition: opacity 0.4s, width ease 0.8s, height ease 0.8s, background-color ease 0.3s, border-radius ease 0.8s;
+  transition: opacity 0.4s, width ease 0.8s, height ease 0.8s,
+    background-color ease 0.3s, border-radius ease 0.8s;
   will-change: scale;
 }
 .cursor--active {
@@ -848,7 +894,8 @@ ul li {
   display: grid;
   align-items: center;
   gap: clamp(36px, 7.2653884965vw, 72px);
-  padding: clamp(50px, 10.0908173562vw, 100px) clamp(75px, 15.1362260343vw, 150px) clamp(150px, 15.5555555556vw, 280px);
+  padding: clamp(50px, 10.0908173562vw, 100px)
+    clamp(75px, 15.1362260343vw, 150px) clamp(150px, 15.5555555556vw, 280px);
 }
 @media only screen and (min-width: 992px) {
   .home-testimonial__container {
