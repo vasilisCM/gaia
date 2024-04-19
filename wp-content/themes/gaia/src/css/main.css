@@ -954,4 +954,21 @@ ul li {
   transform: translateX(-50%);
 }
 
+.philosophy-curves__container {
+  min-height: 350px;
+  background-image: url(./../../assets/img/curve-with-gradient.svg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: initial;
+}
+.philosophy-curves__text {
+  padding-block: clamp(60px, 10.0908173562vw, 100px);
+}
+
+@media only screen and (min-width: 992px) {
+  .bottom-grid .main-grid__item-text-container {
+    justify-self: left;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
