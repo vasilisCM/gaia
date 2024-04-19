@@ -17,7 +17,6 @@ const carousel = (
   previousButton = undefined,
   indicator = undefined
 ) => {
-  console.log("Hello from Carousel");
   // Entrance
   ScrollTrigger.create({
     ease: "power3.out",
