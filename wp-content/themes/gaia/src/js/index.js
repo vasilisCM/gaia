@@ -96,54 +96,89 @@ const loadPageScript = (namespace) => {
   document.body.appendChild(script);
 };
 
-barba.hooks.beforeEnter(() => {
-  console.log("coming...");
-});
+// barba.hooks.beforeEnter(() => {
+//   console.log("coming...");
+//   // Animation
+//   gsap.fromTo(
+//     ".page-transition",
+//     {
+//       backgroundColor: "transparent",
+//       opacity: 0,
+//     },
+//     {
+//       backgroundColor: "#eceaea",
+//       opacity: 1,
+//       delay: 3,
+//     }
+//   );
+// });
 
-barba.hooks.beforeLeave(() => {
-  console.log("leaving...");
-});
+// barba.hooks.beforeLeave(() => {
+//   console.log("leaving...");
+
+//   // Animation
+//   gsap.fromTo(
+//     ".page-transition",
+//     {
+//       backgroundColor: "#eceaea",
+//       opacity: 1,
+//     },
+//     {
+//       backgroundColor: "transparent",
+//       opacity: 0,
+//     }
+//   );
+// });
 
 barba.init({
-  // debug: true,
   transitions: [
     {
-      name: "general-transition",
-      once: (data) => {
-        console.log("init...");
-        global();
+      name: "fade-transition",
+      once(data) {
+        // Run on initial load
+        let tl = gsap.timeline();
+        tl.to(".page-transition", {
+          duration: 1,
+          opacity: 0,
+          onComplete: global,
+        });
       },
-
-      leave: function (data) {
-        console.log("leave init...");
+      leave(data) {
+        // Animation to run when leaving a page
+        return new Promise((resolve) => {
+          let tl = gsap.timeline({
+            onComplete: () => {
+              console.log("Page covered, ready to switch content.");
+              resolve(); // Resolve the promise when animation completes
+            },
+          });
+          tl.to(".page-transition", { duration: 1, opacity: 1 });
+        });
       },
+      enter(data) {
+        console.log("Switching to new page content...");
 
-      enter: (data) => {
-        console.log("next...");
-
-        // Retrieve the body class from the next container, if available
         const bodyClassAttribute =
           data.next.container.getAttribute("data-body-class");
         const nextBodyClasses = bodyClassAttribute
           ? bodyClassAttribute.split(" ")
           : [];
+        document.body.className = ["body", ...nextBodyClasses].join(" ");
 
-        // Classes that should always remain on the body
-        const permanentClasses = ["body"];
-
-        // Construct the new class list for the body
-        document.body.className = [
-          ...permanentClasses,
-          ...nextBodyClasses,
-        ].join(" ");
-
-        // Run global script
         global();
-
-        // Load each page's script
         const namespace = data.next.namespace;
         if (namespace) loadPageScript(namespace);
-        console.log("Transition to " + namespace);
+
+        // Animation to run when entering a page
+        return new Promise((resolve) => {
+          let tl = gsap.timeline({
+            onComplete: () => {
+              console.log("New content revealed.");
+              resolve(); // Resolve the promise when animation completes
+            },
+          });
+          tl.to(".page-transition", { duration: 1, opacity: 0, delay: 0.5 });
+        });
       },
     },
   ],

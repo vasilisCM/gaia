@@ -52,3 +52,8 @@
     </div>
     <div class="main-menu__dropdown-background"></div>
   </header>
+
+  <!-- Page Transition  -->
+  <?php
+  include 'components/page-transition.php';
+  ?>

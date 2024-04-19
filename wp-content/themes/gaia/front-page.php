@@ -1,6 +1,7 @@
 <!-- Header  -->
 <?php get_header(); ?>
 
+
 <!-- Main  -->
 <main data-barba="container" data-barba-namespace="home">
   <!-- Hero  -->
@@ -65,7 +66,6 @@
       </div>
     <?php endif; ?>
   </section>
-
 
 
   <!-- Carousel  -->
