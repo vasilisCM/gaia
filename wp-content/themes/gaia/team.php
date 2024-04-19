@@ -4,7 +4,7 @@
 <?php get_header(); ?>
 
 <!-- Main  -->
-<main>
+<main data-barba="container" data-barba-namespace="team">
   <!-- Hero  -->
   <section class="first-section intro intro--team">
     <div class="intro__container">

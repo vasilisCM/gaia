@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 <!-- Main  -->
-<main>
+<main data-barba="container" data-barba-namespace="home">
   <!-- Hero  -->
   <section class="first-section hero hero--home">
     <?php

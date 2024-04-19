@@ -1,6 +1,5 @@
 const backToTop = function (button, className) {
   // Back to Top
-  console.log("Hello from Back to Top");
 
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > 100) {
