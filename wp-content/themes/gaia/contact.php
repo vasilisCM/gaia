@@ -14,6 +14,13 @@
       <a href=""><button>More</button></a>
     </div>
   </section>
+
+  <!-- Form -->
+  <section class="contact-form">
+    <div class="contact-form__container boxed-xs centered">
+      <?php echo do_shortcode('[contact-form-7 id="4db155d" title="Contact Form"]'); ?>
+    </div>
+  </section>
 </main>
 
 <!-- Footer  --> <?php get_footer(); ?>
