@@ -1,0 +1,59 @@
+// Intro
+.intro--contact {
+  .intro__heading {
+    padding-bottom: 0;
+  }
+}
+
+// Contact Info
+.contact-info {
+  padding-bottom: cross-media(35px, 991px, 50px);
+  &__container {
+    display: grid;
+    gap: cross-media(20px, 991px, 30px);
+  }
+}
+
+//Contact Form
+.contact-form {
+  padding-block: cross-media(20px, 991px, 30px) cross-media(60px, 991px, 130px);
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+  & .wpcf7 {
+    width: 100%;
+  }
+  & .wpcf7-list-item {
+    margin: 0;
+  }
+  &__content {
+    display: grid;
+    gap: 0 35px;
+    @include view(lg-min) {
+      grid-template-columns: 1fr 1fr;
+      & .contact-form__acceptance,
+      & .contact-form__submit {
+        grid-column: 1/3;
+        justify-self: center;
+      }
+    }
+  }
+  &__info-fields {
+    display: grid;
+  }
+  & label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $secondary;
+  }
+  &__input-field {
+    background-color: rgba($white, 0.8);
+    border: none;
+    width: 100%;
+    padding: 18px;
+  }
+  &__acceptance {
+    padding-block: cross-media(35px, 991px, 50px) cross-media(5px, 991px, 10px);
+  }
+}

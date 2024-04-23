@@ -20,6 +20,7 @@ if (function_exists('acf_add_options_page')) {
   acf_add_options_sub_page('Social');
   acf_add_options_sub_page('Text Banner');
   acf_add_options_sub_page('Our Team');
+  acf_add_options_sub_page('FAQ');
 }
 
 // Body Classes
