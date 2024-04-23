@@ -58,44 +58,6 @@ const global = () => {
   const backToTopButton = document.querySelector(".back-to-top");
   backToTop(backToTopButton, "back-to-top--visible");
 
-  //////////////////////////
-  var swiper = new Swiper(".carousel-text", {
-    slidesPerView: "auto",
-    spaceBetween: 150,
-    centeredSlides: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false, // continue autoplay after user interactions
-    },
-    allowTouchMove: false,
-  });
-
-  var swiper2 = new Swiper(".carousel-image", {
-    slidesPerView: 1,
-    effect: "fade",
-    centeredSlides: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false, // continue autoplay after user interactions
-    },
-    allowTouchMove: false,
-  });
-
-  /////////////////////////
-  /*
-  // Footer Menu Items Rearrangement
-  const footerMenuList = document.querySelector(".footer-menu__list");
-  const footerMenuItemsExceptFirst = document.querySelectorAll(
-    ".footer-menu__list > li:not(:first-child)"
-  );
-  const footerMenuCustomWrapper = document.createElement("div");
-  footerMenuItemsExceptFirst.forEach((item) => {
-    footerMenuCustomWrapper.insertAdjacentElement("beforeend", item);
-  });
-
-  footerMenuList.insertAdjacentElement("beforeend", footerMenuCustomWrapper);
-*/
-
   console.log("Global JavaScript");
 };
 

@@ -40,6 +40,7 @@ add_filter('body_class', 'custom_body_classes');
 // Enqueue CSS
 function load_css()
 {
+  wp_enqueue_style('swiper', get_template_directory_uri() . '/src/css/libraries/swiper.bundle.min.css');
   wp_enqueue_style('main', get_template_directory_uri() . '/src/css/main.css');
 }
 add_action('wp_enqueue_scripts', 'load_css');
@@ -54,7 +55,7 @@ function load_js_libraries()
   wp_enqueue_script('lenis', get_template_directory_uri() . '/src/js/libraries/lenis.min.js', array(), false, true);
   wp_enqueue_script('ScrollTrigger', get_template_directory_uri() . '/src/js/libraries/ScrollTrigger.min.js', array(), false, true);
   wp_enqueue_script('SplitType', get_template_directory_uri() . '/src/js/libraries/SplitType.min.js', array(), false, true);
-  wp_enqueue_script('swiper',  'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), false, true);
+  wp_enqueue_script('swiper', get_template_directory_uri() . '/src/js/libraries/swiper-bundle.min.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'load_js_libraries');
 
@@ -68,6 +69,10 @@ function load_js()
   // Team
   if (is_page_template('team.php')) {
     wp_enqueue_script('team', get_template_directory_uri() . '/src/js/team.bundle.js', array(), null, true);
+  }
+  // Mykonos
+  elseif (is_page_template('mykonos.php')) {
+    wp_enqueue_script('mykonos', get_template_directory_uri() . '/src/js/mykonos.bundle.js', array(), null, true);
   }
   // Contact
   elseif (is_page_template('contact.php')) {
