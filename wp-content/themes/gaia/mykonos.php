@@ -86,27 +86,40 @@
 
     <section>
 
+
         <div class="carousel-double">
+
+
             <div class="swiper carousel-image">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-001.webp" alt=""></div>
-                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-002.webp" alt=""></div>
-                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-003.webp" alt=""></div>
-                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-004.webp" alt=""></div>
+                    <?php if (have_rows('carousel')) : ?>
+                        <?php while (have_rows('carousel')) : the_row();
+                            $image = get_sub_field('image');
 
+                        ?>
+                            <div class="swiper-slide carousel-image__slide"><img src="<?php echo $image; ?>" alt=""></div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
             </div>
 
             <div class="swiper carousel-text">
                 <div class="swiper-wrapper">
-                    <div class="heading-l carousel-text__slide  swiper-slide">Slide 1</div>
-                    <div class="heading-l  carousel-text__slide swiper-slide">Slide 2</div>
-                    <div class="heading-l carousel-text__slide  swiper-slide">Slide 3</div>
-                    <div class="heading-l carousel-text__slide  swiper-slide">Slide 4</div>
+                    <?php if (have_rows('carousel')) : ?>
+                        <?php while (have_rows('carousel')) : the_row();
 
+                            $profession = get_sub_field('profession');
+                        ?>
+                            <div class="heading-l carousel-text__slide  swiper-slide"><?php echo $profession; ?></div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
             </div>
+
+
         </div>
+
+
 
     </section>
 

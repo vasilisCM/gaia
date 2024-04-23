@@ -524,10 +524,12 @@ ul li {
 
 .carousel-double {
   position: relative;
+  margin-top: clamp(60px, 9.375vw, 180px);
 }
 
 .carousel-image {
   position: relative;
+  max-height: 900px;
 }
 .carousel-image__slide:after {
   content: "";

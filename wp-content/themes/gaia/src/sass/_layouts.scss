@@ -250,10 +250,12 @@
 // Fullscreen Carousel
 .carousel-double {
   position: relative;
+  margin-top: cross-media(60px, 1920px, 180px);
 }
 
 .carousel-image {
   position: relative;
+  max-height: 900px;
 
   &__slide {
     &:after {
