@@ -548,11 +548,13 @@ ul li {
   align-items: center;
   width: 40%;
   text-align: center;
+  pointer-events: none;
 }
 
 .swiper {
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .text-banner {

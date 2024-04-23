@@ -63,23 +63,22 @@ const global = () => {
     slidesPerView: "auto",
     spaceBetween: 150,
     centeredSlides: true,
-    autoplay: true,
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false, // continue autoplay after user interactions
+    },
+    allowTouchMove: false,
   });
 
   var swiper2 = new Swiper(".carousel-image", {
     slidesPerView: 1,
-    // spaceBetween: 150,
     effect: "fade",
     centeredSlides: true,
-    // autoplay: true,
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false, // continue autoplay after user interactions
+    },
+    allowTouchMove: false,
   });
 
   /////////////////////////

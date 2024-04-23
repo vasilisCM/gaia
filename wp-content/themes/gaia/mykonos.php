@@ -108,9 +108,6 @@
             </div>
         </div>
 
-
-
-
     </section>
 
     <section class="main-grid main-grid--mykonos">
