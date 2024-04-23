@@ -699,6 +699,7 @@ ul li {
   z-index: 50;
   pointer-events: none;
   opacity: 1;
+  visibility: visible;
 }
 .page-transition__container {
   position: relative;

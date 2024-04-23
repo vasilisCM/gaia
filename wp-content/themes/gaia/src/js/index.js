@@ -8,7 +8,7 @@ import backToTop from "./global/backToTop.js";
 const global = () => {
   // Loader
   const body = document.querySelector(".body");
-  loader(body);
+  // loader(body);
 
   // Sticky Header
   const header = document.querySelector(".header");
@@ -130,34 +130,62 @@ const loadPageScript = (namespace) => {
 //   );
 // });
 
+const revealPageTransitionTl = gsap.timeline({
+  paused: true,
+  onStart: () => {
+    console.log("Revealing");
+    global();
+  },
+  // onComplete: global,
+});
+
+const hidePageTransitionTl = gsap.timeline({
+  paused: true,
+});
+
+hidePageTransitionTl.fromTo(
+  ".page-transition",
+  {
+    opacity: 0,
+  },
+  {
+    duration: 1,
+    opacity: 1,
+  }
+);
+
+revealPageTransitionTl.fromTo(
+  ".page-transition",
+  {
+    opacity: 1,
+  },
+  {
+    duration: 1,
+    opacity: 0,
+    delay: 0.5,
+  }
+);
+
 barba.init({
   transitions: [
     {
       name: "fade-transition",
       once(data) {
-        // Run on initial load
-        let tl = gsap.timeline();
-        tl.to(".page-transition", {
-          duration: 1,
-          opacity: 0,
-          onComplete: global,
-        });
+        // Initial load animation
+        revealPageTransitionTl.play();
       },
       leave(data) {
-        // Animation to run when leaving a page
-        return new Promise((resolve) => {
-          let tl = gsap.timeline({
-            onComplete: () => {
-              console.log("Page covered, ready to switch content.");
-              resolve(); // Resolve the promise when animation completes
-            },
-          });
-          tl.to(".page-transition", { duration: 1, opacity: 1 });
+        const done = this.async(); // Get the async completion function
+        hidePageTransitionTl.restart();
+        hidePageTransitionTl.eventCallback("onComplete", () => {
+          revealPageTransitionTl.play();
+          done(); // Call done when the hide transition is complete
         });
       },
       enter(data) {
         console.log("Switching to new page content...");
 
+        // Apply new body class from next container
         const bodyClassAttribute =
           data.next.container.getAttribute("data-body-class");
         const nextBodyClasses = bodyClassAttribute
@@ -165,20 +193,14 @@ barba.init({
           : [];
         document.body.className = ["body", ...nextBodyClasses].join(" ");
 
-        global();
+        // Reinitialize scripts or global functions
         const namespace = data.next.namespace;
-        if (namespace) loadPageScript(namespace);
+        if (namespace) {
+          loadPageScript(namespace); // Ensure this is defined to load page-specific scripts
+        }
+        // global();
 
-        // Animation to run when entering a page
-        return new Promise((resolve) => {
-          let tl = gsap.timeline({
-            onComplete: () => {
-              console.log("New content revealed.");
-              resolve(); // Resolve the promise when animation completes
-            },
-          });
-          tl.to(".page-transition", { duration: 1, opacity: 0, delay: 0.5 });
-        });
+        revealPageTransitionTl.restart();
       },
     },
   ],

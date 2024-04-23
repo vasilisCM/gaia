@@ -77,9 +77,9 @@
 
 
   <!-- Loader  -->
-  <div class="loader">
+  <!-- <div class="loader">
     <div class="loader__spinner"></div>
-  </div>
+  </div> -->
 
   <!-- Back to Top  -->
   <div class="back-to-top"></div>
