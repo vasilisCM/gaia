@@ -54,6 +54,7 @@ function load_js_libraries()
   wp_enqueue_script('lenis', get_template_directory_uri() . '/src/js/libraries/lenis.min.js', array(), false, true);
   wp_enqueue_script('ScrollTrigger', get_template_directory_uri() . '/src/js/libraries/ScrollTrigger.min.js', array(), false, true);
   wp_enqueue_script('SplitType', get_template_directory_uri() . '/src/js/libraries/SplitType.min.js', array(), false, true);
+  wp_enqueue_script('swiper',  'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'load_js_libraries');
 

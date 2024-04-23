@@ -247,6 +247,48 @@
   }
 }
 
+// Fullscreen Carousel
+.carousel-double {
+  position: relative;
+}
+
+.carousel-image {
+  position: relative;
+
+  &__slide {
+    &:after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(
+        180deg,
+        rgba(230, 221, 212, 1) 0%,
+        rgba(110, 108, 108, 1) 100%
+      );
+      opacity: 0.7;
+      inset: 0;
+    }
+  }
+}
+
+.carousel-text {
+  position: absolute;
+  top: 0;
+  color: $white;
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
 // Text Banner
 .text-banner {
   text-align: center;

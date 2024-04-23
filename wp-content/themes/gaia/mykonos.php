@@ -85,10 +85,32 @@
     </section>
 
     <section>
-        <h1 class="center-align">
-            <br>
-            Here will come the Carousel
-        </h1>
+
+        <div class="carousel-double">
+            <div class="swiper carousel-image">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-001.webp" alt=""></div>
+                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-002.webp" alt=""></div>
+                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-003.webp" alt=""></div>
+                    <div class="swiper-slide carousel-image__slide"><img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/mykonos-carousel-004.webp" alt=""></div>
+
+                </div>
+            </div>
+
+            <div class="swiper carousel-text">
+                <div class="swiper-wrapper">
+                    <div class="heading-l carousel-text__slide  swiper-slide">Slide 1</div>
+                    <div class="heading-l  carousel-text__slide swiper-slide">Slide 2</div>
+                    <div class="heading-l carousel-text__slide  swiper-slide">Slide 3</div>
+                    <div class="heading-l carousel-text__slide  swiper-slide">Slide 4</div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
     </section>
 
     <section class="main-grid main-grid--mykonos">

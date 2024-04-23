@@ -1,5 +1,6 @@
-import carousel from "../logic/carousel.js";
 import customCursor from "../logic/customCursor.js";
+import carousel from "../logic/carousel.js";
+import carouselFullScreen from "../logic/carouselFullScreen.js";
 
 const home = () => {
   console.log("Hello from home");

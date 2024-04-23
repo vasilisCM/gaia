@@ -522,6 +522,39 @@ ul li {
   display: grid;
 }
 
+.carousel-double {
+  position: relative;
+}
+
+.carousel-image {
+  position: relative;
+}
+.carousel-image__slide:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(180deg, rgb(230, 221, 212) 0%, rgb(110, 108, 108) 100%);
+  opacity: 0.7;
+  inset: 0;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 0;
+  color: #fff;
+}
+.carousel-text__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  text-align: center;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
 .text-banner {
   text-align: center;
   padding-block: clamp(40px, 8.072653885vw, 80px) clamp(80px, 16.1453077699vw, 160px);

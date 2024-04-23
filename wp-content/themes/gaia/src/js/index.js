@@ -4,6 +4,7 @@ import stickyHeader from "./global/stickyHeader.js";
 import moveUpTextByLine from "./animations/moveUpTextbyLine.js";
 import moveUpOnScroll from "./animations/moveUpOnScroll.js";
 import backToTop from "./global/backToTop.js";
+import carouselFullScreen from "./logic/carouselFullScreen.js";
 
 const global = () => {
   // Loader
@@ -57,6 +58,31 @@ const global = () => {
   const backToTopButton = document.querySelector(".back-to-top");
   backToTop(backToTopButton, "back-to-top--visible");
 
+  //////////////////////////
+  var swiper = new Swiper(".carousel-text", {
+    slidesPerView: "auto",
+    spaceBetween: 150,
+    centeredSlides: true,
+    autoplay: true,
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+  });
+
+  var swiper2 = new Swiper(".carousel-image", {
+    slidesPerView: 1,
+    // spaceBetween: 150,
+    effect: "fade",
+    centeredSlides: true,
+    // autoplay: true,
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+  });
+
+  /////////////////////////
   /*
   // Footer Menu Items Rearrangement
   const footerMenuList = document.querySelector(".footer-menu__list");
