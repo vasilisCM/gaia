@@ -375,7 +375,7 @@
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 100px;
+    // column-gap: 100px;
     align-items: start;
 
     // & > li {
@@ -383,7 +383,7 @@
     // }
 
     & > .menu-item-has-children {
-      grid-row: span 3;
+      grid-row: span 4;
     }
 
     & .sub-menu {

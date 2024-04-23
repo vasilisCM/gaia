@@ -635,11 +635,10 @@ ul li {
 .footer-menu__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 100px;
   align-items: start;
 }
 .footer-menu__list > .menu-item-has-children {
-  grid-row: span 3;
+  grid-row: span 4;
 }
 .footer-menu__list .sub-menu {
   padding-top: 20px;
