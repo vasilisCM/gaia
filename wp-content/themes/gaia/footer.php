@@ -49,10 +49,10 @@
     </div>
   </div>
   <div class="footer__bottom">
-    <div class="boxed centered footer__bottom-container">
+    <div class="boxed-s centered footer__bottom-container">
       <!-- Copyrights -->
       <div>
-        <span class="text-extra-small footer__copyrights"><?php echo date("Y"); ?> Gaia Exclusive Retreats. All Rights Reserved | </span>
+        <span class="text-extra-small footer__copyrights">© <?php echo date("Y"); ?> Gaia Exclusive Retreats. All Rights Reserved | </span>
         <span class="text-extra-small footer__created-by">
           Created by
           <a href="https://conceptmaniax.gr/" target="_blank">ConceptManiax</a>

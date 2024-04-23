@@ -270,6 +270,7 @@
     padding-block: cross-media(32px, 991px, 64px);
     background-color: $accent;
     color: $white;
+    font-weight: 700;
   }
 
   &__top-container,
@@ -298,7 +299,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: cross-media(20px, 991px, 40px);
+    gap: cross-media(30px, 991px, 60px);
   }
 
   &__newsletter {
@@ -325,6 +326,7 @@
       }
 
       & input {
+        font-weight: 400;
         &::placeholder {
           color: $black;
         }
@@ -372,12 +374,25 @@
 
   &__list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 100px;
     align-items: start;
+
+    // & > li {
+    //   background-color: red;
+    // }
+
+    & > .menu-item-has-children {
+      grid-row: span 3;
+    }
+
+    & .sub-menu {
+      padding-top: 20px;
+    }
 
     & ul {
       & li {
-        // background-color: red;
+        font-weight: 400;
         text-transform: none;
       }
     }

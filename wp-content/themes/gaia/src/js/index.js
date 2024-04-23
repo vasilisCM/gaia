@@ -57,6 +57,7 @@ const global = () => {
   const backToTopButton = document.querySelector(".back-to-top");
   backToTop(backToTopButton, "back-to-top--visible");
 
+  /*
   // Footer Menu Items Rearrangement
   const footerMenuList = document.querySelector(".footer-menu__list");
   const footerMenuItemsExceptFirst = document.querySelectorAll(
@@ -68,6 +69,7 @@ const global = () => {
   });
 
   footerMenuList.insertAdjacentElement("beforeend", footerMenuCustomWrapper);
+*/
 
   console.log("Global JavaScript");
 };
@@ -95,40 +97,6 @@ const loadPageScript = (namespace) => {
   script.async = true;
   document.body.appendChild(script);
 };
-
-// barba.hooks.beforeEnter(() => {
-//   console.log("coming...");
-//   // Animation
-//   gsap.fromTo(
-//     ".page-transition",
-//     {
-//       backgroundColor: "transparent",
-//       opacity: 0,
-//     },
-//     {
-//       backgroundColor: "#eceaea",
-//       opacity: 1,
-//       delay: 3,
-//     }
-//   );
-// });
-
-// barba.hooks.beforeLeave(() => {
-//   console.log("leaving...");
-
-//   // Animation
-//   gsap.fromTo(
-//     ".page-transition",
-//     {
-//       backgroundColor: "#eceaea",
-//       opacity: 1,
-//     },
-//     {
-//       backgroundColor: "transparent",
-//       opacity: 0,
-//     }
-//   );
-// });
 
 const revealPageTransitionTl = gsap.timeline({
   paused: true,
