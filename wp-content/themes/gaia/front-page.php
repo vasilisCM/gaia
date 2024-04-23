@@ -99,7 +99,7 @@
         </div>
       </div>
       <a href="<?php echo get_field('home__team')['button']['link']; ?>" class="center-align home-team__button">
-        <button class="button button--plain"><?php echo get_field('home__team')['button']['label']; ?></button>
+        <button class="centered button button--plain"><?php echo get_field('home__team')['button']['label']; ?></button>
       </a>
     </div>
   </section>
