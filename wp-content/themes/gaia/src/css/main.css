@@ -882,6 +882,12 @@ ul li {
 .button--plain:hover::after {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+.button--book {
+  color: #fff;
+}
+.button--book:before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
 
 .cursor {
   display: flex;
@@ -923,6 +929,16 @@ ul li {
   height: 500px;
   border-top: solid 2px #a19696;
   border-radius: 100%;
+}
+
+.book-cta {
+  width: fit-content;
+  position: fixed;
+  z-index: 1000;
+  top: 160px;
+  right: 0;
+  transform: rotate(-90deg);
+  transform-origin: bottom right;
 }
 
 .hero--home {

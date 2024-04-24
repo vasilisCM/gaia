@@ -57,3 +57,8 @@
   <?php
   include 'components/page-transition.php';
   ?>
+
+  <!-- CTA Book  -->
+  <?php
+  include 'components/book-cta.php';
+  ?>
