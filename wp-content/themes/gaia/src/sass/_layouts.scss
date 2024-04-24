@@ -62,7 +62,7 @@
       padding-top: 36px;
       visibility: hidden;
       opacity: 0;
-      transition: all ease 300ms;
+      // transition: all ease 300ms;
 
       & a {
         text-transform: none;
@@ -92,7 +92,7 @@
     height: 300px;
     // clip-path: ellipse(50% 0% at 50% 0%);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path ease 500ms;
+    // transition: clip-path ease 500ms;
 
     &--open {
       // clip-path: ellipse(70% 70% at 50% 0%);

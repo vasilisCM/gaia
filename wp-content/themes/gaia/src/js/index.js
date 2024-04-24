@@ -21,79 +21,53 @@ const global = () => {
     ".main-menu__dropdown-background"
   );
 
-  const dropdownTl = gsap.timeline({ paused: true });
-  // dropdownTl
-  //   .fromTo(
-  //     header,
-  //     {
-  //       visibility: "hidden",
-  //       opacity: 0,
-  //       clipPath: "polygon(0 0, 100 0, 100 0, 0 0)",
-  //     },
-  //     {
-  //       visibility: "visible",
-  //       opacity: 1,
-  //       clipPath: "polygon(0 0, 100 0, 100 100, 0 100)",
-  //     }
-  //   )
-  //   .fromTo(
-  //     dropdownBackground,
-  //     {
-  //       visibility: "hidden",
-  //       opacity: 0,
-  //       clipPath: "polygon(0 0, 100 0, 100 0, 0 0)",
-  //     },
-  //     {
-  //       visibility: "visible",
-  //       opacity: 1,
-  //       clipPath: "polygon(0 0, 100 0, 100 100, 0 100)",
-  //     }
-  //   );
+  const dropdownTl = gsap.timeline({
+    paused: true,
+    onStart: () => header.classList.add("header--dropdown"),
+    onReverseComplete: () => header.classList.remove("header--dropdown"),
+  });
+  dropdownTl
+    .fromTo(
+      dropdownBackground,
+      {
+        visibility: "hidden",
+        opacity: 0,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+      },
+      {
+        visibility: "visible",
+        opacity: 1,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      }
+    )
+    .fromTo(
+      dropdownMenu,
+      {
+        visibility: "hidden",
+        opacity: 0,
+      },
+      {
+        visibility: "visible",
+        opacity: 1,
+      }
+    );
 
   header.addEventListener("mouseover", (e) => {
     let dropdownItem = header.querySelector(".menu-item-has-children > a");
 
     if (e.target === dropdownItem) {
       dropdownTl.play();
-      // if (!header.classList.contains("header--dropdown"))
-      //   header.classList.add("header--dropdown");
-
-      // if (
-      //   !dropdownBackground.classList.contains(
-      //     "main-menu__dropdown-background--open"
-      //   )
-      // )
-      //   dropdownBackground.classList.add(
-      //     "main-menu__dropdown-background--open"
-      //   );
-      // setTimeout(() => {
-      //   if (!dropdownMenu.classList.contains("dropdown--open"))
-      //     dropdownMenu.classList.add("dropdown--open");
-      // }, "600");
     }
   });
 
-  // header.addEventListener("mouseout", (e) => {
-  //   let dropdownItem = header.querySelector(".menu-item-has-children > a");
-  //   if (e.target === dropdownItem) {
-  //     if (header.classList.contains("header--dropdown"))
-  //       dropdownMenu.classList.remove("dropdown--open");
+  const main = document.querySelector("main");
+  main.addEventListener("click", (e) => {
+    dropdownTl.reverse();
+  });
 
-  //     setTimeout(() => {
-  //       if (
-  //         dropdownBackground.classList.contains(
-  //           "main-menu__dropdown-background--open"
-  //         )
-  //       )
-  //         dropdownBackground.classList.remove(
-  //           "main-menu__dropdown-background--open"
-  //         );
-
-  //       if (header.classList.contains("header--dropdown"))
-  //         header.classList.remove("header--dropdown");
-  //     }, "300");
-  //   }
-  // });
+  main.addEventListener("wheel", (e) => {
+    dropdownTl.reverse();
+  });
 
   // Hero Text Animation
   moveUpTextByLine();
