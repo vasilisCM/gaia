@@ -4,7 +4,7 @@
 <?php get_header(); ?>
 
 <!-- Main  -->
-<main data-barba="container" data-body-class="<?php echo esc_attr(join(' ', get_body_class())); ?>">
+<main data-barba="container" data-barba-namespace="mykonos" data-body-class="<?php echo esc_attr(join(' ', get_body_class())); ?>">
     <!-- Hero  -->
     <section class="first-section hero hero--mykonos">
         <?php

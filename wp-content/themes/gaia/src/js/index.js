@@ -150,6 +150,7 @@ barba.init({
 
         // Reinitialize scripts or global functions
         const namespace = data.next.namespace;
+        console.log(namespace);
         if (namespace) {
           loadPageScript(namespace); // Ensure this is defined to load page-specific scripts
         }

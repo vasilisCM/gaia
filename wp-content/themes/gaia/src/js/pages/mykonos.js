@@ -1,4 +1,5 @@
 const mykonos = () => {
+  console.log("Hello from Mykonos");
   var swiper = new Swiper(".carousel-text", {
     slidesPerView: "auto",
     spaceBetween: 150,
