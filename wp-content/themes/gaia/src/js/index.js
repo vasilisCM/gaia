@@ -21,30 +21,79 @@ const global = () => {
     ".main-menu__dropdown-background"
   );
 
+  const dropdownTl = gsap.timeline({ paused: true });
+  // dropdownTl
+  //   .fromTo(
+  //     header,
+  //     {
+  //       visibility: "hidden",
+  //       opacity: 0,
+  //       clipPath: "polygon(0 0, 100 0, 100 0, 0 0)",
+  //     },
+  //     {
+  //       visibility: "visible",
+  //       opacity: 1,
+  //       clipPath: "polygon(0 0, 100 0, 100 100, 0 100)",
+  //     }
+  //   )
+  //   .fromTo(
+  //     dropdownBackground,
+  //     {
+  //       visibility: "hidden",
+  //       opacity: 0,
+  //       clipPath: "polygon(0 0, 100 0, 100 0, 0 0)",
+  //     },
+  //     {
+  //       visibility: "visible",
+  //       opacity: 1,
+  //       clipPath: "polygon(0 0, 100 0, 100 100, 0 100)",
+  //     }
+  //   );
+
   header.addEventListener("mouseover", (e) => {
-    let dropdownItem = header.querySelector(".menu-item-has-children a");
+    let dropdownItem = header.querySelector(".menu-item-has-children > a");
+
     if (e.target === dropdownItem) {
-      header.classList.add("header--dropdown");
-      dropdownBackground.classList.add("main-menu__dropdown-background--open");
-      setTimeout(() => {
-        dropdownMenu.classList.add("dropdown--open");
-      }, "600");
+      dropdownTl.play();
+      // if (!header.classList.contains("header--dropdown"))
+      //   header.classList.add("header--dropdown");
+
+      // if (
+      //   !dropdownBackground.classList.contains(
+      //     "main-menu__dropdown-background--open"
+      //   )
+      // )
+      //   dropdownBackground.classList.add(
+      //     "main-menu__dropdown-background--open"
+      //   );
+      // setTimeout(() => {
+      //   if (!dropdownMenu.classList.contains("dropdown--open"))
+      //     dropdownMenu.classList.add("dropdown--open");
+      // }, "600");
     }
   });
 
-  header.addEventListener("mouseout", (e) => {
-    let dropdownItem = header.querySelector(".menu-item-has-children a");
-    if (e.target === dropdownItem) {
-      dropdownMenu.classList.remove("dropdown--open");
+  // header.addEventListener("mouseout", (e) => {
+  //   let dropdownItem = header.querySelector(".menu-item-has-children > a");
+  //   if (e.target === dropdownItem) {
+  //     if (header.classList.contains("header--dropdown"))
+  //       dropdownMenu.classList.remove("dropdown--open");
 
-      setTimeout(() => {
-        dropdownBackground.classList.remove(
-          "main-menu__dropdown-background--open"
-        );
-        header.classList.remove("header--dropdown");
-      }, "300");
-    }
-  });
+  //     setTimeout(() => {
+  //       if (
+  //         dropdownBackground.classList.contains(
+  //           "main-menu__dropdown-background--open"
+  //         )
+  //       )
+  //         dropdownBackground.classList.remove(
+  //           "main-menu__dropdown-background--open"
+  //         );
+
+  //       if (header.classList.contains("header--dropdown"))
+  //         header.classList.remove("header--dropdown");
+  //     }, "300");
+  //   }
+  // });
 
   // Hero Text Animation
   moveUpTextByLine();

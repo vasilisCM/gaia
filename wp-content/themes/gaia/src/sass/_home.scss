@@ -1,5 +1,6 @@
 .hero {
   &--home {
+    height: calc(100vw * 0.625);
     margin-bottom: 0;
   }
 }

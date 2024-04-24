@@ -69,10 +69,10 @@
       }
     }
 
-    .dropdown--open {
-      visibility: visible;
-      opacity: 1;
-    }
+    // .dropdown--open {
+    //   visibility: visible;
+    //   opacity: 1;
+    // }
 
     & a {
       color: $black;
@@ -113,9 +113,10 @@
   &__background {
     position: absolute;
     z-index: -1;
-    top: 0;
-    right: 0;
-    left: 0;
+    // top: 0;
+    // right: 0;
+    // left: 0;
+    inset: 0;
     margin: auto;
     overflow: hidden;
     height: 100%;
@@ -297,6 +298,10 @@
 .text-banner {
   text-align: center;
   padding-block: cross-media(40px, 991px, 80px) cross-media(80px, 991px, 160px);
+
+  &__button {
+    margin-top: cross-media(40px, 991px, 80px);
+  }
 }
 
 .curved-container {
