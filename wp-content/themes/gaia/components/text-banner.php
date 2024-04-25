@@ -5,7 +5,7 @@
     <div class="boxed centered">
         <div class="hero__heading">
             <span class="heading-s italic serif hero__text"><?php echo $text_banner['text_small']; ?></span>
-            <span class="heading-l hero__text"><?php echo $text_banner['text_large']; ?></span>
+            <span class="heading-l hero__text" animate="word"><?php echo $text_banner['text_large']; ?></span>
         </div>
 
     </div>

@@ -15,8 +15,8 @@
     </picture>
     <div class="boxed centered hero__container">
       <h1 class="hero__heading">
-        <span class="heading-s italic serif hero__text" animate><?php echo $hero['heading']['text_small']; ?></span>
-        <span class="heading-l hero__text" animate><?php echo $hero['heading']['text_large']; ?></span>
+        <span class="heading-s italic serif hero__text" animate="line"><?php echo $hero['heading']['text_small']; ?></span>
+        <span class="heading-l hero__text" animate="line"><?php echo $hero['heading']['text_large']; ?></span>
       </h1>
     </div>
   </section>

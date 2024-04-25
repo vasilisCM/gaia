@@ -2,6 +2,7 @@ import loader from "./global/loader.js";
 import smoothScroll from "./global/smoothScroll.js";
 import stickyHeader from "./global/stickyHeader.js";
 import moveUpTextByLine from "./animations/moveUpTextbyLine.js";
+import clipPathTextByWord from "./animations/clipPathTextByWord.js";
 import moveUpOnScroll from "./animations/moveUpOnScroll.js";
 import backToTop from "./global/backToTop.js";
 import carouselFullScreen from "./logic/carouselFullScreen.js";
@@ -71,6 +72,7 @@ const global = () => {
 
   // Hero Text Animation
   moveUpTextByLine();
+  clipPathTextByWord();
 
   // Main Grid
   const imageLarge = ".image-with-tiles";

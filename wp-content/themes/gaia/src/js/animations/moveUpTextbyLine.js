@@ -1,9 +1,9 @@
 const moveUpTextByLine = () => {
-  let typeSplit = new SplitType("[animate]", {
-    types: "lines, words, chars",
+  let typeSplit = new SplitType("[animate='line']", {
+    types: "lines",
     tagName: "span",
   });
-  gsap.from("[animate] .line", {
+  gsap.from("[animate='line'] .line", {
     y: "100%",
     opacity: 0,
     duration: 1.5,
