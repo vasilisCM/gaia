@@ -261,6 +261,16 @@
   &--white {
     border-color: $white;
   }
+
+  &--gradient {
+    border-color: transparent;
+    background: linear-gradient(
+      180deg,
+      rgba($white, 1) 0%,
+      rgba($white, 0) 50%
+    );
+    z-index: -1;
+  }
 }
 
 // Book CTA

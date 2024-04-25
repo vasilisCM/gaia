@@ -946,6 +946,11 @@ ul li {
 .curve-custom--white {
   border-color: #fff;
 }
+.curve-custom--gradient {
+  border-color: transparent;
+  background: linear-gradient(180deg, white 0%, rgba(255, 255, 255, 0) 50%);
+  z-index: -1;
+}
 
 .book-cta {
   width: fit-content;
@@ -1071,10 +1076,6 @@ ul li {
 
 .philosophy-curves__container {
   min-height: 350px;
-  background-image: url(./../../assets/img/curve-with-gradient.svg);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: initial;
 }
 .philosophy-curves__text {
   padding-block: clamp(60px, 10.0908173562vw, 100px);
