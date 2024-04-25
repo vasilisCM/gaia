@@ -319,20 +319,13 @@
   }
 }
 
-.curved-container {
-  padding-top: 24px;
-  max-width: 100%;
-  & svg {
-    max-width: 100%;
-  }
-}
-
 // FAQ
 .faq {
   padding-bottom: cross-media(100px, 991px, 200px);
 }
 .faq-accordion {
   &__item {
+    position: relative;
     overflow: hidden;
     padding-bottom: 20px;
     cursor: pointer;

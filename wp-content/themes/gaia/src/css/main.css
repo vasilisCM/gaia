@@ -576,19 +576,12 @@ ul li {
   margin-top: clamp(40px, 8.072653885vw, 80px);
 }
 
-.curved-container {
-  padding-top: 24px;
-  max-width: 100%;
-}
-.curved-container svg {
-  max-width: 100%;
-}
-
 .faq {
   padding-bottom: clamp(100px, 20.1816347124vw, 200px);
 }
 
 .faq-accordion__item {
+  position: relative;
   overflow: hidden;
   padding-bottom: 20px;
   cursor: pointer;
@@ -956,6 +949,16 @@ ul li {
 .cursor--active:after {
   content: "drag";
   color: #fff;
+}
+
+.curved-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 24px;
+  max-width: 100%;
+}
+.curved-container svg {
+  max-width: 100%;
 }
 
 .curve-custom {

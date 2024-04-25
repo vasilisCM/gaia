@@ -51,18 +51,20 @@
         <div class="philosophy-curves__container philosophy-curves__container--top">
             <div class="curved-container">
                 <div class="curve-custom curve-custom--gradient"></div>
+                <div class="philosophy-curves__text heading boxed-xs centered centered-text">
+                    <?php echo get_field('philosophy_text_large'); ?>
+                </div>
             </div>
-            <div class="philosophy-curves__text heading boxed-xs centered centered-text">
-                <?php echo get_field('philosophy_text_large'); ?>
-            </div>
+
         </div>
         <div class="philosophy-curves__container philosophy-curves__container--bottom">
             <div class="curved-container">
                 <div class="curve-custom curve-custom--gradient"></div>
+                <div class="philosophy-curves__text text-l boxed-xs centered centered-text">
+                    <?php echo get_field('philosophy_text_small'); ?>
+                </div>
             </div>
-            <div class="philosophy-curves__text text-l boxed-xs centered centered-text">
-                <?php echo get_field('philosophy_text_small'); ?>
-            </div>
+
         </div>
     </section>
 

@@ -11,8 +11,8 @@
       <h1 class="intro__heading heading-l sans-serif centered-text boxed-s centered" animate><?php echo get_field('our_team_heading'); ?></h1>
       <div class="curved-container">
         <div class="curve-custom curve-custom--white"></div>
+        <div class="intro__text serif boxed-s centered centered-text heading-s"><?php echo get_field('our_team_intro_text'); ?></div>
       </div>
-      <div class="intro__text serif boxed-s centered centered-text heading-s"><?php echo get_field('our_team_intro_text'); ?></div>
     </div>
   </section>
 

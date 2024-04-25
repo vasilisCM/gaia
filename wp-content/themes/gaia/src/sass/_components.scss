@@ -248,6 +248,17 @@
 }
 
 // Curve
+.curved-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 24px;
+  max-width: 100%;
+  // height: 100px;
+  & svg {
+    max-width: 100%;
+  }
+}
+
 .curve-custom {
   position: absolute;
   width: 100vw;
