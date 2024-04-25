@@ -43,6 +43,11 @@
       <?php echo do_shortcode('[contact-form-7 id="4db155d" title="Contact Form"]'); ?>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <?php
+  include 'components/faq.php';
+  ?>
 </main>
 
 <!-- Footer  --> <?php get_footer(); ?>

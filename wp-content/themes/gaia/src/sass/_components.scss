@@ -106,8 +106,8 @@
 
 // Back to Top
 .back-to-top {
-  position: absolute;
   position: fixed;
+  z-index: 100;
   bottom: 0;
   right: 0;
   margin: cross-media(24px, 991px, 48px);

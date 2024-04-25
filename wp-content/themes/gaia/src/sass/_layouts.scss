@@ -327,8 +327,35 @@
   }
 }
 
+// FAQ
+.faq {
+  padding-bottom: cross-media(100px, 991px, 200px);
+}
+.faq-accordion {
+  &__item {
+    overflow: hidden;
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+  &__text-container {
+    display: grid;
+    gap: 20px;
+    max-width: 600px;
+    padding-top: 30px;
+    overflow: hidden;
+  }
+
+  &__content {
+    max-height: 0;
+    transition: max-height ease 300ms;
+    // padding-block: 60px 40px;
+  }
+}
+
 // Footer
 .footer {
+  position: relative;
+  z-index: 100;
   background-color: $white;
   font-size: cross-media(10px, 991px, 12px);
 

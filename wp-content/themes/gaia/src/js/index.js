@@ -4,6 +4,7 @@ import stickyHeader from "./global/stickyHeader.js";
 import moveUpTextByLine from "./animations/moveUpTextbyLine.js";
 import clipPathTextByWord from "./animations/clipPathTextByWord.js";
 import moveUpOnScroll from "./animations/moveUpOnScroll.js";
+import accordion from "./logic/accordion.js";
 import backToTop from "./global/backToTop.js";
 import carouselFullScreen from "./logic/carouselFullScreen.js";
 
@@ -72,12 +73,15 @@ const global = () => {
 
   // Hero Text Animation
   moveUpTextByLine();
-  clipPathTextByWord();
+  // clipPathTextByWord();
 
   // Main Grid
   const imageLarge = ".image-with-tiles";
   const imagesSmall = ".main-grid__item-image-s";
   if (imagesSmall) moveUpOnScroll(imageLarge, imagesSmall);
+
+  // FAQ
+  accordion(".faq-accordion__item", ".faq-accordion__content");
 
   // Back to Top
   const backToTopButton = document.querySelector(".back-to-top");

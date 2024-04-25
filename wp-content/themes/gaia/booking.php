@@ -27,34 +27,9 @@
     </section>
 
     <!-- FAQ -->
-    <!-- <section class="faq centered-text">
-        <h2 class="heading-ms faq__heading">FAQ</h2>
-
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-        <div>Can I come alone?</div>
-        <div class="curve-custom"></div>
-
-
-
-    </section> -->
-
-
-
+    <?php
+    include 'components/faq.php';
+    ?>
 
 </main>
 
