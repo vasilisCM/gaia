@@ -3,6 +3,7 @@ const mykonos = () => {
   var swiper = new Swiper(".carousel-text", {
     slidesPerView: "auto",
     spaceBetween: 150,
+    speed: 1000,
     centeredSlides: true,
     autoplay: {
       delay: 2500,
@@ -14,6 +15,7 @@ const mykonos = () => {
   var swiper2 = new Swiper(".carousel-image", {
     slidesPerView: 1,
     effect: "fade",
+    speed: 1000,
     centeredSlides: true,
     autoplay: {
       delay: 2500,
