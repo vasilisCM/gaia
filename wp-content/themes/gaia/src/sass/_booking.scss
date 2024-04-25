@@ -1,0 +1,22 @@
+.online-booking {
+  padding-bottom: cross-media(30px, 991px, 60px);
+  &__container {
+    display: grid;
+    justify-items: center;
+    gap: cross-media(30px, 991px, 60px);
+  }
+  &__plugin {
+    max-width: 660px;
+    border: solid 1px $accent;
+    border-radius: 30px;
+    padding: 100px;
+  }
+}
+
+.faq {
+  padding-top: cross-media(30px, 991px, 60px);
+
+  &__heading {
+    padding-bottom: cross-media(30px, 991px, 60px);
+  }
+}

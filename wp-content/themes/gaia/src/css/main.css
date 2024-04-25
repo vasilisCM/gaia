@@ -1122,4 +1122,26 @@ ul li {
   padding-block: clamp(35px, 5.0454086781vw, 50px) clamp(5px, 1.0090817356vw, 10px);
 }
 
+.online-booking {
+  padding-bottom: clamp(30px, 6.0544904137vw, 60px);
+}
+.online-booking__container {
+  display: grid;
+  justify-items: center;
+  gap: clamp(30px, 6.0544904137vw, 60px);
+}
+.online-booking__plugin {
+  max-width: 660px;
+  border: solid 1px #a19696;
+  border-radius: 30px;
+  padding: 100px;
+}
+
+.faq {
+  padding-top: clamp(30px, 6.0544904137vw, 60px);
+}
+.faq__heading {
+  padding-bottom: clamp(30px, 6.0544904137vw, 60px);
+}
+
 /*# sourceMappingURL=main.css.map */

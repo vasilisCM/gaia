@@ -13,7 +13,7 @@
     </div>
   </section>
 
-  <!-- COntact Info -->
+  <!-- Contact Info -->
   <section class="contact-info">
     <div class="contact-info__container boxed-xs centered sans-serif text centered-text">
       <div class="contact-info__title text-s">
