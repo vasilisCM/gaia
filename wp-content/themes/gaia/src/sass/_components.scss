@@ -257,6 +257,10 @@
   border-top: solid 2px $accent;
   // border-color: $black transparent transparent transparent;
   border-radius: 100%;
+
+  &--white {
+    border-color: $white;
+  }
 }
 
 // Book CTA

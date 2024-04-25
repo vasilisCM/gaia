@@ -943,6 +943,9 @@ ul li {
   border-top: solid 2px #a19696;
   border-radius: 100%;
 }
+.curve-custom--white {
+  border-color: #fff;
+}
 
 .book-cta {
   width: fit-content;
@@ -1006,6 +1009,10 @@ ul li {
   font-size: clamp(20px, 3.0272452069vw, 30px);
   line-height: 1.3em;
   letter-spacing: 0;
+}
+
+.intro--team .intro__text {
+  padding-top: clamp(80px, 8.8888888889vw, 160px);
 }
 
 .team-grid {

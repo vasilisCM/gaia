@@ -70,9 +70,13 @@ const carousel = (
     // console.log(slide);
   });
 
+  // console.log(totalSlideWidth);
+
   // Calculate Each Slide Width
   const slidesNumber = carouselSlides.length;
   const slideWidth = draggableCarouselWidth / slidesNumber;
+
+  // console.log(slideWidth);
 
   // CalculateOffsets
   const offset = window.innerWidth - slideWidth;
@@ -128,7 +132,8 @@ const carousel = (
     if (carouselTrack.dataset.mouseDownAt === "0") return;
     const mouseDelta =
       parseFloat(carouselTrack.dataset.mouseDownAt) - e.clientX;
-    const maxDelta = window.innerWidth * 2;
+    const sensitivity = 5 * 0.1;
+    const maxDelta = window.innerWidth * 2 * sensitivity;
 
     const percentage = (mouseDelta / maxDelta) * -100;
     const nextPercentageUnconstrained =

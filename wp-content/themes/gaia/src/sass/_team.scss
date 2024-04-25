@@ -1,3 +1,11 @@
+.intro {
+  &--team {
+    & .intro__text {
+      padding-top: cross-media(80px, $box, 160px);
+    }
+  }
+}
+
 //Grid
 .team-grid {
   padding-top: cross-media(150px, 991px, 290px);
