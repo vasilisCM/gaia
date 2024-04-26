@@ -28,9 +28,15 @@
 
   &__container {
     // position: relative;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include view(lg-min) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     // @include view(md-max) {
     //   justify-content: center;
@@ -39,6 +45,10 @@
 
   &__logo-container {
     // margin-inline: auto;
+
+    @include view(lg-min) {
+      justify-self: center;
+    }
 
     @include view(md-max) {
       // position: absolute;
@@ -84,6 +94,12 @@
   // display: none;
   // z-index: 1000;
   text-transform: uppercase;
+
+  &--2 {
+    @include view(lg-min) {
+      justify-self: end;
+    }
+  }
 
   &__list {
     display: flex;
@@ -202,19 +218,19 @@
   margin-bottom: 20px;
   text-align: center;
 
-  @include view(ultra) {
-    padding-top: cross-media(
-      350px,
-      $ultra-breakpoint,
-      calc(350px * $ultra-scale)
-    );
+  // @include view(ultra) {
+  //   padding-top: cross-media(
+  //     350px,
+  //     $ultra-breakpoint,
+  //     calc(350px * $ultra-scale)
+  //   );
 
-    margin-bottom: cross-media(
-      20px,
-      $ultra-breakpoint,
-      calc(20px * $ultra-scale)
-    );
-  }
+  //   margin-bottom: cross-media(
+  //     20px,
+  //     $ultra-breakpoint,
+  //     calc(20px * $ultra-scale)
+  //   );
+  // }
 
   &__background {
     position: absolute;
@@ -365,7 +381,7 @@
     user-select: none;
 
     @include view(ultra) {
-      min-width: calc(100vw / 4);
+      min-width: calc($box-4k / 3.6);
 
       & img {
         width: 100%;

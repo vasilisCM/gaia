@@ -124,7 +124,7 @@ h1,
 @media only screen and (min-width: 1921px) {
   h1,
   .heading-l {
-    font-size: clamp(80px, 6.25vw, 160px);
+    font-size: clamp(80px, 4.6875vw, 120px);
   }
 }
 
@@ -135,7 +135,7 @@ h1,
 }
 @media only screen and (min-width: 1921px) {
   .heading-ml {
-    font-size: clamp(60px, 4.6875vw, 120px);
+    font-size: clamp(60px, 3.515625vw, 90px);
   }
 }
 
@@ -148,7 +148,7 @@ h2,
 @media only screen and (min-width: 1921px) {
   h2,
   .heading {
-    font-size: clamp(50px, 3.90625vw, 100px);
+    font-size: clamp(50px, 2.9296875vw, 75px);
   }
 }
 
@@ -161,7 +161,7 @@ h3,
 @media only screen and (min-width: 1921px) {
   h3,
   .heading-ms {
-    font-size: clamp(40px, 3.125vw, 80px);
+    font-size: clamp(40px, 2.34375vw, 60px);
   }
 }
 
@@ -174,7 +174,7 @@ h4,
 @media only screen and (min-width: 1921px) {
   h4,
   .heading-s {
-    font-size: clamp(30px, 2.34375vw, 60px);
+    font-size: clamp(30px, 1.7578125vw, 45px);
   }
 }
 
@@ -183,7 +183,7 @@ h4,
 }
 @media only screen and (min-width: 1921px) {
   .text-l {
-    font-size: clamp(22px, 1.71875vw, 44px);
+    font-size: clamp(22px, 1.2890625vw, 33px);
   }
 }
 
@@ -192,7 +192,7 @@ h4,
 }
 @media only screen and (min-width: 1921px) {
   .text-ml {
-    font-size: clamp(20px, 1.5625vw, 40px);
+    font-size: clamp(20px, 1.171875vw, 30px);
   }
 }
 
@@ -204,7 +204,7 @@ p,
 @media only screen and (min-width: 1921px) {
   p,
   .text {
-    font-size: clamp(16px, 1.25vw, 32px);
+    font-size: clamp(16px, 0.9375vw, 24px);
   }
 }
 
@@ -213,7 +213,7 @@ p,
 }
 @media only screen and (min-width: 1921px) {
   .text-ms {
-    font-size: clamp(14px, 1.09375vw, 28px);
+    font-size: clamp(14px, 0.8203125vw, 21px);
   }
 }
 
@@ -222,7 +222,7 @@ p,
 }
 @media only screen and (min-width: 1921px) {
   .text-s {
-    font-size: clamp(12px, 0.9375vw, 24px);
+    font-size: clamp(12px, 0.703125vw, 18px);
   }
 }
 
@@ -234,7 +234,7 @@ p,
 }
 @media only screen and (min-width: 1921px) {
   .button {
-    font-size: clamp(13px, 1.015625vw, 26px);
+    font-size: clamp(13px, 0.76171875vw, 19.5px);
   }
 }
 
@@ -244,11 +244,14 @@ p,
   font-family: "Montserrat";
 }
 
-.white-menu-items .header__logo {
+.white-menu-items .header__logo,
+.white-menu-items .hamburger {
   filter: invert(100%);
 }
-.white-menu-items .main-menu a {
-  color: #fff;
+@media only screen and (min-width: 992px) {
+  .white-menu-items .main-menu a {
+    color: #fff;
+  }
 }
 .white-menu-items .header--sticky .header__logo, .white-menu-items .header--dropdown .header__logo {
   filter: revert;
@@ -288,7 +291,7 @@ button {
 }
 @media only screen and (min-width: 1921px) {
   .boxed {
-    max-width: 3620px;
+    max-width: 2280px;
   }
 }
 
@@ -305,7 +308,7 @@ button {
 }
 @media only screen and (min-width: 1921px) {
   .boxed-s {
-    max-width: 2580px;
+    max-width: 1940px;
   }
 }
 
@@ -315,7 +318,7 @@ button {
 }
 @media only screen and (min-width: 1921px) {
   .boxed-xs {
-    max-width: 2020px;
+    max-width: 1520px;
   }
 }
 
@@ -338,11 +341,6 @@ button {
 
 .first-section {
   padding-top: clamp(150px, 19.4444444444vw, 350px);
-}
-@media only screen and (min-width: 1921px) {
-  .first-section {
-    padding-top: clamp(350px, 27.34375vw, 700px);
-  }
 }
 
 .bold {
@@ -427,6 +425,17 @@ ul li {
   align-items: center;
   justify-content: space-between;
 }
+@media only screen and (min-width: 992px) {
+  .header__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header__logo-container {
+    justify-self: center;
+  }
+}
 @media only screen and (max-width: 991px) {
   .header__logo-container {
     z-index: 1;
@@ -446,7 +455,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .header__logo {
-    min-width: clamp(150px, 11.71875vw, 300px);
+    min-width: clamp(150px, 8.7890625vw, 225px);
   }
 }
 .header ul {
@@ -461,6 +470,11 @@ ul li {
 
 .main-menu {
   text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) {
+  .main-menu--2 {
+    justify-self: end;
+  }
 }
 .main-menu__list {
   display: flex;
@@ -516,7 +530,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .main-menu__list a {
-    font-size: clamp(12px, 0.9375vw, 24px);
+    font-size: clamp(12px, 0.703125vw, 18px);
   }
 }
 @media only screen and (max-width: 991px) {
@@ -548,12 +562,6 @@ ul li {
   padding-top: clamp(150px, 19.4444444444vw, 350px);
   margin-bottom: 20px;
   text-align: center;
-}
-@media only screen and (min-width: 1921px) {
-  .hero {
-    padding-top: clamp(350px, 27.34375vw, 700px);
-    margin-bottom: clamp(20px, 1.5625vw, 40px);
-  }
 }
 .hero__background {
   position: absolute;
@@ -594,7 +602,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .main-grid--inner {
-    padding-top: clamp(100px, 7.8125vw, 200px);
+    padding-top: clamp(100px, 5.859375vw, 150px);
   }
 }
 .main-grid__item {
@@ -608,7 +616,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .main-grid__item-text-container {
-    max-width: clamp(545px, 42.578125vw, 1090px);
+    max-width: clamp(545px, 31.93359375vw, 817.5px);
   }
 }
 .main-grid__item-text {
@@ -682,7 +690,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .carousel__item {
-    min-width: 25vw;
+    min-width: 627.7777777778px;
   }
   .carousel__item img {
     width: 100%;
@@ -780,7 +788,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .footer {
-    font-size: clamp(12px, 0.9375vw, 24px);
+    font-size: clamp(12px, 0.703125vw, 18px);
   }
 }
 .footer__top {
@@ -1080,7 +1088,7 @@ ul li {
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: contain;
-  bottom: 0;
+  bottom: -8px;
   width: 95%;
   height: 100%;
   left: 0;
@@ -1356,7 +1364,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .contact-form label {
-    font-size: clamp(12px, 0.9375vw, 24px);
+    font-size: clamp(12px, 0.703125vw, 18px);
   }
 }
 .contact-form__input-field {
@@ -1416,7 +1424,7 @@ ul li {
 }
 @media only screen and (min-width: 1921px) {
   .contact-form__submit input {
-    font-size: clamp(13px, 1.015625vw, 26px);
+    font-size: clamp(13px, 0.76171875vw, 19.5px);
   }
 }
 .contact-form__submit:hover input {

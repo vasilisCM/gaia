@@ -132,6 +132,12 @@ const global = () => {
 
     // Open/ Close Mobile Menu
     const hamburgerButton = document.querySelector(".hamburger");
+
+    // Reset Button State
+    mobileMenuTl.pause();
+    hamburgerButton.removeAttribute("pressed");
+    hamburgerButton.classList.remove("hamburger--pressed");
+
     hamburgerButton.addEventListener("click", () => {
       // Toggle Hamburger to X and vice versa
       if (!mobileMenuTl.isActive()) {
@@ -142,6 +148,7 @@ const global = () => {
         hamburgerButton.setAttribute("pressed", isPressed ? "false" : "true");
 
         // Play/Reverse Timeline
+        console.log(mobileMenuTl.progress() === 1);
         if (mobileMenuTl.progress() === 1) {
           mobileMenuTl.reverse();
         } else {

@@ -52,13 +52,13 @@
 .first-section {
   padding-top: cross-media(150px, $box, 350px);
 
-  @include view(ultra) {
-    padding-top: cross-media(
-      350px,
-      $ultra-breakpoint,
-      calc(350px * $ultra-scale)
-    );
-  }
+  // @include view(ultra) {
+  //   padding-top: cross-media(
+  //     350px,
+  //     $ultra-breakpoint,
+  //     calc(350px * $ultra-scale)
+  //   );
+  // }
 }
 
 // Typography

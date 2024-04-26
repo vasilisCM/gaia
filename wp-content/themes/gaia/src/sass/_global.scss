@@ -5,13 +5,16 @@
 }
 
 .white-menu-items {
-  & .header__logo {
+  & .header__logo,
+  .hamburger {
     filter: invert(100%);
   }
 
   & .main-menu {
     & a {
-      color: $white;
+      @include view(lg-min) {
+        color: $white;
+      }
     }
   }
 
