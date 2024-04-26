@@ -9,8 +9,16 @@ $secondary: #3b3232;
 $box: 1800px;
 $box-s: 1280px;
 $box-xs: 1000px;
+
+// 4K
 $box-4k: 3600px;
+$box-s-4k: 2560px;
+$box-xs-4k: 2000px;
 
 // Padding
 $padding-inline: 20px;
 $padding-inline-laptop: 60px;
+
+//Ultra Scale
+$ultra-scale: 2;
+$ultra-breakpoint: 2560px;

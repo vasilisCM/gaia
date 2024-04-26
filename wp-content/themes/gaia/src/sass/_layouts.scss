@@ -58,6 +58,14 @@
     @include view(md-max) {
       margin-inline: auto;
     }
+
+    @include view(ultra) {
+      min-width: cross-media(
+        150px,
+        $ultra-breakpoint,
+        calc(150px * $ultra-scale)
+      );
+    }
   }
 
   & ul {
@@ -148,6 +156,14 @@
       font-size: cross-media(10px, 991px, 12px);
       transition: color ease 300ms;
 
+      @include view(ultra) {
+        font-size: cross-media(
+          12px,
+          $ultra-breakpoint,
+          calc(12px * $ultra-scale)
+        );
+      }
+
       @include view(md-max) {
         font-size: cross-media(20px, 767px, 24px);
         font-weight: 700;
@@ -185,6 +201,20 @@
   padding-top: cross-media(150px, $box, 350px);
   margin-bottom: 20px;
   text-align: center;
+
+  @include view(ultra) {
+    padding-top: cross-media(
+      350px,
+      $ultra-breakpoint,
+      calc(350px * $ultra-scale)
+    );
+
+    margin-bottom: cross-media(
+      20px,
+      $ultra-breakpoint,
+      calc(20px * $ultra-scale)
+    );
+  }
 
   &__background {
     position: absolute;
@@ -234,6 +264,14 @@
 .main-grid {
   &--inner {
     padding-top: cross-media(40px, 991px, 100px);
+
+    @include view(ultra) {
+      padding-top: cross-media(
+        100px,
+        $ultra-breakpoint,
+        calc(100px * $ultra-scale)
+      );
+    }
   }
   &__item {
     gap: cross-media(60px, 1920px, 180px);
@@ -242,6 +280,14 @@
       max-width: 545px;
       justify-self: right;
       padding-top: 10%;
+
+      @include view(ultra) {
+        max-width: cross-media(
+          545px,
+          $ultra-breakpoint,
+          calc(545px * $ultra-scale)
+        );
+      }
     }
     &-text {
       padding-block: cross-media(25px, 991px, 35px);
@@ -319,7 +365,7 @@
     user-select: none;
 
     @include view(ultra) {
-      min-width: cross-media(500px, 2000px, 1000px);
+      min-width: calc(100vw / 4);
 
       & img {
         width: 100%;
@@ -436,6 +482,10 @@
   z-index: 100;
   background-color: $white;
   font-size: cross-media(10px, 991px, 12px);
+
+  @include view(ultra) {
+    font-size: cross-media(12px, $ultra-breakpoint, calc(12px * $ultra-scale));
+  }
 
   &__top {
     padding-block: cross-media(32px, 991px, 64px);

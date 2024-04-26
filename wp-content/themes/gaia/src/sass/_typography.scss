@@ -18,12 +18,20 @@ h1,
   letter-spacing: -0.02em;
   line-height: 1.1;
   font-weight: 300;
+
+  @include view(ultra) {
+    font-size: cross-media(80px, $ultra-breakpoint, calc(80px * $ultra-scale));
+  }
 }
 
 .heading-ml {
   font-size: cross-media(30px, 991px, 60px);
   letter-spacing: -0.04em;
   line-height: 1.25;
+
+  @include view(ultra) {
+    font-size: cross-media(60px, $ultra-breakpoint, calc(60px * $ultra-scale));
+  }
 }
 
 h2,
@@ -31,6 +39,10 @@ h2,
   font-size: cross-media(35px, 991px, 50px);
   line-height: 1;
   font-weight: 400;
+
+  @include view(ultra) {
+    font-size: cross-media(50px, $ultra-breakpoint, calc(50px * $ultra-scale));
+  }
 }
 
 h3,
@@ -38,6 +50,10 @@ h3,
   font-size: cross-media(28px, 991px, 40px);
   line-height: 1.1;
   font-weight: 400;
+
+  @include view(ultra) {
+    font-size: cross-media(40px, $ultra-breakpoint, calc(40px * $ultra-scale));
+  }
 }
 
 h4,
@@ -45,29 +61,53 @@ h4,
   font-size: cross-media(20px, 991px, 30px);
   line-height: 1.3em;
   letter-spacing: 0;
+
+  @include view(ultra) {
+    font-size: cross-media(30px, $ultra-breakpoint, calc(30px * $ultra-scale));
+  }
 }
 
 // Texts
 .text-l {
   font-size: cross-media(20px, 991px, 22px);
+
+  @include view(ultra) {
+    font-size: cross-media(22px, $ultra-breakpoint, calc(22px * $ultra-scale));
+  }
 }
 
 .text-ml {
   font-size: cross-media(18px, 991px, 20px);
+
+  @include view(ultra) {
+    font-size: cross-media(20px, $ultra-breakpoint, calc(20px * $ultra-scale));
+  }
 }
 
 p,
 .text {
   font-size: cross-media(14px, 991px, 16px);
   line-height: 1.56;
+
+  @include view(ultra) {
+    font-size: cross-media(16px, $ultra-breakpoint, calc(16px * $ultra-scale));
+  }
 }
 
 .text-ms {
   font-size: cross-media(12px, 991px, 14px);
+
+  @include view(ultra) {
+    font-size: cross-media(14px, $ultra-breakpoint, calc(14px * $ultra-scale));
+  }
 }
 
 .text-s {
   font-size: cross-media(10px, 991px, 12px);
+
+  @include view(ultra) {
+    font-size: cross-media(12px, $ultra-breakpoint, calc(12px * $ultra-scale));
+  }
 }
 
 .button {
@@ -75,4 +115,8 @@ p,
   letter-spacing: 0.048em;
   font-weight: 700;
   text-transform: uppercase;
+
+  @include view(ultra) {
+    font-size: cross-media(13px, $ultra-breakpoint, calc(13px * $ultra-scale));
+  }
 }

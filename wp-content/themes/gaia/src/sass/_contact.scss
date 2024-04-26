@@ -46,6 +46,14 @@
     font-size: 12px;
     text-transform: uppercase;
     color: $secondary;
+
+    @include view(ultra) {
+      font-size: cross-media(
+        12px,
+        $ultra-breakpoint,
+        calc(12px * $ultra-scale)
+      );
+    }
   }
   &__input-field {
     background-color: rgba($white, 0.8);
@@ -93,6 +101,14 @@
       @include clear-styles;
       padding: cross-media(7px, 991px, 14px) cross-media(32px, 991px, 64px);
       font-size: cross-media(12px, 991px, 13px);
+
+      @include view(ultra) {
+        font-size: cross-media(
+          13px,
+          $ultra-breakpoint,
+          calc(13px * $ultra-scale)
+        );
+      }
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.048em;

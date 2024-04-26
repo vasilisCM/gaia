@@ -18,11 +18,19 @@
 .boxed-s {
   max-width: $box-s + $padding-inline;
   padding-inline: $padding-inline;
+
+  @include view(ultra) {
+    max-width: $box-s-4k + $padding-inline;
+  }
 }
 
 .boxed-xs {
   max-width: $box-xs + $padding-inline;
   padding-inline: $padding-inline;
+
+  @include view(ultra) {
+    max-width: $box-xs-4k + $padding-inline;
+  }
 }
 
 .centered {
@@ -43,6 +51,14 @@
 
 .first-section {
   padding-top: cross-media(150px, $box, 350px);
+
+  @include view(ultra) {
+    padding-top: cross-media(
+      350px,
+      $ultra-breakpoint,
+      calc(350px * $ultra-scale)
+    );
+  }
 }
 
 // Typography
