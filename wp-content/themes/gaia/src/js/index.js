@@ -1,5 +1,5 @@
 import loader from "./global/loader.js";
-import smoothScroll from "./global/smoothScroll.js";
+import lenis from "./global/smoothScroll.js";
 import stickyHeader from "./global/stickyHeader.js";
 import moveUpTextByLine from "./animations/moveUpTextbyLine.js";
 import clipPathTextByWord from "./animations/clipPathTextByWord.js";
@@ -13,16 +13,23 @@ const global = () => {
   const body = document.querySelector(".body");
   // loader(body);
 
+  // Go to Top of the Page
+  lenis.scrollTo(0, {
+    duration: 0,
+  });
+
   // Sticky Header
   const header = document.querySelector(".header");
   stickyHeader(header, "header--sticky");
 
   // Dropdown Menu
+  header.classList.remove("header--dropdown"); // Reset Header State
   const dropdownMenu = document.querySelector(".sub-menu");
   const dropdownBackground = document.querySelector(
     ".main-menu__dropdown-background"
   );
 
+  // Dropdown Timeline
   const dropdownTl = gsap.timeline({
     paused: true,
     onStart: () => header.classList.add("header--dropdown"),
@@ -54,6 +61,7 @@ const global = () => {
       }
     );
 
+  // Interaction to Open Dropdown
   header.addEventListener("mouseover", (e) => {
     let dropdownItem = header.querySelector(".menu-item-has-children > a");
 
@@ -62,6 +70,7 @@ const global = () => {
     }
   });
 
+  // Interaction to Close Dropdown
   const main = document.querySelector("main");
   main.addEventListener("click", (e) => {
     dropdownTl.reverse();
