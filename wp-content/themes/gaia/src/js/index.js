@@ -22,6 +22,8 @@ const global = () => {
   const header = document.querySelector(".header");
   stickyHeader(header, "header--sticky");
 
+  const mm = gsap.matchMedia();
+
   // Dropdown Menu
   header.classList.remove("header--dropdown"); // Reset Header State
   const dropdownMenu = document.querySelector(".sub-menu");
@@ -30,54 +32,73 @@ const global = () => {
   );
 
   // Dropdown Timeline
-  const dropdownTl = gsap.timeline({
-    paused: true,
-    onStart: () => header.classList.add("header--dropdown"),
-    onReverseComplete: () => header.classList.remove("header--dropdown"),
+
+  mm.add("(min-width: 991px)", () => {
+    const dropdownTl = gsap.timeline({
+      paused: true,
+      onStart: () => header.classList.add("header--dropdown"),
+      onReverseComplete: () => header.classList.remove("header--dropdown"),
+    });
+    dropdownTl
+      .fromTo(
+        dropdownBackground,
+        {
+          visibility: "hidden",
+          opacity: 0,
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        },
+        {
+          visibility: "visible",
+          opacity: 1,
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        }
+      )
+      .fromTo(
+        dropdownMenu,
+        {
+          visibility: "hidden",
+          opacity: 0,
+        },
+        {
+          visibility: "visible",
+          opacity: 1,
+        }
+      );
+
+    // Interaction to Open Dropdown
+    header.addEventListener("mouseover", (e) => {
+      let dropdownItem = header.querySelector(".menu-item-has-children > a");
+
+      if (e.target === dropdownItem) {
+        dropdownTl.play();
+      }
+    });
+
+    // Interaction to Close Dropdown
+    const main = document.querySelector("main");
+    main.addEventListener("click", (e) => {
+      dropdownTl.reverse();
+    });
+
+    main.addEventListener("wheel", (e) => {
+      dropdownTl.reverse();
+    });
   });
-  dropdownTl
-    .fromTo(
-      dropdownBackground,
-      {
-        visibility: "hidden",
-        opacity: 0,
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      },
-      {
-        visibility: "visible",
-        opacity: 1,
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      }
-    )
-    .fromTo(
-      dropdownMenu,
-      {
-        visibility: "hidden",
-        opacity: 0,
-      },
-      {
-        visibility: "visible",
-        opacity: 1,
-      }
+
+  // Mobile Menu
+
+  // Move All into one Menu List
+
+  mm.add("(max-width: 991px)", () => {
+    const mainMenuList1 = document.querySelector(
+      ".main-menu--1 .main-menu__list"
     );
-
-  // Interaction to Open Dropdown
-  header.addEventListener("mouseover", (e) => {
-    let dropdownItem = header.querySelector(".menu-item-has-children > a");
-
-    if (e.target === dropdownItem) {
-      dropdownTl.play();
-    }
-  });
-
-  // Interaction to Close Dropdown
-  const main = document.querySelector("main");
-  main.addEventListener("click", (e) => {
-    dropdownTl.reverse();
-  });
-
-  main.addEventListener("wheel", (e) => {
-    dropdownTl.reverse();
+    const mainMenuList2 = document.querySelector(
+      ".main-menu--2 .main-menu__list"
+    );
+    mainMenuList2.querySelectorAll("li").forEach((item) => {
+      mainMenuList1.insertAdjacentElement("beforeend", item);
+    });
   });
 
   // Hero Text Animation

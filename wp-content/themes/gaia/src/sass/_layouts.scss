@@ -9,6 +9,10 @@
   // mix-blend-mode: difference;
   transition: background-color ease 300ms;
 
+  @include view(md-max) {
+    width: 100vw;
+  }
+
   &--sticky,
   &--dropdown {
     & .header__logo-container {
@@ -23,29 +27,71 @@
   }
 
   &__container {
+    // position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    // @include view(md-max) {
+    //   justify-content: center;
+    // }
+  }
+
+  &__logo-container {
+    margin-inline: auto;
+
+    @include view(md-max) {
+      position: absolute;
+      width: 100%;
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
   }
 
   &__logo {
-    max-width: 270px;
+    max-width: cross-media(150px, 991px, 270px);
     transition: all ease 300ms;
+
+    @include view(md-max) {
+      margin-inline: auto;
+    }
   }
 
   & ul {
-    @include clear-styles;
+    margin: 0;
+    // padding-inline: 0;
+    list-style-type: none;
+  }
+
+  @include view(md-max) {
+    z-index: 1001;
   }
 }
 
 // Main Menu
 .main-menu {
+  // display: none;
+  // z-index: 1000;
   text-transform: uppercase;
 
   &__list {
     display: flex;
     gap: cross-media(32px, 991px, 64px);
     position: relative;
+
+    @include view(md-max) {
+      position: absolute;
+      flex-direction: column;
+      gap: cross-media(10px, 767px, 20px);
+      height: 100dvh;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 100px 20px 40px;
+      background-color: $primary;
+      transform: translateY(-100%);
+    }
 
     // & > li {
     //   &:hover {
@@ -59,13 +105,31 @@
 
     .sub-menu {
       position: absolute;
-      padding-top: 36px;
+      padding-top: cross-media(10px, 991px, 36px);
+
       visibility: hidden;
       opacity: 0;
       // transition: all ease 300ms;
 
+      @include view(md-max) {
+        position: revert;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      & li {
+        @include view(md-max) {
+          margin-bottom: 4px;
+        }
+      }
+
       & a {
         text-transform: none;
+
+        @include view(md-max) {
+          font-size: cross-media(16px, 991px, 18px);
+          font-weight: revert;
+        }
       }
     }
 
@@ -80,7 +144,16 @@
       // Font styles will be the CSS rules of the correct typography class
       font-size: cross-media(10px, 991px, 12px);
       transition: color ease 300ms;
+
+      @include view(md-max) {
+        font-size: cross-media(20px, 767px, 24px);
+        font-weight: 700;
+      }
     }
+  }
+
+  & li {
+    z-index: 1;
   }
 
   &__dropdown-background {

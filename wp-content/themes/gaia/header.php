@@ -11,10 +11,9 @@
 <body <?php body_class('body'); ?> data-barba="wrapper">
   <header class="header">
     <div class="header__container boxed centered">
-      <div class="main-menu__mobile-button hamburger" pressed="false"></div>
 
       <!-- Main Menu 1 -->
-      <nav class="main-menu">
+      <nav class="main-menu main-menu--1">
         <?php
         wp_nav_menu(
           array(
@@ -35,7 +34,7 @@
       </div>
 
       <!-- Main Menu 2 -->
-      <nav class="main-menu">
+      <nav class="main-menu main-menu--2">
         <?php
         wp_nav_menu(
           array(
@@ -48,6 +47,8 @@
         ?>
       </nav>
 
+      <!-- Hamburger  -->
+      <div class="main-menu__mobile-button hamburger" pressed="false"></div>
 
     </div>
     <div class="main-menu__dropdown-background"></div>
