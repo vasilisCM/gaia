@@ -2,6 +2,10 @@
 .boxed {
   max-width: $box + $padding-inline;
   padding-inline: $padding-inline;
+
+  @include view(ultra) {
+    max-width: $box-4k + $padding-inline;
+  }
 }
 
 .boxed-desktop {

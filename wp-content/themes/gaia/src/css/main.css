@@ -226,6 +226,11 @@ button {
   max-width: 1820px;
   padding-inline: 20px;
 }
+@media only screen and (min-width: 1921px) {
+  .boxed {
+    max-width: 3620px;
+  }
+}
 
 @media only screen and (min-width: 992px) {
   .boxed-desktop {
@@ -391,7 +396,7 @@ ul li {
     top: 0;
     right: 0;
     left: 0;
-    padding: 100px 20px 40px;
+    padding: 160px 20px 40px;
     background-color: #eceaea;
     transform: translateY(-100%);
     will-change: transform;
@@ -573,6 +578,14 @@ ul li {
   gap: 20px;
   max-width: clamp(300px, 50.454086781vw, 500px);
   user-select: none;
+}
+@media only screen and (min-width: 1921px) {
+  .carousel__item {
+    min-width: clamp(500px, 50vw, 1000px);
+  }
+  .carousel__item img {
+    width: 100%;
+  }
 }
 .carousel__heading {
   display: grid;
