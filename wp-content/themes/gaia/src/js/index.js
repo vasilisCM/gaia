@@ -86,10 +86,8 @@ const global = () => {
   });
 
   // Mobile Menu
-
-  // Move All into one Menu List
-
   mm.add("(max-width: 991px)", () => {
+    // Move All into one Menu List
     const mainMenuList1 = document.querySelector(
       ".main-menu--1 .main-menu__list"
     );
@@ -98,6 +96,58 @@ const global = () => {
     );
     mainMenuList2.querySelectorAll("li").forEach((item) => {
       mainMenuList1.insertAdjacentElement("beforeend", item);
+    });
+
+    // Mobile Menu Timeline
+    const mobileMenuTl = gsap.timeline({
+      paused: true,
+      onComplete: () => (lenis.isStopped = true),
+      onReverseComplete: () => (lenis.isStopped = false),
+    });
+    mobileMenuTl
+      .fromTo(
+        mainMenuList1,
+        {
+          y: "-100%",
+        },
+        {
+          y: "0%",
+          duration: 1.2,
+          ease: "power4.out",
+        }
+      )
+      .fromTo(
+        mainMenuList1.querySelectorAll("li"),
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power4.out",
+        },
+        "<0.7"
+      );
+
+    // Open/ Close Mobile Menu
+    const hamburgerButton = document.querySelector(".hamburger");
+    hamburgerButton.addEventListener("click", () => {
+      // Toggle Hamburger to X and vice versa
+      if (!mobileMenuTl.isActive()) {
+        const isPressed = hamburgerButton.getAttribute("pressed") === "true";
+
+        // Add "pressed" class and attribute
+        hamburgerButton.classList.toggle("hamburger--pressed", !isPressed);
+        hamburgerButton.setAttribute("pressed", isPressed ? "false" : "true");
+
+        // Play/Reverse Timeline
+        if (mobileMenuTl.progress() === 1) {
+          mobileMenuTl.reverse();
+        } else {
+          mobileMenuTl.play();
+        }
+      }
     });
   });
 

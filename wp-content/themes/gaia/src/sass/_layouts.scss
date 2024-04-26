@@ -38,11 +38,13 @@
   }
 
   &__logo-container {
-    margin-inline: auto;
+    // margin-inline: auto;
 
     @include view(md-max) {
-      position: absolute;
-      width: 100%;
+      // position: absolute;
+      z-index: 1;
+      // border: solid 3px red;
+      // width: 100%;
       right: 0;
       left: 0;
       margin: auto;
@@ -91,6 +93,7 @@
       padding: 100px 20px 40px;
       background-color: $primary;
       transform: translateY(-100%);
+      will-change: transform;
     }
 
     // & > li {

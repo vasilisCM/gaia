@@ -116,7 +116,7 @@ html.lenis {
 
 h1,
 .heading-l {
-  font-size: clamp(50px, 8.072653885vw, 80px);
+  font-size: clamp(40px, 8.072653885vw, 80px);
   letter-spacing: -0.02em;
   line-height: 1.1;
   font-weight: 300;
@@ -347,13 +347,9 @@ ul li {
   align-items: center;
   justify-content: space-between;
 }
-.header__logo-container {
-  margin-inline: auto;
-}
 @media only screen and (max-width: 991px) {
   .header__logo-container {
-    position: absolute;
-    width: 100%;
+    z-index: 1;
     right: 0;
     left: 0;
     margin: auto;
@@ -398,6 +394,7 @@ ul li {
     padding: 100px 20px 40px;
     background-color: #eceaea;
     transform: translateY(-100%);
+    will-change: transform;
   }
 }
 .main-menu__list .sub-menu {
@@ -874,10 +871,10 @@ ul li {
   transition: all 0.5s ease-in-out;
 }
 .hamburger:before {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 .hamburger:after {
-  transform: translateY(10px);
+  transform: translateY(8px);
 }
 .hamburger--pressed {
   transform: translateX(-50px);
