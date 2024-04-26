@@ -8,8 +8,8 @@
   <!-- Hero  -->
   <section class="first-section intro intro--contact">
     <div class="intro__container">
-      <h1 class="intro__heading heading-ms sans-serif centered-text boxed-s centered" animate><?php echo get_field('contact_heading'); ?></h1>
-      <div class="intro__text serif boxed-s centered centered-text heading-s"><?php echo get_field('contact_subheading'); ?></div>
+      <h1 class="intro__heading heading-ms sans-serif centered-text boxed-s centered" animate="line"><?php echo get_field('contact_heading'); ?></h1>
+      <div class="intro__text serif boxed-s centered centered-text heading-s" animate="line"><?php echo get_field('contact_subheading'); ?></div>
     </div>
   </section>
 

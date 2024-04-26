@@ -11,8 +11,8 @@
         $hero = get_field('hero');
         ?>
         <div class="intro__container">
-            <h1 class="intro__heading heading-ms sans-serif centered-text boxed-s centered" animate><?php echo $hero['heading']['text_large']; ?></h1>
-            <div class="intro__text serif boxed-s centered centered-text heading-s"><?php echo $hero['heading']['text_small']; ?></div>
+            <h1 class="intro__heading heading-ms sans-serif centered-text boxed-s centered" animate="line"><?php echo $hero['heading']['text_large']; ?></h1>
+            <div class="intro__text serif boxed-s centered centered-text heading-s" animate="line"><?php echo $hero['heading']['text_small']; ?></div>
         </div>
     </section>
 

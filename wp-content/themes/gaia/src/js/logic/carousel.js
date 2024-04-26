@@ -132,7 +132,7 @@ const carousel = (
     if (carouselTrack.dataset.mouseDownAt === "0") return;
     const mouseDelta =
       parseFloat(carouselTrack.dataset.mouseDownAt) - e.clientX;
-    const sensitivity = 5 * 0.1;
+    const sensitivity = 2.5 * 0.1;
     const maxDelta = window.innerWidth * 2 * sensitivity;
 
     const percentage = (mouseDelta / maxDelta) * -100;

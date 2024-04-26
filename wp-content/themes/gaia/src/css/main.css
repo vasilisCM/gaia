@@ -511,7 +511,7 @@ ul li {
   flex-shrink: 0;
   display: grid;
   gap: 20px;
-  max-width: clamp(300px, 54.4904137235vw, 540px);
+  max-width: clamp(300px, 50.454086781vw, 500px);
   user-select: none;
 }
 .carousel__heading {

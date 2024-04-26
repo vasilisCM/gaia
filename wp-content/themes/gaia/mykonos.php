@@ -16,7 +16,7 @@
         <div class="boxed-s centered hero__container">
 
             <div class="hero__text-container">
-                <h1 class="hero__text-large heading-ml light" animate>
+                <h1 class="hero__text-large heading-ml light" animate="line">
                     <?php echo $hero['heading']['text_large']; ?>
                 </h1>
                 <?php if ($hero['heading']['text_small']) : ?>

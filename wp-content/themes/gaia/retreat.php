@@ -10,16 +10,16 @@
     <picture class="hero__background">
       <img src="<?php echo get_field('image'); ?>" class="hero__background-img">
     </picture>
-    <div class="boxed-s centered hero__container <?php if (get_field('white_texts')) : ?>white-text<?php endif; ?>">
-      <h1 class="hero__heading heading-s italic serif">
+    <div class="boxed-s centered hero__container <?php if (get_field('white_texts')) : ?>white-text<?php endif; ?>" animate="line">
+      <h1 class="hero__heading heading-s italic serif" animate="line">
         <?php echo get_field('heading'); ?>
       </h1>
       <div class="hero__text-container">
-        <div class="hero__text-large heading-ml light" animate>
+        <div class="hero__text-large heading-ml light" animate="line">
           <?php echo get_field('text_large'); ?>
         </div>
         <?php if (get_field('test_small')) : ?>
-          <div class="hero__text-small text-l">
+          <div class="hero__text-small text-l" animate="line">
             <?php echo get_field('test_small'); ?>
           </div>
         <?php endif; ?>
