@@ -134,28 +134,26 @@ const global = () => {
     const hamburgerButton = document.querySelector(".hamburger");
 
     // Reset Button State
-    mobileMenuTl.pause();
+    // mobileMenuTl.pause();
+    mobileMenuTl.progress(0);
     hamburgerButton.removeAttribute("pressed");
     hamburgerButton.classList.remove("hamburger--pressed");
 
-    hamburgerButton.addEventListener("click", () => {
-      // Toggle Hamburger to X and vice versa
+    const handleHamburgerClick = () => {
       if (!mobileMenuTl.isActive()) {
         const isPressed = hamburgerButton.getAttribute("pressed") === "true";
-
-        // Add "pressed" class and attribute
         hamburgerButton.classList.toggle("hamburger--pressed", !isPressed);
-        hamburgerButton.setAttribute("pressed", isPressed ? "false" : "true");
+        hamburgerButton.setAttribute("pressed", !isPressed ? "true" : "false");
 
-        // Play/Reverse Timeline
-        console.log(mobileMenuTl.progress() === 1);
         if (mobileMenuTl.progress() === 1) {
           mobileMenuTl.reverse();
         } else {
           mobileMenuTl.play();
         }
       }
-    });
+    };
+
+    hamburgerButton.addEventListener("click", handleHamburgerClick);
   });
 
   // Hero Text Animation
@@ -246,6 +244,7 @@ barba.init({
         revealPageTransitionTl.play();
       },
       leave(data) {
+        hamburgerButton.removeEventListener("click", handleHamburgerClick);
         const done = this.async(); // Get the async completion function
         hidePageTransitionTl.restart();
         hidePageTransitionTl.eventCallback("onComplete", () => {
