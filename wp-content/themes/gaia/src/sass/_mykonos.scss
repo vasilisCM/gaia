@@ -9,3 +9,13 @@
     padding-top: cross-media(80px, 991px, 160px);
   }
 }
+
+.learn-more {
+  &__grid {
+    display: grid;
+    gap: 10px;
+    @include view(lg-min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

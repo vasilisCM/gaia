@@ -202,6 +202,42 @@
 
     </section>
 
+    <section class="learn-more">
+        <div class="learn-more__container boxed centered">
+            <div class="learn-more__heading heading-s serif centered-text">
+                Learn more about...
+            </div>
+            <div class="learn-more__grid">
+                <div class="learn-more__item">
+                    <div class="learn-more__item-text heading-ms light sans-serif centered-text">
+                        The retreat
+                    </div>
+                    <div class="learn-more__item-image">
+                        <img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/hero-retreat.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="learn-more__item">
+                    <div class="learn-more__item-text heading-ms light sans-serif centered-text">
+                        The experience
+                    </div>
+                    <div class="learn-more__item-image">
+                        <img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/hero-experience.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="learn-more__item">
+                    <div class="learn-more__item-text heading-ms light sans-serif centered-text">
+                        Tailor - made retreats
+                    </div>
+                    <div class="learn-more__item-image">
+                        <img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/hero-tailor-made.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Text Banner  -->
     <?php
