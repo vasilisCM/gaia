@@ -85,76 +85,41 @@
                 <div class="boxed centered">
                     <div class="heading-s lightbox__close">✖</div>
 
-                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                            </div>
-                        </div>
-                        <div class="swiper-button-next">NEXT</div>
-                        <div class="swiper-button-prev">PREVIOUS</div>
-                    </div>
-                    <div thumbsSlider="" class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    // Check if the ACF field exists and has values
+                    if (have_rows('gallery')) :  // Replace 'gallery' with the correct field group key if different
+                        while (have_rows('gallery')) : the_row();
+                            $images = get_sub_field('images');  // Ensure 'images' is the correct name of your ACF gallery field
+                            if ($images) : ?>
+                                <div class="swiper mySwiper2">
+                                    <div class="swiper-wrapper">
+                                        <?php foreach ($images as $image) : ?>
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo esc_url($image); ?>" />
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+
+
+                                    <div class="lightbox__button lightbox__button--next swiper-button-next">
+                                    </div>
+                                    <div class="lightbox__button lightbox__button--previous swiper-button-prev"></div>
+
+                                </div>
+                                <div class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        <?php foreach ($images as $image) : ?>
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo esc_url($image); ?>" />
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                    <?php endif;
+                        endwhile;
+                    endif;
+                    ?>
+
                 </div>
             </div>
         </div>

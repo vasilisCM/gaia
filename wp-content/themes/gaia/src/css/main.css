@@ -812,6 +812,35 @@ ul li {
   color: #000;
   cursor: pointer;
 }
+.lightbox__button {
+  display: flex;
+  display: block;
+  color: #fff;
+}
+.lightbox__button::after {
+  content: "\e902";
+  font-family: "icomoon";
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: clamp(20px, 3.0272452069vw, 30px);
+  line-height: 1.3em;
+  letter-spacing: 0;
+}
+@media only screen and (min-width: 1921px) {
+  .lightbox__button::after {
+    font-size: clamp(30px, 1.7578125vw, 45px);
+  }
+}
+.lightbox__button--previous {
+  justify-content: end;
+  text-align: right;
+  transform: rotate(180deg);
+  left: 40px;
+}
+.lightbox__button--next {
+  right: 40px;
+}
 
 .swiper {
   width: 100%;
@@ -839,7 +868,7 @@ ul li {
 
 .mySwiper2 .swiper-slide img {
   max-height: 700px;
-  aspect-ratio: 16/9;
+  margin: auto;
 }
 @media only screen and (min-width: 1921px) {
   .mySwiper2 .swiper-slide img {
@@ -851,11 +880,13 @@ ul li {
   opacity: 1;
 }
 
+.mySwiper .swiper-slide img {
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
 .swiper-slide img {
   display: block;
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
 }
 
 .text-banner {

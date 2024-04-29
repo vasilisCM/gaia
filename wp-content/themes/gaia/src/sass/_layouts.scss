@@ -495,6 +495,47 @@
     color: $black;
     cursor: pointer;
   }
+
+  // &__navigation {
+  //   position: absolute;
+  //   inset: 0;
+  //   margin: auto;
+  //   background-color: red;
+  // }
+
+  &__button {
+    display: flex;
+    display: block;
+
+    // width: 100%;
+    color: $white;
+    &::after {
+      @include icon("\e902");
+
+      font-size: cross-media(20px, 991px, 30px);
+      line-height: 1.3em;
+      letter-spacing: 0;
+
+      @include view(ultra) {
+        font-size: cross-media(
+          30px,
+          $ultra-breakpoint,
+          calc(30px * $ultra-scale)
+        );
+      }
+    }
+
+    &--previous {
+      justify-content: end;
+      text-align: right;
+      transform: rotate(180deg);
+      left: 40px;
+    }
+
+    &--next {
+      right: 40px;
+    }
+  }
 }
 
 .swiper {
@@ -549,7 +590,8 @@
 
 .mySwiper2 .swiper-slide img {
   max-height: 700px;
-  aspect-ratio: 16/9;
+  margin: auto;
+  // aspect-ratio: 16/9;
 
   @include view(ultra) {
     max-height: cross-media(
@@ -564,11 +606,15 @@
   opacity: 1;
 }
 
+.mySwiper .swiper-slide img {
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
 .swiper-slide img {
   display: block;
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
+  // width: 100%;
+  // aspect-ratio: 16/9;
+  // object-fit: cover;
 }
 
 // Text Banner
