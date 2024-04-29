@@ -211,6 +211,40 @@
   }
 }
 
+.white-menu-items {
+  & .menu {
+    &__hover-effect {
+      a {
+        color: rgba($secondary, 0.7);
+        &::before {
+          color: $white;
+        }
+      }
+    }
+  }
+  & .menu-item-has-children > a {
+    color: $white;
+  }
+}
+
+.header--dropdown,
+.header--sticky {
+  & .menu {
+    &__hover-effect,
+    &__hover-effect .sub-menu {
+      & a {
+        color: $accent !important;
+        &::before {
+          color: $black !important;
+        }
+      }
+    }
+  }
+  & .menu-item-has-children > a {
+    color: $black !important;
+  }
+}
+
 // Hero
 .hero {
   position: relative;

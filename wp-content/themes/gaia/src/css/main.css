@@ -589,6 +589,31 @@ ul li {
   color: #000;
 }
 
+.white-menu-items .menu__hover-effect a {
+  color: rgba(59, 50, 50, 0.7);
+}
+.white-menu-items .menu__hover-effect a::before {
+  color: #fff;
+}
+.white-menu-items .menu-item-has-children > a {
+  color: #fff;
+}
+
+.header--dropdown .menu__hover-effect a, .header--dropdown .menu__hover-effect .sub-menu a,
+.header--sticky .menu__hover-effect a,
+.header--sticky .menu__hover-effect .sub-menu a {
+  color: #a19696 !important;
+}
+.header--dropdown .menu__hover-effect a::before, .header--dropdown .menu__hover-effect .sub-menu a::before,
+.header--sticky .menu__hover-effect a::before,
+.header--sticky .menu__hover-effect .sub-menu a::before {
+  color: #000 !important;
+}
+.header--dropdown .menu-item-has-children > a,
+.header--sticky .menu-item-has-children > a {
+  color: #000 !important;
+}
+
 .hero {
   position: relative;
   z-index: -1;
