@@ -403,6 +403,9 @@ ul li {
   font-weight: inherit;
   text-shadow: none;
   outline: none;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 .menu__hover-effect a::before {
   content: attr(title);
@@ -515,6 +518,9 @@ ul li {
     will-change: transform;
   }
 }
+.main-menu__list > li > a {
+  font-weight: 500;
+}
 .main-menu__list .sub-menu {
   position: absolute;
   padding-top: clamp(10px, 3.6326942482vw, 36px);
@@ -572,6 +578,15 @@ ul li {
 }
 .main-menu__dropdown-background--open {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.main-menu.menu__hover-effect a {
+  color: #a19696;
+}
+.main-menu.menu__hover-effect a::before {
+  color: #000;
+}
+.main-menu .menu-item-has-children > a {
+  color: #000;
 }
 
 .hero {

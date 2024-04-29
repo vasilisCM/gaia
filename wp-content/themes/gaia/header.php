@@ -13,7 +13,7 @@
     <div class="header__container boxed centered">
 
       <!-- Main Menu 1 -->
-      <nav class="main-menu main-menu--1">
+      <nav class="main-menu main-menu--1 menu__hover-effect">
         <?php
         wp_nav_menu(
           array(
@@ -34,7 +34,7 @@
       </div>
 
       <!-- Main Menu 2 -->
-      <nav class="main-menu main-menu--2">
+      <nav class="main-menu main-menu--2 menu__hover-effect">
         <?php
         wp_nav_menu(
           array(

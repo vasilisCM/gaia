@@ -120,15 +120,9 @@
       will-change: transform;
     }
 
-    // & > li {
-    //   &:hover {
-    //     & ul {
-    //       // position: absolute;
-    //       visibility: visible;
-    //       opacity: 1;
-    //     }
-    //   }
-    // }
+    & > li > a {
+      font-weight: 500;
+    }
 
     .sub-menu {
       position: absolute;
@@ -159,11 +153,6 @@
         }
       }
     }
-
-    // .dropdown--open {
-    //   visibility: visible;
-    //   opacity: 1;
-    // }
 
     & a {
       color: $black;
@@ -206,6 +195,19 @@
       // clip-path: ellipse(70% 70% at 50% 0%);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
+  }
+  &.menu {
+    &__hover-effect {
+      a {
+        color: $accent;
+        &::before {
+          color: $black;
+        }
+      }
+    }
+  }
+  & .menu-item-has-children > a {
+    color: $black;
   }
 }
 
