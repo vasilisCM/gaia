@@ -248,12 +248,19 @@ p,
 .white-menu-items .hamburger {
   filter: invert(100%);
 }
+.white-menu-items .header__logo--pressed,
+.white-menu-items .hamburger--pressed {
+  filter: revert;
+}
 @media only screen and (min-width: 992px) {
   .white-menu-items .main-menu a {
     color: #fff;
   }
 }
 .white-menu-items .header--sticky .header__logo, .white-menu-items .header--dropdown .header__logo {
+  filter: revert;
+}
+.white-menu-items .header--sticky .hamburger, .white-menu-items .header--dropdown .hamburger {
   filter: revert;
 }
 .white-menu-items .header--sticky .main-menu a, .white-menu-items .header--dropdown .main-menu a {
@@ -435,8 +442,8 @@ ul li {
   }
 }
 @media only screen and (max-width: 991px) {
-  .header--sticky .header__logo-container, .header--dropdown .header__logo-container {
-    opacity: 0;
+  .header--mobile-menu-open .header__logo {
+    filter: invert(0%);
   }
 }
 .header--sticky {
@@ -592,11 +599,15 @@ ul li {
 .white-menu-items .menu__hover-effect a {
   color: rgba(59, 50, 50, 0.7);
 }
-.white-menu-items .menu__hover-effect a::before {
-  color: #fff;
+@media only screen and (min-width: 992px) {
+  .white-menu-items .menu__hover-effect a::before {
+    color: #fff;
+  }
 }
-.white-menu-items .menu-item-has-children > a {
-  color: #fff;
+@media only screen and (min-width: 992px) {
+  .white-menu-items .menu-item-has-children > a {
+    color: #fff;
+  }
 }
 
 .header--dropdown .menu__hover-effect a, .header--dropdown .menu__hover-effect .sub-menu a,

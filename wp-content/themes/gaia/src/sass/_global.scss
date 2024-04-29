@@ -8,6 +8,10 @@
   & .header__logo,
   .hamburger {
     filter: invert(100%);
+
+    &--pressed {
+      filter: revert;
+    }
   }
 
   & .main-menu {
@@ -22,6 +26,9 @@
   & .header--sticky,
   & .header--dropdown {
     & .header__logo {
+      filter: revert;
+    }
+    & .hamburger {
       filter: revert;
     }
 

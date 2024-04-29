@@ -7,6 +7,7 @@
   // backdrop-filter: blur(10px);
   padding-block: cross-media(32px, 991px, 64px);
   // mix-blend-mode: difference;
+  // border: solid 1px red;
   transition: background-color ease 300ms;
 
   @include view(md-max) {
@@ -15,9 +16,17 @@
 
   &--sticky,
   &--dropdown {
-    & .header__logo-container {
+    // & .header__logo-container {
+    //   @include view(md-max) {
+    //     opacity: 0;
+    //   }
+    // }
+  }
+
+  &--mobile-menu-open {
+    & .header__logo {
       @include view(md-max) {
-        opacity: 0;
+        filter: invert(0%);
       }
     }
   }
@@ -217,13 +226,17 @@
       a {
         color: rgba($secondary, 0.7);
         &::before {
-          color: $white;
+          @include view(lg-min) {
+            color: $white;
+          }
         }
       }
     }
   }
   & .menu-item-has-children > a {
-    color: $white;
+    @include view(lg-min) {
+      color: $white;
+    }
   }
 }
 

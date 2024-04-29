@@ -10,13 +10,16 @@ import carouselFullScreen from "./logic/carouselFullScreen.js";
 
 // Define the handler at a broader scope
 let handleHamburgerClick;
+const header = document.querySelector(".header");
+
 const initHamburgerClickHandler = (hamburgerButton, tl) => {
   console.log(tl.progress());
   // tl.play();
 
   // Reset Timeline and Button State
   tl.pause();
-  tl.progress(0); // Ensure the timeline is paused and reset to the start
+  tl.progress(0);
+  lenis.isStopped = false; // Ensure the timeline is paused and reset to the start
   hamburgerButton.classList.remove("hamburger--pressed"); // Ensure button is not in the "pressed" state visually
   hamburgerButton.removeAttribute("pressed");
 
@@ -39,9 +42,11 @@ const initHamburgerClickHandler = (hamburgerButton, tl) => {
         if (isPressed) {
           console.log("Reversing Timeline");
           tl.reverse();
+          header.classList.remove("header--mobile-menu-open");
         } else {
           console.log("Playing Timeline");
           tl.restart();
+          header.classList.add("header--mobile-menu-open");
         }
       }
     };
@@ -70,7 +75,7 @@ const mobileMenu = () => {
 
     mobileMenuTl = gsap.timeline({
       paused: true,
-      onComplete: () => (lenis.isStopped = true),
+      onStart: () => (lenis.isStopped = true),
       onReverseComplete: () => (lenis.isStopped = false),
     });
     mobileMenuTl
