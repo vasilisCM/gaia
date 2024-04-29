@@ -621,6 +621,10 @@
 
     & > .menu-item-has-children {
       grid-row: span 4;
+      & > a {
+        color: $white !important;
+        cursor: default;
+      }
     }
 
     & .sub-menu {
@@ -651,6 +655,16 @@
 
   @include view(md-max) {
     margin-bottom: 20px;
+  }
+  &.menu {
+    &__hover-effect {
+      a {
+        color: rgba($secondary, 0.5);
+        &::before {
+          color: $white;
+        }
+      }
+    }
   }
 }
 

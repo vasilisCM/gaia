@@ -120,3 +120,28 @@ ul {
     display: none !important;
   }
 }
+
+// Menu Hover Effect
+.menu {
+  &__hover-effect {
+    a {
+      font-weight: inherit;
+      text-shadow: none;
+      outline: none;
+      &::before {
+        content: attr(title);
+        position: absolute;
+        -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+        -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      &:hover::before,
+      &:focus::before {
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        transform: scale(0.9);
+        opacity: 0;
+      }
+    }
+  }
+}

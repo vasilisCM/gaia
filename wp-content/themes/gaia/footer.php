@@ -8,7 +8,7 @@
     <div class="boxed-s centered footer__top-container">
       <!-- Footer Menu -->
       <div class="footer__menu">
-        <nav class="footer-menu">
+        <nav class="footer-menu menu__hover-effect">
           <?php
           wp_nav_menu(
             array(
