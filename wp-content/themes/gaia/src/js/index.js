@@ -8,6 +8,90 @@ import accordion from "./logic/accordion.js";
 import backToTop from "./global/backToTop.js";
 import carouselFullScreen from "./logic/carouselFullScreen.js";
 
+// Define the handler at a broader scope
+let handleHamburgerClick;
+const initHamburgerClickHandler = (hamburgerButton, tl) => {
+  console.log(tl.progress());
+  // tl.play();
+
+  // Reset Timeline and Button State
+  tl.pause();
+  tl.progress(0); // Ensure the timeline is paused and reset to the start
+  hamburgerButton.classList.remove("hamburger--pressed"); // Ensure button is not in the "pressed" state visually
+  hamburgerButton.removeAttribute("pressed");
+
+  if (!handleHamburgerClick) {
+    handleHamburgerClick = () => {
+      console.log(tl.progress());
+      console.log(!tl.isActive());
+      if (!tl.isActive()) {
+        const isPressed = hamburgerButton.getAttribute("pressed") === "true";
+        hamburgerButton.classList.toggle("hamburger--pressed", !isPressed);
+        hamburgerButton.setAttribute("pressed", !isPressed ? "true" : "false");
+
+        // if (tl.progress() === 1) {
+        //   tl.reverse();
+        // } else {
+        //   tl.play();
+        // }
+
+        // Control the timeline based on the pressed attribute
+        if (isPressed) {
+          console.log("Reversing Timeline");
+          tl.reverse();
+        } else {
+          console.log("Playing Timeline");
+          tl.restart();
+        }
+      }
+    };
+  }
+
+  hamburgerButton.addEventListener("click", handleHamburgerClick);
+
+  // Remove attribute to reset the state
+};
+
+let mobileMenuTl;
+
+const mobileMenu = () => {
+  const mm = gsap.matchMedia();
+  // Mobile Menu
+  mm.add("(max-width: 991px)", () => {
+    const mainMenuList1 = document.querySelector(
+      ".main-menu--1 .main-menu__list"
+    );
+    const mainMenuList2 = document.querySelector(
+      ".main-menu--2 .main-menu__list"
+    );
+    mainMenuList2.querySelectorAll("li").forEach((item) => {
+      mainMenuList1.insertAdjacentElement("beforeend", item);
+    });
+
+    mobileMenuTl = gsap.timeline({
+      paused: true,
+      onComplete: () => (lenis.isStopped = true),
+      onReverseComplete: () => (lenis.isStopped = false),
+    });
+    mobileMenuTl
+      .fromTo(
+        mainMenuList1,
+        { y: "-100%" },
+        { y: "0%", duration: 1.2, ease: "power4.out" }
+      )
+      .fromTo(
+        mainMenuList1.querySelectorAll("li"),
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, stagger: 0.1, ease: "power4.out" },
+        "<0.7"
+      );
+
+    const hamburgerButton = document.querySelector(".hamburger");
+
+    initHamburgerClickHandler(hamburgerButton, mobileMenuTl);
+  });
+};
+
 const global = () => {
   // Loader
   const body = document.querySelector(".body");
@@ -22,8 +106,6 @@ const global = () => {
   const header = document.querySelector(".header");
   stickyHeader(header, "header--sticky");
 
-  const mm = gsap.matchMedia();
-
   // Dropdown Menu
   header.classList.remove("header--dropdown"); // Reset Header State
   const dropdownMenu = document.querySelector(".sub-menu");
@@ -32,7 +114,7 @@ const global = () => {
   );
 
   // Dropdown Timeline
-
+  const mm = gsap.matchMedia();
   mm.add("(min-width: 991px)", () => {
     const dropdownTl = gsap.timeline({
       paused: true,
@@ -85,77 +167,6 @@ const global = () => {
     });
   });
 
-  // Mobile Menu
-  mm.add("(max-width: 991px)", () => {
-    // Move All into one Menu List
-    const mainMenuList1 = document.querySelector(
-      ".main-menu--1 .main-menu__list"
-    );
-    const mainMenuList2 = document.querySelector(
-      ".main-menu--2 .main-menu__list"
-    );
-    mainMenuList2.querySelectorAll("li").forEach((item) => {
-      mainMenuList1.insertAdjacentElement("beforeend", item);
-    });
-
-    // Mobile Menu Timeline
-    const mobileMenuTl = gsap.timeline({
-      paused: true,
-      onComplete: () => (lenis.isStopped = true),
-      onReverseComplete: () => (lenis.isStopped = false),
-    });
-    mobileMenuTl
-      .fromTo(
-        mainMenuList1,
-        {
-          y: "-100%",
-        },
-        {
-          y: "0%",
-          duration: 1.2,
-          ease: "power4.out",
-        }
-      )
-      .fromTo(
-        mainMenuList1.querySelectorAll("li"),
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "power4.out",
-        },
-        "<0.7"
-      );
-
-    // Open/ Close Mobile Menu
-    const hamburgerButton = document.querySelector(".hamburger");
-
-    // Reset Button State
-    // mobileMenuTl.pause();
-    mobileMenuTl.progress(0);
-    hamburgerButton.removeAttribute("pressed");
-    hamburgerButton.classList.remove("hamburger--pressed");
-
-    const handleHamburgerClick = () => {
-      if (!mobileMenuTl.isActive()) {
-        const isPressed = hamburgerButton.getAttribute("pressed") === "true";
-        hamburgerButton.classList.toggle("hamburger--pressed", !isPressed);
-        hamburgerButton.setAttribute("pressed", !isPressed ? "true" : "false");
-
-        if (mobileMenuTl.progress() === 1) {
-          mobileMenuTl.reverse();
-        } else {
-          mobileMenuTl.play();
-        }
-      }
-    };
-
-    hamburgerButton.addEventListener("click", handleHamburgerClick);
-  });
-
   // Hero Text Animation
   moveUpTextByLine();
   // clipPathTextByWord();
@@ -203,6 +214,7 @@ const revealPageTransitionTl = gsap.timeline({
   paused: true,
   onStart: () => {
     console.log("Revealing");
+    // mobileMenu();
     global();
   },
   // onComplete: global,
@@ -242,13 +254,16 @@ barba.init({
       once(data) {
         // Initial load animation
         revealPageTransitionTl.play();
+        mobileMenu();
       },
       leave(data) {
-        hamburgerButton.removeEventListener("click", handleHamburgerClick);
         const done = this.async(); // Get the async completion function
         hidePageTransitionTl.restart();
         hidePageTransitionTl.eventCallback("onComplete", () => {
-          revealPageTransitionTl.play();
+          if (mobileMenuTl) {
+            mobileMenuTl.kill();
+          }
+          // revealPageTransitionTl.play();
           done(); // Call done when the hide transition is complete
         });
       },
@@ -272,6 +287,7 @@ barba.init({
         // global();
 
         revealPageTransitionTl.restart();
+        mobileMenu();
       },
     },
   ],
