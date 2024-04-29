@@ -1445,6 +1445,12 @@ ul li {
   padding-top: clamp(80px, 16.1453077699vw, 160px);
 }
 
+.learn-more {
+  margin-bottom: clamp(35px, 5.0454086781vw, 50px);
+}
+.learn-more__heading {
+  padding-bottom: clamp(25px, 4.0363269425vw, 40px);
+}
 .learn-more__grid {
   display: grid;
   gap: 10px;
@@ -1453,6 +1459,35 @@ ul li {
   .learn-more__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+.learn-more__item {
+  position: relative;
+  height: clamp(200px, 33.2996972755vw, 330px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b3232;
+}
+.learn-more__item-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  opacity: 0.4;
+  transition: opacity 0.5s ease;
+}
+.learn-more__item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.learn-more__item-text {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+.learn-more__item:hover .learn-more__item-image {
+  opacity: 0.8;
 }
 
 .intro__benefits-list {

@@ -11,11 +11,47 @@
 }
 
 .learn-more {
+  margin-bottom: cross-media(35px, 991px, 50px);
+  &__heading {
+    padding-bottom: cross-media(25px, 991px, 40px);
+  }
   &__grid {
     display: grid;
     gap: 10px;
     @include view(lg-min) {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__item {
+    position: relative;
+    height: cross-media(200px, 991px, 330px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary;
+
+    &-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      opacity: 0.4;
+      transition: opacity 0.5s ease;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-text {
+      position: relative;
+      color: $white;
+      z-index: 1;
+    }
+    &:hover {
+      & .learn-more__item-image {
+        opacity: 0.8;
+      }
     }
   }
 }
