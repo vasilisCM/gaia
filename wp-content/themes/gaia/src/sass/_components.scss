@@ -265,7 +265,7 @@
 .curve-custom {
   position: absolute;
   width: 100vw;
-  height: cross-media(200px, 991px, 500px);
+  height: cross-media(200px, $box, 500px);
   border-top: solid 2px $accent;
   border-radius: 100%;
   transform: scaleX(1.3);

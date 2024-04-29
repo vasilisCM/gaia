@@ -47,10 +47,10 @@
                             <?php echo $benefitText; ?>
                         </div>
                         <?php if ($row_index < $lastBenefit) : ?>
-                            <div class="intro__benefits-curve">
-                                <svg width="1920" height="115" viewBox="0 0 1920 115">
+                            <div class="intro__benefits-curve curve-custom curve-custom--white">
+                                <!-- <svg width="1920" height="115" viewBox="0 0 1920 115">
                                     <path id="Path_272" data-name="Path 272" d="M64.87,222.35c81.438-19.438,164.687-36.657,247.457-51.14a4149.027,4149.027,0,0,1,1425.077,0c82.77,14.5,166.028,31.7,247.466,51.14" transform="translate(-64.638 -108.567)" fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2" />
-                                </svg>
+                                </svg> -->
                             </div>
                         <?php endif; ?>
                     <?php endwhile; ?>
