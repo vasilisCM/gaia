@@ -13,7 +13,7 @@ const home = () => {
   const mm = gsap.matchMedia();
 
   mm.add("(max-width: 991px)", () => {
-    carousel(carouselContainer, carouselTrack, ".carousel__item", 5);
+    carousel(carouselContainer, carouselTrack, ".carousel__item", 7);
   });
 
   mm.add("(min-width: 991px)", () => {
@@ -21,7 +21,7 @@ const home = () => {
   });
 
   mm.add("(min-width: 2220px)", () => {
-    carousel(carouselContainer, carouselTrack, ".carousel__item", 0.01);
+    carousel(carouselContainer, carouselTrack, ".carousel__item", 0.1);
   });
 
   // Custom Cursor
