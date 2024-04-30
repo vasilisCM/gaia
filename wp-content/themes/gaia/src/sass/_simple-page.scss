@@ -1,0 +1,33 @@
+.simple-page {
+  padding-bottom: cross-media(80px, 991px, 140px);
+  & h1 {
+    padding-bottom: cross-media(50px, 991px, 80px);
+  }
+  & h4 {
+    padding-block: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  & p {
+    margin-bottom: 20px;
+  }
+  & ul li {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  & ol {
+    padding: 0;
+    & li {
+      list-style-type: upper-alpha;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  & a {
+    color: $secondary;
+    transition: 0.3s ease;
+    &:hover {
+      color: $accent;
+    }
+  }
+}
