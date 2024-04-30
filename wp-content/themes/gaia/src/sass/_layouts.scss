@@ -691,7 +691,7 @@
     align-items: center;
     @include view(md-max) {
       grid-template-columns: 1fr;
-      justify-items: center;
+      // justify-items: center;
     }
   }
 
@@ -701,7 +701,7 @@
     justify-items: end;
     gap: cross-media(20px, 991px, 40px);
     @include view(md-max) {
-      justify-items: center;
+      justify-items: start;
     }
   }
 
@@ -719,6 +719,11 @@
       display: flex;
       align-items: center;
       gap: 12px;
+
+      @include view(md-max) {
+        flex-direction: column;
+        align-items: start;
+      }
 
       & p {
         display: flex;
@@ -759,6 +764,10 @@
 
   &__bottom {
     padding-block: cross-media(12px, 991px, 18px);
+
+    @include view(md-max) {
+      padding-bottom: 40px;
+    }
 
     & a {
       color: $black;
@@ -815,7 +824,7 @@
     @include view(md-max) {
       grid-template-columns: 1fr;
       align-items: center;
-      justify-items: center;
+      // justify-items: center;
       text-align: center;
       gap: 10px;
     }

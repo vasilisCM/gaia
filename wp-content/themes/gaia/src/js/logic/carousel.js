@@ -13,6 +13,7 @@ const carousel = (
   carouselContainer,
   carouselTrack,
   slideSelector,
+  speed = 1,
   nextButton = undefined,
   previousButton = undefined,
   indicator = undefined
@@ -132,7 +133,7 @@ const carousel = (
     if (carouselTrack.dataset.mouseDownAt === "0") return;
     const mouseDelta =
       parseFloat(carouselTrack.dataset.mouseDownAt) - e.clientX;
-    const sensitivity = 0.01 * 0.1;
+    const sensitivity = speed * 0.1;
     // const sensitivity = 1;
 
     const maxDelta = window.innerWidth * 2 * sensitivity;

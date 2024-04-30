@@ -9,7 +9,15 @@ const home = () => {
   const carouselElement = document.querySelector(".carousel");
   const carouselContainer = document.querySelector(".carousel__container");
   const carouselTrack = document.querySelector(".carousel__track");
-  carousel(carouselContainer, carouselTrack, ".carousel__item");
+
+  const mm = gsap.matchMedia();
+  mm.add("(max-width: 2200px)", () => {
+    carousel(carouselContainer, carouselTrack, ".carousel__item", 2);
+  });
+
+  mm.add("(min-width: 2220px)", () => {
+    carousel(carouselContainer, carouselTrack, ".carousel__item", 0.01);
+  });
 
   // Custom Cursor
   const cursorDrag = document.querySelector(".cursor");
