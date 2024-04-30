@@ -14,14 +14,14 @@
     width: 100vw;
   }
 
-  &--sticky,
-  &--dropdown {
-    // & .header__logo-container {
-    //   @include view(md-max) {
-    //     opacity: 0;
-    //   }
-    // }
-  }
+  // &--sticky,
+  // &--dropdown {
+  //   // & .header__logo-container {
+  //   //   @include view(md-max) {
+  //   //     opacity: 0;
+  //   //   }
+  //   // }
+  // }
 
   &--mobile-menu-open {
     & .header__logo {
