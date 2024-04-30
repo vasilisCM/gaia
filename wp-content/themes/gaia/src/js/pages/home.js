@@ -13,7 +13,7 @@ const home = () => {
   const mm = gsap.matchMedia();
 
   mm.add("(max-width: 991px)", () => {
-    carousel(carouselContainer, carouselTrack, ".carousel__item", 15);
+    carousel(carouselContainer, carouselTrack, ".carousel__item", 5);
   });
 
   mm.add("(min-width: 991px)", () => {
