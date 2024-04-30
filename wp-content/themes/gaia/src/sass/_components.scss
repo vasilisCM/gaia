@@ -119,6 +119,10 @@
   transition: opacity ease 0.2s;
   cursor: pointer;
 
+  @include view(md-max) {
+    bottom: 30px;
+  }
+
   &::after {
     @include icon("\e902");
     font-size: 10px;
@@ -195,7 +199,8 @@
   &--book {
     color: $white;
     @include view(md-max) {
-      min-width: 250px;
+      // min-width: 250px;
+      width: 100%;
     }
 
     &:before {
@@ -303,8 +308,8 @@
   }
 
   @include view(md-max) {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    bottom: 0;
+    // transform: translateX(-50%);
   }
 }
