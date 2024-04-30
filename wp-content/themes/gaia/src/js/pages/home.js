@@ -11,7 +11,12 @@ const home = () => {
   const carouselTrack = document.querySelector(".carousel__track");
 
   const mm = gsap.matchMedia();
-  mm.add("(max-width: 2200px)", () => {
+
+  mm.add("(max-width: 991px)", () => {
+    carousel(carouselContainer, carouselTrack, ".carousel__item", 15);
+  });
+
+  mm.add("(min-width: 991px)", () => {
     carousel(carouselContainer, carouselTrack, ".carousel__item", 2);
   });
 
