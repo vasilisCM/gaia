@@ -1,6 +1,6 @@
 <button class="button centered lightbox__open"><?php echo $gallery['button']; ?></button>
 <div class="lightbox hidden">
-    <div class="boxed centered">
+    <div class="boxed centered lightbox__container">
         <div class="heading-s lightbox__close">✖</div>
 
         <?php

@@ -504,8 +504,17 @@
   position: fixed;
   z-index: 99999;
   inset: 0;
-  display: grid;
-  place-items: center;
+
+  @include view(lg-min) {
+    display: grid;
+    place-items: center;
+  }
+
+  &__container {
+    @include view(md-max) {
+      margin-top: 50%;
+    }
+  }
 
   &__close {
     text-align: right;
@@ -522,7 +531,9 @@
 
   &__button {
     display: flex;
-    display: block;
+    // display: block;
+    // height: 0;
+    // border: solid 2px red;
 
     // width: 100%;
     color: $white;
@@ -547,6 +558,7 @@
       justify-content: end;
       text-align: right;
       transform: rotate(180deg);
+      // transform-origin: center right;
       left: 40px;
 
       @include view(ultra) {
@@ -601,6 +613,12 @@
 
 .mySwiper2 {
   max-height: 100vh;
+
+  & .swiper-wrapper {
+    @include view(md-max) {
+      max-height: 300px;
+    }
+  }
 }
 
 .mySwiper {

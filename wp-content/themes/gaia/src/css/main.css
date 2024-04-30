@@ -820,8 +820,17 @@ ul li {
   position: fixed;
   z-index: 99999;
   inset: 0;
-  display: grid;
-  place-items: center;
+}
+@media only screen and (min-width: 992px) {
+  .lightbox {
+    display: grid;
+    place-items: center;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .lightbox__container {
+    margin-top: 50%;
+  }
 }
 .lightbox__close {
   text-align: right;
@@ -830,7 +839,6 @@ ul li {
 }
 .lightbox__button {
   display: flex;
-  display: block;
   color: #fff;
 }
 .lightbox__button::after {
@@ -880,6 +888,11 @@ ul li {
 
 .mySwiper2 {
   max-height: 100vh;
+}
+@media only screen and (max-width: 991px) {
+  .mySwiper2 .swiper-wrapper {
+    max-height: 300px;
+  }
 }
 
 .mySwiper {
