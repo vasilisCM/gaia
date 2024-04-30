@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2024 at 12:34 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Apr 30, 2024 at 01:33 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `wp_commentmeta` (
   `meta_id` bigint(20) UNSIGNED NOT NULL,
   `comment_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `meta_key` varchar(255) DEFAULT NULL,
+  `meta_value` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -43,17 +43,17 @@ CREATE TABLE `wp_commentmeta` (
 CREATE TABLE `wp_comments` (
   `comment_ID` bigint(20) UNSIGNED NOT NULL,
   `comment_post_ID` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
-  `comment_author` tinytext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `comment_author_email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `comment_author_url` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `comment_author_IP` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `comment_author` tinytext NOT NULL,
+  `comment_author_email` varchar(100) NOT NULL DEFAULT '',
+  `comment_author_url` varchar(200) NOT NULL DEFAULT '',
+  `comment_author_IP` varchar(100) NOT NULL DEFAULT '',
   `comment_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `comment_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `comment_content` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `comment_content` text NOT NULL,
   `comment_karma` int(11) NOT NULL DEFAULT 0,
-  `comment_approved` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '1',
-  `comment_agent` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `comment_type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'comment',
+  `comment_approved` varchar(20) NOT NULL DEFAULT '1',
+  `comment_agent` varchar(255) NOT NULL DEFAULT '',
+  `comment_type` varchar(20) NOT NULL DEFAULT 'comment',
   `comment_parent` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
   `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
@@ -73,18 +73,18 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 
 CREATE TABLE `wp_links` (
   `link_id` bigint(20) UNSIGNED NOT NULL,
-  `link_url` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_image` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_target` varchar(25) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_description` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_visible` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Y',
+  `link_url` varchar(255) NOT NULL DEFAULT '',
+  `link_name` varchar(255) NOT NULL DEFAULT '',
+  `link_image` varchar(255) NOT NULL DEFAULT '',
+  `link_target` varchar(25) NOT NULL DEFAULT '',
+  `link_description` varchar(255) NOT NULL DEFAULT '',
+  `link_visible` varchar(20) NOT NULL DEFAULT 'Y',
   `link_owner` bigint(20) UNSIGNED NOT NULL DEFAULT 1,
   `link_rating` int(11) NOT NULL DEFAULT 0,
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `link_rel` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_notes` mediumtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `link_rss` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT ''
+  `link_rel` varchar(255) NOT NULL DEFAULT '',
+  `link_notes` mediumtext NOT NULL,
+  `link_rss` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -95,9 +95,9 @@ CREATE TABLE `wp_links` (
 
 CREATE TABLE `wp_options` (
   `option_id` bigint(20) UNSIGNED NOT NULL,
-  `option_name` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `option_value` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `autoload` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'yes'
+  `option_name` varchar(191) NOT NULL DEFAULT '',
+  `option_value` longtext NOT NULL,
+  `autoload` varchar(20) NOT NULL DEFAULT 'yes'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -211,7 +211,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (103, 'user_count', '3', 'no'),
 (104, 'widget_block', 'a:6:{i:2;a:1:{s:7:\"content\";s:19:\"<!-- wp:search /-->\";}i:3;a:1:{s:7:\"content\";s:154:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Recent Posts</h2><!-- /wp:heading --><!-- wp:latest-posts /--></div><!-- /wp:group -->\";}i:4;a:1:{s:7:\"content\";s:227:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Recent Comments</h2><!-- /wp:heading --><!-- wp:latest-comments {\"displayAvatar\":false,\"displayDate\":false,\"displayExcerpt\":false} /--></div><!-- /wp:group -->\";}i:5;a:1:{s:7:\"content\";s:146:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Archives</h2><!-- /wp:heading --><!-- wp:archives /--></div><!-- /wp:group -->\";}i:6;a:1:{s:7:\"content\";s:150:\"<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:heading --><h2>Categories</h2><!-- /wp:heading --><!-- wp:categories /--></div><!-- /wp:group -->\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (105, 'sidebars_widgets', 'a:2:{s:19:\"wp_inactive_widgets\";a:5:{i:0;s:7:\"block-2\";i:1;s:7:\"block-3\";i:2;s:7:\"block-4\";i:3;s:7:\"block-5\";i:4;s:7:\"block-6\";}s:13:\"array_version\";i:3;}', 'yes'),
-(106, 'cron', 'a:10:{i:1714473763;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1714482515;a:2:{s:29:\"seedprod_lite_fetch_help_docs\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}s:22:\"seedprod_notifications\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714513363;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1714513371;a:1:{s:21:\"wp_update_user_counts\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1714556562;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714556571;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714556573;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714733742;a:1:{s:30:\"wp_delete_temp_updater_backups\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}i:1714815762;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}', 'yes'),
+(106, 'cron', 'a:10:{i:1714477363;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1714482515;a:2:{s:29:\"seedprod_lite_fetch_help_docs\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}s:22:\"seedprod_notifications\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714513363;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1714513371;a:1:{s:21:\"wp_update_user_counts\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1714556562;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714556571;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714556573;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1714733742;a:1:{s:30:\"wp_delete_temp_updater_backups\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}i:1714815762;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}', 'yes'),
 (107, 'widget_pages', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (108, 'widget_calendar', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (109, 'widget_archives', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -280,7 +280,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (224, '_options_text_banner_text_large', 'field_66194a8da228e', 'no'),
 (225, 'options_text_banner_button_text', 'Book now', 'no'),
 (226, '_options_text_banner_button_text', 'field_66194aa8a2290', 'no'),
-(227, 'options_text_banner_button_link', '13', 'no'),
+(227, 'options_text_banner_button_link', '280', 'no'),
 (228, '_options_text_banner_button_link', 'field_66194aada2291', 'no'),
 (229, 'options_text_banner_button', '', 'no'),
 (230, '_options_text_banner_button', 'field_66194a95a228f', 'no'),
@@ -416,8 +416,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 CREATE TABLE `wp_postmeta` (
   `meta_id` bigint(20) UNSIGNED NOT NULL,
   `post_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `meta_key` varchar(255) DEFAULT NULL,
+  `meta_value` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -510,7 +510,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (191, 48, '_edit_last', '2'),
 (192, 48, '_wp_page_template', 'default'),
 (193, 48, 'inline_featured_image', '0'),
-(194, 48, '_edit_lock', '1714473223:1'),
+(194, 48, '_edit_lock', '1714476131:2'),
 (195, 48, 'hero_heading_text_large', 'in a transformative journey'),
 (196, 48, '_hero_heading_text_large', 'field_66193769e7e70'),
 (197, 48, 'hero_heading_text_small', 'Discover a new dimension of yourself'),
@@ -589,7 +589,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (270, 69, '_wp_attachment_metadata', 'a:6:{s:5:\"width\";i:546;s:6:\"height\";i:820;s:4:\"file\";s:26:\"2024/04/team-grid-002.webp\";s:8:\"filesize\";i:21340;s:5:\"sizes\";a:2:{s:6:\"medium\";a:5:{s:4:\"file\";s:26:\"team-grid-002-200x300.webp\";s:5:\"width\";i:200;s:6:\"height\";i:300;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:7298;}s:9:\"thumbnail\";a:5:{s:4:\"file\";s:26:\"team-grid-002-150x150.webp\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:3364;}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
 (271, 70, '_wp_attached_file', '2024/04/home-quote.webp'),
 (272, 70, '_wp_attachment_metadata', 'a:6:{s:5:\"width\";i:538;s:6:\"height\";i:538;s:4:\"file\";s:23:\"2024/04/home-quote.webp\";s:8:\"filesize\";i:101180;s:5:\"sizes\";a:2:{s:6:\"medium\";a:5:{s:4:\"file\";s:23:\"home-quote-300x300.webp\";s:5:\"width\";i:300;s:6:\"height\";i:300;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:8956;}s:9:\"thumbnail\";a:5:{s:4:\"file\";s:23:\"home-quote-150x150.webp\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/webp\";s:8:\"filesize\";i:3840;}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
-(273, 71, '_edit_lock', '1713453678:2'),
+(273, 71, '_edit_lock', '1714476138:2'),
 (274, 71, '_edit_last', '2'),
 (275, 48, 'grid_item_0_item_text_title', 'Gaia Exclusive Retreats'),
 (276, 48, '_grid_item_0_item_text_title', 'field_661d0e01c3d58'),
@@ -599,7 +599,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (280, 48, '_grid_item_0_item_text_text', 'field_661d0e1fc3d5a'),
 (281, 48, 'grid_item_0_item_text_button_label', 'LIVE THE EXPERIENCE'),
 (282, 48, '_grid_item_0_item_text_button_label', 'field_661d0e4fc3d5c'),
-(283, 48, 'grid_item_0_item_text_button_link', '#'),
+(283, 48, 'grid_item_0_item_text_button_link', '27'),
 (284, 48, '_grid_item_0_item_text_button_link', 'field_661d0e64c3d5d'),
 (285, 48, 'grid_item_0_item_text_button', ''),
 (286, 48, '_grid_item_0_item_text_button', 'field_661d0e2ac3d5b'),
@@ -621,7 +621,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (302, 48, '_grid_item_1_item_text_text', 'field_661d0e1fc3d5a'),
 (303, 48, 'grid_item_1_item_text_button_label', 'JOIN THE RETREAT'),
 (304, 48, '_grid_item_1_item_text_button_label', 'field_661d0e4fc3d5c'),
-(305, 48, 'grid_item_1_item_text_button_link', '#'),
+(305, 48, 'grid_item_1_item_text_button_link', '166'),
 (306, 48, '_grid_item_1_item_text_button_link', 'field_661d0e64c3d5d'),
 (307, 48, 'grid_item_1_item_text_button', ''),
 (308, 48, '_grid_item_1_item_text_button', 'field_661d0e2ac3d5b'),
@@ -1053,9 +1053,9 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (734, 102, '_grid_item_0_item_text', 'field_661d0dd3c3d57'),
 (735, 102, 'grid_item_0_item_image_image', '65'),
 (736, 102, '_grid_item_0_item_image_image', 'field_661d12ddb11f6'),
-(737, 102, 'grid_item_0_item_image_image_small_left', '64'),
-(738, 102, '_grid_item_0_item_image_image_small_left', 'field_661d1329b11f8');
+(737, 102, 'grid_item_0_item_image_image_small_left', '64');
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
+(738, 102, '_grid_item_0_item_image_image_small_left', 'field_661d1329b11f8'),
 (739, 102, 'grid_item_0_item_image_image_small_right', '62'),
 (740, 102, '_grid_item_0_item_image_image_small_right', 'field_661d1348b11f9'),
 (741, 102, 'grid_item_0_item_image', ''),
@@ -5328,7 +5328,243 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (5066, 383, '_menu_item_url', ''),
 (5068, 384, '_edit_lock', '1714473241:1'),
 (5069, 384, '_edit_last', '1'),
-(5070, 388, '_edit_lock', '1714473101:1');
+(5070, 388, '_edit_lock', '1714473101:1'),
+(5071, 390, 'hero_heading_text_large', 'in a transformative journey'),
+(5072, 390, '_hero_heading_text_large', 'field_66193769e7e70'),
+(5073, 390, 'hero_heading_text_small', 'Discover a new dimension of yourself'),
+(5074, 390, '_hero_heading_text_small', 'field_66193779e7e71'),
+(5075, 390, 'hero_heading', ''),
+(5076, 390, '_hero_heading', 'field_6619375fe7e6f'),
+(5077, 390, 'hero_image_desktop', '52'),
+(5078, 390, '_hero_image_desktop', 'field_6619379ee7e73'),
+(5079, 390, 'hero_image_mobile', ''),
+(5080, 390, '_hero_image_mobile', 'field_661937b0e7e74'),
+(5081, 390, 'hero_image', ''),
+(5082, 390, '_hero_image', 'field_66193789e7e72'),
+(5083, 390, 'hero', ''),
+(5084, 390, '_hero', 'field_6619373ce7e6e'),
+(5085, 390, 'grid_item_0_item_text_title', 'Gaia Exclusive Retreats'),
+(5086, 390, '_grid_item_0_item_text_title', 'field_661d0e01c3d58'),
+(5087, 390, 'grid_item_0_item_text_subtitle', ''),
+(5088, 390, '_grid_item_0_item_text_subtitle', 'field_661d0e0fc3d59'),
+(5089, 390, 'grid_item_0_item_text_text', 'Mark the beginning of your new life and enjoy a unique experience that will accompany you everywhere and forever. From the moment you make your booking, you\'ve already entered the sphere of change. You\'ve taken the first step in a series of processes that will lead you to improve the quality of your life on all levels.'),
+(5090, 390, '_grid_item_0_item_text_text', 'field_661d0e1fc3d5a'),
+(5091, 390, 'grid_item_0_item_text_button_label', 'LIVE THE EXPERIENCE'),
+(5092, 390, '_grid_item_0_item_text_button_label', 'field_661d0e4fc3d5c'),
+(5093, 390, 'grid_item_0_item_text_button_link', '/the-experience/'),
+(5094, 390, '_grid_item_0_item_text_button_link', 'field_661d0e64c3d5d'),
+(5095, 390, 'grid_item_0_item_text_button', ''),
+(5096, 390, '_grid_item_0_item_text_button', 'field_661d0e2ac3d5b'),
+(5097, 390, 'grid_item_0_item_text', ''),
+(5098, 390, '_grid_item_0_item_text', 'field_661d0dd3c3d57'),
+(5099, 390, 'grid_item_0_item_image_image', '330'),
+(5100, 390, '_grid_item_0_item_image_image', 'field_661d12ddb11f6'),
+(5101, 390, 'grid_item_0_item_image_image_small_left', '64'),
+(5102, 390, '_grid_item_0_item_image_image_small_left', 'field_661d1329b11f8'),
+(5103, 390, 'grid_item_0_item_image_image_small_right', '62'),
+(5104, 390, '_grid_item_0_item_image_image_small_right', 'field_661d1348b11f9'),
+(5105, 390, 'grid_item_0_item_image', ''),
+(5106, 390, '_grid_item_0_item_image', 'field_661d12b0b11f5'),
+(5107, 390, 'grid_item_1_item_text_title', 'Retreat in Mykonos'),
+(5108, 390, '_grid_item_1_item_text_title', 'field_661d0e01c3d58'),
+(5109, 390, 'grid_item_1_item_text_subtitle', ''),
+(5110, 390, '_grid_item_1_item_text_subtitle', 'field_661d0e0fc3d59'),
+(5111, 390, 'grid_item_1_item_text_text', 'Perched in a unique Mykonos location, GAIA EXCLUSIVE RETREATS offer modern luxury with breathtaking views. Guests can visit a nearby tranquil beach and relax in the crystal-clear waters. Meticulously designed, the residence caters to every need, featuring outdoor spaces for sunbathing, a spacious heated pool with an outdoor bar, and a large barbecue in the dining area for cooking.'),
+(5112, 390, '_grid_item_1_item_text_text', 'field_661d0e1fc3d5a'),
+(5113, 390, 'grid_item_1_item_text_button_label', 'JOIN THE RETREAT'),
+(5114, 390, '_grid_item_1_item_text_button_label', 'field_661d0e4fc3d5c'),
+(5115, 390, 'grid_item_1_item_text_button_link', '/retreat-in-mykonos/'),
+(5116, 390, '_grid_item_1_item_text_button_link', 'field_661d0e64c3d5d'),
+(5117, 390, 'grid_item_1_item_text_button', ''),
+(5118, 390, '_grid_item_1_item_text_button', 'field_661d0e2ac3d5b'),
+(5119, 390, 'grid_item_1_item_text', ''),
+(5120, 390, '_grid_item_1_item_text', 'field_661d0dd3c3d57'),
+(5121, 390, 'grid_item_1_item_image_image', '63'),
+(5122, 390, '_grid_item_1_item_image_image', 'field_661d12ddb11f6'),
+(5123, 390, 'grid_item_1_item_image_image_small_left', ''),
+(5124, 390, '_grid_item_1_item_image_image_small_left', 'field_661d1329b11f8'),
+(5125, 390, 'grid_item_1_item_image_image_small_right', ''),
+(5126, 390, '_grid_item_1_item_image_image_small_right', 'field_661d1348b11f9'),
+(5127, 390, 'grid_item_1_item_image', ''),
+(5128, 390, '_grid_item_1_item_image', 'field_661d12b0b11f5'),
+(5129, 390, 'grid_item', '2'),
+(5130, 390, '_grid_item', 'field_661d0d2b28846'),
+(5131, 390, 'grid_item_0_item_image_', '1'),
+(5132, 390, '_grid_item_0_item_image_', 'field_661d452c82ec5'),
+(5133, 390, 'grid_item_1_item_image_', '0'),
+(5134, 390, '_grid_item_1_item_image_', 'field_661d452c82ec5'),
+(5135, 390, 'grid_item_0_item_image_image_with_tiles', '1'),
+(5136, 390, '_grid_item_0_item_image_image_with_tiles', 'field_661d452c82ec5'),
+(5137, 390, 'grid_item_1_item_image_image_with_tiles', '0'),
+(5138, 390, '_grid_item_1_item_image_image_with_tiles', 'field_661d452c82ec5'),
+(5139, 390, 'carousel_0_image', '66'),
+(5140, 390, '_carousel_0_image', 'field_661e35ece3a92'),
+(5141, 390, 'carousel_0_name', 'Stephanie Corneille'),
+(5142, 390, '_carousel_0_name', 'field_661e35f9e3a93'),
+(5143, 390, 'carousel_0_profession', 'Wellness Enthusiast'),
+(5144, 390, '_carousel_0_profession', 'field_661e360ae3a94'),
+(5145, 390, 'carousel_1_image', '118'),
+(5146, 390, '_carousel_1_image', 'field_661e35ece3a92'),
+(5147, 390, 'carousel_1_name', 'Ruth Geyer'),
+(5148, 390, '_carousel_1_name', 'field_661e35f9e3a93'),
+(5149, 390, 'carousel_1_profession', 'Well-being Instructor & Burnout Coach'),
+(5150, 390, '_carousel_1_profession', 'field_661e360ae3a94'),
+(5151, 390, 'carousel_2_image', '67'),
+(5152, 390, '_carousel_2_image', 'field_661e35ece3a92'),
+(5153, 390, 'carousel_2_name', 'Mihail'),
+(5154, 390, '_carousel_2_name', 'field_661e35f9e3a93'),
+(5155, 390, 'carousel_2_profession', 'Self Development Expert'),
+(5156, 390, '_carousel_2_profession', 'field_661e360ae3a94'),
+(5157, 390, 'carousel_3_image', '119'),
+(5158, 390, '_carousel_3_image', 'field_661e35ece3a92'),
+(5159, 390, 'carousel_3_name', 'Sandra Berten'),
+(5160, 390, '_carousel_3_name', 'field_661e35f9e3a93'),
+(5161, 390, 'carousel_3_profession', 'Chef'),
+(5162, 390, '_carousel_3_profession', 'field_661e360ae3a94'),
+(5163, 390, 'carousel', '4'),
+(5164, 390, '_carousel', 'field_661e35b1e3a8f'),
+(5165, 390, 'home__team_heading', 'Our team'),
+(5166, 390, '_home__team_heading', 'field_661e42df587ec'),
+(5167, 390, 'home__team_button_label', 'Meet the team'),
+(5168, 390, '_home__team_button_label', 'field_661e42f2587ee'),
+(5169, 390, 'home__team_button_link', '6'),
+(5170, 390, '_home__team_button_link', 'field_661e42f7587ef'),
+(5171, 390, 'home__team_button', ''),
+(5172, 390, '_home__team_button', 'field_661e42e8587ed'),
+(5173, 390, 'home__team', ''),
+(5174, 390, '_home__team', 'field_661e42c2587eb'),
+(5175, 390, 'testimonial_image', '112'),
+(5176, 390, '_testimonial_image', 'field_661e47cd09fcc'),
+(5177, 390, 'testimonial_heading', 'Your experiences'),
+(5178, 390, '_testimonial_heading', 'field_661e47dc09fcd'),
+(5179, 390, 'testimonial_text', 'The experience surpassed all my expectations. I discovered skills and strengths I never knew I possessed, and with the guidance and support of the team, I\'ve embraced a new way of living.'),
+(5180, 390, '_testimonial_text', 'field_661e47ea09fce'),
+(5181, 390, 'testimonial_author', 'ÉLODIE'),
+(5182, 390, '_testimonial_author', 'field_661e47f509fcf'),
+(5183, 390, 'testimonial', ''),
+(5184, 390, '_testimonial', 'field_661e47b609fcb'),
+(5185, 390, 'grid_item_0_wide_image_item', '0'),
+(5186, 390, '_grid_item_0_wide_image_item', 'field_66211e516a09c'),
+(5187, 390, 'grid_item_1_wide_image_item', '0'),
+(5188, 390, '_grid_item_1_wide_image_item', 'field_66211e516a09c'),
+(5189, 391, 'hero_heading_text_large', 'in a transformative journey'),
+(5190, 391, '_hero_heading_text_large', 'field_66193769e7e70'),
+(5191, 391, 'hero_heading_text_small', 'Discover a new dimension of yourself'),
+(5192, 391, '_hero_heading_text_small', 'field_66193779e7e71'),
+(5193, 391, 'hero_heading', ''),
+(5194, 391, '_hero_heading', 'field_6619375fe7e6f'),
+(5195, 391, 'hero_image_desktop', '52'),
+(5196, 391, '_hero_image_desktop', 'field_6619379ee7e73'),
+(5197, 391, 'hero_image_mobile', ''),
+(5198, 391, '_hero_image_mobile', 'field_661937b0e7e74'),
+(5199, 391, 'hero_image', ''),
+(5200, 391, '_hero_image', 'field_66193789e7e72'),
+(5201, 391, 'hero', ''),
+(5202, 391, '_hero', 'field_6619373ce7e6e'),
+(5203, 391, 'grid_item_0_item_text_title', 'Gaia Exclusive Retreats'),
+(5204, 391, '_grid_item_0_item_text_title', 'field_661d0e01c3d58'),
+(5205, 391, 'grid_item_0_item_text_subtitle', ''),
+(5206, 391, '_grid_item_0_item_text_subtitle', 'field_661d0e0fc3d59'),
+(5207, 391, 'grid_item_0_item_text_text', 'Mark the beginning of your new life and enjoy a unique experience that will accompany you everywhere and forever. From the moment you make your booking, you\'ve already entered the sphere of change. You\'ve taken the first step in a series of processes that will lead you to improve the quality of your life on all levels.'),
+(5208, 391, '_grid_item_0_item_text_text', 'field_661d0e1fc3d5a'),
+(5209, 391, 'grid_item_0_item_text_button_label', 'LIVE THE EXPERIENCE'),
+(5210, 391, '_grid_item_0_item_text_button_label', 'field_661d0e4fc3d5c'),
+(5211, 391, 'grid_item_0_item_text_button_link', '27'),
+(5212, 391, '_grid_item_0_item_text_button_link', 'field_661d0e64c3d5d'),
+(5213, 391, 'grid_item_0_item_text_button', ''),
+(5214, 391, '_grid_item_0_item_text_button', 'field_661d0e2ac3d5b'),
+(5215, 391, 'grid_item_0_item_text', ''),
+(5216, 391, '_grid_item_0_item_text', 'field_661d0dd3c3d57'),
+(5217, 391, 'grid_item_0_item_image_image', '330'),
+(5218, 391, '_grid_item_0_item_image_image', 'field_661d12ddb11f6'),
+(5219, 391, 'grid_item_0_item_image_image_small_left', '64'),
+(5220, 391, '_grid_item_0_item_image_image_small_left', 'field_661d1329b11f8'),
+(5221, 391, 'grid_item_0_item_image_image_small_right', '62'),
+(5222, 391, '_grid_item_0_item_image_image_small_right', 'field_661d1348b11f9'),
+(5223, 391, 'grid_item_0_item_image', ''),
+(5224, 391, '_grid_item_0_item_image', 'field_661d12b0b11f5'),
+(5225, 391, 'grid_item_1_item_text_title', 'Retreat in Mykonos'),
+(5226, 391, '_grid_item_1_item_text_title', 'field_661d0e01c3d58'),
+(5227, 391, 'grid_item_1_item_text_subtitle', ''),
+(5228, 391, '_grid_item_1_item_text_subtitle', 'field_661d0e0fc3d59'),
+(5229, 391, 'grid_item_1_item_text_text', 'Perched in a unique Mykonos location, GAIA EXCLUSIVE RETREATS offer modern luxury with breathtaking views. Guests can visit a nearby tranquil beach and relax in the crystal-clear waters. Meticulously designed, the residence caters to every need, featuring outdoor spaces for sunbathing, a spacious heated pool with an outdoor bar, and a large barbecue in the dining area for cooking.'),
+(5230, 391, '_grid_item_1_item_text_text', 'field_661d0e1fc3d5a'),
+(5231, 391, 'grid_item_1_item_text_button_label', 'JOIN THE RETREAT'),
+(5232, 391, '_grid_item_1_item_text_button_label', 'field_661d0e4fc3d5c'),
+(5233, 391, 'grid_item_1_item_text_button_link', '166'),
+(5234, 391, '_grid_item_1_item_text_button_link', 'field_661d0e64c3d5d'),
+(5235, 391, 'grid_item_1_item_text_button', ''),
+(5236, 391, '_grid_item_1_item_text_button', 'field_661d0e2ac3d5b'),
+(5237, 391, 'grid_item_1_item_text', ''),
+(5238, 391, '_grid_item_1_item_text', 'field_661d0dd3c3d57'),
+(5239, 391, 'grid_item_1_item_image_image', '63'),
+(5240, 391, '_grid_item_1_item_image_image', 'field_661d12ddb11f6'),
+(5241, 391, 'grid_item_1_item_image_image_small_left', ''),
+(5242, 391, '_grid_item_1_item_image_image_small_left', 'field_661d1329b11f8'),
+(5243, 391, 'grid_item_1_item_image_image_small_right', ''),
+(5244, 391, '_grid_item_1_item_image_image_small_right', 'field_661d1348b11f9'),
+(5245, 391, 'grid_item_1_item_image', ''),
+(5246, 391, '_grid_item_1_item_image', 'field_661d12b0b11f5'),
+(5247, 391, 'grid_item', '2'),
+(5248, 391, '_grid_item', 'field_661d0d2b28846'),
+(5249, 391, 'grid_item_0_item_image_', '1'),
+(5250, 391, '_grid_item_0_item_image_', 'field_661d452c82ec5'),
+(5251, 391, 'grid_item_1_item_image_', '0'),
+(5252, 391, '_grid_item_1_item_image_', 'field_661d452c82ec5'),
+(5253, 391, 'grid_item_0_item_image_image_with_tiles', '1'),
+(5254, 391, '_grid_item_0_item_image_image_with_tiles', 'field_661d452c82ec5'),
+(5255, 391, 'grid_item_1_item_image_image_with_tiles', '0'),
+(5256, 391, '_grid_item_1_item_image_image_with_tiles', 'field_661d452c82ec5'),
+(5257, 391, 'carousel_0_image', '66'),
+(5258, 391, '_carousel_0_image', 'field_661e35ece3a92'),
+(5259, 391, 'carousel_0_name', 'Stephanie Corneille'),
+(5260, 391, '_carousel_0_name', 'field_661e35f9e3a93'),
+(5261, 391, 'carousel_0_profession', 'Wellness Enthusiast'),
+(5262, 391, '_carousel_0_profession', 'field_661e360ae3a94'),
+(5263, 391, 'carousel_1_image', '118'),
+(5264, 391, '_carousel_1_image', 'field_661e35ece3a92'),
+(5265, 391, 'carousel_1_name', 'Ruth Geyer'),
+(5266, 391, '_carousel_1_name', 'field_661e35f9e3a93'),
+(5267, 391, 'carousel_1_profession', 'Well-being Instructor & Burnout Coach'),
+(5268, 391, '_carousel_1_profession', 'field_661e360ae3a94'),
+(5269, 391, 'carousel_2_image', '67'),
+(5270, 391, '_carousel_2_image', 'field_661e35ece3a92'),
+(5271, 391, 'carousel_2_name', 'Mihail'),
+(5272, 391, '_carousel_2_name', 'field_661e35f9e3a93'),
+(5273, 391, 'carousel_2_profession', 'Self Development Expert'),
+(5274, 391, '_carousel_2_profession', 'field_661e360ae3a94'),
+(5275, 391, 'carousel_3_image', '119'),
+(5276, 391, '_carousel_3_image', 'field_661e35ece3a92'),
+(5277, 391, 'carousel_3_name', 'Sandra Berten'),
+(5278, 391, '_carousel_3_name', 'field_661e35f9e3a93'),
+(5279, 391, 'carousel_3_profession', 'Chef'),
+(5280, 391, '_carousel_3_profession', 'field_661e360ae3a94'),
+(5281, 391, 'carousel', '4'),
+(5282, 391, '_carousel', 'field_661e35b1e3a8f'),
+(5283, 391, 'home__team_heading', 'Our team'),
+(5284, 391, '_home__team_heading', 'field_661e42df587ec'),
+(5285, 391, 'home__team_button_label', 'Meet the team'),
+(5286, 391, '_home__team_button_label', 'field_661e42f2587ee'),
+(5287, 391, 'home__team_button_link', '6'),
+(5288, 391, '_home__team_button_link', 'field_661e42f7587ef'),
+(5289, 391, 'home__team_button', ''),
+(5290, 391, '_home__team_button', 'field_661e42e8587ed'),
+(5291, 391, 'home__team', ''),
+(5292, 391, '_home__team', 'field_661e42c2587eb'),
+(5293, 391, 'testimonial_image', '112'),
+(5294, 391, '_testimonial_image', 'field_661e47cd09fcc'),
+(5295, 391, 'testimonial_heading', 'Your experiences'),
+(5296, 391, '_testimonial_heading', 'field_661e47dc09fcd'),
+(5297, 391, 'testimonial_text', 'The experience surpassed all my expectations. I discovered skills and strengths I never knew I possessed, and with the guidance and support of the team, I\'ve embraced a new way of living.'),
+(5298, 391, '_testimonial_text', 'field_661e47ea09fce'),
+(5299, 391, 'testimonial_author', 'ÉLODIE'),
+(5300, 391, '_testimonial_author', 'field_661e47f509fcf'),
+(5301, 391, 'testimonial', ''),
+(5302, 391, '_testimonial', 'field_661e47b609fcb'),
+(5303, 391, 'grid_item_0_wide_image_item', '0'),
+(5304, 391, '_grid_item_0_wide_image_item', 'field_66211e516a09c'),
+(5305, 391, 'grid_item_1_wide_image_item', '0'),
+(5306, 391, '_grid_item_1_wide_image_item', 'field_66211e516a09c');
 
 -- --------------------------------------------------------
 
@@ -5341,24 +5577,24 @@ CREATE TABLE `wp_posts` (
   `post_author` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `post_content` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `post_title` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `post_excerpt` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `post_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'publish',
-  `comment_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'open',
-  `ping_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'open',
-  `post_password` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `post_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `to_ping` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `pinged` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `post_content` longtext NOT NULL,
+  `post_title` text NOT NULL,
+  `post_excerpt` text NOT NULL,
+  `post_status` varchar(20) NOT NULL DEFAULT 'publish',
+  `comment_status` varchar(20) NOT NULL DEFAULT 'open',
+  `ping_status` varchar(20) NOT NULL DEFAULT 'open',
+  `post_password` varchar(255) NOT NULL DEFAULT '',
+  `post_name` varchar(200) NOT NULL DEFAULT '',
+  `to_ping` text NOT NULL,
+  `pinged` text NOT NULL,
   `post_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_modified_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `post_content_filtered` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `post_content_filtered` longtext NOT NULL,
   `post_parent` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
-  `guid` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `guid` varchar(255) NOT NULL DEFAULT '',
   `menu_order` int(11) NOT NULL DEFAULT 0,
-  `post_type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'post',
-  `post_mime_type` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `post_type` varchar(20) NOT NULL DEFAULT 'post',
+  `post_mime_type` varchar(100) NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -5398,7 +5634,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (45, 1, '2024-04-12 13:32:17', '2024-04-12 13:32:17', 'a:8:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"group\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"block\";s:10:\"sub_fields\";a:0:{}}', 'Image', 'image', 'publish', 'closed', 'closed', '', 'field_66193789e7e72', '', '', '2024-04-12 13:32:17', '2024-04-12 13:32:17', '', 41, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=45', 1, 'acf-field', '', 0),
 (46, 1, '2024-04-12 13:32:17', '2024-04-12 13:32:17', 'a:16:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";s:12:\"preview_size\";s:6:\"medium\";}', 'Desktop', 'desktop', 'publish', 'closed', 'closed', '', 'field_6619379ee7e73', '', '', '2024-04-12 13:32:17', '2024-04-12 13:32:17', '', 45, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=46', 0, 'acf-field', '', 0),
 (47, 1, '2024-04-12 13:32:17', '2024-04-12 13:32:17', 'a:16:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";s:12:\"preview_size\";s:6:\"medium\";}', 'Mobile', 'mobile', 'publish', 'closed', 'closed', '', 'field_661937b0e7e74', '', '', '2024-04-12 13:32:17', '2024-04-12 13:32:17', '', 45, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=47', 1, 'acf-field', '', 0),
-(48, 1, '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2024-04-29 08:22:41', '2024-04-29 08:22:41', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?page_id=48', 0, 'page', '', 0),
+(48, 1, '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2024-04-30 11:23:55', '2024-04-30 11:23:55', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?page_id=48', 0, 'page', '', 0),
 (49, 1, '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 13:32:32', '2024-04-12 13:32:32', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=49', 0, 'revision', '', 0),
 (50, 1, '2024-04-12 13:34:36', '2024-04-12 13:34:36', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 13:34:36', '2024-04-12 13:34:36', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=50', 0, 'revision', '', 0),
 (51, 1, '2024-04-12 13:48:05', '2024-04-12 13:48:05', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-12 13:48:05', '2024-04-12 13:48:05', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=51', 0, 'revision', '', 0),
@@ -5420,7 +5656,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (68, 2, '2024-04-15 09:41:21', '2024-04-15 09:41:21', '', 'team-grid-004', '', 'inherit', 'open', 'closed', '', 'team-grid-004', '', '', '2024-04-16 08:30:03', '2024-04-16 08:30:03', '', 48, 'http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/team-grid-004.webp', 0, 'attachment', 'image/webp', 0),
 (69, 2, '2024-04-15 09:41:22', '2024-04-15 09:41:22', '', 'team-grid-002', '', 'inherit', 'open', 'closed', '', 'team-grid-002', '', '', '2024-04-16 08:30:03', '2024-04-16 08:30:03', '', 48, 'http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/team-grid-002.webp', 0, 'attachment', 'image/webp', 0),
 (70, 2, '2024-04-15 09:52:54', '2024-04-15 09:52:54', '', 'home-quote', '', 'inherit', 'open', 'closed', '', 'home-quote', '', '', '2024-04-16 09:44:32', '2024-04-16 09:44:32', '', 48, 'http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/home-quote.webp', 0, 'attachment', 'image/webp', 0),
-(71, 2, '2024-04-15 11:19:21', '2024-04-15 11:19:21', 'a:8:{s:8:\"location\";a:4:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:7:\"default\";}}i:1;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"retreat.php\";}}i:2;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"mykonos.php\";}}i:3;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:14:\"experience.php\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:0:\"\";s:12:\"show_in_rest\";i:0;}', 'Main grid', 'main-grid', 'publish', 'closed', 'closed', '', 'group_661d0d2b3b124', '', '', '2024-04-18 15:15:36', '2024-04-18 15:15:36', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field-group&#038;p=71', 0, 'acf-field-group', '', 0),
+(71, 2, '2024-04-15 11:19:21', '2024-04-15 11:19:21', 'a:8:{s:8:\"location\";a:4:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:7:\"default\";}}i:1;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"retreat.php\";}}i:2;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"mykonos.php\";}}i:3;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"page_template\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:14:\"experience.php\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:0:\"\";s:12:\"show_in_rest\";i:0;}', 'Main grid', 'main-grid', 'publish', 'closed', 'closed', '', 'group_661d0d2b3b124', '', '', '2024-04-30 11:23:32', '2024-04-30 11:23:32', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field-group&#038;p=71', 0, 'acf-field-group', '', 0),
 (72, 2, '2024-04-15 11:19:21', '2024-04-15 11:19:21', 'a:13:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:8:\"repeater\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"block\";s:10:\"pagination\";i:0;s:3:\"min\";s:0:\"\";s:3:\"max\";s:0:\"\";s:9:\"collapsed\";s:0:\"\";s:12:\"button_label\";s:7:\"Add Row\";s:13:\"rows_per_page\";i:20;}', 'Grid Item', 'grid_item', 'publish', 'closed', 'closed', '', 'field_661d0d2b28846', '', '', '2024-04-15 11:47:40', '2024-04-15 11:47:40', '', 71, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=72', 0, 'acf-field', '', 0),
 (73, 2, '2024-04-15 11:41:46', '2024-04-15 11:41:46', 'a:8:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"group\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"block\";s:10:\"sub_fields\";a:0:{}}', 'Item Text', 'item_text', 'publish', 'closed', 'closed', '', 'field_661d0dd3c3d57', '', '', '2024-04-18 13:22:25', '2024-04-18 13:22:25', '', 72, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=73', 1, 'acf-field', '', 0),
 (74, 2, '2024-04-15 11:41:46', '2024-04-15 11:41:46', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:2:\"50\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";}', 'Title', 'title', 'publish', 'closed', 'closed', '', 'field_661d0e01c3d58', '', '', '2024-04-15 11:47:07', '2024-04-15 11:47:07', '', 73, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=74', 0, 'acf-field', '', 0),
@@ -5428,7 +5664,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (76, 2, '2024-04-15 11:41:46', '2024-04-15 11:41:46', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Text', 'text', 'publish', 'closed', 'closed', '', 'field_661d0e1fc3d5a', '', '', '2024-04-15 11:47:07', '2024-04-15 11:47:07', '', 73, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=76', 2, 'acf-field', '', 0),
 (77, 2, '2024-04-15 11:41:46', '2024-04-15 11:41:46', 'a:8:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"group\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"table\";s:10:\"sub_fields\";a:0:{}}', 'Button', 'button', 'publish', 'closed', 'closed', '', 'field_661d0e2ac3d5b', '', '', '2024-04-15 11:47:07', '2024-04-15 11:47:07', '', 73, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=77', 3, 'acf-field', '', 0),
 (78, 2, '2024-04-15 11:41:46', '2024-04-15 11:41:46', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";}', 'Label', 'label', 'publish', 'closed', 'closed', '', 'field_661d0e4fc3d5c', '', '', '2024-04-15 11:41:46', '2024-04-15 11:41:46', '', 77, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=78', 0, 'acf-field', '', 0),
-(79, 2, '2024-04-15 11:41:46', '2024-04-15 11:41:46', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";}', 'link', 'link', 'publish', 'closed', 'closed', '', 'field_661d0e64c3d5d', '', '', '2024-04-15 11:41:46', '2024-04-15 11:41:46', '', 77, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=79', 1, 'acf-field', '', 0),
+(79, 2, '2024-04-15 11:41:46', '2024-04-15 11:41:46', 'a:12:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:9:\"page_link\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:9:\"post_type\";s:0:\"\";s:11:\"post_status\";s:0:\"\";s:8:\"taxonomy\";s:0:\"\";s:14:\"allow_archives\";i:1;s:8:\"multiple\";i:0;s:10:\"allow_null\";i:0;}', 'link', 'link', 'publish', 'closed', 'closed', '', 'field_661d0e64c3d5d', '', '', '2024-04-30 11:23:32', '2024-04-30 11:23:32', '', 77, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=79', 1, 'acf-field', '', 0),
 (80, 2, '2024-04-15 11:45:24', '2024-04-15 11:45:24', 'a:8:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"group\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:6:\"layout\";s:5:\"table\";s:10:\"sub_fields\";a:0:{}}', 'Item Image', 'item_image', 'publish', 'closed', 'closed', '', 'field_661d12b0b11f5', '', '', '2024-04-18 13:22:25', '2024-04-18 13:22:25', '', 72, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=80', 2, 'acf-field', '', 0);
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (81, 2, '2024-04-15 11:45:24', '2024-04-15 11:45:24', 'a:16:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:2:\"50\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";s:12:\"preview_size\";s:6:\"medium\";}', 'Image', 'image', 'publish', 'closed', 'closed', '', 'field_661d12ddb11f6', '', '', '2024-04-15 11:47:07', '2024-04-15 11:47:07', '', 80, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&#038;p=81', 0, 'acf-field', '', 0),
@@ -5723,7 +5959,9 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (386, 1, '2024-04-30 10:31:25', '2024-04-30 10:31:25', 'a:11:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";}', 'Text', 'text', 'publish', 'closed', 'closed', '', 'field_6630c8698bc94', '', '', '2024-04-30 10:31:25', '2024-04-30 10:31:25', '', 385, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=386', 0, 'acf-field', '', 0),
 (387, 1, '2024-04-30 10:31:25', '2024-04-30 10:31:25', 'a:12:{s:10:\"aria-label\";s:0:\"\";s:4:\"type\";s:9:\"page_link\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:9:\"post_type\";s:0:\"\";s:11:\"post_status\";s:0:\"\";s:8:\"taxonomy\";s:0:\"\";s:14:\"allow_archives\";i:1;s:8:\"multiple\";i:0;s:10:\"allow_null\";i:0;}', 'Link', 'link', 'publish', 'closed', 'closed', '', 'field_6630c8718bc95', '', '', '2024-04-30 10:31:25', '2024-04-30 10:31:25', '', 385, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field&p=387', 1, 'acf-field', '', 0),
 (388, 1, '2024-04-30 10:31:39', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2024-04-30 10:31:39', '0000-00-00 00:00:00', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?post_type=acf-field-group&p=388', 0, 'acf-field-group', '', 0),
-(389, 1, '2024-04-30 10:33:43', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2024-04-30 10:33:43', '0000-00-00 00:00:00', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=389', 0, 'post', '', 0);
+(389, 1, '2024-04-30 10:33:43', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2024-04-30 10:33:43', '0000-00-00 00:00:00', '', 0, 'http://localhost/gaiaexclusiveretreats.com/?p=389', 0, 'post', '', 0),
+(390, 2, '2024-04-30 11:22:17', '2024-04-30 11:22:17', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-30 11:22:17', '2024-04-30 11:22:17', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=390', 0, 'revision', '', 0),
+(391, 2, '2024-04-30 11:23:55', '2024-04-30 11:23:55', '', 'Home', '', 'inherit', 'closed', 'closed', '', '48-revision-v1', '', '', '2024-04-30 11:23:55', '2024-04-30 11:23:55', '', 48, 'http://localhost/gaiaexclusiveretreats.com/?p=391', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -5734,8 +5972,8 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 CREATE TABLE `wp_termmeta` (
   `meta_id` bigint(20) UNSIGNED NOT NULL,
   `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `meta_key` varchar(255) DEFAULT NULL,
+  `meta_value` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -5746,8 +5984,8 @@ CREATE TABLE `wp_termmeta` (
 
 CREATE TABLE `wp_terms` (
   `term_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `slug` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `name` varchar(200) NOT NULL DEFAULT '',
+  `slug` varchar(200) NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -5811,8 +6049,8 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 CREATE TABLE `wp_term_taxonomy` (
   `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL,
   `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
-  `taxonomy` varchar(32) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `description` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `taxonomy` varchar(32) NOT NULL DEFAULT '',
+  `description` longtext NOT NULL,
   `parent` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
   `count` bigint(20) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
@@ -5837,8 +6075,8 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 CREATE TABLE `wp_usermeta` (
   `umeta_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `meta_key` varchar(255) DEFAULT NULL,
+  `meta_value` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -5885,7 +6123,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (38, 1, 'acf_user_settings', 'a:1:{s:23:\"options-pages-first-run\";b:1;}'),
 (39, 2, 'session_tokens', 'a:2:{s:64:\"9ffb5e5062cbd93f5bd26d5e94c1bfbef7c1d26476889f71bfff115042c908de\";a:4:{s:10:\"expiration\";i:1714549024;s:2:\"ip\";s:3:\"::1\";s:2:\"ua\";s:111:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\";s:5:\"login\";i:1714376224;}s:64:\"689f56d347c7cae573f80cc5e0b60fbf4dd81b450d3fb11a901c64834c689a22\";a:4:{s:10:\"expiration\";i:1714634834;s:2:\"ip\";s:3:\"::1\";s:2:\"ua\";s:111:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\";s:5:\"login\";i:1714462034;}}'),
 (40, 2, 'wp_dashboard_quick_press_last_post_id', '326'),
-(41, 2, 'closedpostboxes_page', 'a:4:{i:0;s:23:\"acf-group_6619373be9cad\";i:1;s:23:\"acf-group_661d0d2b3b124\";i:2;s:23:\"acf-group_6620f50022a4c\";i:3;s:23:\"acf-group_661e35b10ad21\";}'),
+(41, 2, 'closedpostboxes_page', 'a:3:{i:0;s:23:\"acf-group_6619373be9cad\";i:1;s:23:\"acf-group_661e47b62f238\";i:2;s:12:\"revisionsdiv\";}'),
 (42, 2, 'metaboxhidden_page', 'a:4:{i:0;s:16:\"commentstatusdiv\";i:1;s:11:\"commentsdiv\";i:2;s:7:\"slugdiv\";i:3;s:9:\"authordiv\";}'),
 (43, 2, 'wp_user-settings', 'editor=tinymce&libraryContent=browse'),
 (44, 2, 'wp_user-settings-time', '1714467848'),
@@ -5895,7 +6133,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (48, 1, 'screen_layout_page', '2'),
 (49, 2, 'manageedit-acf-ui-options-pagecolumnshidden', 'a:1:{i:0;s:7:\"acf-key\";}'),
 (50, 2, 'acf_user_settings', 'a:1:{s:23:\"options-pages-first-run\";b:1;}'),
-(51, 2, 'meta-box-order_page', 'a:4:{s:15:\"acf_after_title\";s:0:\"\";s:4:\"side\";s:23:\"submitdiv,pageparentdiv\";s:6:\"normal\";s:131:\"acf-group_661fd20bade5b,acf-group_66213ba9db215,acf-group_661d0d2b3b124,revisionsdiv,commentstatusdiv,commentsdiv,slugdiv,authordiv\";s:8:\"advanced\";s:0:\"\";}'),
+(51, 2, 'meta-box-order_page', 'a:4:{s:15:\"acf_after_title\";s:0:\"\";s:4:\"side\";s:23:\"submitdiv,pageparentdiv\";s:6:\"normal\";s:155:\"acf-group_6619373be9cad,acf-group_661d0d2b3b124,acf-group_661e42c15355d,acf-group_661e47b62f238,revisionsdiv,commentstatusdiv,commentsdiv,slugdiv,authordiv\";s:8:\"advanced\";s:0:\"\";}'),
 (52, 2, 'screen_layout_page', '2'),
 (53, 2, 'nav_menu_recently_edited', '6'),
 (54, 2, 'managenav-menuscolumnshidden', 'a:0:{}'),
@@ -5926,15 +6164,15 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 
 CREATE TABLE `wp_users` (
   `ID` bigint(20) UNSIGNED NOT NULL,
-  `user_login` varchar(60) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_pass` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_nicename` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_url` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `user_login` varchar(60) NOT NULL DEFAULT '',
+  `user_pass` varchar(255) NOT NULL DEFAULT '',
+  `user_nicename` varchar(50) NOT NULL DEFAULT '',
+  `user_email` varchar(100) NOT NULL DEFAULT '',
+  `user_url` varchar(100) NOT NULL DEFAULT '',
   `user_registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `user_activation_key` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `user_activation_key` varchar(255) NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT 0,
-  `display_name` varchar(250) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT ''
+  `display_name` varchar(250) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -6076,19 +6314,19 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT for table `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=593;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=594;
 
 --
 -- AUTO_INCREMENT for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5071;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5307;
 
 --
 -- AUTO_INCREMENT for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=390;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=392;
 
 --
 -- AUTO_INCREMENT for table `wp_termmeta`
