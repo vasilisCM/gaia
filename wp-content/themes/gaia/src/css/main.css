@@ -1654,4 +1654,38 @@ ul li {
   padding-bottom: clamp(30px, 6.0544904137vw, 60px);
 }
 
+.simple-page {
+  padding-bottom: clamp(80px, 14.1271442987vw, 140px);
+}
+.simple-page h1 {
+  padding-bottom: clamp(50px, 8.072653885vw, 80px);
+}
+.simple-page h4 {
+  padding-block: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.simple-page p {
+  margin-bottom: 20px;
+}
+.simple-page ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+.simple-page ol {
+  padding: 0;
+}
+.simple-page ol li {
+  list-style-type: upper-alpha;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.simple-page a {
+  color: #3b3232;
+  transition: 0.3s ease;
+}
+.simple-page a:hover {
+  color: #a19696;
+}
+
 /*# sourceMappingURL=main.css.map */

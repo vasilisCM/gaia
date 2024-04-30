@@ -4,12 +4,10 @@
 <!-- Main  -->
 <main data-barba="container">
     <!-- Hero  -->
-    <section class="first-section hero hero--home">
-        <div class="boxed centered">
-            <h1>Page Boilerplate</h1>
-            <p>Sass is compiling live, and you can also use JS modules.</p>
-            <div><img src="<?php echo get_template_directory_uri() . '/assets/img/logo.jpg'; ?>" alt=""></div>
-            <a href=""><button>More</button></a>
+    <section class="first-section simple-page">
+        <div class="boxed-xs centered">
+            <h1 class="heading serif centered-text"><?php the_title(); ?></h1>
+            <p><?php the_content(); ?></p>
         </div>
     </section>
 </main>
