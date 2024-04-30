@@ -532,6 +532,7 @@
       font-size: cross-media(20px, 991px, 30px);
       line-height: 1.3em;
       letter-spacing: 0;
+      color: $black;
 
       @include view(ultra) {
         font-size: cross-media(
@@ -547,10 +548,18 @@
       text-align: right;
       transform: rotate(180deg);
       left: 40px;
+
+      @include view(ultra) {
+        left: cross-media(60px, $ultra-breakpoint, calc(60px * $ultra-scale));
+      }
     }
 
     &--next {
       right: 40px;
+
+      @include view(ultra) {
+        right: cross-media(60px, $ultra-breakpoint, calc(60px * $ultra-scale));
+      }
     }
   }
 }

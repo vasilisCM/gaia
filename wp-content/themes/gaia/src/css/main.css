@@ -842,6 +842,7 @@ ul li {
   font-size: clamp(20px, 3.0272452069vw, 30px);
   line-height: 1.3em;
   letter-spacing: 0;
+  color: #000;
 }
 @media only screen and (min-width: 1921px) {
   .lightbox__button::after {
@@ -854,8 +855,18 @@ ul li {
   transform: rotate(180deg);
   left: 40px;
 }
+@media only screen and (min-width: 1921px) {
+  .lightbox__button--previous {
+    left: clamp(60px, 3.046875vw, 78px);
+  }
+}
 .lightbox__button--next {
   right: 40px;
+}
+@media only screen and (min-width: 1921px) {
+  .lightbox__button--next {
+    right: clamp(60px, 3.046875vw, 78px);
+  }
 }
 
 .swiper {
