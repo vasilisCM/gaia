@@ -168,42 +168,34 @@
     <section class="learn-more">
         <div class="learn-more__container boxed centered">
             <div class="learn-more__heading heading-s serif centered-text">
-                Learn more about...
+                <?php echo get_field('learn_more_heading'); ?>
             </div>
-            <div class="learn-more__grid">
-                <a href="#">
-                    <div class="learn-more__item">
-                        <div class="learn-more__item-text heading-ms light sans-serif centered-text">
-                            The retreat
-                        </div>
-                        <div class="learn-more__item-image">
-                            <img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/hero-retreat.webp" alt="">
-                        </div>
-                    </div>
-                </a>
 
-                <a href="#">
-                    <div class="learn-more__item">
-                        <div class="learn-more__item-text heading-ms light sans-serif centered-text">
-                            The experience
-                        </div>
-                        <div class="learn-more__item-image">
-                            <img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/hero-experience.webp" alt="">
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="learn-more__item">
-                        <div class="learn-more__item-text heading-ms light sans-serif centered-text">
-                            Tailor - made retreats
-                        </div>
-                        <div class="learn-more__item-image">
-                            <img src="http://localhost/gaiaexclusiveretreats.com/wp-content/uploads/2024/04/hero-tailor-made.webp" alt="">
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <?php if (have_rows('learn_more_items')) : ?>
+                <div class="learn-more__grid">
+                    <?php while (have_rows('learn_more_items')) : the_row(); ?>
+                        <?php $post_object = get_sub_field('item'); ?>
+                        <?php if ($post_object) : ?>
+                            <?php // override $post
+                            $post = $post_object;
+                            setup_postdata($post);
+                            ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="learn-more__item">
+                                    <div class="learn-more__item-text heading-ms light sans-serif centered-text">
+                                        <?php the_title(); ?>
+                                    </div>
+                                    <div class="learn-more__item-image">
+                                        <img src="<?php echo get_field('image', $post->ID); ?>" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly 
+                            ?>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 
