@@ -20,6 +20,7 @@ const initHamburgerClickHandler = (hamburgerButton, tl) => {
   tl.pause();
   tl.progress(0);
   lenis.isStopped = false; // Ensure the timeline is paused and reset to the start
+  header.classList.remove("header--mobile-menu-open");
   hamburgerButton.classList.remove("hamburger--pressed"); // Ensure button is not in the "pressed" state visually
   hamburgerButton.removeAttribute("pressed");
 
