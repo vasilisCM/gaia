@@ -809,6 +809,11 @@ ul li {
   text-align: center;
   pointer-events: none;
 }
+@media only screen and (max-width: 991px) {
+  .carousel-text__slide {
+    width: 100%;
+  }
+}
 
 .lightbox {
   background-color: #eceaea;
