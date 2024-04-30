@@ -36,16 +36,12 @@
   }
 
   &__container {
-    // position: relative;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
 
-    @include view(lg-min) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+    // @include view(lg-min) {
+    // }
 
     // @include view(md-max) {
     //   justify-content: center;
@@ -60,7 +56,7 @@
     }
 
     @include view(md-max) {
-      // position: absolute;
+      justify-self: center;
       z-index: 1;
       // border: solid 3px red;
       // width: 100%;
@@ -107,6 +103,10 @@
   &--2 {
     @include view(lg-min) {
       justify-self: end;
+    }
+
+    @include view(md-max) {
+      order: 1;
     }
   }
 
