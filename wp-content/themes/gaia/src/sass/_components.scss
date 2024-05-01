@@ -143,6 +143,7 @@
   border: solid 1px $black;
   transition: color 0.3s ease;
   color: $black;
+  -webkit-appearance: none;
 
   &:hover {
     color: $white;

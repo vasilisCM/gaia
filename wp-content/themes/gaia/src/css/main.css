@@ -244,6 +244,11 @@ p,
   font-family: "Montserrat";
 }
 
+input[type=submit],
+input[type=Reset] {
+  -webkit-appearance: none;
+}
+
 .white-menu-items .header__logo,
 .white-menu-items .hamburger {
   filter: invert(100%);
@@ -1257,6 +1262,7 @@ ul li {
   border: solid 1px #000;
   transition: color 0.3s ease;
   color: #000;
+  -webkit-appearance: none;
 }
 .button:hover {
   color: #fff;
