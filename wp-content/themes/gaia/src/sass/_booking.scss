@@ -5,12 +5,17 @@
     justify-items: center;
     gap: cross-media(30px, 991px, 60px);
   }
-  // &__plugin {
-  //   max-width: 660px;
-  //   border: solid 1px $accent;
-  //   border-radius: 30px;
-  //   padding: 100px;
-  // }
+  &__plugin {
+    width: 100%;
+    // max-width: 660px;
+    // border: solid 1px $accent;
+    // border-radius: 30px;
+    // padding: 100px;
+  }
+
+  &__text-container {
+    text-align: center;
+  }
 }
 
 .faq {
@@ -21,6 +26,27 @@
   }
 }
 
+// Form
+.contact-form {
+  & select {
+    background-color: rgba($white, 0.8);
+    border: none;
+    padding: 16px;
+  }
+
+  &__message-field {
+    & p,
+    & textarea {
+      height: 100%;
+    }
+
+    & textarea {
+      max-height: 360px;
+    }
+  }
+}
+
+/*
 // Hotelier
 .online-booking__plugin {
   width: 100%;
@@ -87,3 +113,4 @@
   width: fit-content;
   margin-inline: auto;
 }
+*/

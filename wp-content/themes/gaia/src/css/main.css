@@ -1695,6 +1695,12 @@ ul li {
   justify-items: center;
   gap: clamp(30px, 6.0544904137vw, 60px);
 }
+.online-booking__plugin {
+  width: 100%;
+}
+.online-booking__text-container {
+  text-align: center;
+}
 
 .faq {
   padding-top: clamp(30px, 6.0544904137vw, 60px);
@@ -1703,21 +1709,39 @@ ul li {
   padding-bottom: clamp(30px, 6.0544904137vw, 60px);
 }
 
+.contact-form select {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 16px;
+}
+.contact-form__message-field p, .contact-form__message-field textarea {
+  height: 100%;
+}
+.contact-form__message-field textarea {
+  max-height: 360px;
+}
+
+/*
+// Hotelier
 .online-booking__plugin {
   width: 100%;
 }
-
 #primary {
-  padding-top: clamp(150px, 19.4444444444vw, 350px);
-  max-width: 1820px;
-  padding-inline: 20px;
-  margin-inline: auto;
-}
-@media only screen and (min-width: 1921px) {
-  #primary {
-    max-width: 2280px;
+  padding-top: cross-media(150px, $box, 350px); // first-section
+  // boxed
+  max-width: $box + $padding-inline;
+  padding-inline: $padding-inline;
+
+  @include view(ultra) {
+    max-width: $box-4k + $padding-inline;
   }
+
+  margin-inline: auto; // centered
 }
+
+// .room__thumbnail {
+//   display: none;
+// }
 
 #sidebar,
 .datepicker-form,
@@ -1729,9 +1753,11 @@ ul li {
   display: none;
 }
 
-.hotelier-notice li {
-  margin: 0;
-  list-style-type: none !important;
+.hotelier-notice {
+  & li {
+    margin: 0;
+    list-style-type: none !important;
+  }
 }
 
 .listing__list {
@@ -1744,9 +1770,10 @@ ul li {
   border: solid 1px #a19696;
   border-radius: 30px;
   padding: 60px;
-}
-.listing__room img {
-  display: none;
+
+  & img {
+    display: none;
+  }
 }
 
 .room__actions {
@@ -1761,7 +1788,7 @@ ul li {
   width: fit-content;
   margin-inline: auto;
 }
-
+*/
 .simple-page {
   padding-bottom: clamp(80px, 14.1271442987vw, 140px);
 }
