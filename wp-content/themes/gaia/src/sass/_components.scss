@@ -142,6 +142,7 @@
   padding: cross-media(7px, 991px, 14px) cross-media(32px, 991px, 64px);
   border: solid 1px $black;
   transition: color 0.3s ease;
+  color: $black;
 
   &:hover {
     color: $white;

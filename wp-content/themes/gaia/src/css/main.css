@@ -1256,6 +1256,7 @@ ul li {
   padding: clamp(7px, 1.4127144299vw, 14px) clamp(32px, 6.458123108vw, 64px);
   border: solid 1px #000;
   transition: color 0.3s ease;
+  color: #000;
 }
 .button:hover {
   color: #fff;
@@ -1645,6 +1646,9 @@ ul li {
 }
 .contact-form__submit {
   padding: 0;
+}
+.contact-form__submit p {
+  text-align: center;
 }
 .contact-form__submit input {
   margin: 0;

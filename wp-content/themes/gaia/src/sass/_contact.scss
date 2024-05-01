@@ -97,6 +97,11 @@
 
   &__submit {
     padding: 0; // Make the whole <input> clickable
+
+    & p {
+      text-align: center;
+    }
+
     & input {
       @include clear-styles;
       padding: cross-media(7px, 991px, 14px) cross-media(32px, 991px, 64px);
