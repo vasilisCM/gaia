@@ -1,4 +1,6 @@
 <?php
+// Add <title> in the <head> dynamically
+add_theme_support('title-tag');
 // Register Menus
 function theme_menus()
 {
