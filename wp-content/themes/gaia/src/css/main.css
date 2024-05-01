@@ -825,19 +825,21 @@ ul li {
   position: fixed;
   z-index: 99999;
   inset: 0;
+  display: grid;
+  place-items: center;
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 1800px) {
   .lightbox {
-    display: grid;
-    place-items: center;
+    display: block;
   }
 }
 @media only screen and (max-width: 991px) {
   .lightbox__container {
-    margin-top: 50%;
+    margin-top: 20vh;
   }
 }
 .lightbox__close {
+  margin-top: 30px;
   text-align: right;
   color: #000;
   cursor: pointer;
@@ -1262,6 +1264,7 @@ ul li {
   border: solid 1px #000;
   transition: color 0.3s ease;
   color: #000;
+  text-align: center;
   -webkit-appearance: none;
 }
 .button:hover {
@@ -1692,18 +1695,71 @@ ul li {
   justify-items: center;
   gap: clamp(30px, 6.0544904137vw, 60px);
 }
-.online-booking__plugin {
-  max-width: 660px;
-  border: solid 1px #a19696;
-  border-radius: 30px;
-  padding: 100px;
-}
 
 .faq {
   padding-top: clamp(30px, 6.0544904137vw, 60px);
 }
 .faq__heading {
   padding-bottom: clamp(30px, 6.0544904137vw, 60px);
+}
+
+.online-booking__plugin {
+  width: 100%;
+}
+
+#primary {
+  padding-top: clamp(150px, 19.4444444444vw, 350px);
+  max-width: 1820px;
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+@media only screen and (min-width: 1921px) {
+  #primary {
+    max-width: 2280px;
+  }
+}
+
+#sidebar,
+.datepicker-form,
+.selected-nights,
+.room__link,
+.room__max-guests,
+.add-to-cart-selected,
+.online-booking h1 {
+  display: none;
+}
+
+.hotelier-notice li {
+  margin: 0;
+  list-style-type: none !important;
+}
+
+.listing__list {
+  padding-inline: 0;
+}
+
+.listing__room {
+  list-style-type: none !important;
+  margin-left: 0 !important;
+  border: solid 1px #a19696;
+  border-radius: 30px;
+  padding: 60px;
+}
+.listing__room img {
+  display: none;
+}
+
+.room__actions {
+  width: 100%;
+}
+
+.room__price-wrapper {
+  text-align: center;
+}
+
+.button--toggle-rates {
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .simple-page {

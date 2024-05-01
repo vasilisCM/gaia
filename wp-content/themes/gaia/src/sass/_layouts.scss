@@ -504,19 +504,25 @@
   position: fixed;
   z-index: 99999;
   inset: 0;
+  // border: solid 20px red;
+  display: grid;
+  place-items: center;
 
-  @include view(lg-min) {
-    display: grid;
-    place-items: center;
+  @include view(box) {
+    display: block;
   }
 
   &__container {
+    // margin-top: 50%;
+    // border: solid 10px blue;
+
     @include view(md-max) {
-      margin-top: 50%;
+      margin-top: 20vh;
     }
   }
 
   &__close {
+    margin-top: 30px;
     text-align: right;
     color: $black;
     cursor: pointer;

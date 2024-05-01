@@ -5,12 +5,12 @@
     justify-items: center;
     gap: cross-media(30px, 991px, 60px);
   }
-  &__plugin {
-    max-width: 660px;
-    border: solid 1px $accent;
-    border-radius: 30px;
-    padding: 100px;
-  }
+  // &__plugin {
+  //   max-width: 660px;
+  //   border: solid 1px $accent;
+  //   border-radius: 30px;
+  //   padding: 100px;
+  // }
 }
 
 .faq {
@@ -19,4 +19,71 @@
   &__heading {
     padding-bottom: cross-media(30px, 991px, 60px);
   }
+}
+
+// Hotelier
+.online-booking__plugin {
+  width: 100%;
+}
+#primary {
+  padding-top: cross-media(150px, $box, 350px); // first-section
+  // boxed
+  max-width: $box + $padding-inline;
+  padding-inline: $padding-inline;
+
+  @include view(ultra) {
+    max-width: $box-4k + $padding-inline;
+  }
+
+  margin-inline: auto; // centered
+}
+
+// .room__thumbnail {
+//   display: none;
+// }
+
+#sidebar,
+.datepicker-form,
+.selected-nights,
+.room__link,
+.room__max-guests,
+.add-to-cart-selected,
+.online-booking h1 {
+  display: none;
+}
+
+.hotelier-notice {
+  & li {
+    margin: 0;
+    list-style-type: none !important;
+  }
+}
+
+.listing__list {
+  padding-inline: 0;
+}
+
+.listing__room {
+  list-style-type: none !important;
+  margin-left: 0 !important;
+  border: solid 1px #a19696;
+  border-radius: 30px;
+  padding: 60px;
+
+  & img {
+    display: none;
+  }
+}
+
+.room__actions {
+  width: 100%;
+}
+
+.room__price-wrapper {
+  text-align: center;
+}
+
+.button--toggle-rates {
+  width: fit-content;
+  margin-inline: auto;
 }

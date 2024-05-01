@@ -21,7 +21,7 @@
             <p class="online-booking__description">Fill in the information form with details such as the number of people, preferred
                 dates, and the purpose of your retreat. </p>
             <div class="online-booking__plugin">
-                <?php echo get_the_content(); ?>
+                <?php echo the_content(); ?>
             </div>
         </div>
     </section>
