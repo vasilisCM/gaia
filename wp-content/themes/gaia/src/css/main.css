@@ -665,9 +665,6 @@ ul li {
   opacity: 0.8;
 }
 
-.intro__heading {
-  padding-bottom: clamp(35px, 5.0454086781vw, 50px);
-}
 .intro__text {
   padding-block: clamp(25px, 4.0363269425vw, 40px);
 }
@@ -1699,7 +1696,14 @@ ul li {
   width: 100%;
 }
 .online-booking__text-container {
+  margin-top: clamp(20px, 4.0363269425vw, 40px);
   text-align: center;
+}
+.online-booking__retreat {
+  padding-bottom: clamp(12px, 2.0181634712vw, 20px);
+}
+.online-booking__options {
+  padding-block: clamp(20px, 4.0363269425vw, 40px);
 }
 
 .faq {
@@ -1709,6 +1713,9 @@ ul li {
   padding-bottom: clamp(30px, 6.0544904137vw, 60px);
 }
 
+.contact-form {
+  width: 100%;
+}
 .contact-form select {
   background-color: rgba(255, 255, 255, 0.8);
   border: none;

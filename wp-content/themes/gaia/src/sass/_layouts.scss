@@ -317,9 +317,9 @@
 
 // Intro
 .intro {
-  &__heading {
-    padding-bottom: cross-media(35px, 991px, 50px);
-  }
+  // &__heading {
+  //   padding-bottom: cross-media(35px, 991px, 50px);
+  // }
   &__text {
     padding-block: cross-media(25px, 991px, 40px);
   }

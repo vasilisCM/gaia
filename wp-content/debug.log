@@ -83,3 +83,11 @@ Stack trace:
 [01-May-2024 14:21:24 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
 [01-May-2024 14:29:00 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
 [01-May-2024 14:31:03 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 08:36:01 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 10:42:06 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 10:44:01 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 10:46:13 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 10:51:58 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 10:52:07 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 10:52:17 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905
+[02-May-2024 10:53:05 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\gaiaexclusiveretreats.com\wp-includes\class-wp-customize-widgets.php on line 905

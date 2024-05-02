@@ -14,7 +14,16 @@
   }
 
   &__text-container {
+    margin-top: cross-media(20px, 991px, 40px);
     text-align: center;
+  }
+
+  &__retreat {
+    padding-bottom: cross-media(12px, 991px, 20px);
+  }
+
+  &__options {
+    padding-block: cross-media(20px, 991px, 40px);
   }
 }
 
@@ -28,6 +37,7 @@
 
 // Form
 .contact-form {
+  width: 100%;
   & select {
     background-color: rgba($white, 0.8);
     border: none;
