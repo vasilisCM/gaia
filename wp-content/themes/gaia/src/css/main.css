@@ -1633,23 +1633,6 @@ ul li {
 .contact-form a:before {
   display: none;
 }
-.contact-form a::after {
-  content: "";
-  position: absolute;
-  background-image: url(./../../assets/img/ic-curve.svg);
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: -8px;
-  width: 95%;
-  height: 100%;
-  left: 0;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-  transition: clip-path 0.3s ease;
-}
-.contact-form a:hover::after {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
 .contact-form__submit {
   padding: 0;
 }
