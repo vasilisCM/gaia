@@ -1621,6 +1621,7 @@ ul li {
   padding: 18px;
 }
 .contact-form__acceptance {
+  margin-top: 40px;
   padding-block: clamp(35px, 5.0454086781vw, 50px) clamp(5px, 1.0090817356vw, 10px);
 }
 .contact-form a {
