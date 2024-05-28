@@ -142,8 +142,8 @@ function send_booking_email()
   $lastName = sanitize_text_field($_POST['lastName']);
   $email = sanitize_email($_POST['email']);
   $tel = sanitize_text_field($_POST['tel']);
-  $type = sanitize_text_field($_POST['type']);
-  $quantity = sanitize_text_field($_POST['quantity']);
+  // $type = sanitize_text_field($_POST['type']);
+  // $quantity = sanitize_text_field($_POST['quantity']);
   $price = sanitize_text_field($_POST['price']);
   $paypalEmail = sanitize_email($_POST['paypalEmail']);
   $paypalAmount = sanitize_text_field($_POST['paypalAmount']);
@@ -169,8 +169,6 @@ function send_booking_email()
       <p>Last Name: $lastName</p>
       <p>Email: $email</p>
       <p>Tel: $tel</p>
-      <p>Room Type: $type</p>
-      <p>Persons: $quantity</p>
       <p>Total Price: $price €</p>
       <h3>Transaction Details</h3>
       <p>PayPal Email: $paypalEmail</p>
@@ -198,8 +196,6 @@ function send_booking_email()
       <p>Last Name: $lastName</p>
       <p>Email: $email</p>
       <p>Tel: $tel</p>
-      <p>Room Type: $type</p>
-      <p>Persons: $quantity</p>
       <p>Total Price: $price €</p>
       <h3>Transaction Details</h3>
       <p>PayPal Email: $paypalEmail</p>

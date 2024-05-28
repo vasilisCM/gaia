@@ -1,26 +1,50 @@
 const singleRetreat = () => {
   console.log("Hello from Retreat Room");
 
+  // Control Input Elements for Rooms
+  const quantityInputs = document.querySelectorAll(".quantity-input");
+
+  function updateMaxValues() {
+    let sum = 0;
+    quantityInputs.forEach((input) => {
+      sum += parseInt(input.value);
+    });
+
+    quantityInputs.forEach((input) => {
+      const currentSum = sum - parseInt(input.value);
+      const maxValue = quantityField - currentSum;
+      input.max = maxValue;
+    });
+  }
+
+  // Initialize
+  updateMaxValues();
+
+  // Listen for changes
+  quantityInputs.forEach((input) => {
+    input.addEventListener("input", function () {
+      updateMaxValues();
+    });
+  });
+
   function updatePrice() {
-    const roomType = document.querySelector('input[name="type"]:checked').value;
-    const quantityElement = document.querySelector('input[name="quantity"]');
-    let quantity = quantityElement.value;
+    let finalPrice = 0;
+    const roomTypes = ["single", "double"];
+    let rooms = [];
 
-    // Ensure quantity is at least 1
-    if (quantity < 1) quantity = 1;
+    quantityInputs.forEach((input, i) => {
+      rooms.push({
+        roomType: roomTypes[i],
+        roomNumber: input.value,
+      });
+    });
 
-    // const prices = {
-    //   single: 15800,
-    //   double: 9500,
-    // };
+    rooms.forEach((room) => {
+      finalPrice += Number(room.roomNumber) * Number(prices[room.roomType]);
+    });
 
-    const room = {
-      type: roomType,
-      price: prices[roomType],
-    };
-
-    const finalPrice = room.price * quantity;
     const depositAmount = finalPrice * 0.2;
+    // console.log(depositAmount);
 
     document.getElementById("room-price").textContent = `${finalPrice}€`; // UI
     document.getElementById(
@@ -32,12 +56,13 @@ const singleRetreat = () => {
   }
 
   // Add event listeners
-  document.querySelectorAll('input[name="type"]').forEach((element) => {
-    element.addEventListener("change", updatePrice);
+  // document.querySelectorAll('input[name="type"]').forEach((element) => {
+  //   element.addEventListener("change", updatePrice);
+  // });
+
+  quantityInputs.forEach((input) => {
+    input.addEventListener("change", updatePrice);
   });
-  document
-    .querySelector('input[name="quantity"]')
-    .addEventListener("change", updatePrice);
 
   // Initialize PayPal button
   paypal

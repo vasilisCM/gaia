@@ -78,20 +78,18 @@ if (have_posts()) : while (have_posts()) : the_post();
                             <div class="contact-form__info-fields">
                                 <!-- Number field for quantity with a max value -->
                                 <label for="quantity">Rooms</label>
-                                <input type="number" name="quantity" class="contact-form__input-field" value="1" min="1" max="<?php echo esc_attr($quantity); ?>" required>
-                            </div>
 
-                            <div>
-                                <label>Room Type</label>
+
+
                                 <!-- Radio buttons for room type -->
                                 <div class="capitalize">
                                     <?php if ($variations) : ?>
                                         <?php foreach ($variations as $variation) : ?>
-                                            <input type="radio" name="type" class="contact-form__input-field contact-form__input-field--radio" value="<?php echo esc_attr($variation['type']); ?>" <?php checked($variation['type'], $default_type); ?>> <?php echo esc_html($variation['type']); ?>
+                                            <div><?php echo esc_html($variation['type']); ?> </div>
+                                            <input type="number" name="quantity" class="contact-form__input-field quantity-input" value="1" min="0" max="<?php echo esc_attr($quantity); ?>" required>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
-                            </div>
                         </form>
 
                         <div class="text online-booking__totals">
@@ -112,6 +110,7 @@ if (have_posts()) : while (have_posts()) : the_post();
             var thankYouPageUrl = "<?php echo $thank_you_page_url; ?>";
             var title = <?php echo json_encode($post_title); ?>;
             var prices = <?php echo json_encode($prices); ?>;
+            var quantityField = <?php echo json_encode($quantity); ?>;
             var toDate = <?php echo json_encode($to_date); ?>;
             var fromDate = <?php echo json_encode($from_date); ?>;
             var maxQuantity = <?php echo esc_attr($quantity); ?>;

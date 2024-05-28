@@ -12,15 +12,7 @@ const [fromDate, toDate] = dates;
 // console.log("Form Details:", formDetails);
 // console.log("Transaction Details:", transactionDetails);
 
-const {
-  price,
-  name: firstName,
-  last_name: lastName,
-  email,
-  tel,
-  type,
-  quantity,
-} = formDetails;
+const { price, name: firstName, last_name: lastName, email, tel } = formDetails;
 
 const paypalEmail = transactionDetails.payer.email_address;
 const paypalAmount = transactionDetails.purchase_units[0].amount.value;
@@ -34,8 +26,6 @@ if (formDetails && transactionDetails) {
       <div>First Name: ${firstName}</div>
       <div>Email: ${email}</div>
       <div>Tel: ${tel}</div>
-      <div>Room Type: ${type.charAt(0).toUpperCase() + type.slice(1)}</div>
-      <div>Persons: ${quantity}</div>
       <div>Total Price: ${price}€</div>
       <h3>Transaction Details</h3>
       <div>PayPal Email: ${paypalEmail}</div>
@@ -58,8 +48,6 @@ if (formDetails && transactionDetails) {
       lastName: lastName,
       email: email,
       tel: tel,
-      type: type,
-      quantity: quantity,
       price: price,
       paypalEmail: paypalEmail,
       paypalAmount: paypalAmount,
