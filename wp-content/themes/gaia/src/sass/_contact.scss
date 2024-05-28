@@ -60,6 +60,11 @@
     border: none;
     width: 100%;
     padding: 18px;
+
+    &--radio {
+      width: revert;
+      text-transform: capitalize;
+    }
   }
   &__acceptance {
     margin-top: 40px;

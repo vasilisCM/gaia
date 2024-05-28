@@ -25,6 +25,13 @@
   &__options {
     padding-block: cross-media(20px, 991px, 40px);
   }
+
+  &__totals {
+    margin-top: cross-media(20px, 991px, 40px);
+  }
+
+  // &__paypal-button-container {
+  // }
 }
 
 .faq {
@@ -56,7 +63,6 @@
   }
 }
 
-/*
 // Hotelier
 .online-booking__plugin {
   width: 100%;
@@ -123,4 +129,3 @@
   width: fit-content;
   margin-inline: auto;
 }
-*/

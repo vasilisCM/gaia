@@ -9,6 +9,8 @@ module.exports = {
     posts: path.resolve(__dirname, "src/js/pages/posts.js"), // Posts
     team: path.resolve(__dirname, "src/js/pages/team.js"), // About
     contact: path.resolve(__dirname, "src/js/pages/contact.js"), // Contact
+    singleRetreat: path.resolve(__dirname, "src/js/pages/singleRetreat.js"), // Single Retreat
+    thankYou: path.resolve(__dirname, "src/js/pages/thankYou.js"), // Thank You
   },
   output: {
     filename: "[name].bundle.js",
