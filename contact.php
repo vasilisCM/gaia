@@ -24,10 +24,11 @@
       </div>
       <div class="contact-info__details">
         <div class="contact-info__phone">
-          T: <?php echo get_field('contact_info')['phone']; ?>
+			
+          T: <a href="tel:<?php echo get_field('contact_info')['phone']; ?>"><?php echo get_field('contact_info')['phone']; ?></a>
         </div>
         <div class="contact-info__email">
-          E: <?php echo get_field('contact_info')['email']; ?>
+          E: <a href="mailto:<?php echo get_field('contact_info')['email']; ?>"> <?php echo get_field('contact_info')['email']; ?></a>
         </div>
         <div class="contact-info__reception">
           <?php echo get_field('contact_info')['reception_label']; ?>: <?php echo get_field('contact_info')['reception_text']; ?>

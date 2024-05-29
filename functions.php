@@ -1,7 +1,4 @@
 <?php
-// Add <title> in the <head> dynamically
-add_theme_support('title-tag');
-
 // Register Menus
 function theme_menus()
 {
@@ -14,6 +11,7 @@ function theme_menus()
   register_nav_menus($locations);
 }
 add_action('init', 'theme_menus');
+
 
 // Place custom post type content here
 function create_retreat_post_type()
@@ -124,7 +122,6 @@ function load_js()
 add_action('wp_enqueue_scripts', 'load_js');
 
 
-
 // Booking Email
 add_action('wp_ajax_nopriv_send_booking_email', 'send_booking_email');
 add_action('wp_ajax_send_booking_email', 'send_booking_email');
@@ -220,12 +217,7 @@ function send_booking_email()
 }
 
 
-
-
-
 // CM Plugin
-// Remove Gutenberg Editor
-add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Use assets
 function assets($filename = '')

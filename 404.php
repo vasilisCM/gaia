@@ -4,12 +4,11 @@
 <!-- Main  -->
 <main data-barba="container">
   <!-- Hero  -->
-  <section class="first-section hero hero--home">
+  <section class="first-section hero">
     <div class="boxed centered">
-      <h1>Boilerplate Not Found</h1>
-      <p>Sass is compiling live, and you can also use JS modules.</p>
-      <div><img src="<?php echo get_template_directory_uri() . '/assets/img/logo.jpg'; ?>" alt=""></div>
-      <a href=""><button>More</button></a>
+      <h1 animate="line">Error 404</h1>
+      <p>Page Not Found.</p>
+      <a href="<?php echo home_url(); ?>"><button class="button">Go to Home</button></a>
     </div>
   </section>
 </main>
