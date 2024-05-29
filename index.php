@@ -1,17 +1,18 @@
-<?php
-/**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
+<?php /* Template Name: Blog */ ?>
+<?php get_header(); ?> <!-- Header  -->
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define( 'WP_USE_THEMES', true );
 
-/** Loads the WordPress Environment and Template */
-require __DIR__ . '/wp-blog-header.php';
+<!-- Main  -->
+<main>
+  <!-- Hero  -->
+  <section class="first-section hero hero--home">
+    <div class="boxed centered">
+      <h1>Boilerplate Blog</h1>
+      <p>Sass is compiling live, and you can also use JS modules.</p>
+      <div><img src="<?php echo get_template_directory_uri() . '/assets/img/logo.jpg'; ?>" alt=""></div>
+      <a href=""><button>More</button></a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer  --> <?php get_footer(); ?>
