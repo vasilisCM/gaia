@@ -103,7 +103,8 @@ function load_js()
     wp_enqueue_script('thank-you', get_template_directory_uri() . '/src/js/thankYou.bundle.js', array(), null, true);
     wp_localize_script('thank-you', 'thankyou_ajax_obj', array(
       'ajax_url' => admin_url('admin-ajax.php'),
-      'nonce' => wp_create_nonce('send_booking_email_nonce')
+      'send_booking_email_nonce' => wp_create_nonce('send_booking_email_nonce'),
+      'update_acf_quantity_nonce' => wp_create_nonce('update_acf_quantity_nonce')
     ));
   }
   // Home
@@ -120,6 +121,38 @@ function load_js()
   }
 }
 add_action('wp_enqueue_scripts', 'load_js');
+
+
+// Update Retreat Rooms Quantity
+add_action('wp_ajax_nopriv_update_acf_quantity', 'update_acf_quantity');
+add_action('wp_ajax_update_acf_quantity', 'update_acf_quantity');
+
+function update_acf_quantity()
+{
+  // Verify the nonce for security
+  check_ajax_referer('update_acf_quantity_nonce', 'security');
+
+  // Get the parameters from the AJAX request
+  $post_id = intval($_POST['post_id']);
+  $roomsBooked = intval($_POST['roomsBooked']);
+
+  // Get the current value of the quantity field within the retreat_room group
+  $retreat_group = get_field('retreat_room', $post_id);
+  $current_quantity = intval($retreat_group['quantity']);
+
+  // Calculate the new quantity
+  $new_quantity = $current_quantity - $roomsBooked;
+
+  // Update the quantity field with the new value within the retreat_room group
+  $retreat_group['quantity'] = $new_quantity;
+  update_field('retreat_room', $retreat_group, $post_id);
+
+  // Return a success response
+  wp_send_json_success(array('new_quantity' => $new_quantity));
+}
+
+
+
 
 
 // Booking Email

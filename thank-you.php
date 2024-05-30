@@ -14,7 +14,7 @@ get_header();
     </section>
 </main>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/thankYou.js"></script>
+
 
 <?php
 get_footer();

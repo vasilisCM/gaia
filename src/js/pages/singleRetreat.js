@@ -27,8 +27,12 @@ const singleRetreat = () => {
     });
   });
 
+  let finalRoomNumber = 0;
+
   function updatePrice() {
+    finalRoomNumber = 0;
     let finalPrice = 0;
+
     const roomTypes = ["single", "double"];
     let rooms = [];
 
@@ -41,6 +45,7 @@ const singleRetreat = () => {
 
     rooms.forEach((room) => {
       finalPrice += Number(room.roomNumber) * Number(prices[room.roomType]);
+      finalRoomNumber += Number(room.roomNumber);
     });
 
     const depositAmount = finalPrice * 0.2;
@@ -53,6 +58,8 @@ const singleRetreat = () => {
 
     document.getElementById("booking-price").value = finalPrice; // Hidden field
     document.getElementById("deposit-price").value = depositAmount.toFixed(2); // Hidden
+
+    return finalRoomNumber;
   }
 
   // Add event listeners
@@ -98,6 +105,7 @@ const singleRetreat = () => {
           const formObject = Object.fromEntries(formData.entries());
 
           localStorage.setItem("title", JSON.stringify(title));
+          localStorage.setItem("roomsBooked", JSON.stringify(finalRoomNumber));
           localStorage.setItem("dates", JSON.stringify([fromDate, toDate]));
           localStorage.setItem("form_details", JSON.stringify(formObject));
           localStorage.setItem("transaction_details", JSON.stringify(details));
