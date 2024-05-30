@@ -1701,7 +1701,21 @@ ul li {
   padding-block: clamp(20px, 4.0363269425vw, 40px);
 }
 .online-booking__totals {
-  margin-top: clamp(20px, 4.0363269425vw, 40px);
+  padding-block: clamp(20px, 4.0363269425vw, 40px);
+  text-align: right;
+}
+.online-booking__form {
+  display: grid;
+  row-gap: 12px;
+}
+.online-booking__rooms-field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(8px, 1.614530777vw, 16px);
+}
+.online-booking__paypal-button-container {
+  max-width: 300px;
+  margin-inline: auto;
 }
 
 .faq {

@@ -30,6 +30,7 @@ const singleRetreat = () => {
   let finalRoomNumber = 0;
 
   function updatePrice() {
+    const paypalButton = document.querySelector("#paypal-button-container");
     finalRoomNumber = 0;
     let finalPrice = 0;
 
@@ -47,6 +48,10 @@ const singleRetreat = () => {
       finalPrice += Number(room.roomNumber) * Number(prices[room.roomType]);
       finalRoomNumber += Number(room.roomNumber);
     });
+
+    finalPrice !== 0
+      ? paypalButton.classList.remove("hidden")
+      : paypalButton.classList.add("hidden");
 
     const depositAmount = finalPrice * 0.2;
     // console.log(depositAmount);

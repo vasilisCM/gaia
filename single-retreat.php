@@ -49,12 +49,16 @@ if (have_posts()) : while (have_posts()) : the_post();
                         <h2 class="heading serif online-booking__retreat"><?php echo $post_title ?></h2>
                         <p class="text-ml">next available: <?php echo esc_attr($from_date); ?> to <?php echo esc_attr($to_date); ?> | summer 2024</p>
                         <p class="text">(arrivals Monday from 5 pm and Sunday departure 11 am)</p>
-                        <p><?php echo esc_html($quantity); ?> spots left!</p>
+                        <br>
+                        <?php if ((int)$quantity === 0) : ?>
+                            <p class="heading-s">There are no rooms available</p>
+                        <?php else : ?>
+                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> spots left!</p>
+                        <?php endif; ?>
                     </div>
 
-                    <div class="contact-form">
-
-                        <form id="booking-form">
+                    <div class="contact-form<?php echo ((int)$quantity === 0) ? ' hidden' : ''; ?>">
+                        <form id="booking-form" class="online-booking__form">
                             <input type="hidden" name="room_id" value="<?php echo get_the_ID(); ?>">
                             <input type="hidden" id="booking-price" name="price" value="<?php echo esc_attr($default_price); ?>">
                             <input type="hidden" id="deposit-price" name="deposit_price" value="<?php echo esc_attr($deposit_amount); ?>">
@@ -82,11 +86,13 @@ if (have_posts()) : while (have_posts()) : the_post();
 
 
                                 <!-- Radio buttons for room type -->
-                                <div class="capitalize">
+                                <div class="capitalize online-booking__rooms-field">
                                     <?php if ($variations) : ?>
                                         <?php foreach ($variations as $variation) : ?>
-                                            <div><?php echo esc_html($variation['type']); ?> </div>
-                                            <input type="number" name="quantity" class="contact-form__input-field quantity-input" value="0" min="0" max="<?php echo esc_attr($quantity); ?>" required>
+                                            <div>
+                                                <div><?php echo esc_html($variation['type']); ?> </div>
+                                                <input type="number" name="quantity" class="contact-form__input-field quantity-input" value="0" min="0" max="<?php echo esc_attr($quantity); ?>" required>
+                                            </div>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
@@ -97,7 +103,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                             <p class="bold">Deposit Amount Amount: <span id="deposit-amount">0 €</span></p>
                         </div>
 
-                        <div id="paypal-button-container" class="online-booking__paypal-button-container"></div>
+                        <div id="paypal-button-container" class="online-booking__paypal-button-container hidden"></div>
                     </div>
                 </div>
             </section>
