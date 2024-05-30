@@ -87,15 +87,15 @@ if (formDetails && transactionDetails) {
   const detailsContainer = document.getElementById("details-container");
   detailsContainer.innerHTML = `
       <h3>Summary</h3>
-      <div>${title}</div>
-      <div>${fromDate} to ${toDate}</div>
-      <div>First Name: ${firstName}</div>
-      <div>Email: ${email}</div>
-      <div>Tel: ${tel}</div>
-      <div>Total Price: ${price}€</div>
+      <div>Retreat: <strong>${title}</strong></div>
+      <div>Dates: <strong>${fromDate} to ${toDate}</strong></div>
+      <div>First Name: <strong>${firstName}</strong></div>
+      <div>Email: <strong>${email}</strong></div>
+      <div>Tel: <strong>${tel}</strong></div>
+      <div>Total Amount: <strong>${price}€</strong></div>
       <h3>Transaction Details</h3>
-      <div>PayPal Email: ${paypalEmail}</div>
-      <div>Deposit Paid: ${paypalAmount}€</div>
+      <div>PayPal Email: <strong>${paypalEmail}</strong></div>
+      <div>Deposit Paid: <strong>${paypalAmount}€</strong></div>
     `;
 
   // Run both functions independently

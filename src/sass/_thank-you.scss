@@ -1,0 +1,9 @@
+.thank-you-details {
+  //   text-align: center;
+  padding-bottom: cross-media(20px, 991px, 40px);
+
+  & h3 {
+    font-family: "Unna", serif;
+    padding-block: cross-media(20px, 991px, 40px) cross-media(6px, 991px, 12px);
+  }
+}

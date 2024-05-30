@@ -1799,6 +1799,14 @@ ul li {
   margin-inline: auto;
 }
 
+.thank-you-details {
+  padding-bottom: clamp(20px, 4.0363269425vw, 40px);
+}
+.thank-you-details h3 {
+  font-family: "Unna", serif;
+  padding-block: clamp(20px, 4.0363269425vw, 40px) clamp(6px, 1.2108980827vw, 12px);
+}
+
 .simple-page {
   padding-bottom: clamp(80px, 14.1271442987vw, 140px);
 }
