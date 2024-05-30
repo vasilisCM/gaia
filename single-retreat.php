@@ -86,15 +86,15 @@ if (have_posts()) : while (have_posts()) : the_post();
                                     <?php if ($variations) : ?>
                                         <?php foreach ($variations as $variation) : ?>
                                             <div><?php echo esc_html($variation['type']); ?> </div>
-                                            <input type="number" name="quantity" class="contact-form__input-field quantity-input" value="1" min="0" max="<?php echo esc_attr($quantity); ?>" required>
+                                            <input type="number" name="quantity" class="contact-form__input-field quantity-input" value="0" min="0" max="<?php echo esc_attr($quantity); ?>" required>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
                         </form>
 
                         <div class="text online-booking__totals">
-                            <p>Total Amount: <span id="room-price"><?php echo esc_html($default_price); ?>€</span></p>
-                            <p class="bold">Deposit Amount Amount: <span id="deposit-amount"><?php echo esc_html($deposit_amount); ?>€</span></p>
+                            <p>Total Amount: <span id="room-price">0 €</span></p>
+                            <p class="bold">Deposit Amount Amount: <span id="deposit-amount">0 €</span></p>
                         </div>
 
                         <div id="paypal-button-container" class="online-booking__paypal-button-container"></div>
