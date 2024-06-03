@@ -79,6 +79,52 @@
   }
 }
 
+// Archive
+.retreat-archive {
+  padding-block: cross-media(20px, 991px, 30px) cross-media(60px, 991px, 130px);
+
+  &__grid {
+    display: grid;
+    gap: cross-media(30px, 991px, 60px);
+    @include view(lg-min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__retreat {
+    display: grid;
+    position: relative;
+    // padding: cross-media(28px, 991px, 56px) cross-media(10px, 991px, 20px);
+    padding: 56px 20px;
+    border: solid 1px $black;
+    color: $black;
+    transition: all ease 300ms;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+
+    &--sold-out {
+      background-color: $accent;
+      border-color: $accent;
+      color: $white;
+
+      &:hover {
+        background-color: $accent;
+        color: $white;
+      }
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+  }
+}
+
+/*
 // Hotelier
 .online-booking__plugin {
   width: 100%;
@@ -145,3 +191,4 @@
   width: fit-content;
   margin-inline: auto;
 }
+*/
