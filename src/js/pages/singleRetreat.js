@@ -54,13 +54,12 @@ const singleRetreat = () => {
     // }
 
     if (isValid) {
-      termsContainer.classList.remove("hidden");
+      console.log(isValid);
     } else {
-      termsContainer.classList.add("hidden");
       termsCheckbox.checked = false;
       paypalButton.classList.add("hidden");
     }
-    console.log(isValid);
+
     return isValid;
   }
 
@@ -100,21 +99,27 @@ const singleRetreat = () => {
     const depositAmount = finalPrice * 0.2;
     // console.log(depositAmount);
 
-    document.getElementById("room-price").textContent = `${finalPrice}€`; // UI
+    document.getElementById(
+      "room-price"
+    ).textContent = `${finalPrice.toLocaleString("de-DE")}€`; // UI
     document.getElementById(
       "deposit-amount"
-    ).textContent = `${depositAmount.toFixed(2)}€`; // UI
+    ).textContent = `${depositAmount.toLocaleString("de-DE")}€`; // UI
 
     document.getElementById("booking-price").value = finalPrice; // Hidden field
-    document.getElementById("deposit-price").value = depositAmount.toFixed(2); // Hidden
+    document.getElementById("deposit-price").value = depositAmount; // Hidden
 
     return finalRoomNumber;
   }
 
   termsCheckbox.addEventListener("click", (e) => {
-    e.target.checked
-      ? paypalButton.classList.remove("hidden")
-      : paypalButton.classList.add("hidden");
+    if (validateForm()) {
+      e.target.checked
+        ? paypalButton.classList.remove("hidden")
+        : paypalButton.classList.add("hidden");
+    } else {
+      alert("Please fill all the fields");
+    }
   });
 
   // Add event listeners

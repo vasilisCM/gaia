@@ -103,10 +103,10 @@ if (have_posts()) : while (have_posts()) : the_post();
 
                         <div class="text online-booking__totals">
                             <p>Total Amount: <span id="room-price">0 €</span></p>
-                            <p class="bold">Deposit Amount Amount: <span id="deposit-amount">0 €</span></p>
+                            <p class="bold">Deposit Amount: <span id="deposit-amount">0 €</span></p>
                         </div>
 
-                        <div class="contact-form__info-fields online-booking__terms-container centered hidden">
+                        <div class="contact-form__info-fields online-booking__terms-container centered">
                             <label><input type="checkbox" name="acceptance" value="1" class="contact-form__acceptance-field " aria-invalid="false"><span class="wpcf7-list-item-label">I agree with the <a href="/payment-refund/" target="_blank">Refund Policy</a> and I want to procceed with payment.</span></label>
                         </div>
 
