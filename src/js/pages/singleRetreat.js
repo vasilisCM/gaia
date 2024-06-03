@@ -2,7 +2,15 @@ const singleRetreat = () => {
   console.log("Hello from Retreat Room");
 
   // Control Input Elements for Rooms
+  const form = document.getElementById("booking-form");
   const quantityInputs = document.querySelectorAll(".quantity-input");
+  const termsContainer = document.querySelector(
+    ".online-booking__terms-container"
+  );
+  const termsCheckbox = document.querySelector(
+    ".contact-form__acceptance-field"
+  );
+  const paypalButton = document.querySelector("#paypal-button-container");
 
   function updateMaxValues() {
     let sum = 0;
@@ -27,10 +35,39 @@ const singleRetreat = () => {
     });
   });
 
-  let finalRoomNumber = 0;
+  function validateForm() {
+    const requiredFields = form.querySelectorAll("input[required]");
+    let isValid = true;
+    let zeroRoomNumber = Array.from(quantityInputs).every(
+      (input) => parseInt(input.value) === 0
+    );
+    isValid = zeroRoomNumber ? false : true;
 
+    requiredFields.forEach((field) => {
+      if (!field.value.trim()) {
+        isValid = false;
+      }
+    });
+
+    // if (!termsCheckbox.checked) {
+    //   isValid = false;
+    // }
+
+    if (isValid) {
+      termsContainer.classList.remove("hidden");
+    } else {
+      termsContainer.classList.add("hidden");
+      termsCheckbox.checked = false;
+      paypalButton.classList.add("hidden");
+    }
+    console.log(isValid);
+    return isValid;
+  }
+
+  form.addEventListener("change", validateForm);
+
+  let finalRoomNumber = 0;
   function updatePrice() {
-    const paypalButton = document.querySelector("#paypal-button-container");
     finalRoomNumber = 0;
     let finalPrice = 0;
 
@@ -49,9 +86,16 @@ const singleRetreat = () => {
       finalRoomNumber += Number(room.roomNumber);
     });
 
-    finalPrice !== 0
-      ? paypalButton.classList.remove("hidden")
-      : paypalButton.classList.add("hidden");
+    validateForm();
+
+    // if (finalRoomNumber !== 0 && validateForm()) {
+    //   termsContainer.classList.remove("hidden");
+    // } else {
+    //   // Reset Terms and PayPal Button State
+    //   termsContainer.classList.add("hidden");
+    //   termsCheckbox.checked = false;
+    //   paypalButton.classList.add("hidden");
+    // }
 
     const depositAmount = finalPrice * 0.2;
     // console.log(depositAmount);
@@ -66,6 +110,12 @@ const singleRetreat = () => {
 
     return finalRoomNumber;
   }
+
+  termsCheckbox.addEventListener("click", (e) => {
+    e.target.checked
+      ? paypalButton.classList.remove("hidden")
+      : paypalButton.classList.add("hidden");
+  });
 
   // Add event listeners
   // document.querySelectorAll('input[name="type"]').forEach((element) => {

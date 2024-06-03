@@ -6,6 +6,7 @@ if (have_posts()) : while (have_posts()) : the_post();
         $quantity = $retreat['quantity'];
         $from_date = $retreat['dates']['from'];
         $to_date = $retreat['dates']['to'];
+        $info = $retreat['info'];
 
 
         // Get room variations
@@ -47,13 +48,13 @@ if (have_posts()) : while (have_posts()) : the_post();
                 <div class="boxed-xs centered online-booking__container">
                     <div class="online-booking__text-container">
                         <h2 class="heading serif online-booking__retreat"><?php echo $post_title ?></h2>
-                        <p class="text-ml">next available: <?php echo esc_attr($from_date); ?> to <?php echo esc_attr($to_date); ?> | summer 2024</p>
-                        <p class="text">(arrivals Monday from 5 pm and Sunday departure 11 am)</p>
+                        <p class="text-ml"><?php echo esc_attr($from_date); ?> - <?php echo esc_attr($to_date); ?></p>
+                        <div class="text"><?php echo $info; ?></div>
                         <br>
                         <?php if ((int)$quantity === 0) : ?>
                             <p class="heading-s">There are no rooms available</p>
                         <?php else : ?>
-                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> spots left!</p>
+                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> rooms left!</p>
                         <?php endif; ?>
                     </div>
 
@@ -63,25 +64,25 @@ if (have_posts()) : while (have_posts()) : the_post();
                             <input type="hidden" id="booking-price" name="price" value="<?php echo esc_attr($default_price); ?>">
                             <input type="hidden" id="deposit-price" name="deposit_price" value="<?php echo esc_attr($deposit_amount); ?>">
                             <div class="contact-form__info-fields">
-                                <label for="name">First Name</label>
+                                <label for="name">First Name *</label>
                                 <input type="text" name="name" class="contact-form__input-field" required>
                             </div>
                             <div class="contact-form__info-fields">
-                                <label for="last_name">Last Name</label>
+                                <label for="last_name">Last Name *</label>
                                 <input type="text" name="last_name" class="contact-form__input-field" required>
                             </div>
                             <div class="contact-form__info-fields">
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                                 <input type="email" name="email" class="contact-form__input-field" required>
                             </div>
                             <div class="contact-form__info-fields">
-                                <label for="tel">Phone Number</label>
+                                <label for="tel">Phone Number *</label>
                                 <input type="text" name="tel" class="contact-form__input-field" required>
                             </div>
 
                             <div class="contact-form__info-fields">
                                 <!-- Number field for quantity with a max value -->
-                                <label for="quantity">Rooms</label>
+                                <label for="quantity">Rooms *</label>
 
 
 
@@ -96,11 +97,17 @@ if (have_posts()) : while (have_posts()) : the_post();
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
+
+
                         </form>
 
                         <div class="text online-booking__totals">
                             <p>Total Amount: <span id="room-price">0 €</span></p>
                             <p class="bold">Deposit Amount Amount: <span id="deposit-amount">0 €</span></p>
+                        </div>
+
+                        <div class="contact-form__info-fields online-booking__terms-container centered hidden">
+                            <label><input type="checkbox" name="acceptance" value="1" class="contact-form__acceptance-field " aria-invalid="false"><span class="wpcf7-list-item-label">I agree with the <a href="/payment-refund/" target="_blank">Refund Policy</a> and I want to procceed with payment.</span></label>
                         </div>
 
                         <div id="paypal-button-container" class="online-booking__paypal-button-container hidden"></div>
