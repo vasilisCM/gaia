@@ -808,6 +808,11 @@
 
     & a {
       color: $black;
+      transition: color ease 300ms;
+
+      &:hover {
+        color: $accent;
+      }
     }
   }
 

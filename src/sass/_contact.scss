@@ -81,6 +81,11 @@
     padding-inline: 0;
     border: none;
     background: transparent;
+    transition: color ease 300ms;
+
+    &:hover {
+      color: $accent;
+    }
 
     &:before {
       display: none;
