@@ -60,6 +60,7 @@ const singleRetreat = () => {
     requiredFields.forEach((field) => {
       field.addEventListener("input", () => {
         termsCheckbox.checked = false;
+        paypalButton.classList.add("hidden");
       });
       if (!field.value.trim()) {
         isValid = false;
@@ -116,7 +117,7 @@ const singleRetreat = () => {
       termsContainer.classList.remove("hidden");
     } else {
       // Reset Terms and PayPal Button State
-      termsContainer.classList.add("hidden");
+      // termsContainer.classList.add("hidden");
       termsCheckbox.checked = false;
       paypalButton.classList.add("hidden");
     }
