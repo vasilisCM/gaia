@@ -58,6 +58,9 @@ const singleRetreat = () => {
     isValid = zeroRoomNumber ? false : true;
 
     requiredFields.forEach((field) => {
+      field.addEventListener("input", () => {
+        termsCheckbox.checked = false;
+      });
       if (!field.value.trim()) {
         isValid = false;
       }
@@ -89,6 +92,7 @@ const singleRetreat = () => {
   }
 
   let finalRoomNumber = 0;
+
   function updatePrice() {
     finalRoomNumber = 0;
     let finalPrice = 0;
@@ -107,6 +111,15 @@ const singleRetreat = () => {
       finalPrice += Number(room.roomNumber) * Number(prices[room.roomType]);
       finalRoomNumber += Number(room.roomNumber);
     });
+
+    if (finalRoomNumber !== 0 && validateForm()) {
+      termsContainer.classList.remove("hidden");
+    } else {
+      // Reset Terms and PayPal Button State
+      termsContainer.classList.add("hidden");
+      termsCheckbox.checked = false;
+      paypalButton.classList.add("hidden");
+    }
 
     const depositAmount = finalPrice * 0.2;
 
