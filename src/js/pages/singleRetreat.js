@@ -12,6 +12,10 @@ const singleRetreat = () => {
   );
   const paypalButton = document.querySelector("#paypal-button-container");
 
+  const errorContainer = document.querySelector(
+    ".online-booking__error-message"
+  );
+
   function updateMaxValues() {
     let sum = 0;
     quantityInputs.forEach((input) => {
@@ -35,6 +39,16 @@ const singleRetreat = () => {
     });
   });
 
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function validatePhoneNumber(phone) {
+    const re = /^\+?\d{9,15}$/;
+    return re.test(String(phone));
+  }
+
   function validateForm() {
     const requiredFields = form.querySelectorAll("input[required]");
     let isValid = true;
@@ -49,21 +63,30 @@ const singleRetreat = () => {
       }
     });
 
-    // if (!termsCheckbox.checked) {
-    //   isValid = false;
-    // }
+    const emailField = form.querySelector("input[name='email']");
+    const phoneField = form.querySelector("input[name='tel']");
 
-    if (isValid) {
-      console.log(isValid);
-    } else {
-      termsCheckbox.checked = false;
-      paypalButton.classList.add("hidden");
+    if (!validateEmail(emailField.value)) {
+      isValid = false;
+    } else if (!validatePhoneNumber(phoneField.value)) {
+      isValid = false;
     }
 
     return isValid;
   }
 
-  form.addEventListener("change", validateForm);
+  function showErrorMessages() {
+    const emailField = form.querySelector("input[name='email']");
+    const phoneField = form.querySelector("input[name='tel']");
+
+    if (!validateEmail(emailField.value)) {
+      errorContainer.textContent = "Please enter a valid email address.";
+    } else if (!validatePhoneNumber(phoneField.value)) {
+      errorContainer.textContent = "Please enter a valid phone number.";
+    } else {
+      errorContainer.textContent = "Please fill all the fields!";
+    }
+  }
 
   let finalRoomNumber = 0;
   function updatePrice() {
@@ -85,26 +108,25 @@ const singleRetreat = () => {
       finalRoomNumber += Number(room.roomNumber);
     });
 
-    validateForm();
-
-    // if (finalRoomNumber !== 0 && validateForm()) {
-    //   termsContainer.classList.remove("hidden");
-    // } else {
-    //   // Reset Terms and PayPal Button State
-    //   termsContainer.classList.add("hidden");
-    //   termsCheckbox.checked = false;
-    //   paypalButton.classList.add("hidden");
-    // }
-
     const depositAmount = finalPrice * 0.2;
-    // console.log(depositAmount);
+
+    // Format the prices with period as thousands separator and comma as decimal separator
+    const formattedFinalPrice = finalPrice.toLocaleString("de-DE", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
+    const formattedDepositAmount = depositAmount.toLocaleString("de-DE", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
 
     document.getElementById(
       "room-price"
-    ).textContent = `${finalPrice.toLocaleString("de-DE")}€`; // UI
+    ).textContent = `${formattedFinalPrice}€`; // UI
     document.getElementById(
       "deposit-amount"
-    ).textContent = `${depositAmount.toLocaleString("de-DE")}€`; // UI
+    ).textContent = `${formattedDepositAmount}€`; // UI
 
     document.getElementById("booking-price").value = finalPrice; // Hidden field
     document.getElementById("deposit-price").value = depositAmount; // Hidden
@@ -114,11 +136,13 @@ const singleRetreat = () => {
 
   termsCheckbox.addEventListener("click", (e) => {
     if (validateForm()) {
+      errorContainer.textContent = "";
       e.target.checked
         ? paypalButton.classList.remove("hidden")
         : paypalButton.classList.add("hidden");
     } else {
-      alert("Please fill all the fields");
+      showErrorMessages();
+      e.target.checked = false;
     }
   });
 

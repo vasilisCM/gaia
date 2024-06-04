@@ -106,6 +106,11 @@ if (have_posts()) : while (have_posts()) : the_post();
                             <p class="bold">Deposit Amount: <span id="deposit-amount">0 €</span></p>
                         </div>
 
+                        <div class="online-booking__error">
+                            <p class="online-booking__error-message"></p>
+                        </div>
+
+
                         <div class="contact-form__info-fields online-booking__terms-container centered">
                             <label><input type="checkbox" name="acceptance" value="1" class="contact-form__acceptance-field " aria-invalid="false"><span class="wpcf7-list-item-label">I agree with the <a href="/payment-refund/" target="_blank">Refund Policy</a> and I want to procceed with payment.</span></label>
                         </div>
