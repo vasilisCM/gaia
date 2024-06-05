@@ -157,8 +157,10 @@ const singleRetreat = () => {
     document.getElementById("booking-price").value = finalPrice; // Hidden field
     document.getElementById("deposit-price").value = depositAmount; // Hidden
 
-    return finalRoomNumber;
+    return [finalRoomNumber, totalPersons];
   }
+
+  [finalRoomNumber, totalPersons] = updatePrice();
 
   termsCheckbox.addEventListener("click", (e) => {
     if (validateForm()) {
@@ -216,6 +218,7 @@ const singleRetreat = () => {
 
           localStorage.setItem("title", JSON.stringify(title));
           localStorage.setItem("roomsBooked", JSON.stringify(finalRoomNumber));
+          localStorage.setItem("persons", JSON.stringify(totalPersons));
           localStorage.setItem("dates", JSON.stringify([fromDate, toDate]));
           localStorage.setItem("form_details", JSON.stringify(formObject));
           localStorage.setItem("transaction_details", JSON.stringify(details));

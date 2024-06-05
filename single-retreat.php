@@ -79,7 +79,6 @@ if (have_posts()) : while (have_posts()) : the_post();
                                 <label for="tel">Phone Number *</label>
                                 <input type="text" name="tel" class="contact-form__input-field" placeholder="Please include your country code" required>
                             </div>
-
                             <div class="contact-form__info-fields">
                                 <!-- Number field for quantity with a max value -->
                                 <label for="quantity">Rooms *</label>
@@ -92,7 +91,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                                         <?php foreach ($variations as $variation) : ?>
                                             <div>
                                                 <div><?php echo esc_html($variation['type']); ?> </div>
-                                                <input type="number" name="quantity" class="contact-form__input-field quantity-input" value="0" min="0" max="<?php echo esc_attr($quantity); ?>" required>
+                                                <input type="number" name="quantity_<?php echo esc_html($variation['type']); ?>" class="contact-form__input-field quantity-input" value="0" min="0" max="<?php echo esc_attr($quantity); ?>" required>
                                             </div>
                                         <?php endforeach; ?>
                                     <?php endif; ?>

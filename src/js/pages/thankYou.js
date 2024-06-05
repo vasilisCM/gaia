@@ -4,9 +4,13 @@ const transactionDetails = JSON.parse(
 );
 const title = JSON.parse(localStorage.getItem("title"));
 const dates = JSON.parse(localStorage.getItem("dates"));
+const persons = JSON.parse(localStorage.getItem("persons"));
+
 const roomsBooked = JSON.parse(localStorage.getItem("roomsBooked"));
 
 const [fromDate, toDate] = dates;
+
+// console.log(formDetails);
 
 const {
   price,
@@ -14,6 +18,8 @@ const {
   last_name: lastName,
   email,
   tel,
+  quantity_double: quantityDouble,
+  quantity_single: quantitySingle,
   room_id: roomId,
 } = formDetails;
 
@@ -37,6 +43,9 @@ async function sendEmail() {
         lastName: lastName,
         email: email,
         tel: tel,
+        persons: persons,
+        quantitySingle: quantitySingle,
+        quantityDouble: quantityDouble,
         price: price,
         paypalEmail: paypalEmail,
         paypalAmount: paypalAmount,
@@ -75,6 +84,7 @@ async function updateACF() {
     if (data.success) {
       console.log("ACF field updated successfully");
       localStorage.removeItem("roomsBooked");
+      localStorage.removeItem("persons");
     } else {
       console.error("Failed to update ACF field");
     }
@@ -90,8 +100,24 @@ if (formDetails && transactionDetails) {
       <div>Retreat: <strong>${title}</strong></div>
       <div>Dates: <strong>${fromDate} to ${toDate}</strong></div>
       <div>First Name: <strong>${firstName}</strong></div>
+      <div>Last Name: <strong>${lastName}</strong></div>
       <div>Email: <strong>${email}</strong></div>
       <div>Tel: <strong>${tel}</strong></div>
+      <div>Persons: <strong>${persons}</strong></div>
+      ${
+        quantitySingle
+          ? `<div><strong>${quantitySingle}</strong> single ${
+              Number(quantitySingle) === 1 ? "room" : "rooms"
+            }</div>`
+          : ""
+      }
+      ${
+        quantityDouble
+          ? `<div><strong>${quantityDouble}</strong> double ${
+              Number(quantityDouble) === 1 ? "room" : "rooms"
+            }</div>`
+          : ""
+      }
       <div>Total Amount: <strong>${price}€</strong></div>
       <h3>Transaction Details</h3>
       <div>PayPal Email: <strong>${paypalEmail}</strong></div>

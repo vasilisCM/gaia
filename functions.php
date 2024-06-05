@@ -172,8 +172,9 @@ function send_booking_email()
   $lastName = sanitize_text_field($_POST['lastName']);
   $email = sanitize_email($_POST['email']);
   $tel = sanitize_text_field($_POST['tel']);
-  // $type = sanitize_text_field($_POST['type']);
-  // $quantity = sanitize_text_field($_POST['quantity']);
+  $persons = sanitize_text_field($_POST['persons']);
+  $quantitySingle = sanitize_text_field($_POST['quantitySingle']);
+  $quantityDouble = sanitize_text_field($_POST['quantityDouble']);
   $price = sanitize_text_field($_POST['price']);
   $paypalEmail = sanitize_email($_POST['paypalEmail']);
   $paypalAmount = sanitize_text_field($_POST['paypalAmount']);
@@ -199,6 +200,20 @@ function send_booking_email()
       <p>Last Name: $lastName</p>
       <p>Email: $email</p>
       <p>Tel: $tel</p>
+      <p>Persons: $persons</p>";
+
+
+  // Conditional inclusion of single rooms
+  if ($quantitySingle) {
+    $messageAdmin .= "<p>$quantitySingle single " . ($quantitySingle == 1 ? "room" : "rooms") . "</p>";
+  }
+
+  // Conditional inclusion of double rooms
+  if ($quantityDouble) {
+    $messageAdmin .= "<p>$quantityDouble double " . ($quantityDouble == 1 ? "room" : "rooms") . "</p>";
+  }
+
+  $messageAdmin .= "
       <p>Total Price: $price €</p>
       <h3>Transaction Details</h3>
       <p>PayPal Email: $paypalEmail</p>
@@ -226,13 +241,27 @@ function send_booking_email()
       <p>Last Name: $lastName</p>
       <p>Email: $email</p>
       <p>Tel: $tel</p>
-      <p>Total Price: $price €</p>
-      <h3>Transaction Details</h3>
-      <p>PayPal Email: $paypalEmail</p>
-      <p>Deposit Paid: $paypalAmount €</p>
-    </body>
-    </html>
-    ";
+      <p>Persons: $persons</p>";
+
+
+  // Conditional inclusion of single rooms
+  if ($quantitySingle) {
+    $messageCustomer .= "<p>$quantitySingle single " . ($quantitySingle == 1 ? "room" : "rooms") . "</p>";
+  }
+
+  // Conditional inclusion of double rooms
+  if ($quantityDouble) {
+    $messageCustomer .= "<p>$quantityDouble double " . ($quantityDouble == 1 ? "room" : "rooms") . "</p>";
+  }
+
+  $messageCustomer .= "
+  <p>Total Price: $price €</p>
+  <h3>Transaction Details</h3>
+  <p>PayPal Email: $paypalEmail</p>
+  <p>Deposit Paid: $paypalAmount €</p>
+</body>
+</html>
+";
 
   // To send HTML mail, the Content-type header must be set
   $headers = array('Content-Type: text/html; charset=UTF-8');
