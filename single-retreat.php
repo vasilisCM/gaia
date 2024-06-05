@@ -54,8 +54,9 @@ if (have_posts()) : while (have_posts()) : the_post();
                         <?php if ((int)$quantity === 0) : ?>
                             <p class="heading-s">There are no rooms available</p>
                         <?php else : ?>
-                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> rooms left! (up to <?php echo esc_html((int)$quantity * 2); ?> persons)</p>
+                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> <?php echo (int)$quantity === 1 ? 'room' : 'rooms'; ?> left! (up to <?php echo esc_html((int)$quantity * 2); ?> persons)</p>
                         <?php endif; ?>
+
                     </div>
 
                     <div class="contact-form<?php echo ((int)$quantity === 0) ? ' hidden' : ''; ?>">
