@@ -54,7 +54,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                         <?php if ((int)$quantity === 0) : ?>
                             <p class="heading-s">There are no rooms available</p>
                         <?php else : ?>
-                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> rooms left!</p>
+                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> rooms left! (up to <?php echo esc_html((int)$quantity * 2); ?> persons )</p>
                         <?php endif; ?>
                     </div>
 
@@ -102,6 +102,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                         </form>
 
                         <div class="text online-booking__totals">
+                            <p>Total Persons: <span id="total-persons">0</span></p>
                             <p>Total Amount: <span id="room-price">0 €</span></p>
                             <p class="bold">Booking & Deposit Amount: <span id="deposit-amount">0 €</span></p>
                         </div>

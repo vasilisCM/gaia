@@ -93,9 +93,11 @@ const singleRetreat = () => {
   }
 
   let finalRoomNumber = 0;
+  let totalPersons = 0;
 
   function updatePrice() {
     finalRoomNumber = 0;
+    totalPersons = 0;
     let finalPrice = 0;
 
     const roomTypes = ["single", "double"];
@@ -111,6 +113,13 @@ const singleRetreat = () => {
     rooms.forEach((room) => {
       finalPrice += Number(room.roomNumber) * Number(prices[room.roomType]);
       finalRoomNumber += Number(room.roomNumber);
+
+      // Calculate total persons
+      if (room.roomType === "single") {
+        totalPersons += Number(room.roomNumber);
+      } else if (room.roomType === "double") {
+        totalPersons += Number(room.roomNumber) * 2;
+      }
     });
 
     if (finalRoomNumber !== 0 && validateForm()) {
@@ -126,22 +135,25 @@ const singleRetreat = () => {
 
     // Format the prices with period as thousands separator and comma as decimal separator
     const formattedFinalPrice = finalPrice.toLocaleString("de-DE", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
     });
 
     const formattedDepositAmount = depositAmount.toLocaleString("de-DE", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
     });
 
+    // Update UI
+    document.getElementById("total-persons").textContent = `${totalPersons}`;
     document.getElementById(
       "room-price"
-    ).textContent = `${formattedFinalPrice}€`; // UI
+    ).textContent = `${formattedFinalPrice}€`;
     document.getElementById(
       "deposit-amount"
-    ).textContent = `${formattedDepositAmount}€`; // UI
+    ).textContent = `${formattedDepositAmount}€`;
 
+    // Update Values
     document.getElementById("booking-price").value = finalPrice; // Hidden field
     document.getElementById("deposit-price").value = depositAmount; // Hidden
 
