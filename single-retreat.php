@@ -54,7 +54,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                         <?php if ((int)$quantity === 0) : ?>
                             <p class="heading-s">There are no rooms available</p>
                         <?php else : ?>
-                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> rooms left! (up to <?php echo esc_html((int)$quantity * 2); ?> persons )</p>
+                            <p class="heading-s"><?php echo esc_html((int)$quantity); ?> rooms left! (up to <?php echo esc_html((int)$quantity * 2); ?> persons)</p>
                         <?php endif; ?>
                     </div>
 
@@ -77,7 +77,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                             </div>
                             <div class="contact-form__info-fields">
                                 <label for="tel">Phone Number *</label>
-                                <input type="text" name="tel" class="contact-form__input-field" required>
+                                <input type="text" name="tel" class="contact-form__input-field" placeholder="Please include your country code" required>
                             </div>
 
                             <div class="contact-form__info-fields">
@@ -113,7 +113,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 
 
                         <div class="contact-form__info-fields online-booking__terms-container centered">
-                            <label><input type="checkbox" name="acceptance" value="1" class="contact-form__acceptance-field " aria-invalid="false"><span class="wpcf7-list-item-label">I agree with the <a href="/payment-refund/" target="_blank">Refund Policy</a> and I want to procceed with payment.</span></label>
+                            <label><input type="checkbox" name="acceptance" value="1" class="contact-form__acceptance-field " aria-invalid="false"><span class="wpcf7-list-item-label">I agree with the <a href="/payment-refund/" target="_blank">Refund Policy</a> and I want to proceed with payment.</span></label>
                         </div>
 
                         <div id="paypal-button-container" class="online-booking__paypal-button-container hidden"></div>
