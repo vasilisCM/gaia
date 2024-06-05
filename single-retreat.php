@@ -103,7 +103,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 
                         <div class="text online-booking__totals">
                             <p>Total Amount: <span id="room-price">0 €</span></p>
-                            <p class="bold">Deposit Amount: <span id="deposit-amount">0 €</span></p>
+                            <p class="bold">Booking & Deposit Amount: <span id="deposit-amount">0 €</span></p>
                         </div>
 
                         <div class="online-booking__error">

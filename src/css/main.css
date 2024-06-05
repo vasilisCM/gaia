@@ -1722,6 +1722,9 @@ ul li {
   gap: clamp(8px, 1.614530777vw, 16px);
   margin-top: 12px;
 }
+.online-booking__terms-container a {
+  text-decoration: underline;
+}
 .online-booking__paypal-button-container {
   max-width: 300px;
   margin-top: 30px;

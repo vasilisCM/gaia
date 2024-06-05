@@ -24,6 +24,8 @@ get_header(); ?>
                     $retreat = get_field('retreat_room');
                     $quantity = isset($retreat['quantity']) ? $retreat['quantity'] : 0;
                     $from_date = isset($retreat['dates']['from']) ? $retreat['dates']['from'] : '';
+                    $to_date = isset($retreat['dates']['to']) ? $retreat['dates']['to'] : '';
+
                     ?>
                     <?php if ($quantity > 0) : ?>
                         <a href="<?php the_permalink(); ?>" class="retreat-archive__retreat uppercase center-align">
@@ -32,7 +34,7 @@ get_header(); ?>
                             </span>
                             <h2 class="text-s bold"><?php the_title(); ?></h2>
                             <div class="text-s">
-                                <?php echo esc_html($from_date); ?>
+                                <?php echo esc_html($from_date); ?> / <?php echo esc_html($to_date); ?>
                             </div>
                         </a>
                     <?php else : ?>
@@ -42,7 +44,7 @@ get_header(); ?>
                             </span>
                             <h2 class="text-s bold"><?php the_title(); ?></h2>
                             <div class="text-s">
-                                <?php echo esc_html($from_date); ?>
+                                <?php echo esc_html($from_date); ?> / <?php echo esc_html($to_date); ?>
                             </div>
                         </div>
                     <?php endif; ?>
