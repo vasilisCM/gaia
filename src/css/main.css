@@ -1780,8 +1780,10 @@ ul li {
   color: #000;
   transition: all ease 300ms;
 }
-.retreat-archive__retreat:only-child {
-  grid-column: 2;
+@media only screen and (min-width: 992px) {
+  .retreat-archive__retreat:only-child {
+    grid-column: 2;
+  }
 }
 .retreat-archive__retreat:hover {
   background-color: #000;

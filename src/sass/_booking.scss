@@ -115,7 +115,9 @@
     transition: all ease 300ms;
 
     &:only-child {
-      grid-column: 2;
+      @include view(lg-min) {
+        grid-column: 2;
+      }
     }
 
     &:hover {
