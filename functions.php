@@ -45,16 +45,20 @@ if (function_exists('acf_add_options_page')) {
 // Body Classes
 function custom_body_classes($classes)
 {
-
   $white_menu_templates = ['mykonos.php', 'retreat.php', 'experience.php', 'philosophy.php']; // Add more templates in the array
 
   if (is_page_template($white_menu_templates)) {
     $classes[] = 'white-menu-items';
   }
 
+  if (is_singular('retreat')) {
+    $classes[] = 'no-booking-cta';
+  }
+
   return $classes;
 }
 add_filter('body_class', 'custom_body_classes');
+
 
 
 // Enqueue CSS

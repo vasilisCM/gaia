@@ -33,7 +33,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
         <!-- Main  -->
-        <main data-barba="container">
+        <main data-barba="container" data-body-class="<?php echo esc_attr(join(' ', get_body_class())); ?>">
             <!-- Hero  -->
             <section class="first-section intro">
 

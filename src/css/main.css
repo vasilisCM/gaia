@@ -272,6 +272,10 @@ input[type=Reset] {
   color: #000;
 }
 
+.no-booking-cta .book-cta {
+  display: none;
+}
+
 a {
   margin: 0;
   padding: 0;

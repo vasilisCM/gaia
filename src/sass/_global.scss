@@ -49,6 +49,12 @@ input[type="Reset"] {
   // }
 }
 
+.no-booking-cta {
+  & .book-cta {
+    display: none;
+  }
+}
+
 a {
   @include clear-styles;
 }
