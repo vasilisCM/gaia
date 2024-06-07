@@ -76,6 +76,16 @@ const singleRetreat = () => {
       isValid = false;
     }
 
+    // Check if the sum of quantities exceeds the maximum limit
+    let sum = 0;
+    quantityInputs.forEach((input) => {
+      sum += parseInt(input.value) || 0;
+    });
+
+    if (sum > quantityField) {
+      isValid = false;
+    }
+
     return isValid;
   }
 
@@ -89,6 +99,16 @@ const singleRetreat = () => {
       errorContainer.textContent = "Please enter a valid phone number.";
     } else {
       errorContainer.textContent = "Please fill all the fields!";
+    }
+
+    // Additional error message for quantity limit
+    let sum = 0;
+    quantityInputs.forEach((input) => {
+      sum += parseInt(input.value) || 0;
+    });
+
+    if (sum > quantityField) {
+      errorContainer.textContent = `The total quantity cannot exceed ${quantityField}. Please adjust your input.`;
     }
   }
 
@@ -171,6 +191,19 @@ const singleRetreat = () => {
     } else {
       showErrorMessages();
       e.target.checked = false;
+
+      // Reset invalid quantity inputs to 0
+      let sum = 0;
+      quantityInputs.forEach((input) => {
+        sum += parseInt(input.value) || 0;
+      });
+
+      if (sum > quantityField) {
+        quantityInputs.forEach((input) => {
+          input.value = 0;
+        });
+        updatePrice(); // Recalculate price after resetting inputs
+      }
     }
   });
 
