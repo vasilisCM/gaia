@@ -114,6 +114,10 @@
     color: $black;
     transition: all ease 300ms;
 
+    &:only-child {
+      grid-column: 2;
+    }
+
     &:hover {
       background-color: $black;
       color: $white;
