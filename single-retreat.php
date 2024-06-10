@@ -122,7 +122,7 @@ if (have_posts()) : while (have_posts()) : the_post();
             </section>
         </main>
 
-        <script src="https://www.paypal.com/sdk/js?client-id=AVC1o3K_uCHvQI6G3p334NZf9gPNSm9HUJ1c3igrpj-wX02XD6DKlrY1zFwgInL5FdBVkfGGGi9DcqhI&currency=EUR"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR"></script>
 
         <script>
             var adminAjaxUrl = "<?php echo $admin_url; ?>";
