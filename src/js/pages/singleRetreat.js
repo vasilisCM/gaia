@@ -1,5 +1,6 @@
 const singleRetreat = () => {
   console.log("Hello from Retreat Room");
+  
 
   // Control Input Elements for Rooms
   const form = document.getElementById("booking-form");

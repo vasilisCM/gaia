@@ -33,7 +33,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
         <!-- Main  -->
-        <main data-barba="container" data-body-class="<?php echo esc_attr(join(' ', get_body_class())); ?>">
+        <main data-barba="container" data-barba-namespace="singleRetreat" data-body-class="<?php echo esc_attr(join(' ', get_body_class())); ?>" >
             <!-- Hero  -->
             <section class="first-section intro">
 
@@ -120,20 +120,22 @@ if (have_posts()) : while (have_posts()) : the_post();
                     </div>
                 </div>
             </section>
+
+            <script src="https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR"></script>
+
+<script>
+    var adminAjaxUrl = "<?php echo $admin_url; ?>";
+    var thankYouPageUrl = "<?php echo $thank_you_page_url; ?>";
+    var title = <?php echo json_encode($post_title); ?>;
+    var prices = <?php echo json_encode($prices); ?>;
+    var quantityField = <?php echo json_encode($quantity); ?>;
+    var toDate = <?php echo json_encode($to_date); ?>;
+    var fromDate = <?php echo json_encode($from_date); ?>;
+    var maxQuantity = <?php echo esc_attr($quantity); ?>;
+</script>
         </main>
 
-        <script src="https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR"></script>
-
-        <script>
-            var adminAjaxUrl = "<?php echo $admin_url; ?>";
-            var thankYouPageUrl = "<?php echo $thank_you_page_url; ?>";
-            var title = <?php echo json_encode($post_title); ?>;
-            var prices = <?php echo json_encode($prices); ?>;
-            var quantityField = <?php echo json_encode($quantity); ?>;
-            var toDate = <?php echo json_encode($to_date); ?>;
-            var fromDate = <?php echo json_encode($from_date); ?>;
-            var maxQuantity = <?php echo esc_attr($quantity); ?>;
-        </script>
+      
 
 
 <?php
