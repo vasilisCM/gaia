@@ -1,6 +1,19 @@
 const singleRetreat = () => {
   console.log("Hello from Retreat Room");
-  
+
+  // Read values from the main element's data attributes
+  const main = document.querySelector(
+    'main[data-barba-namespace="singleRetreat"]'
+  );
+  if (!main) return; // Exit if main element is not found
+
+  const adminAjaxUrl = main.getAttribute("data-admin-url");
+  const thankYouPageUrl = main.getAttribute("data-thank-you-page-url");
+  const title = main.getAttribute("data-post-title");
+  const prices = JSON.parse(main.getAttribute("data-prices"));
+  const quantityField = parseInt(main.getAttribute("data-quantity"), 10);
+  const fromDate = main.getAttribute("data-from-date");
+  const toDate = main.getAttribute("data-to-date");
 
   // Control Input Elements for Rooms
   const form = document.getElementById("booking-form");
@@ -267,5 +280,4 @@ const singleRetreat = () => {
     })
     .render("#paypal-button-container");
 };
-
 singleRetreat();
