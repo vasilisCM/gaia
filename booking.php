@@ -1,71 +1,70 @@
 <?php /* Template Name: Online Booking */ ?>
 
-<!-- Header  -->
-<?php get_header(); ?>
+<?php
+get_header(); ?>
 
 <!-- Main  -->
 <main data-barba="container">
     <!-- Hero  -->
     <section class="first-section intro">
-        <?php
-        $hero = get_field('hero');
-        ?>
+
         <div class="intro__container">
-            <h1 class="intro__heading heading-ms sans-serif centered-text boxed-s centered" animate="line"><?php echo $hero['heading']['text_large']; ?></h1>
-            <div class="intro__text  boxed-s centered centered-text text-l light" animate="line"><?php echo $hero['heading']['text_small']; ?></div>
+            <h1 class="intro__heading heading-ms sans-serif centered-text boxed-s centered" animate="line">book your retreat</h1>
+            <div class="intro__text  boxed-s centered centered-text text-l light" animate="line">Ready to start your transformation journey with Gaia Exclusive Retreats? Reserve your spot online, inquire about
+                dates, and customize your retreat experience.</div>
         </div>
     </section>
 
-    <section class="online-booking">
-        <div class="boxed-xs centered online-booking__container">
-
-
-            <div class="online-booking__text-container">
-
-
-
-                <!-- booking__retreat -->
+    <section class="retreat-archive">
+        <div class="boxed-xs centered retreat-archive__container">
+            <div class="retreat-archive__grid">
                 <?php
-                if (have_rows('booking__retreat')) : while (have_rows('booking__retreat')) : the_row(); ?>
-                        <h3 class="heading serif online-booking__retreat"><?php echo get_sub_field('heading'); ?></h3>
-                        <p class="text-ml"><?php echo get_sub_field('date'); ?></p>
-                        <p class="text"><?php echo get_sub_field('comment'); ?></p>
-                        <div class="text online-booking__options">
-                            <p>Prices:</p>
-                            <?php if (have_rows('prices')) : while (have_rows('prices')) : the_row();
-                                    if (have_rows('options')) : while (have_rows('options')) : the_row(); ?>
-                                            <div><?php echo get_sub_field('item'); ?></div>
-                            <?php endwhile;
-                                    endif;
-                                endwhile;
-                            endif; ?>
-                        </div>
-                <?php
-                    endwhile;
-                endif;
+                $args = array(
+                    'post_type' => 'retreat',
+                    'posts_per_page' => -1,
+                );
+                $retreat_query = new WP_Query($args);
                 ?>
+                <?php while ($retreat_query->have_posts()) : $retreat_query->the_post(); ?>
+                    <?php
+                    $retreat = get_field('retreat_room');
+                    $quantity = isset($retreat['quantity']) ? $retreat['quantity'] : 0;
+                    $from_date = isset($retreat['dates']['from']) ? $retreat['dates']['from'] : '';
+                    $to_date = isset($retreat['dates']['to']) ? $retreat['dates']['to'] : '';
 
-
-
-
-
-                <div class="online-booking__plugin">
-                    <?php // echo the_content(); 
                     ?>
-
-                </div>
+                    <?php if ($quantity > 0) : ?>
+                        <a href="<?php the_permalink(); ?>" class="retreat-archive__retreat uppercase center-align">
+                            <span class="text-s retreat-archive__status">
+                                Available
+                            </span>
+                            <h2 class="text-s bold"><?php the_title(); ?></h2>
+                            <div class="text-s">
+                                <?php echo esc_html($from_date); ?> / <?php echo esc_html($to_date); ?>
+                            </div>
+                        </a>
+                    <?php else : ?>
+                        <div class="retreat-archive__retreat retreat-archive__retreat--sold-out uppercase center-align">
+                            <span class="text-s retreat-archive__status">
+                                Sold out
+                            </span>
+                            <h2 class="text-s bold"><?php the_title(); ?></h2>
+                            <div class="text-s">
+                                <?php echo esc_html($from_date); ?> / <?php echo esc_html($to_date); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
-
-            <div class="contact-form">
-                <?php echo do_shortcode('[contact-form-7 id="7433ce2" title="Booking"]'); ?>
-            </div>
+        </div>
     </section>
+
 
     <!-- FAQ -->
     <?php
     include 'components/faq.php';
     ?>
-
 </main>
 
 <!-- Footer  -->

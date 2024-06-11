@@ -186,6 +186,15 @@ function send_booking_email()
   // Recipient email
   $admin_email = "vpafiliaris@conceptmaniax.com";
 
+  // Temporary filters to change the From name and email
+  add_filter('wp_mail_from_name', function () {
+    return 'Gaia Exclusive Retreats';
+  });
+
+  add_filter('wp_mail_from', function () {
+    return 'no-reply@gaiaexclusiveretreats.com';
+  });
+
 
   // Email subject for the admin
   $subjectAdmin = "Booking Confirmation";
@@ -276,6 +285,15 @@ function send_booking_email()
 
   // Send email to customer
   wp_mail($email, $subjectCustomer, $messageCustomer, $headers);
+
+  // Remove temporary filters to avoid affecting other emails
+  remove_filter('wp_mail_from_name', function () {
+    return 'Gaia Exclusive Retreats';
+  });
+
+  remove_filter('wp_mail_from', function () {
+    return 'no-reply@gaiaexclusiveretreats.com';
+  });
 
 
 
