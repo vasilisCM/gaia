@@ -1740,7 +1740,13 @@ ul li {
   }
 }
 .online-booking__coupon-container {
+  display: grid;
+  gap: 8px;
   padding-block: clamp(20px, 4.0363269425vw, 40px);
+}
+.online-booking__coupon-code {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
 }
 .online-booking__paypal-button-container {
   max-width: 300px;

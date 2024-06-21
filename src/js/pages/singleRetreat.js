@@ -14,10 +14,10 @@ const singleRetreat = () => {
   const quantityField = parseInt(main.getAttribute("data-quantity"), 10);
   const fromDate = main.getAttribute("data-from-date");
   const toDate = main.getAttribute("data-to-date");
-
+  const coupons = JSON.parse(main.getAttribute("data-coupons"));
 
   // Assume we have a coupon object
-  const coupon = { name: "CM2024", percentage: 20 }; 
+  const coupon = { name: "CM2024", percentage: 20 };
 
   // Control Input Elements for Rooms
   const form = document.getElementById("booking-form");
@@ -34,14 +34,21 @@ const singleRetreat = () => {
     ".online-booking__error-message"
   );
 
-  const couponCodeInput = document.querySelector(".online-booking__coupon-code");
-  const applyCouponButton = document.querySelector(".online-booking__coupon-button");
-  const couponMessage = document.querySelector(".online-booking__coupon-message");
+  const couponCodeInput = document.querySelector(
+    ".online-booking__coupon-code"
+  );
+  const applyCouponButton = document.querySelector(
+    ".online-booking__coupon-button"
+  );
+  const couponMessage = document.querySelector(
+    ".online-booking__coupon-message"
+  );
 
   const roomPriceElement = document.getElementById("room-price");
   const discountPriceElement = document.getElementById("discount-price");
 
   let couponRedeemed = false;
+  let activeCoupon = null;
 
   function updateMaxValues() {
     let sum = 0;
@@ -179,17 +186,17 @@ const singleRetreat = () => {
       paypalButton.classList.add("hidden");
     }
 
-     // Apply coupon if redeemed
-       // Apply coupon if redeemed
-       if (couponRedeemed) {
-        discountPrice = finalPrice * ((100 - coupon.percentage) / 100);
-        discountPriceElement.classList.remove("hidden");
-        roomPriceElement.classList.add("strikethrough");
-      } else {
-        discountPrice = finalPrice;
-        discountPriceElement.classList.add("hidden");
-        roomPriceElement.classList.remove("strikethrough");
-      }
+    // Apply coupon if redeemed
+    if (couponRedeemed) {
+      discountPrice = finalPrice * ((100 - activeCoupon.percentage) / 100);
+      discountPriceElement.classList.remove("hidden");
+      roomPriceElement.classList.add("strikethrough");
+    } else {
+      discountPrice = finalPrice;
+      discountPriceElement.classList.add("hidden");
+      roomPriceElement.classList.remove("strikethrough");
+    }
+
     const depositAmount = discountPrice * 0.2;
 
     // Format the prices with period as thousands separator and comma as decimal separator
@@ -237,8 +244,12 @@ const singleRetreat = () => {
       return;
     }
 
-    if (couponCodeInput.value === coupon.name) {
+    const enteredCoupon = couponCodeInput.value.trim();
+    const foundCoupon = coupons.find((coupon) => coupon.name === enteredCoupon);
+
+    if (foundCoupon) {
       couponRedeemed = true;
+      activeCoupon = foundCoupon;
       couponMessage.textContent = "Coupon applied successfully!";
       couponMessage.classList.remove("hidden");
       updatePrice();
@@ -321,6 +332,18 @@ const singleRetreat = () => {
           localStorage.setItem("dates", JSON.stringify([fromDate, toDate]));
           localStorage.setItem("form_details", JSON.stringify(formObject));
           localStorage.setItem("transaction_details", JSON.stringify(details));
+
+          // Store coupon details
+          if (couponRedeemed) {
+            localStorage.setItem(
+              "coupon",
+              JSON.stringify({
+                code: coupon.name,
+                percentage: coupon.percentage,
+                discountPrice: discountPrice,
+              })
+            );
+          }
 
           // Redirect to thank you page
           window.location.href = thankYouPageUrl;

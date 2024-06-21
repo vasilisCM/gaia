@@ -19,6 +19,17 @@ if (have_posts()) : while (have_posts()) : the_post();
             }
         }
 
+        // Get coupons
+        $coupons = array();
+        if (isset($retreat['coupon'])) {
+            foreach ($retreat['coupon'] as $coupon) {
+                $coupons[] = array(
+                    'name' => $coupon['name'],
+                    'percentage' => $coupon['percentage']
+                );
+            }
+        }
+
         // Post title
         $post_title = get_the_title();
 
@@ -33,7 +44,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
         <!-- Main  -->
-        <main data-barba="container" data-barba-namespace="singleRetreat" data-body-class="<?php echo esc_attr(join(' ', get_body_class())); ?>" data-admin-url="<?php echo $admin_url; ?>" data-thank-you-page-url="<?php echo $thank_you_page_url; ?>" data-post-title="<?php echo esc_attr($post_title); ?>" data-prices="<?php echo esc_attr(json_encode($prices)); ?>" data-quantity="<?php echo esc_attr($quantity); ?>" data-from-date="<?php echo esc_attr($from_date); ?>" data-to-date="<?php echo esc_attr($to_date); ?>">>
+        <main data-barba="container" data-barba-namespace="singleRetreat" data-body-class="<?php echo esc_attr(join(' ', get_body_class())); ?>" data-admin-url="<?php echo $admin_url; ?>" data-thank-you-page-url="<?php echo $thank_you_page_url; ?>" data-post-title="<?php echo esc_attr($post_title); ?>" data-prices="<?php echo esc_attr(json_encode($prices)); ?>" data-quantity="<?php echo esc_attr($quantity); ?>" data-from-date="<?php echo esc_attr($from_date); ?>" data-to-date="<?php echo esc_attr($to_date); ?>" data-coupons="<?php echo esc_attr(json_encode($coupons)); ?>">
             <!-- Hero  -->
             <section class="first-section intro">
 
@@ -66,7 +77,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                             <input type="hidden" id="deposit-price" name="deposit_price" value="<?php echo esc_attr($deposit_amount); ?>">
                             <input type="hidden" id="discount-price-value" name="discount_price_value" value="0">
 
-                            
+
                             <div class="contact-form__info-fields">
                                 <label for="name">First Name *</label>
                                 <input type="text" name="name" class="contact-form__input-field" required>
@@ -109,20 +120,20 @@ if (have_posts()) : while (have_posts()) : the_post();
                                 <label for="coupon">Coupon Code</label>
                                 <input type="text" class="online-booking__coupon-code" name="coupon">
                                 <button type="button" class="online-booking__coupon-button">Apply Coupon</button>
-                                <p  class="online-booking__coupon-message hidden"></p>
-                            </div>
-        
-                                <div class="text online-booking__totals">
-                                    <p>Total Persons: <span id="total-persons">0</span></p>
-                                    <p>Total Amount: <span id="room-price">0 € </span><span id="discount-price" class="hidden">0 €</span></p>
-                                    
-                                    <p class="bold">Booking & Deposit Amount: <span id="deposit-amount">0 €</span></p>
-                                </div>
+                                <p class="online-booking__coupon-message hidden"></p>
                             </div>
 
-                            <div class="online-booking__error">
-                                <p class="online-booking__error-message"></p>
+                            <div class="text online-booking__totals">
+                                <p>Total Persons: <span id="total-persons">0</span></p>
+                                <p>Total Amount: <span id="room-price">0 € </span><span id="discount-price" class="hidden">0 €</span></p>
+
+                                <p class="bold">Booking & Deposit Amount: <span id="deposit-amount">0 €</span></p>
                             </div>
+                        </div>
+
+                        <div class="online-booking__error">
+                            <p class="online-booking__error-message"></p>
+                        </div>
 
 
                         <div class="contact-form__info-fields online-booking__terms-container centered">
@@ -132,31 +143,12 @@ if (have_posts()) : while (have_posts()) : the_post();
                         <div id="paypal-button-container" class="online-booking__paypal-button-container hidden"></div>
                     </div>
 
-                  
+
 
                 </div>
             </section>
 
-            <!-- <script src="https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR"></script> -->
 
-            <!-- <script>
-                var adminAjaxUrl = "<?php // echo $admin_url; 
-                                    ?>";
-                var thankYouPageUrl = "<?php // echo $thank_you_page_url; 
-                                        ?>";
-                var title = <?php // echo json_encode($post_title); 
-                            ?>;
-                var prices = <?php // echo json_encode($prices); 
-                                ?>;
-                var quantityField = <?php // echo json_encode($quantity); 
-                                    ?>;
-                var toDate = <?php // echo json_encode($to_date); 
-                                ?>;
-                var fromDate = <?php // echo json_encode($from_date); 
-                                ?>;
-                var maxQuantity = <?php // echo esc_attr($quantity); 
-                                    ?>;
-            </script> -->
         </main>
 
 

@@ -5,8 +5,8 @@ const transactionDetails = JSON.parse(
 const title = JSON.parse(localStorage.getItem("title"));
 const dates = JSON.parse(localStorage.getItem("dates"));
 const persons = JSON.parse(localStorage.getItem("persons"));
-
 const roomsBooked = JSON.parse(localStorage.getItem("roomsBooked"));
+const coupon = JSON.parse(localStorage.getItem("coupon"));
 
 const [fromDate, toDate] = dates;
 
@@ -49,6 +49,9 @@ async function sendEmail() {
         price: price,
         paypalEmail: paypalEmail,
         paypalAmount: paypalAmount,
+        couponCode: coupon ? coupon.code : "",
+        discountPercentage: coupon ? coupon.percentage : "",
+        discountPrice: coupon ? coupon.discountPrice : "",
       }),
     });
 
@@ -57,6 +60,7 @@ async function sendEmail() {
       console.log("Email sent successfully");
       localStorage.removeItem("transaction_details");
       localStorage.removeItem("form_details");
+      localStorage.removeItem("coupon");
     } else {
       console.error("Failed to send email");
     }
@@ -119,6 +123,15 @@ if (formDetails && transactionDetails) {
           : ""
       }
       <div>Total Amount: <strong>${price}€</strong></div>
+
+          ${
+            coupon
+              ? `<div>Coupon Code: <strong>${coupon.code}</strong></div>
+             <div>Discount Percentage: <strong>${coupon.percentage}%</strong></div>
+             <div>Discounted Price: <strong>${coupon.discountPrice}€</strong></div>`
+              : ""
+          }
+
       <h3>Transaction Details</h3>
       <div>PayPal Email: <strong>${paypalEmail}</strong></div>
       <div>Deposit Paid: <strong>${paypalAmount}€</strong></div>

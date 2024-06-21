@@ -182,6 +182,9 @@ function send_booking_email()
   $price = sanitize_text_field($_POST['price']);
   $paypalEmail = sanitize_email($_POST['paypalEmail']);
   $paypalAmount = sanitize_text_field($_POST['paypalAmount']);
+  $couponCode = sanitize_text_field($_POST['couponCode']);
+  $discountPercentage = sanitize_text_field($_POST['discountPercentage']);
+  $discountPrice = sanitize_text_field($_POST['discountPrice']);
 
   // Recipient email
   $admin_email = "vpafiliaris@conceptmaniax.com";
@@ -226,6 +229,13 @@ function send_booking_email()
     $messageAdmin .= "<p>$quantityDouble double " . ($quantityDouble == 1 ? "room" : "rooms") . "</p>";
   }
 
+  if ($couponCode) {
+    $messageAdmin .= "
+      <p>Coupon Code: $couponCode</p>
+      <p>Discount Percentage: $discountPercentage%</p>
+      <p>Discounted Price: $discountPrice €</p>";
+  }
+
   $messageAdmin .= "
       <p>Total Price: $price €</p>
       <h3>Transaction Details</h3>
@@ -265,6 +275,13 @@ function send_booking_email()
   // Conditional inclusion of double rooms
   if ($quantityDouble) {
     $messageCustomer .= "<p>$quantityDouble double " . ($quantityDouble == 1 ? "room" : "rooms") . "</p>";
+  }
+
+  if ($couponCode) {
+    $messageCustomer .= "
+      <p>Coupon Code: $couponCode</p>
+      <p>Discount Percentage: $discountPercentage%</p>
+      <p>Discounted Price: $discountPrice €</p>";
   }
 
   $messageCustomer .= "

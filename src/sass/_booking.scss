@@ -50,16 +50,21 @@
   }
 
   &__bottom {
-
     @include view(lg-min) {
       display: flex;
       justify-content: space-between;
-  
     }
   }
 
   &__coupon-container {
+    display: grid;
+    gap: 8px;
     padding-block: cross-media(20px, 991px, 40px);
+  }
+
+  &__coupon-code {
+    background-color: rgba($white, 0.8);
+    border: none;
   }
 
   &__paypal-button-container {
