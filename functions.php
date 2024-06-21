@@ -187,7 +187,7 @@ function send_booking_email()
   $discountPrice = sanitize_text_field($_POST['discountPrice']);
 
   // Recipient email
-  $admin_email = "vpafiliaris@conceptmaniax.com";
+  $admin_email = "stephaniecorneille@yahoo.com";
 
   // Temporary filters to change the From name and email
   add_filter('wp_mail_from_name', function () {
