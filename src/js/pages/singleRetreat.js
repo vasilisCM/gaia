@@ -15,6 +15,10 @@ const singleRetreat = () => {
   const fromDate = main.getAttribute("data-from-date");
   const toDate = main.getAttribute("data-to-date");
 
+
+  // Assume we have a coupon object
+  const coupon = { name: "CM2024", percentage: 20 }; 
+
   // Control Input Elements for Rooms
   const form = document.getElementById("booking-form");
   const quantityInputs = document.querySelectorAll(".quantity-input");
@@ -29,6 +33,15 @@ const singleRetreat = () => {
   const errorContainer = document.querySelector(
     ".online-booking__error-message"
   );
+
+  const couponCodeInput = document.querySelector(".online-booking__coupon-code");
+  const applyCouponButton = document.querySelector(".online-booking__coupon-button");
+  const couponMessage = document.querySelector(".online-booking__coupon-message");
+
+  const roomPriceElement = document.getElementById("room-price");
+  const discountPriceElement = document.getElementById("discount-price");
+
+  let couponRedeemed = false;
 
   function updateMaxValues() {
     let sum = 0;
@@ -128,6 +141,7 @@ const singleRetreat = () => {
 
   let finalRoomNumber = 0;
   let totalPersons = 0;
+  let discountPrice = 0;
 
   function updatePrice() {
     finalRoomNumber = 0;
@@ -165,10 +179,26 @@ const singleRetreat = () => {
       paypalButton.classList.add("hidden");
     }
 
-    const depositAmount = finalPrice * 0.2;
+     // Apply coupon if redeemed
+       // Apply coupon if redeemed
+       if (couponRedeemed) {
+        discountPrice = finalPrice * ((100 - coupon.percentage) / 100);
+        discountPriceElement.classList.remove("hidden");
+        roomPriceElement.classList.add("strikethrough");
+      } else {
+        discountPrice = finalPrice;
+        discountPriceElement.classList.add("hidden");
+        roomPriceElement.classList.remove("strikethrough");
+      }
+    const depositAmount = discountPrice * 0.2;
 
     // Format the prices with period as thousands separator and comma as decimal separator
     const formattedFinalPrice = finalPrice.toLocaleString("de-DE", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+    const formattedDiscountPrice = discountPrice.toLocaleString("de-DE", {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     });
@@ -184,17 +214,39 @@ const singleRetreat = () => {
       "room-price"
     ).textContent = `${formattedFinalPrice}€`;
     document.getElementById(
+      "discount-price"
+    ).textContent = `${formattedDiscountPrice}€`;
+    document.getElementById(
       "deposit-amount"
     ).textContent = `${formattedDepositAmount}€`;
 
     // Update Values
     document.getElementById("booking-price").value = finalPrice; // Hidden field
+    document.getElementById("discount-price-value").value = discountPrice; // Hidden field for discounted price
     document.getElementById("deposit-price").value = depositAmount; // Hidden
 
     return [finalRoomNumber, totalPersons];
   }
 
   [finalRoomNumber, totalPersons] = updatePrice();
+
+  applyCouponButton.addEventListener("click", () => {
+    if (couponRedeemed) {
+      couponMessage.textContent = "Coupon already applied!";
+      couponMessage.classList.remove("hidden");
+      return;
+    }
+
+    if (couponCodeInput.value === coupon.name) {
+      couponRedeemed = true;
+      couponMessage.textContent = "Coupon applied successfully!";
+      couponMessage.classList.remove("hidden");
+      updatePrice();
+    } else {
+      couponMessage.textContent = "Invalid coupon code!";
+      couponMessage.classList.remove("hidden");
+    }
+  });
 
   termsCheckbox.addEventListener("click", (e) => {
     if (validateForm()) {

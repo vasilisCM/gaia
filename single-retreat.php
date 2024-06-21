@@ -64,6 +64,9 @@ if (have_posts()) : while (have_posts()) : the_post();
                             <input type="hidden" name="room_id" value="<?php echo get_the_ID(); ?>">
                             <input type="hidden" id="booking-price" name="price" value="<?php echo esc_attr($default_price); ?>">
                             <input type="hidden" id="deposit-price" name="deposit_price" value="<?php echo esc_attr($deposit_amount); ?>">
+                            <input type="hidden" id="discount-price-value" name="discount_price_value" value="0">
+
+                            
                             <div class="contact-form__info-fields">
                                 <label for="name">First Name *</label>
                                 <input type="text" name="name" class="contact-form__input-field" required>
@@ -101,15 +104,25 @@ if (have_posts()) : while (have_posts()) : the_post();
 
                         </form>
 
-                        <div class="text online-booking__totals">
-                            <p>Total Persons: <span id="total-persons">0</span></p>
-                            <p>Total Amount: <span id="room-price">0 €</span></p>
-                            <p class="bold">Booking & Deposit Amount: <span id="deposit-amount">0 €</span></p>
-                        </div>
+                        <div class="online-booking__bottom">
+                            <div class="online-booking__coupon-container">
+                                <label for="coupon">Coupon Code</label>
+                                <input type="text" class="online-booking__coupon-code" name="coupon">
+                                <button type="button" class="online-booking__coupon-button">Apply Coupon</button>
+                                <p  class="online-booking__coupon-message hidden"></p>
+                            </div>
+        
+                                <div class="text online-booking__totals">
+                                    <p>Total Persons: <span id="total-persons">0</span></p>
+                                    <p>Total Amount: <span id="room-price">0 € </span><span id="discount-price" class="hidden">0 €</span></p>
+                                    
+                                    <p class="bold">Booking & Deposit Amount: <span id="deposit-amount">0 €</span></p>
+                                </div>
+                            </div>
 
-                        <div class="online-booking__error">
-                            <p class="online-booking__error-message"></p>
-                        </div>
+                            <div class="online-booking__error">
+                                <p class="online-booking__error-message"></p>
+                            </div>
 
 
                         <div class="contact-form__info-fields online-booking__terms-container centered">
@@ -118,6 +131,9 @@ if (have_posts()) : while (have_posts()) : the_post();
 
                         <div id="paypal-button-container" class="online-booking__paypal-button-container hidden"></div>
                     </div>
+
+                  
+
                 </div>
             </section>
 

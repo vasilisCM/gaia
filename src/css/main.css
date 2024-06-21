@@ -419,6 +419,10 @@ ul li {
   }
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
 .menu__hover-effect a {
   font-weight: inherit;
   text-shadow: none;
@@ -1728,6 +1732,15 @@ ul li {
 }
 .online-booking__terms-container a {
   text-decoration: underline;
+}
+@media only screen and (min-width: 992px) {
+  .online-booking__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.online-booking__coupon-container {
+  padding-block: clamp(20px, 4.0363269425vw, 40px);
 }
 .online-booking__paypal-button-container {
   max-width: 300px;
