@@ -1,5 +1,5 @@
 const singleRetreat = () => {
-  console.log("Hello from Retreat Room");
+  console.log("Hello from Retreat Rooms");
 
   // Read values from the main element's data attributes
   const main = document.querySelector(
@@ -197,7 +197,8 @@ const singleRetreat = () => {
       roomPriceElement.classList.remove("strikethrough");
     }
 
-    const depositAmount = discountPrice * 0.2;
+    // const depositAmount = discountPrice * 0.2;
+    const depositAmount = discountPrice;
 
     // Format the prices with period as thousands separator and comma as decimal separator
     const formattedFinalPrice = finalPrice.toLocaleString("de-DE", {
