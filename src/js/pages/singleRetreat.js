@@ -16,6 +16,8 @@ const singleRetreat = () => {
   const toDate = main.getAttribute("data-to-date");
   const coupons = JSON.parse(main.getAttribute("data-coupons"));
 
+  console.log(quantityField);
+
   // Assume we have a coupon object
   const coupon = { name: "CM2024", percentage: 20 };
 

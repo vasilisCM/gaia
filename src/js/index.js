@@ -207,13 +207,14 @@ const loadPageScript = (namespace) => {
   }
 
   // If the namespace is 'singleRetreat', also append the PayPal SDK script
-  if (namespace === "singleRetreat") {
-    const paypalScript = document.createElement("script");
-    paypalScript.src =
-      "https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR";
-    paypalScript.async = true;
-    document.body.appendChild(paypalScript);
-  }
+  // if (namespace === "singleRetreat") {
+  //   console.log("paypal!");
+  //   const paypalScript = document.createElement("script");
+  //   paypalScript.src =
+  //     "https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR";
+  //   paypalScript.async = true;
+  //   document.body.appendChild(paypalScript);
+  // }
 
   const scriptsDir = `wp-content/themes/${themeName}/src/js`;
   const scriptUrl = `${url}/${scriptsDir}/${namespace}.bundle.js`;
