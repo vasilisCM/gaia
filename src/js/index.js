@@ -225,6 +225,27 @@ const loadPageScript = (namespace) => {
   document.body.appendChild(script);
 };
 
+function unloadPageScript(namespace) {
+  const siteName = "gaiaexclusiveretreats.com";
+  const themeName = "gaia";
+  let url = window.location.origin;
+
+  // Check if we are in XAMPP environment
+  if (window.location.href.includes("localhost")) {
+    console.log("We are in XAMPP environment");
+
+    // Remove "localhost" from the URL
+    url += `/${siteName}`;
+  }
+
+  const scriptsDir = `wp-content/themes/${themeName}/src/js`;
+
+  const scripts = document.querySelectorAll(
+    `script[src="${path}/${namespace}.${extension}"]`
+  );
+  scripts.forEach((script) => script.remove());
+}
+
 const revealPageTransitionTl = gsap.timeline({
   paused: true,
   onStart: () => {
@@ -272,6 +293,16 @@ barba.init({
         mobileMenu();
       },
       leave(data) {
+        const namespace = data.current.namespace;
+        const scripts = document.querySelectorAll(
+          `script[src="https://gaiaexclusiveretreats.com/wp-content/themes/gaia/src/js/${namespace}.bundle.js"]`
+        );
+        scripts.forEach((script) => script.remove());
+
+        // if (namespace) {
+        //   unloadPageScript(namespace); // Ensure this is defined to load page-specific scripts
+        // }
+
         const done = this.async(); // Get the async completion function
         hidePageTransitionTl.restart();
         hidePageTransitionTl.eventCallback("onComplete", () => {
