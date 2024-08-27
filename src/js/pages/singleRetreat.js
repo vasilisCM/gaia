@@ -72,6 +72,9 @@ const singleRetreat = () => {
   quantityInputs.forEach((input) => {
     input.addEventListener("input", function () {
       updateMaxValues();
+      if (input.value === "") {
+        input.value = 0; // Set to 0 if the input is empty
+      }
     });
   });
 
