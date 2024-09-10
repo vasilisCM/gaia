@@ -23,8 +23,10 @@ const {
   room_id: roomId,
 } = formDetails;
 
-const paypalEmail = transactionDetails.payer.email_address;
-const paypalAmount = transactionDetails.purchase_units[0].amount.value;
+console.log(formDetails);
+
+// const paypalEmail = transactionDetails.payer.email_address;
+// const paypalAmount = transactionDetails.purchase_units[0].amount.value;
 
 async function sendEmail() {
   try {
@@ -47,8 +49,8 @@ async function sendEmail() {
         quantitySingle: quantitySingle,
         quantityDouble: quantityDouble,
         price: price,
-        paypalEmail: paypalEmail,
-        paypalAmount: paypalAmount,
+        // paypalEmail: paypalEmail,
+        // paypalAmount: paypalAmount,
         couponCode: coupon ? coupon.code : "",
         discountPercentage: coupon ? coupon.percentage : "",
         discountPrice: coupon ? coupon.discountPrice : "",
@@ -97,7 +99,7 @@ async function updateACF() {
   }
 }
 
-if (formDetails && transactionDetails) {
+if (formDetails) {
   const detailsContainer = document.getElementById("details-container");
   detailsContainer.innerHTML = `
       <h3>Summary</h3>
@@ -132,9 +134,7 @@ if (formDetails && transactionDetails) {
               : ""
           }
 
-      <h3>Transaction Details</h3>
-      <div>PayPal Email: <strong>${paypalEmail}</strong></div>
-      <div>Deposit Paid: <strong>${paypalAmount}€</strong></div>
+
     `;
 
   // Run both functions independently

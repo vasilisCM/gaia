@@ -180,14 +180,16 @@ function send_booking_email()
   $quantitySingle = sanitize_text_field($_POST['quantitySingle']);
   $quantityDouble = sanitize_text_field($_POST['quantityDouble']);
   $price = sanitize_text_field($_POST['price']);
-  $paypalEmail = sanitize_email($_POST['paypalEmail']);
-  $paypalAmount = sanitize_text_field($_POST['paypalAmount']);
+  // $paypalEmail = sanitize_email($_POST['paypalEmail']);
+  // $paypalAmount = sanitize_text_field($_POST['paypalAmount']);
   $couponCode = sanitize_text_field($_POST['couponCode']);
   $discountPercentage = sanitize_text_field($_POST['discountPercentage']);
   $discountPrice = sanitize_text_field($_POST['discountPrice']);
 
   // Recipient email
-  $admin_email = "stephaniecorneille@yahoo.com";
+  // $admin_email = "stephaniecorneille@yahoo.com";
+  $admin_email = "vasilisound@gmail.com";
+
 
   // Temporary filters to change the From name and email
   add_filter('wp_mail_from_name', function () {
@@ -238,9 +240,7 @@ function send_booking_email()
 
   $messageAdmin .= "
       <p>Total Price: $price €</p>
-      <h3>Transaction Details</h3>
-      <p>PayPal Email: $paypalEmail</p>
-      <p>Deposit Paid: $paypalAmount €</p>
+     
     </body>
     </html>
     ";
@@ -286,9 +286,7 @@ function send_booking_email()
 
   $messageCustomer .= "
   <p>Total Price: $price €</p>
-  <h3>Transaction Details</h3>
-  <p>PayPal Email: $paypalEmail</p>
-  <p>Deposit Paid: $paypalAmount €</p>
+
 </body>
 </html>
 ";

@@ -31,6 +31,7 @@ const singleRetreat = () => {
     ".contact-form__acceptance-field"
   );
   const paypalButton = document.querySelector("#paypal-button-container");
+  const submitButton = document.querySelector("#submit-button");
 
   const errorContainer = document.querySelector(
     ".online-booking__error-message"
@@ -99,7 +100,8 @@ const singleRetreat = () => {
     requiredFields.forEach((field) => {
       field.addEventListener("input", () => {
         termsCheckbox.checked = false;
-        paypalButton.classList.add("hidden");
+        // paypalButton.classList.add("hidden");
+        submitButton.classList.add("hidden");
       });
       if (!field.value.trim()) {
         isValid = false;
@@ -188,7 +190,8 @@ const singleRetreat = () => {
       // Reset Terms and PayPal Button State
       // termsContainer.classList.add("hidden");
       termsCheckbox.checked = false;
-      paypalButton.classList.add("hidden");
+      // paypalButton.classList.add("hidden");
+      submitButton.classList.add("hidden");
     }
 
     // Apply coupon if redeemed
@@ -268,9 +271,13 @@ const singleRetreat = () => {
   termsCheckbox.addEventListener("click", (e) => {
     if (validateForm()) {
       errorContainer.textContent = "";
+      // e.target.checked
+      //   ? paypalButton.classList.remove("hidden")
+      //   : paypalButton.classList.add("hidden");
+
       e.target.checked
-        ? paypalButton.classList.remove("hidden")
-        : paypalButton.classList.add("hidden");
+        ? submitButton.classList.remove("hidden")
+        : submitButton.classList.add("hidden");
     } else {
       showErrorMessages();
       e.target.checked = false;
@@ -299,6 +306,41 @@ const singleRetreat = () => {
     input.addEventListener("change", updatePrice);
   });
 
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Ensure deposit price is up to date
+    updatePrice();
+
+    // Gather form data and store it in local storage
+    const form = document.getElementById("booking-form");
+    const formData = new FormData(form);
+    const formObject = Object.fromEntries(formData.entries());
+
+    localStorage.setItem("title", JSON.stringify(title));
+    localStorage.setItem("roomsBooked", JSON.stringify(finalRoomNumber));
+    localStorage.setItem("persons", JSON.stringify(totalPersons));
+    localStorage.setItem("dates", JSON.stringify([fromDate, toDate]));
+    localStorage.setItem("form_details", JSON.stringify(formObject));
+    // localStorage.setItem("transaction_details", JSON.stringify(details));
+
+    // Store coupon details
+    if (couponRedeemed) {
+      localStorage.setItem(
+        "coupon",
+        JSON.stringify({
+          code: coupon.name,
+          percentage: coupon.percentage,
+          discountPrice: discountPrice,
+        })
+      );
+    }
+
+    // Redirect to thank you page
+    window.location.href = thankYouPageUrl;
+  });
+
+  /*
   // Initialize PayPal button
   paypal
     .Buttons({
@@ -360,5 +402,6 @@ const singleRetreat = () => {
       },
     })
     .render("#paypal-button-container");
+*/
 };
 singleRetreat();

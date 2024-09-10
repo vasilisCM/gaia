@@ -84,7 +84,7 @@
   <!-- Back to Top  -->
   <div class="back-to-top"></div>
 
-  <script src="https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR"></script>
+  <!-- <script src="https://www.paypal.com/sdk/js?client-id=AaHlSTZ4SjO1nzF9V2zk3M8cqLllpOkgLvEjJHirYSswC6ivpckM0oxS9oIr3ZVmIf4-STLBgSEJQf6p&currency=EUR"></script> -->
 
 
 </footer>
