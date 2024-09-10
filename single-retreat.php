@@ -138,9 +138,9 @@ if (have_posts()) : while (have_posts()) : the_post();
 
 
                         <div class="contact-form__info-fields online-booking__terms-container centered">
-                            <label><input type="checkbox" name="acceptance" value="1" class="contact-form__acceptance-field " aria-invalid="false"><span class="wpcf7-list-item-label">I agree with the <a href="/payment-refund/" target="_blank">Refund Policy</a> and I want to proceed with payment.</span></label>
+                            <label><input type="checkbox" name="acceptance" value="1" class="contact-form__acceptance-field " aria-invalid="false"><span class="wpcf7-list-item-label">I agree with the <a href="/terms-and-conditions/" target="_blank">Terms and Conditions</a></span></label>
                         </div>
-                        <button id="submit-button" class="button online-booking__paypal-button-container hidden">Book Retreat</button>
+                        <button id="submit-button" class="button online-booking__paypal-button-container hidden">Start Your Journey</button>
 
                         <!-- <div id="paypal-button-container" class="online-booking__paypal-button-container hidden"></div> -->
                     </div>
