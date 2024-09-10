@@ -187,8 +187,7 @@ function send_booking_email()
   $discountPrice = sanitize_text_field($_POST['discountPrice']);
 
   // Recipient email
-  // $admin_email = "stephaniecorneille@yahoo.com";
-  $admin_email = "vasilisound@gmail.com";
+  $admin_email = "stephaniecorneille@yahoo.com";
 
 
   // Temporary filters to change the From name and email
