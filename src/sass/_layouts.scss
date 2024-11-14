@@ -206,14 +206,14 @@
     }
   }
   &.menu {
-    &__hover-effect {
-      a {
-        color: $accent;
-        &::before {
-          color: $black;
-        }
-      }
-    }
+    // &__hover-effect {
+    //   a {
+    //     color: $accent;
+    //     &::before {
+    //       color: $black;
+    //     }
+    //   }
+    // }
   }
   & .menu-item-has-children > a {
     color: $black;
@@ -222,16 +222,16 @@
 
 .white-menu-items {
   & .menu {
-    &__hover-effect {
-      a {
-        color: rgba($secondary, 0.7);
-        &::before {
-          @include view(lg-min) {
-            color: $white;
-          }
-        }
-      }
-    }
+    // &__hover-effect {
+    //   a {
+    //     color: rgba($secondary, 0.7);
+    //     &::before {
+    //       @include view(lg-min) {
+    //         color: $white;
+    //       }
+    //     }
+    //   }
+    // }
   }
   & .menu-item-has-children > a {
     @include view(lg-min) {
@@ -242,17 +242,17 @@
 
 .header--dropdown,
 .header--sticky {
-  & .menu {
-    &__hover-effect,
-    &__hover-effect .sub-menu {
-      & a {
-        color: $accent !important;
-        &::before {
-          color: $black !important;
-        }
-      }
-    }
-  }
+  // & .menu {
+  //   &__hover-effect,
+  //   &__hover-effect .sub-menu {
+  //     & a {
+  //       color: $accent !important;
+  //       &::before {
+  //         color: $black !important;
+  //       }
+  //     }
+  //   }
+  // }
   & .menu-item-has-children > a {
     color: $black !important;
   }
@@ -882,14 +882,14 @@
     margin-bottom: 20px;
   }
   &.menu {
-    &__hover-effect {
-      a {
-        color: rgba($secondary, 0.5);
-        &::before {
-          color: $white;
-        }
-      }
-    }
+    // &__hover-effect {
+    //   a {
+    //     color: rgba($secondary, 0.5);
+    //     &::before {
+    //       color: $white;
+    //     }
+    //   }
+    // }
   }
 }
 

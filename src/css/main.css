@@ -603,40 +603,16 @@ ul li {
 .main-menu__dropdown-background--open {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-.main-menu.menu__hover-effect a {
-  color: #a19696;
-}
-.main-menu.menu__hover-effect a::before {
-  color: #000;
-}
 .main-menu .menu-item-has-children > a {
   color: #000;
 }
 
-.white-menu-items .menu__hover-effect a {
-  color: rgba(59, 50, 50, 0.7);
-}
-@media only screen and (min-width: 992px) {
-  .white-menu-items .menu__hover-effect a::before {
-    color: #fff;
-  }
-}
 @media only screen and (min-width: 992px) {
   .white-menu-items .menu-item-has-children > a {
     color: #fff;
   }
 }
 
-.header--dropdown .menu__hover-effect a, .header--dropdown .menu__hover-effect .sub-menu a,
-.header--sticky .menu__hover-effect a,
-.header--sticky .menu__hover-effect .sub-menu a {
-  color: #a19696 !important;
-}
-.header--dropdown .menu__hover-effect a::before, .header--dropdown .menu__hover-effect .sub-menu a::before,
-.header--sticky .menu__hover-effect a::before,
-.header--sticky .menu__hover-effect .sub-menu a::before {
-  color: #000 !important;
-}
 .header--dropdown .menu-item-has-children > a,
 .header--sticky .menu-item-has-children > a {
   color: #000 !important;
@@ -1129,13 +1105,6 @@ ul li {
     margin-bottom: 20px;
   }
 }
-.footer-menu.menu__hover-effect a {
-  color: rgba(59, 50, 50, 0.5);
-}
-.footer-menu.menu__hover-effect a::before {
-  color: #fff;
-}
-
 .privacy-menu__list {
   display: flex;
   gap: clamp(20px, 4.0363269425vw, 40px);
