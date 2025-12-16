@@ -114,6 +114,15 @@ html.lenis {
   font-family: "Montserrat", sans-serif;
 }
 
+.text-huge {
+  font-size: clamp(100px, 20.1816347124vw, 200px);
+}
+@media only screen and (min-width: 1921px) {
+  .text-huge {
+    font-size: clamp(200px, 10.15625vw, 260px);
+  }
+}
+
 h1,
 .heading-l {
   font-size: clamp(40px, 8.072653885vw, 80px);
@@ -206,6 +215,10 @@ p,
 .text {
     font-size: clamp(16px, 0.8125vw, 20.8px);
   }
+}
+
+p {
+  font-size: inherit;
 }
 
 .text-ms {
@@ -357,6 +370,10 @@ button {
 
 .first-section {
   padding-top: clamp(150px, 19.4444444444vw, 350px);
+}
+
+.basic {
+  padding-block: clamp(60px, 6.6666666667vw, 120px);
 }
 
 .bold {

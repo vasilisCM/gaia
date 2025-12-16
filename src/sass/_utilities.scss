@@ -61,6 +61,10 @@
   // }
 }
 
+.basic {
+  padding-block: cross-media(60px, $box, 120px);
+}
+
 // Typography
 .bold {
   font-weight: 700;
@@ -126,7 +130,7 @@ ul {
 }
 
 .strikethrough {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 // Menu Hover Effect

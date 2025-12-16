@@ -12,6 +12,18 @@
 }
 
 // Headings
+.text-huge {
+  font-size: cross-media(100px, 991px, 200px);
+
+  @include view(ultra) {
+    font-size: cross-media(
+      200px,
+      $ultra-breakpoint,
+      calc(200px * $ultra-scale)
+    );
+  }
+}
+
 h1,
 .heading-l {
   font-size: cross-media(40px, 991px, 80px);
@@ -92,6 +104,10 @@ p,
   @include view(ultra) {
     font-size: cross-media(16px, $ultra-breakpoint, calc(16px * $ultra-scale));
   }
+}
+
+p {
+  font-size: inherit;
 }
 
 .text-ms {

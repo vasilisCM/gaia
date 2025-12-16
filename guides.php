@@ -1,4 +1,4 @@
-<?php /* Template Name: Program */ ?>
+<?php /* Template Name: Guides */ ?>
 
 <!-- Header  -->
 <?php get_header(); ?>
@@ -28,32 +28,36 @@
     </section>
 
     <!-- Intro -->
-    <section class="intro">
-        <div class="intro__text-container boxed-xs centered centered-text">
-            <div class="intro__text text-l">
-                <?php the_content(); ?>
+    <?php if (get_field('intro_text')) : ?>
+        <section class="intro">
+            <div class="intro__text-container boxed-xs centered centered-text">
+                <div class="intro__text text-l">
+                    <?php echo get_field('intro_text'); ?>
+                </div>
             </div>
-        </div>
-
-    </section>
-
-    <!-- Unique -->
-    <section class="unique-program centered-text">
-        <?php
-        $intro = get_field('program__intro');
-        ?>
-        <div class="unique-program__container boxed-xs centered">
-            <h2 class="serif heading">
-                <?php echo $intro['text_1']; ?>
-            </h2>
-            <div class="basic text-l">
-                <?php echo $intro['text_2']; ?>
-            </div>
-            <div class="heading-ml">
-                <?php echo $intro['text_3']; ?>
-            </div>
-        </div>
-    </section>
+            <?php if (have_rows('benefits')) :
+                $benefits = get_field('benefits');
+                $lastBenefit = count($benefits); ?>
+                <div class="intro__benefits-list centered-text text-l">
+                    <?php while (have_rows('benefits')) : the_row();
+                        $row_index = get_row_index();
+                        $benefitText = get_sub_field('text');
+                    ?>
+                        <div class="intro__benefits-item">
+                            <?php echo $benefitText; ?>
+                        </div>
+                        <?php if ($row_index < $lastBenefit) : ?>
+                            <div class="intro__benefits-curve curve-custom curve-custom--white">
+                                <!-- <svg width="1920" height="115" viewBox="0 0 1920 115">
+                                    <path id="Path_272" data-name="Path 272" d="M64.87,222.35c81.438-19.438,164.687-36.657,247.457-51.14a4149.027,4149.027,0,0,1,1425.077,0c82.77,14.5,166.028,31.7,247.466,51.14" transform="translate(-64.638 -108.567)" fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2" />
+                                </svg> -->
+                            </div>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+        </section>
+    <?php endif; ?>
 
     <!-- Grid -->
     <section class="main-grid main-grid--mykonos">
@@ -85,12 +89,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="main-grid__item-image-container">
-                            <div class="serif">
-                                <span class="heading">Step</span>
-                                <span class="text-huge">0<?php echo get_row_index(); ?></span>
-                            </div>
                             <img src="<?php echo $itemImage['image']; ?>" class="main-grid__item-image" alt="">
-
                         </div>
                     </div>
                 <?php endwhile; ?>
@@ -98,55 +97,6 @@
         <?php endif; ?>
     </section>
 
-    <section class="basic investment-program centered-text">
-        <?php $investment = get_field('program__investment'); ?>
-        <div>
-            <div class="investment-program__container boxed-xs centered">
-                <h2 class="heading-ml">
-                    <?php echo $investment['heading']; ?>
-                </h2>
-                <div class="basic text-l">
-                    <?php echo $investment['text_1']; ?>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="investment-program__container boxed-xs centered">
-                <div class="basic text-l">
-                    <?php echo $investment['text_2']; ?>
-                </div>
-                <div>
-                    <h1>PAYPAL BUTTON</h1>
-                </div>
-                <div class="basic text-l">
-                    <?php echo $investment['text_3']; ?>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Text Banner  -->
-    <section class="text-banner text-banner-program">
-        <?php
-        $text_banner = get_field('text_banner', 'option');
-        ?>
-        <div class="boxed centered">
-            <div class="hero__heading">
-                <span class="heading-s italic serif hero__text">Ready to transform your health?</span>
-                <span class="heading-l hero__text" animate="word">Your body deserves this investment</span>
-            </div>
-
-        </div>
-        <div class="curved-container">
-            <div class="curve-custom"></div>
-
-
-            <button class="centered text-banner__button text-banner-program__curve"></button>
-
-
-        </div>
-    </section>
 </main>
 
 <!-- Footer  -->
