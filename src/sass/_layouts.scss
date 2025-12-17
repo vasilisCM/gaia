@@ -370,9 +370,15 @@
       // border: solid 2px red;
     }
     &-image {
+      max-width: 800px;
       max-height: 840px;
 
       @include view(ultra) {
+        max-width: cross-media(
+          800px,
+          $ultra-breakpoint,
+          calc(800px * $ultra-scale)
+        );
         max-height: cross-media(
           840px,
           $ultra-breakpoint,

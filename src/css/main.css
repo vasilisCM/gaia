@@ -718,12 +718,14 @@ ul li {
   width: 100%;
 }
 .main-grid__item-image {
+  max-width: 800px;
   max-height: 840px;
   height: 100%;
   object-fit: cover;
 }
 @media only screen and (min-width: 1921px) {
   .main-grid__item-image {
+    max-width: clamp(800px, 40.625vw, 1040px);
     max-height: clamp(840px, 42.65625vw, 1092px);
   }
 }
