@@ -37,21 +37,28 @@
 
     </section>
 
-    <!-- Unique -->
-    <section class="unique-program centered-text">
+    <!-- Curves -->
+    <section class="">
         <?php
         $intro = get_field('program__intro');
         ?>
-        <div class="unique-program__container boxed-xs centered">
-            <h2 class="serif heading">
-                <?php echo $intro['text_1']; ?>
-            </h2>
-            <div class="basic text-l">
-                <?php echo $intro['text_2']; ?>
+        <div class="philosophy-curves__container--top">
+            <div class="curved-container">
+                <div class="curve-custom curve-custom--gradient"></div>
+                <div class="philosophy-curves__text boxed-xs centered centered-text">
+                    <h2 class="serif heading">
+                        <?php echo $intro['text_1']; ?>
+                    </h2>
+                    <div class="basic text-l">
+                        <?php echo $intro['text_2']; ?>
+                    </div>
+                    <div class="heading-ml">
+                        <?php echo $intro['text_3']; ?>
+                    </div>
+                </div>
+
             </div>
-            <div class="heading-ml">
-                <?php echo $intro['text_3']; ?>
-            </div>
+
         </div>
     </section>
 
@@ -63,7 +70,7 @@
                     $itemText = get_sub_field('item_text');
                     $itemImage = get_sub_field('item_image');
                 ?>
-                    <div class="main-grid__item two-col">
+                    <div class="main-grid__item main-grid-program__item two-col">
                         <div class="main-grid__item-text-container">
                             <div class="main-grid__item-title serif heading">
                                 <?php echo $itemText['title']; ?>
@@ -84,8 +91,8 @@
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="main-grid__item-image-container">
-                            <div class="serif">
+                        <div class="main-grid__item-image-container main-grid-program__img-container relative">
+                            <div class="serif main-grid-program__step-container absolute">
                                 <span class="heading">Step</span>
                                 <span class="text-huge">0<?php echo get_row_index(); ?></span>
                             </div>
@@ -98,29 +105,40 @@
         <?php endif; ?>
     </section>
 
-    <section class="basic investment-program centered-text">
+    <section class="investment-program centered-text">
         <?php $investment = get_field('program__investment'); ?>
         <div>
             <div class="investment-program__container boxed-xs centered">
                 <h2 class="heading-ml">
                     <?php echo $investment['heading']; ?>
                 </h2>
-                <div class="basic text-l">
+                <div class="text-l">
                     <?php echo $investment['text_1']; ?>
                 </div>
             </div>
         </div>
 
-        <div>
-            <div class="investment-program__container boxed-xs centered">
-                <div class="basic text-l">
-                    <?php echo $investment['text_2']; ?>
-                </div>
-                <div>
-                    <h1>PAYPAL BUTTON</h1>
-                </div>
-                <div class="basic text-l">
-                    <?php echo $investment['text_3']; ?>
+
+    </section>
+
+    <!-- Curves -->
+    <section class="">
+        <?php
+        $intro = get_field('program__intro');
+        ?>
+        <div class="philosophy-curves__container--top">
+            <div class="curved-container">
+                <div class="curve-custom curve-custom--gradient"></div>
+                <div class="investment-program__container boxed-xs centered centered-text">
+                    <div class="basic text-l">
+                        <?php echo $investment['text_2']; ?>
+                    </div>
+                    <div>
+                        <img src="<?php echo assets('paypal.png'); ?>" alt="Paypal" class="centered">
+                    </div>
+                    <div class="basic text-l">
+                        <?php echo $investment['text_3']; ?>
+                    </div>
                 </div>
             </div>
         </div>

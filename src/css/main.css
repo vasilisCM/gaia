@@ -376,6 +376,14 @@ button {
   padding-block: clamp(60px, 6.6666666667vw, 120px);
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 .bold {
   font-weight: 700;
 }
@@ -1568,6 +1576,22 @@ ul li {
 .text-banner-program__curve {
   background-color: transparent;
   border: none;
+}
+
+.main-grid-program__item {
+  align-items: center;
+}
+.main-grid-program__item:nth-child(odd) .main-grid-program__step-container {
+  left: -15%;
+}
+.main-grid-program__item:nth-child(even) .main-grid-program__step-container {
+  right: -15%;
+}
+.main-grid-program__step-container {
+  top: -5%;
+  display: flex;
+  align-items: start;
+  line-height: 0.7;
 }
 
 .intro--contact .intro__heading {

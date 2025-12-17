@@ -4,3 +4,31 @@
     border: none;
   }
 }
+
+.main-grid-program {
+  &__item {
+    align-items: center;
+
+    &:nth-child(odd) {
+      & .main-grid-program__step-container {
+        left: -15%;
+      }
+    }
+    &:nth-child(even) {
+      & .main-grid-program__step-container {
+        right: -15%;
+      }
+    }
+  }
+
+  // &__img-container {
+  //   border: 1px solid blue;
+  // }
+
+  &__step-container {
+    top: -5%;
+    display: flex;
+    align-items: start;
+    line-height: 0.7;
+  }
+}

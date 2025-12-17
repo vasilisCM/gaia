@@ -65,6 +65,14 @@
   padding-block: cross-media(60px, $box, 120px);
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 // Typography
 .bold {
   font-weight: 700;
