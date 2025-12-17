@@ -16,18 +16,18 @@
     }
     &:nth-child(even) {
       & .main-grid-program__step-container {
-        right: -15%;
+        right: -20%;
 
-        @include view(ultra) {
-          right: 0;
-        }
+        // @include view(ultra) {
+        //   right: 0;
+        // }
       }
     }
   }
 
-  // &__img-container {
-  //   border: 1px solid blue;
-  // }
+  &__img-container {
+    width: fit-content;
+  }
 
   &__step-container {
     top: -5%;

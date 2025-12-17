@@ -367,10 +367,22 @@
       justify-self: center;
       position: relative;
       width: 100%;
+      // border: solid 2px red;
     }
     &-image {
+      max-height: 840px;
+
+      @include view(ultra) {
+        max-height: cross-media(
+          840px,
+          $ultra-breakpoint,
+          calc(840px * $ultra-scale)
+        );
+      }
+
       height: 100%;
       object-fit: cover;
+
       &.image-with-tiles {
         width: 70%;
         margin-left: 12%;

@@ -63,7 +63,7 @@
     </section>
 
     <!-- Grid -->
-    <section class="main-grid main-grid--mykonos">
+    <section class="main-grid main-grid--inner">
         <?php if (have_rows('grid_item')) : ?>
             <div class="main-grid__container boxed centered">
                 <?php while (have_rows('grid_item')) : the_row();
