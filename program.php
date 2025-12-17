@@ -133,9 +133,9 @@
                     <div class="basic text-l">
                         <?php echo $investment['text_2']; ?>
                     </div>
-                    <div>
-                        <img src="<?php echo assets('paypal.png'); ?>" alt="Paypal" class="centered">
-                    </div>
+                    <a href="/" target="_blank">
+                        <button class="button investment-program__paypal-button">Pay with <img src="<?php echo assets('paypal-black.png'); ?>" alt="Paypal" class="investment-program__paypal-icon"></button>
+                    </a>
                     <div class="basic text-l">
                         <?php echo $investment['text_3']; ?>
                     </div>

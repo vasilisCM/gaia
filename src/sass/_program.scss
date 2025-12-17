@@ -17,6 +17,10 @@
     &:nth-child(even) {
       & .main-grid-program__step-container {
         right: -15%;
+
+        @include view(ultra) {
+          right: 0;
+        }
       }
     }
   }
@@ -30,5 +34,43 @@
     display: flex;
     align-items: start;
     line-height: 0.7;
+  }
+}
+
+.investment-program {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__paypal-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include view(ultra) {
+      gap: cross-media(10px, $ultra-breakpoint, 20px);
+    }
+
+    &:hover {
+      & .investment-program__paypal-icon {
+        filter: invert(100%);
+      }
+    }
+  }
+
+  &__paypal-icon {
+    max-width: cross-media(30px, 991px, 60px);
+    filter: invert(0%);
+    transition: filter 0.3s ease;
+
+    @include view(ultra) {
+      max-width: cross-media(
+        60px,
+        $ultra-breakpoint,
+        calc(60px * $ultra-scale)
+      );
+    }
   }
 }

@@ -64,8 +64,8 @@ select {
     scroll-behavior: auto;
   }
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -132,7 +132,7 @@ h1,
 }
 @media only screen and (min-width: 1921px) {
   h1,
-.heading-l {
+  .heading-l {
     font-size: clamp(80px, 4.0625vw, 104px);
   }
 }
@@ -156,7 +156,7 @@ h2,
 }
 @media only screen and (min-width: 1921px) {
   h2,
-.heading {
+  .heading {
     font-size: clamp(50px, 2.5390625vw, 65px);
   }
 }
@@ -169,7 +169,7 @@ h3,
 }
 @media only screen and (min-width: 1921px) {
   h3,
-.heading-ms {
+  .heading-ms {
     font-size: clamp(40px, 2.03125vw, 52px);
   }
 }
@@ -182,7 +182,7 @@ h4,
 }
 @media only screen and (min-width: 1921px) {
   h4,
-.heading-s {
+  .heading-s {
     font-size: clamp(30px, 1.5234375vw, 39px);
   }
 }
@@ -212,7 +212,7 @@ p,
 }
 @media only screen and (min-width: 1921px) {
   p,
-.text {
+  .text {
     font-size: clamp(16px, 0.8125vw, 20.8px);
   }
 }
@@ -1587,11 +1587,45 @@ ul li {
 .main-grid-program__item:nth-child(even) .main-grid-program__step-container {
   right: -15%;
 }
+@media only screen and (min-width: 1921px) {
+  .main-grid-program__item:nth-child(even) .main-grid-program__step-container {
+    right: 0;
+  }
+}
 .main-grid-program__step-container {
   top: -5%;
   display: flex;
   align-items: start;
   line-height: 0.7;
+}
+
+.investment-program__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.investment-program__paypal-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media only screen and (min-width: 1921px) {
+  .investment-program__paypal-button {
+    gap: clamp(10px, 0.78125vw, 20px);
+  }
+}
+.investment-program__paypal-button:hover .investment-program__paypal-icon {
+  filter: invert(100%);
+}
+.investment-program__paypal-icon {
+  max-width: clamp(30px, 6.0544904137vw, 60px);
+  filter: invert(0%);
+  transition: filter 0.3s ease;
+}
+@media only screen and (min-width: 1921px) {
+  .investment-program__paypal-icon {
+    max-width: clamp(60px, 3.046875vw, 78px);
+  }
 }
 
 .intro--contact .intro__heading {
