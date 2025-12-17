@@ -83,7 +83,7 @@
                             <?php if ($itemText['button']['link']) : ?>
                                 <div class="main-grid__item-button">
                                     <a href="<?php echo $itemText['button']['link']; ?>">
-                                        <button class="button button--plain"><?php echo $itemText['button']['label']; ?></button>
+                                        <button class="button"><?php echo $itemText['button']['label']; ?></button>
                                     </a>
                                 </div>
                             <?php endif; ?>
