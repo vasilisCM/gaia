@@ -92,7 +92,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="main-grid__item-image-container main-grid-program__img-container relative">
-                            <div class="serif main-grid-program__step-container absolute">
+                            <div class="serif main-grid-program__step-container absolute clip-up">
                                 <span class="heading">Step</span>
                                 <span class="text-huge">0<?php echo get_row_index(); ?></span>
                             </div>
