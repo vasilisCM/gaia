@@ -370,8 +370,10 @@
       // border: solid 2px red;
     }
     &-image {
-      max-width: 800px;
-      max-height: 840px;
+      @include view(lg-min) {
+        max-width: 800px;
+        max-height: 840px;
+      }
 
       @include view(ultra) {
         max-width: cross-media(

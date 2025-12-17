@@ -11,12 +11,20 @@
 
     &:nth-child(odd) {
       & .main-grid-program__step-container {
-        left: -15%;
+        left: 0;
+
+        @include view(lg-min) {
+          left: -15%;
+        }
       }
     }
     &:nth-child(even) {
       & .main-grid-program__step-container {
-        right: -20%;
+        right: 0;
+
+        @include view(lg-min) {
+          right: -20%;
+        }
 
         // @include view(ultra) {
         //   right: 0;
