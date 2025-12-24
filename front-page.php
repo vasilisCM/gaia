@@ -111,7 +111,7 @@
   ?>
 
   <!-- Testimonial  -->
-  <section class="home-testimonial">
+  <section class="home-testimonial hidden">
     <?php
     $testimonial = get_field('testimonial');
     $image = $testimonial['image'];

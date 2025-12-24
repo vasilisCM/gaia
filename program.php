@@ -147,12 +147,12 @@
     <!-- Text Banner  -->
     <section class="text-banner text-banner-program">
         <?php
-        $text_banner = get_field('text_banner', 'option');
+        $text_banner = get_field('program_text_banner');
         ?>
         <div class="boxed centered">
             <div class="hero__heading">
-                <span class="heading-s italic serif hero__text">Ready to transform your health?</span>
-                <span class="heading-l hero__text" animate="word">Your body deserves this investment</span>
+                <span class="heading-s italic serif hero__text"><?php echo $text_banner['text_small']; ?></span>
+                <span class="heading-l hero__text" animate="word"><?php echo $text_banner['text_large']; ?></span>
             </div>
 
         </div>
