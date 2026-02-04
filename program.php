@@ -133,7 +133,7 @@
                     <div class="basic text-l">
                         <?php echo $investment['text_2']; ?>
                     </div>
-                    <a href="/" target="_blank">
+                    <a href="https://www.paypal.com/ncp/payment/U7BLJUYBB6MZY" target="_blank">
                         <button class="button investment-program__paypal-button">Pay with <img src="<?php echo assets('paypal-black.png'); ?>" alt="Paypal" class="investment-program__paypal-icon"></button>
                     </a>
                     <div class="basic text-l">
