@@ -114,7 +114,6 @@ const global = () => {
 
   // Dropdown Menu
   header.classList.remove("header--dropdown"); // Reset Header State
-  const dropdownMenu = document.querySelector(".sub-menu");
   const dropdownBackground = document.querySelector(
     ".main-menu__dropdown-background"
   );
@@ -122,43 +121,53 @@ const global = () => {
   // Dropdown Timeline
   const mm = gsap.matchMedia();
   mm.add("(min-width: 991px)", () => {
+    let currentDropdownMenu = null;
     const dropdownTl = gsap.timeline({
       paused: true,
       onStart: () => header.classList.add("header--dropdown"),
       onReverseComplete: () => header.classList.remove("header--dropdown"),
     });
-    dropdownTl
-      .fromTo(
-        dropdownBackground,
-        {
-          visibility: "hidden",
-          opacity: 0,
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        },
-        {
-          visibility: "visible",
-          opacity: 1,
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        }
-      )
-      .fromTo(
-        dropdownMenu,
-        {
-          visibility: "hidden",
-          opacity: 0,
-        },
-        {
-          visibility: "visible",
-          opacity: 1,
-        }
-      );
 
     // Interaction to Open Dropdown
     header.addEventListener("mouseover", (e) => {
-      let dropdownItem = header.querySelector(".menu-item-has-children > a");
-
-      if (e.target === dropdownItem) {
-        dropdownTl.play();
+      // Check if the hovered element is any dropdown item
+      if (e.target.matches(".menu-item-has-children > a")) {
+        // Find the submenu within the parent li
+        const submenu = e.target.nextElementSibling;
+        
+        if (submenu && submenu.classList.contains("sub-menu")) {
+          currentDropdownMenu = submenu;
+          
+          // Clear and rebuild the timeline with the correct submenu
+          dropdownTl.clear();
+          dropdownTl
+            .fromTo(
+              dropdownBackground,
+              {
+                visibility: "hidden",
+                opacity: 0,
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+              },
+              {
+                visibility: "visible",
+                opacity: 1,
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+              }
+            )
+            .fromTo(
+              currentDropdownMenu,
+              {
+                visibility: "hidden",
+                opacity: 0,
+              },
+              {
+                visibility: "visible",
+                opacity: 1,
+              }
+            );
+          
+          dropdownTl.play();
+        }
       }
     });
 
