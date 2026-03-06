@@ -1,6 +1,7 @@
 import customCursor from "../logic/customCursor.js";
 import carousel from "../logic/carousel.js";
 import carouselFullScreen from "../logic/carouselFullScreen.js";
+import CarouselGlide from "../logic/carouselGlide.js";
 
 const home = () => {
   console.log("Hello from home");
@@ -27,6 +28,18 @@ const home = () => {
       carousel(carouselContainer, carouselTrack, ".carousel__item", 0.1);
     });
   }
+
+  // Testimonial Carousel
+  const testimonialCarousel = new CarouselGlide(
+    ".carousel-glide",
+    ".carousel-glide .carousel-glide__slide",
+    1, 1, 1,
+    ".carousel__button--previous",
+    ".carousel__button--next",
+    "carousel__dots",
+    "carousel__dot"
+  );
+  testimonialCarousel.init();
 
   // Custom Cursor
   const cursorDrag = document.querySelector(".cursor");

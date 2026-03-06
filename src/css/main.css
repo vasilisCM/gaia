@@ -776,6 +776,58 @@ ul li {
   }
 }
 
+.carousel-glide__track {
+  overflow-x: hidden;
+}
+.carousel-glide__container {
+  display: flex;
+}
+@media only screen and (min-width: 992px) {
+  .carousel-glide__container {
+    gap: 16px;
+  }
+}
+.carousel-glide__slide {
+  color: #000;
+  cursor: grab;
+}
+.carousel-glide__button {
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+.carousel-glide__button--previous {
+  transform: rotate(180deg);
+}
+.carousel-glide__button::after {
+  content: "\e901";
+  font-family: "icomoon";
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 8px;
+}
+.carousel-glide__controls {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4.0363269425vw, 40px);
+  margin-top: clamp(40px, 8.072653885vw, 80px);
+  margin-inline: auto;
+}
+.carousel-glide__dots {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.carousel-glide__dot {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.carousel-glide .glide__bullet--active {
+  background-color: #000;
+}
+
 .carousel {
   padding-block: clamp(40px, 6.0544904137vw, 60px);
 }

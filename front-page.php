@@ -73,7 +73,8 @@
   <section class="home-team">
     <div class="boxed centered">
       <h2 class="serif heading center-align"><?php echo get_field('home__team')['heading']; ?></h2>
-      <div class="carousel carousel--home<?php echo have_rows('carousel', 'options') && count(get_field('carousel', 'options')) < 4 ? ' carousel--not-active' : ''; ?>">
+      <?php $carousel_items = get_field('carousel', 'options') ?: []; ?>
+      <div class="carousel carousel--home<?php echo count($carousel_items) < 4 ? ' carousel--not-active' : ''; ?>">
         <div class="carousel__container">
           <div class="carousel__track">
             <?php if (have_rows('carousel', 'options')) : ?>
@@ -111,40 +112,40 @@
   ?>
 
   <!-- Testimonial  -->
-  <section class="home-testimonial">
+  <section class="hidden">
 
-    <div class="boxed-s centered home-testimonial__container">
-      <?php if (have_rows('testimonials')) :
-        while (have_rows('testimonials')) : the_row();
-          $image = get_sub_field('image');
-          $heading = get_sub_field('heading');
-          $text = get_sub_field('text');
-          $author = get_sub_field('author');
-      ?>
+    <div class="">
+      <div class="carousel-glide">
+        <div class="carousel-glide__track" data-glide-el="track">
+          <div class="carousel-glide__container">
 
-          <div class="carousel-glide">
-            <div class="carousel-glide__track" data-glide-el="track">
-
-              <div class="carousel-glide__container">
-                <div>
-                  <div class="home-testimonial__img-container">
-                    <img src="<?php echo $image['url']; ?>" alt="" class="home-testimonial__img">
-                  </div>
-                  <div class="home-testimonial__text-container">
+            <?php if (have_rows('testimonials')) :
+              while (have_rows('testimonials')) : the_row();
+                $heading = get_sub_field('heading');
+                $text = get_sub_field('text');
+                $author = get_sub_field('author');
+            ?>
+                <div class="carousel-glide__slide">
+                  <div class="">
                     <h4 class="heading italic serif"><?php echo $heading; ?></h4>
                     <div class="heading-s italic serif"><?php echo $text; ?></div>
                     <span class="text-ml"><?php echo $author; ?></span>
                   </div>
                 </div>
-              </div>
+              <?php endwhile; ?>
+            <?php endif; ?>
 
-            </div>
           </div>
+        </div>
 
-
-
-        <?php endwhile; ?>
-      <?php endif; ?>
+        <div class="carousel__bottom">
+          <div class="carousel__controls">
+            <div class="carousel__button carousel__button--previous"></div>
+            <div class="carousel__dots" data-glide-el="controls[nav]"></div>
+            <div class="carousel__button carousel__button--next"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -3,14 +3,14 @@
 class CarouselGlide {
   constructor(
     carouselSelector = ".carousel-glide",
-    slideSelector = `${carouselSelector} .carousel__slide`,
-    visibleDesktop = 4,
-    visibleTablet = 2,
+    slideSelector = `${carouselSelector} .carousel-glide__slide`,
+    visibleDesktop = 1,
+    visibleTablet = 1,
     visibleMobile = 1,
-    previousButtonSelector = ".carousel__button--previous",
-    nextButtonSelector = ".carousel__button--next",
-    dotContainerClass = "carousel__dots",
-    dotClass = "carousel__dot",
+    previousButtonSelector = ".carousel-glide__button--previous",
+    nextButtonSelector = ".carousel-glide__button--next",
+    dotContainerClass = "carousel-glide__dots",
+    dotClass = "carousel-glide__dot",
     autoplay = false
   ) {
     this.carouselSelector = carouselSelector;
