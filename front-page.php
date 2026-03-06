@@ -73,11 +73,11 @@
   <section class="home-team">
     <div class="boxed centered">
       <h2 class="serif heading center-align"><?php echo get_field('home__team')['heading']; ?></h2>
-<div class="carousel carousel--home<?php echo have_rows('carousel', 'options') && count(get_field('carousel', 'options')) < 4 ? ' carousel--not-active' : ''; ?>">
-       <div class="carousel__container">
-         <div class="carousel__track">
-           <?php if (have_rows('carousel', 'options')) : ?>
-             <?php while (have_rows('carousel', 'options')) : the_row();
+      <div class="carousel carousel--home<?php echo have_rows('carousel', 'options') && count(get_field('carousel', 'options')) < 4 ? ' carousel--not-active' : ''; ?>">
+        <div class="carousel__container">
+          <div class="carousel__track">
+            <?php if (have_rows('carousel', 'options')) : ?>
+              <?php while (have_rows('carousel', 'options')) : the_row();
                 $image = get_sub_field('image');
                 $name = get_sub_field('name');
                 $profession = get_sub_field('profession');
@@ -111,23 +111,40 @@
   ?>
 
   <!-- Testimonial  -->
-  <section class="home-testimonial hidden">
-    <?php
-    $testimonial = get_field('testimonial');
-    $image = $testimonial['image'];
-    $heading = $testimonial['heading'];
-    $text = $testimonial['text'];
-    $author = $testimonial['author'];
-    ?>
+  <section class="home-testimonial">
+
     <div class="boxed-s centered home-testimonial__container">
-      <div class="home-testimonial__img-container">
-        <img src="<?php echo $image; ?>" alt="" class="home-testimonial__img">
-      </div>
-      <div class="home-testimonial__text-container">
-        <h4 class="heading italic serif"><?php echo $heading; ?></h4>
-        <div class="heading-s italic serif"><?php echo $text; ?></div>
-        <span class="text-ml"><?php echo $author; ?></span>
-      </div>
+      <?php if (have_rows('testimonials')) :
+        while (have_rows('testimonials')) : the_row();
+          $image = get_sub_field('image');
+          $heading = get_sub_field('heading');
+          $text = get_sub_field('text');
+          $author = get_sub_field('author');
+      ?>
+
+          <div class="carousel-glide">
+            <div class="carousel-glide__track" data-glide-el="track">
+
+              <div class="carousel-glide__container">
+                <div>
+                  <div class="home-testimonial__img-container">
+                    <img src="<?php echo $image['url']; ?>" alt="" class="home-testimonial__img">
+                  </div>
+                  <div class="home-testimonial__text-container">
+                    <h4 class="heading italic serif"><?php echo $heading; ?></h4>
+                    <div class="heading-s italic serif"><?php echo $text; ?></div>
+                    <span class="text-ml"><?php echo $author; ?></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+        <?php endwhile; ?>
+      <?php endif; ?>
     </div>
   </section>
 
