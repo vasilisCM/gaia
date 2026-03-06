@@ -73,11 +73,11 @@
   <section class="home-team">
     <div class="boxed centered">
       <h2 class="serif heading center-align"><?php echo get_field('home__team')['heading']; ?></h2>
-      <div class="carousel carousel--home">
-        <div class="carousel__container">
-          <div class="carousel__track">
-            <?php if (have_rows('carousel', 'options')) : ?>
-              <?php while (have_rows('carousel', 'options')) : the_row();
+<div class="carousel carousel--home<?php echo have_rows('carousel', 'options') && count(get_field('carousel', 'options')) < 4 ? ' carousel--not-active' : ''; ?>">
+       <div class="carousel__container">
+         <div class="carousel__track">
+           <?php if (have_rows('carousel', 'options')) : ?>
+             <?php while (have_rows('carousel', 'options')) : the_row();
                 $image = get_sub_field('image');
                 $name = get_sub_field('name');
                 $profession = get_sub_field('profession');

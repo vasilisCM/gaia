@@ -443,6 +443,15 @@
 .carousel {
   padding-block: cross-media(40px, 991px, 60px);
 
+  &--not-active {
+    & .carousel-track {
+      justify-content: space-between;
+    }
+    & .carousel__item {
+      max-width: revert;
+    }
+  }
+
   &__track {
     display: flex;
     gap: cross-media(28px, 991px, 56px);
