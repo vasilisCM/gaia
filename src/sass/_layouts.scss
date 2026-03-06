@@ -444,8 +444,13 @@
   padding-block: cross-media(40px, 991px, 60px);
 
   &--not-active {
+    & .carousel__container {
+      display: flex;
+      justify-content: center;
+    }
+
     & .carousel-track {
-      justify-content: space-between;
+      justify-content: center;
     }
     & .carousel__item {
       max-width: revert;
