@@ -136,7 +136,7 @@
               ?>
                   <div class="carousel-glide__slide">
 
-                    <div class="text carousel-glide__text" data-short-text="<?php echo esc_attr($short_text); ?>" data-full-text="<?php echo esc_attr($plain_text); ?>" data-expanded="0">
+                    <div class="text carousel-glide__text center-align" data-short-text="<?php echo esc_attr($short_text); ?>" data-full-text="<?php echo esc_attr($plain_text); ?>" data-expanded="0">
                       <?php echo $short_text; ?>
                     </div>
                     <span class="text-ml center-align"><?php echo $author; ?></span>
@@ -154,7 +154,7 @@
           <div class="carousel-glide__bottom">
             <div class="carousel-glide__controls">
               <div class="carousel-glide__button carousel-glide__button--previous"></div>
-              <div class="carousel-glide__dots" data-glide-el="controls[nav]"></div>
+              <!-- <div class="carousel-glide__dots" data-glide-el="controls[nav]"></div> -->
               <div class="carousel-glide__button carousel-glide__button--next"></div>
             </div>
           </div>
