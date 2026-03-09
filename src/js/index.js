@@ -12,6 +12,10 @@ import carouselFullScreen from "./logic/carouselFullScreen.js";
 let handleHamburgerClick;
 const header = document.querySelector(".header");
 
+// Dropdown — module-scope refs so they can be cleaned up on each page transition
+let dropdownMm = null;
+let dropdownMouseoverHandler = null;
+
 const initHamburgerClickHandler = (hamburgerButton, tl) => {
   console.log(tl.progress());
   // tl.play();
@@ -118,9 +122,23 @@ const global = () => {
     ".main-menu__dropdown-background"
   );
 
+  // Kill previous matchMedia context and remove stale listener from the persistent header
+  if (dropdownMm) {
+    dropdownMm.kill();
+    dropdownMm = null;
+  }
+  if (dropdownMouseoverHandler) {
+    header.removeEventListener("mouseover", dropdownMouseoverHandler);
+    dropdownMouseoverHandler = null;
+  }
+
+  // Wipe any GSAP inline styles left from the previous page so everything starts closed
+  gsap.set(dropdownBackground, { clearProps: "all" });
+  gsap.set(header.querySelectorAll(".sub-menu"), { clearProps: "all" });
+
   // Dropdown Timeline
-  const mm = gsap.matchMedia();
-  mm.add("(min-width: 991px)", () => {
+  dropdownMm = gsap.matchMedia();
+  dropdownMm.add("(min-width: 991px)", () => {
     let currentDropdownMenu = null;
     const dropdownTl = gsap.timeline({
       paused: true,
@@ -129,7 +147,7 @@ const global = () => {
     });
 
     // Interaction to Open Dropdown
-    header.addEventListener("mouseover", (e) => {
+    dropdownMouseoverHandler = (e) => {
       // Check if the hovered element is any dropdown item
       if (e.target.matches(".menu-item-has-children > a")) {
         // Find the submenu within the parent li
@@ -169,7 +187,8 @@ const global = () => {
           dropdownTl.play();
         }
       }
-    });
+    };
+    header.addEventListener("mouseover", dropdownMouseoverHandler);
 
     // Interaction to Close Dropdown
     const main = document.querySelector("main");
