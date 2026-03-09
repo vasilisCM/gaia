@@ -34,10 +34,10 @@ const home = () => {
     ".carousel-glide",
     ".carousel-glide .carousel-glide__slide",
     1, 1, 1,
-    ".carousel__button--previous",
-    ".carousel__button--next",
-    "carousel__dots",
-    "carousel__dot"
+    ".carousel-glide__button--previous",
+    ".carousel-glide__button--next",
+    "carousel-glide__dots",
+    "carousel-glide__dot"
   );
   testimonialCarousel.init();
 

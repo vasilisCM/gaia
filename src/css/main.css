@@ -785,6 +785,7 @@ ul li {
 }
 .carousel-glide__track {
   overflow-x: hidden;
+  margin-top: clamp(20px, 4.0363269425vw, 40px);
 }
 .carousel-glide__container {
   display: flex;
@@ -814,7 +815,7 @@ ul li {
   transform: rotate(180deg);
 }
 .carousel-glide__button::after {
-  content: "\e901";
+  content: "\e902";
   font-family: "icomoon";
   font-variant: normal;
   -webkit-font-smoothing: antialiased;
@@ -824,9 +825,11 @@ ul li {
 .carousel-glide__controls {
   display: flex;
   align-items: center;
+  justify-content: end;
   gap: clamp(20px, 4.0363269425vw, 40px);
   margin-top: clamp(40px, 8.072653885vw, 80px);
   margin-inline: auto;
+  width: fit-content;
 }
 .carousel-glide__dots {
   display: flex;
@@ -835,6 +838,7 @@ ul li {
 }
 .carousel-glide__dot {
   height: 2px;
+  min-width: 20px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -866,6 +870,7 @@ ul li {
 .carousel__track {
   display: flex;
   gap: clamp(28px, 5.6508577195vw, 56px);
+  margin-top: clamp(20px, 4.0363269425vw, 40px);
 }
 .carousel__item {
   flex-shrink: 0;

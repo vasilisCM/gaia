@@ -117,24 +117,25 @@
     <div class="">
       <div class="carousel-glide">
         <div class="boxed-s centered">
+          <h4 class="heading italic serif center-align"><?php echo _e('Your Experiences', 'gaia') ?></h4>
+
           <div class="carousel-glide__track" data-glide-el="track">
             <div class="carousel-glide__container">
 
               <?php if (have_rows('testimonials')) :
                 while (have_rows('testimonials')) : the_row();
-                  $heading = get_sub_field('heading');
+
                   $text = get_sub_field('text');
                   $author = get_sub_field('author');
 
                   $plain_text = wp_strip_all_tags($text);
 
-                  $max_length = 260;
+                  $max_length = 520;
                   $has_long_text = mb_strlen($plain_text) > $max_length;
                   $short_text = $has_long_text ? mb_substr($plain_text, 0, $max_length) . '…' : $plain_text;
               ?>
                   <div class="carousel-glide__slide">
 
-                    <h4 class="heading italic serif center-align"><?php echo $heading; ?></h4>
                     <div class="text carousel-glide__text" data-short-text="<?php echo esc_attr($short_text); ?>" data-full-text="<?php echo esc_attr($plain_text); ?>" data-expanded="0">
                       <?php echo $short_text; ?>
                     </div>
@@ -150,11 +151,11 @@
             </div>
           </div>
 
-          <div class="carousel__bottom">
-            <div class="carousel__controls">
-              <div class="carousel__button carousel__button--previous"></div>
-              <div class="carousel__dots" data-glide-el="controls[nav]"></div>
-              <div class="carousel__button carousel__button--next"></div>
+          <div class="carousel-glide__bottom">
+            <div class="carousel-glide__controls">
+              <div class="carousel-glide__button carousel-glide__button--previous"></div>
+              <div class="carousel-glide__dots" data-glide-el="controls[nav]"></div>
+              <div class="carousel-glide__button carousel-glide__button--next"></div>
             </div>
           </div>
         </div>
