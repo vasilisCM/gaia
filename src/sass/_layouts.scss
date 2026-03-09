@@ -440,6 +440,8 @@
 }
 
 .carousel-glide {
+  padding-bottom: cross-media(100px, 991px, 200px);
+
   &__track {
     overflow-x: hidden;
   }
@@ -453,8 +455,17 @@
   }
 
   &__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: cross-media(10px, 991px, 20px);
     color: $black;
     cursor: grab;
+  }
+
+  &__toggle {
+    cursor: pointer;
   }
 
   &__button {

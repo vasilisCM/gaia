@@ -428,6 +428,10 @@ ul li {
   color: #fff;
 }
 
+.secondary {
+  color: #3b3232;
+}
+
 .hidden {
   display: none !important;
 }
@@ -776,6 +780,9 @@ ul li {
   }
 }
 
+.carousel-glide {
+  padding-bottom: clamp(100px, 20.1816347124vw, 200px);
+}
 .carousel-glide__track {
   overflow-x: hidden;
 }
@@ -788,8 +795,16 @@ ul li {
   }
 }
 .carousel-glide__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2.0181634712vw, 20px);
   color: #000;
   cursor: grab;
+}
+.carousel-glide__toggle {
+  cursor: pointer;
 }
 .carousel-glide__button {
   cursor: pointer;

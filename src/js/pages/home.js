@@ -41,6 +41,37 @@ const home = () => {
   );
   testimonialCarousel.init();
 
+  const testimonialSlides = document.querySelectorAll(".carousel-glide__slide");
+
+  testimonialSlides.forEach((slide) => {
+    const textElement = slide.querySelector(".carousel-glide__text");
+    const toggleElement = slide.querySelector(".carousel-glide__toggle");
+
+    if (!textElement || !toggleElement) {
+      return;
+    }
+
+    toggleElement.addEventListener("click", () => {
+      const isExpanded = textElement.getAttribute("data-expanded") === "1";
+      const fullText = textElement.getAttribute("data-full-text");
+      const shortText = textElement.getAttribute("data-short-text");
+
+      if (!fullText || !shortText) {
+        return;
+      }
+
+      if (isExpanded) {
+        textElement.textContent = shortText;
+        textElement.setAttribute("data-expanded", "0");
+        toggleElement.textContent = "show more";
+      } else {
+        textElement.textContent = fullText;
+        textElement.setAttribute("data-expanded", "1");
+        toggleElement.textContent = "show less";
+      }
+    });
+  });
+
   // Custom Cursor
   const cursorDrag = document.querySelector(".cursor");
   customCursor(cursorDrag);
