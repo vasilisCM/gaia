@@ -514,6 +514,11 @@
   padding-block: cross-media(40px, 991px, 60px);
 
   &--not-active {
+
+    @include view(md-max) {
+      overflow-x:  auto;
+    }
+
     & .carousel__container {
       display: flex;
       justify-content: center;
@@ -523,7 +528,10 @@
       justify-content: center;
     }
     & .carousel__item {
-      max-width: revert;
+
+      @include view(lg-min) {
+        max-width: revert;
+      }
     }
   }
 
