@@ -111,57 +111,7 @@
   include 'components/text-banner.php';
   ?>
 
-  <!-- Testimonial  -->
-  <section class="">
 
-    <div class="">
-      <div class="carousel-glide">
-        <div class="boxed-s centered">
-          <h4 class="heading italic serif center-align"><?php echo _e('Your Experiences', 'gaia') ?></h4>
-
-          <div class="carousel-glide__track" data-glide-el="track">
-            <div class="carousel-glide__container">
-
-              <?php if (have_rows('testimonials')) :
-                while (have_rows('testimonials')) : the_row();
-
-                  $text = get_sub_field('text');
-                  $author = get_sub_field('author');
-
-                  $plain_text = wp_strip_all_tags($text);
-
-                  $max_length = 520;
-                  $has_long_text = mb_strlen($plain_text) > $max_length;
-                  $short_text = $has_long_text ? mb_substr($plain_text, 0, $max_length) . '…' : $plain_text;
-              ?>
-                  <div class="carousel-glide__slide">
-
-                    <div class="text carousel-glide__text center-align" data-short-text="<?php echo esc_attr($short_text); ?>" data-full-text="<?php echo esc_attr($plain_text); ?>" data-expanded="0">
-                      <?php echo $short_text; ?>
-                    </div>
-                    <span class="text-ml center-align"><?php echo $author; ?></span>
-                    <?php if ($has_long_text) : ?>
-                      <div class="text-ml secondary underline carousel-glide__toggle" type="button">show more</div>
-                    <?php endif; ?>
-
-                  </div>
-                <?php endwhile; ?>
-              <?php endif; ?>
-
-            </div>
-          </div>
-
-          <div class="carousel-glide__bottom">
-            <div class="carousel-glide__controls">
-              <div class="carousel-glide__button carousel-glide__button--previous"></div>
-              <!-- <div class="carousel-glide__dots" data-glide-el="controls[nav]"></div> -->
-              <div class="carousel-glide__button carousel-glide__button--next"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Custom Cursor  -->
   <?php

@@ -94,6 +94,8 @@
   <?php
   include 'components/text-banner.php';
   ?>
+
+
 </main>
 
 <!-- Footer  -->

@@ -6,6 +6,7 @@ import clipUp from "./animations/clipPathTextByWord.js";
 import moveUpOnScroll from "./animations/moveUpOnScroll.js";
 import accordion from "./logic/accordion.js";
 import backToTop from "./global/backToTop.js";
+import CarouselGlide from "./logic/carouselGlide.js";
 import carouselFullScreen from "./logic/carouselFullScreen.js";
 
 // Define the handler at a broader scope
@@ -212,6 +213,52 @@ const global = () => {
 
   // FAQ
   accordion(".faq-accordion__item", ".faq-accordion__content");
+
+    // Testimonial Carousel
+  const testimonialCarousel = new CarouselGlide(
+    ".carousel-glide",
+    ".carousel-glide .carousel-glide__slide",
+    1, 1, 1,
+    ".carousel-glide__button--previous",
+    ".carousel-glide__button--next",
+    "carousel-glide__dots",
+    "carousel-glide__dot"
+  );
+  const carouselGlide = document.querySelector(".carousel-glide");
+  if(carouselGlide) {
+    testimonialCarousel.init();
+  }
+
+  const testimonialSlides = document.querySelectorAll(".carousel-glide__slide");
+
+  testimonialSlides.forEach((slide) => {
+    const textElement = slide.querySelector(".carousel-glide__text");
+    const toggleElement = slide.querySelector(".carousel-glide__toggle");
+
+    if (!textElement || !toggleElement) {
+      return;
+    }
+
+    toggleElement.addEventListener("click", () => {
+      const isExpanded = textElement.getAttribute("data-expanded") === "1";
+      const fullText = textElement.getAttribute("data-full-text");
+      const shortText = textElement.getAttribute("data-short-text");
+
+      if (!fullText || !shortText) {
+        return;
+      }
+
+      if (isExpanded) {
+        textElement.textContent = shortText;
+        textElement.setAttribute("data-expanded", "0");
+        toggleElement.textContent = "show more";
+      } else {
+        textElement.textContent = fullText;
+        textElement.setAttribute("data-expanded", "1");
+        toggleElement.textContent = "show less";
+      }
+    });
+  });
 
   // Back to Top
   const backToTopButton = document.querySelector(".back-to-top");
