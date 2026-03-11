@@ -561,11 +561,12 @@ ul li {
     position: absolute;
     flex-direction: column;
     gap: clamp(10px, 2.6075619296vw, 20px);
+    height: 100vh;
     height: 100dvh;
     top: 0;
     right: 0;
     left: 0;
-    padding: 160px 20px 40px;
+    padding: 100px 20px 40px;
     background-color: #eceaea;
     transform: translateY(-100%);
     will-change: transform;

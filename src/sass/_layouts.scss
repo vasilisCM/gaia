@@ -119,11 +119,12 @@
       position: absolute;
       flex-direction: column;
       gap: cross-media(10px, 767px, 20px);
+      height: 100vh;
       height: 100dvh;
       top: 0;
       right: 0;
       left: 0;
-      padding: 160px 20px 40px;
+      padding: 100px 20px 40px;
       background-color: $primary;
       transform: translateY(-100%);
       will-change: transform;
